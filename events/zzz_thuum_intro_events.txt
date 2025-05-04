@@ -23,8 +23,12 @@ zzz_thuum_intro.0001 = {
 
     immediate = {
         random_courtier = {
+            limit = {
+                is_adult = yes
+            }
             save_scope_as = courtier
         }
+        
     }
 
     trigger = {
@@ -46,6 +50,7 @@ zzz_thuum_intro.0001 = {
                     destination = title:b_gildergreen.title_province
                     on_arrival_event = zzz_thuum_intro.0002
                     on_arrival_destinations = all_but_last
+                    
                 }
             }
         }
@@ -56,6 +61,7 @@ zzz_thuum_intro.0001 = {
 		custom_tooltip = "Will become a decision instead"
         hidden_effect = {
             add_character_flag = visit_gildergreen_as_decision
+            mp_delay_travel_plan = { DAYS = 30 }
         }
 	}
 
@@ -70,8 +76,9 @@ zzz_thuum_intro.0001 = {
 #RULER TALKS TO GILDERGREEN PRIEST
 zzz_thuum_intro.0002 = {
     type = character_event
-	title = "Way of the Voice"
-    desc = zzz_thuum_intro.0001.desc
+	title = "Seeking out the Priest"
+    orphan =  yes
+    desc = zzz_thuum_intro.0002.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -84,14 +91,17 @@ zzz_thuum_intro.0002 = {
 	}
 
     right_portrait = {
-		character = scope:courtier
+		character = scope:priest
 		animation = thinking
 	}
 
     immediate = {
-        random_courtier = {
-            save_scope_as = courtier
+        title:b_gildergreen.holder = {
+            save_scope_as = priest
         }
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        	}
     }
 
     trigger = {
@@ -99,11 +109,30 @@ zzz_thuum_intro.0002 = {
 	}
 
     option = {
-		name = "Let's head to Gildergreen!"
-		custom_tooltip = "Will travel to Gildergreen"
+		name = "Let's meditate to Kynareth."
+	    custom_tooltip = "Will medidate to Kynareth."
         hidden_effect  = {
-           trigger_event = ek_coming_of_age.0022
+            
+           trigger_event = {
+                id = zzz_thuum_intro.0003
+                days = { 30 }
+           }
+           
         }
 	}
 
+    option = {
+		name = "Not interested."
+	    custom_tooltip = "This will end the whole Way of the Voice event."
+	}
+
+}
+
+
+#RESULT OF MEDITATION
+zzz_thuum_intro.0003 = {
+    type = character_event
+	title = "Way of the Voice"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
 }

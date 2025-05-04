@@ -19,7 +19,6 @@
 
 	effect = {
 		custom_tooltip = zero_stone_decision_effect_tt
-		add_character_flag = zero_stone
 		if = {
 			limit = {
 				capital_province.barony = title:b_gildergreen
@@ -29,8 +28,7 @@
 		else = {
 			start_travel_plan = {
 				destination = title:b_gildergreen.title_province
-				on_travel_planner_cancel_on_action = zero_stone_decision_travel_planner_exit
-				on_arrival_event = ek_coming_of_age.0022
+				on_arrival_event = zzz_thuum_intro.0001
 				on_arrival_destinations = all_but_last
 			}
 		}
