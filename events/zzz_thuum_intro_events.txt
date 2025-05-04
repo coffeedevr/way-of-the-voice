@@ -1,0 +1,109 @@
+namespace = zzz_thuum_intro
+
+# COURTIER INQUIRES RULER ABOUT THUUM
+zzz_thuum_intro.0001 = {
+    type = character_event
+	title = "Way of the Voice"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    right_portrait = {
+		character = scope:courtier
+		animation = thinking
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = courtier
+        }
+    }
+
+    trigger = {
+		
+	}
+
+    option = {
+		name = "Let's head to Gildergreen!"
+		custom_tooltip = "Will travel to Gildergreen"
+        hidden_effect  = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_gildergreen
+                }
+                trigger_event = zzz_thuum_intro.0002
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_gildergreen.title_province
+                    on_arrival_event = zzz_thuum_intro.0002
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+
+	option = {
+		name = "No time right now!"
+		custom_tooltip = "Will become a decision instead"
+        hidden_effect = {
+            add_character_flag = visit_gildergreen_as_decision
+        }
+	}
+
+    option = {
+		name = "Not interested"
+		custom_tooltip = "Will drop it"
+	}
+
+}
+
+
+#RULER TALKS TO GILDERGREEN PRIEST
+zzz_thuum_intro.0002 = {
+    type = character_event
+	title = "Way of the Voice"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    right_portrait = {
+		character = scope:courtier
+		animation = thinking
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = courtier
+        }
+    }
+
+    trigger = {
+		
+	}
+
+    option = {
+		name = "Let's head to Gildergreen!"
+		custom_tooltip = "Will travel to Gildergreen"
+        hidden_effect  = {
+           trigger_event = ek_coming_of_age.0022
+        }
+	}
+
+}

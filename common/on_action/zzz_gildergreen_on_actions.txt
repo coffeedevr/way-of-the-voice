@@ -1,0 +1,16 @@
+on_travel_plan_cancel = {
+    on_action = {
+        on_cancel_gildergreen
+    }
+}
+
+
+on_cancel_gildergreen = {
+    trigger = {
+        is_decision_on_cooldown = become_tongue_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = become_tongue_decision
+    }
+}

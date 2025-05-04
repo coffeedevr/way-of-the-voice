@@ -1,0 +1,83 @@
+siege_voice = {
+	scope = character
+	saved_scopes = { player }
+
+	is_shown = {
+		OR = {
+			is_courtier_of = scope:player
+			is_vassal_of = scope:player
+			root = scope:player
+		}
+		trigger_if = {
+			limit = {
+				NOT = { root = scope:player }
+				has_trait = thuum_trait_track
+			}
+			is_ai = yes
+		}
+		location = root.location
+	}
+
+	is_valid = {
+		trigger_if = {
+			limit = { 
+				root = scope:player
+			}
+			custom_tooltip = {
+				text = "sample"
+				NOT = { has_character_flag = used_voice_sieged_today }
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = "sample"
+				NOR = { has_character_flag = recently_sieged_voice }
+			}
+		}
+
+		has_trait = thuum_trait_track
+		NOR = {
+			has_trait = wounded_2
+			has_trait = wounded_3
+			has_trait = incapable
+			has_trait = infirm
+		}
+
+		location = {
+			custom_tooltip = { # Can't damage more
+				text = "text can't damage anymore"
+				NOR = {
+					has_variable = thuum_siege_modifier_large
+					# Cannot be damaged by you anymore as the dragon is not big enough
+					AND = {
+						has_variable = thuum_siege_modifier_medium
+						#check if tier two trait
+					}
+					AND = {
+						has_variable = thuum_siege_modifier_small
+						#check if tier one trait
+					}
+					AND = {
+						fort_level = 1
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		save_scope_as = commander
+
+		trigger_event = { id = thuum_siege_event.0001 }
+
+		custom_tooltip = "sample"
+
+		if = {
+			limit = { NOT = { root = scope:player } }
+			add_character_flag = {
+				flag = recently_sieged_voice
+				months = 1
+			}
+		}
+	}
+}

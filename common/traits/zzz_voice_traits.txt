@@ -1,0 +1,93 @@
+﻿blessed_by_kyne = {
+
+    name = "Blessed By Kyne"
+
+    icon = saoshyant.dds
+    category = lifestyle
+    ruler_designer_cost = 45
+    same_opinion = 10
+
+}
+
+touched_by_clavicus = {
+
+    name = "Touched By Clavicus Vile"
+
+    #icon = saoshyant.dds
+    category = lifestyle
+    ruler_designer_cost = 0
+    desc = "Clavicus is waiting patiently..."
+
+}
+
+thuum_trait_track = {
+
+    icon = voice_student.dds
+    category = lifestyle
+    ruler_designer_cost = 45
+    same_opinion = 10
+
+    track = {
+		33 = {
+			advantage = 5
+			martial = 1
+		}
+		66 = {
+			advantage = 15
+			martial = 2
+		}
+		100 = {
+			advantage = 25
+			martial = 3
+		}
+	}
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = military_engineer
+						value >= 100
+					}
+				}
+				desc = "Master of the Voice"
+			}
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = military_engineer
+						value >= 66
+					}
+				}
+				desc = "Practitioner of the Voice"
+			}
+			triggered_desc = {
+				trigger = {
+					exists = this
+					has_trait_xp = {
+						trait = military_engineer
+						value >= 33
+					}
+				}
+				desc = "Apprentice of the Voice"
+			}
+			desc = "Student of the Voice"
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = "A Thu'um user is a trained master of the Voice, wielding powerful shouts in the dragon tongue to shape the world through sound and will."
+			}
+			desc = "A Thu'um user is a trained master of the Voice, wielding powerful shouts in the dragon tongue to shape the world through sound and will."
+		}
+	}
+
+}
