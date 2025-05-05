@@ -61,7 +61,6 @@ zzz_thuum_intro.0001 = {
 		custom_tooltip = "Will become a decision instead"
         hidden_effect = {
             add_character_flag = visit_gildergreen_as_decision
-            mp_delay_travel_plan = { DAYS = 30 }
         }
 	}
 
@@ -101,7 +100,7 @@ zzz_thuum_intro.0002 = {
         }
         current_travel_plan = {
    			delay_travel_plan = { days = 30 }
-        	}
+        }
     }
 
     trigger = {
@@ -111,14 +110,47 @@ zzz_thuum_intro.0002 = {
     option = {
 		name = "Let's meditate to Kynareth."
 	    custom_tooltip = "Will medidate to Kynareth."
-        hidden_effect  = {
-            
-           trigger_event = {
-                id = zzz_thuum_intro.0003
-                days = { 30 }
-           }
-           
-        }
+        
+		duel = {
+			skill = learning
+			value = very_high_skill_rating
+
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					# Always give _some_ chance.
+					min = -39
+				}
+				desc = harm.0001.a.tt.success
+                #hidden_effect = {
+                #    trigger_event = {
+                #         id = zzz_thuum_intro.0004
+                #        days = { 30 }
+                #    }
+                #}
+                add_character_flag = thuum_medidate_success
+				
+                
+			}
+			# You're not as fit as you thought you were.
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					# Limit how low the off-chance can go.
+					min = -19
+				}
+				desc = harm.0001.a.tt.failure
+				#hidden_effect = {
+                #    trigger_event = {
+                #        id = zzz_thuum_intro.0003
+                #        days = { 30 }
+                #    }
+                #}
+                add_character_flag = thuum_medidate_failure
+			}
+		}
 	}
 
     option = {
@@ -126,13 +158,85 @@ zzz_thuum_intro.0002 = {
 	    custom_tooltip = "This will end the whole Way of the Voice event."
 	}
 
+    after = {
+        if = {
+            limit = {
+                has_character_flag = thuum_medidate_failure
+            }
+            trigger_event = {
+                id = zzz_thuum_intro.0003
+                days = { 30 30 }
+            }
+            
+        }
+
+        else = {
+             limit = {
+                has_character_flag = thuum_medidate_success
+            }
+            trigger_event = {
+                id = zzz_thuum_intro.0004
+                days = { 30 30 }
+            }
+        }
+    }
+
 }
 
 
 #RESULT OF MEDITATION
 zzz_thuum_intro.0003 = {
     type = character_event
-	title = "Way of the Voice"
+	title = "Failure: Way of the Voice"
     desc = zzz_thuum_intro.0001.desc
     theme = diplomacy_majesty_focus
+
+    immediate = {
+        title:b_gildergreen.holder = {
+            save_scope_as = priest
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = disbelief
+	}
+
+    right_portrait = {
+		character = scope:priest
+		animation = sadness
+	}
+
+    option = {
+		name = "Disappointing..."
+	    #custom_tooltip = "This will end the whole Way of the Voice event."
+	}
+}
+
+zzz_thuum_intro.0004 = {
+    type = character_event
+	title = "Success: Way of the Voice"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    immediate = {
+        title:b_gildergreen.holder = {
+            save_scope_as = priest
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+    right_portrait = {
+		character = scope:priest
+		animation = thinking
+	}
+
+    option = {
+		name = "People will regale my voice's might."
+        add_trait = thuum_trait_track
+	}
 }

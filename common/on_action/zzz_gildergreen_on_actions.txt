@@ -14,3 +14,17 @@ on_cancel_gildergreen = {
         remove_decision_cooldown = become_tongue_decision
     }
 }
+
+on_medidation_gildergreen_result = {
+    random_events = {	# A single event will be picked to fire
+		
+	    chance_to_happen = 100
+
+	    chance_of_no_event = { 	# An entry that can be formatted as a script value (and therefore have conditional entries). Separated from "chance_to_happen" for performance reasons. Will only be evaluated if chance_to_happen is true.
+		    value = 0
+	    }
+        
+	    50 = zzz_thuum_intro.0003 	# The number is the weight for picking a specific event. The weight is factored by the event's weight_multiplier entry. (If no weight_multiplier is defined for the event, it is 1)
+	    75 = zzz_thuum_intro.0004
+    }
+}
