@@ -1,0 +1,13 @@
+﻿thuum_lifestyle = {
+
+	is_highlighted = {
+		has_trait = thuum_track_trait
+	}
+
+	is_valid = {
+		#has_trait = thuum_track_trait
+	}
+
+	xp_per_level = 1000
+	base_xp_gain = 10
+}

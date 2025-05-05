@@ -1,0 +1,21 @@
+﻿l_english:
+ # Tongue Lifestyle
+ thuum_lifestyle_name:0 "Tongue"
+ thuum_lifestyle_desc:0 "Tongue Lifestyle Description"
+ zzz_thuum_shouts_name:0 "Words of Power"
+
+ unrelenting_force_perk_name:0 "Fus"
+ unrelenting_force_two_perk_name:0 "Ro"
+ unrelenting_force_three_perk_name:0 "Dah"
+ UNRELENTING_FORCE_PERK_EFFECT: "Enables a new siege command."
+ UNRELENTING_FORCE_TWO_PERK_EFFECT: "Can only be picked if the word "RO" was learned thru visitation. Enables a new siege command."
+
+ animal_allegiance_perk_name:0 "Raan"
+ animal_allegiance_two_perk_name:0 "Mir"
+ animal_allegiance_three_perk_name:0 "Tah"
+ #animal_allegiance_perk_effect: "FUS"
+
+ kyne_peace_perk_name:0 "Kaan"
+ kyne_peace_two_perk_name:0 "Drem"
+ kyne_peace_three_perk_name:0 "Ov"
+ #animal_allegiance_perk_effect: "FUS"

@@ -253,5 +253,31 @@ zzz_thuum_intro.0004 = {
     option = {
 		name = "People will regale my voice's might."
         add_trait = thuum_trait_track
+        add_perk = unrelenting_force_perk
+        hidden_effect = {
+            root = {
+                if = {
+                    limit = {
+                        exists = var:number_of_words_learned
+                    }
+                    debug_log = "it exists!"
+                    change_variable = {
+                        name = number_of_words_learned
+                        add = 1
+                    }
+                }
+                else = {
+                    debug_log = "doesnt exists!"
+                    set_variable = {
+                        name = number_of_words_learned
+                        value = 1
+                    }
+                }
+                add_to_variable_list = {
+                    name = learned_words
+                    target = learned_fus
+                }
+            }
+        }
 	}
 }
