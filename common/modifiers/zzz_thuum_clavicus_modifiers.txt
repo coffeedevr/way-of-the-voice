@@ -1,0 +1,7 @@
+zzz_touched_by_clavicus = {
+	icon = stress_negative
+	
+    stress_gain_mult = 0.25
+	# Modifiers, such as
+	# county_opinion_add = -30
+}

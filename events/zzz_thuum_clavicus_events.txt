@@ -1,0 +1,76 @@
+namespace = zzz_thuum_clavicus
+
+#CLAVICUS REACHES OUT TO RULER
+zzz_thuum_clavicus.1000 = {
+    type = character_event
+	title = "A Helping Hand?"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = corridor_night
+	}
+
+    left_portrait = {
+		character = root
+		animation = stress
+	}
+
+    right_portrait = {
+		character = scope:skaafin_clavicus
+		animation = scheme
+	}
+
+    immediate = {
+        hidden_effect = {
+			create_character = {
+                template = skaafin_clavicus_template
+                name = "Nycot"
+                dynasty = none
+                gender_female_chance = 0
+                location = root.capital_province
+                save_scope_as = skaafin_clavicus
+		    }
+        }
+    }
+
+    trigger = {
+		
+	}
+
+	option = {
+		name = "I want to have a Voice stronger than anyone else!"
+        add_trait = thuum_trait_track
+        add_modifier = zzz_touched_by_clavicus
+        hidden_effect = {
+            add_character_flag = clavicus_strong_event
+        }
+	}
+
+    option = {
+		name = "I want all to fear me due to the might of my Voice!"
+        add_trait = thuum_trait_track
+        add_modifier = zzz_touched_by_clavicus
+        hidden_effect = {
+            add_character_flag = clavicus_fear_event
+        }
+	}
+
+    option = {
+		name = "I want all to tremble before the power of my Voice!"
+        add_trait = thuum_trait_track
+        add_modifier = zzz_touched_by_clavicus
+        hidden_effect = {
+            add_character_flag = clavicus_tremble_event
+        }
+	}
+
+    option = {
+		name = "Begone, Clavicus Vile!"
+		custom_tooltip = "Will drop it"
+        scope:skaafin_clavicus = { silent_disappearance_effect = yes }
+	}
+
+}
+
+

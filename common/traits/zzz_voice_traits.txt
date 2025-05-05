@@ -9,17 +9,6 @@
 
 }
 
-touched_by_clavicus = {
-
-    name = "Touched By Clavicus Vile"
-
-    #icon = saoshyant.dds
-    category = lifestyle
-    ruler_designer_cost = 0
-    desc = "Clavicus is waiting patiently..."
-
-}
-
 thuum_trait_track = {
 
     icon = voice_student.dds
@@ -27,18 +16,20 @@ thuum_trait_track = {
     ruler_designer_cost = 45
     same_opinion = 10
 
-    track = {
-		33 = {
-			advantage = 5
-			martial = 1
-		}
-		66 = {
-			advantage = 15
-			martial = 2
-		}
-		100 = {
-			advantage = 25
-			martial = 3
+    tracks = {
+		mastery = {
+			33 = {
+				advantage = 5
+				martial = 1
+			}
+			66 = {
+				advantage = 15
+				martial = 2
+			}
+			100 = {
+				advantage = 25
+				martial = 3
+			}
 		}
 	}
 

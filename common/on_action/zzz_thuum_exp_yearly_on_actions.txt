@@ -1,0 +1,35 @@
+yearly_global_pulse = {
+    effect = {
+        every_living_character = {
+            limit = {
+                has_trait = thuum_trait_track
+            }
+            if = {
+                limit = {
+                    has_trait = blessed_by_kyne
+                }
+                add_trait_xp = {
+                    trait = thuum_trait_track
+                    track = mastery
+                    value = 1.7
+                }
+            }
+            if = {
+                limit = {
+                    has_trait = dragonborn
+                }
+                add_trait_xp = {
+                    trait = thuum_trait_track
+                    track = mastery
+                    value = 10
+                }
+            }
+            add_trait_xp = {
+                trait = thuum_trait_track
+                track = mastery
+                value = 3.3
+            }
+        }
+    }
+}
+
