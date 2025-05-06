@@ -1,0 +1,4 @@
+thuum_siege_modifier_small = {
+	icon = beast_negative
+	fort_level = -3
+}

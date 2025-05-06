@@ -19,15 +19,15 @@ thuum_trait_track = {
     tracks = {
 		mastery = {
 			33 = {
-				advantage = 5
+				monthly_prestige_gain_mult = 0.25
 				martial = 1
 			}
 			66 = {
-				advantage = 15
+				dread = 10
 				martial = 2
 			}
 			100 = {
-				advantage = 25
+				dread = 15
 				martial = 3
 			}
 		}
@@ -39,7 +39,7 @@ thuum_trait_track = {
 				trigger = {
 					exists = this
 					has_trait_xp = {
-						trait = military_engineer
+						trait = thuum_trait_track
 						value >= 100
 					}
 				}
@@ -49,7 +49,7 @@ thuum_trait_track = {
 				trigger = {
 					exists = this
 					has_trait_xp = {
-						trait = military_engineer
+						trait = thuum_trait_track
 						value >= 66
 					}
 				}
@@ -59,7 +59,7 @@ thuum_trait_track = {
 				trigger = {
 					exists = this
 					has_trait_xp = {
-						trait = military_engineer
+						trait = thuum_trait_track
 						value >= 33
 					}
 				}

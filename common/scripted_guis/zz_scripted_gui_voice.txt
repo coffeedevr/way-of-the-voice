@@ -36,6 +36,11 @@ siege_voice = {
 		}
 
 		has_trait = thuum_trait_track
+		OR = {
+			has_perk = unrelenting_force_perk
+			has_perk = unrelenting_force_two_perk
+			has_perk = unrelenting_force_three_perk
+		}
 		NOR = {
 			has_trait = wounded_2
 			has_trait = wounded_3

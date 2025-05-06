@@ -5,11 +5,12 @@
     icon = node_diplomacy
 
     character_modifier = {
-        advantage = 5
+        advantage = 3
     }
 
     can_be_picked = {
         has_variable = learned_fus
+        has_trait = thuum_track_trait
     }
 
     effect = {
@@ -29,10 +30,11 @@ unrelenting_force_two_perk = {
 
     can_be_picked = {
         has_variable = learned_ro
+        has_trait = thuum_track_trait
     }
 
     character_modifier = {
-        advantage = 3
+        advantage = 5
     }
 
     effect = {
@@ -53,10 +55,11 @@ unrelenting_force_three_perk = {
 
     can_be_picked = {
         has_variable = learned_dah
+        has_trait = thuum_track_trait
     }
 
     character_modifier = {
-        advantage = 5
+        advantage = 10
     }
 
     effect = {
@@ -73,6 +76,12 @@ animal_allegiance_perk = {
    position = { 2 0 }
    icon = node_diplomacy
 
+    can_be_picked = {
+        has_variable = learned_raan
+        has_trait = thuum_track_trait
+    }
+
+
    character_modifier = {
         travel_safety_mult = 0.25
     }
@@ -85,6 +94,12 @@ animal_allegiance_two_perk = {
    icon = node_diplomacy
 
    parent = animal_allegiance_perk
+
+    can_be_picked = {
+        has_variable = learned_mir
+        has_trait = thuum_track_trait
+    }
+
 
    character_modifier = {
         travel_safety_mult = 0.25
@@ -99,6 +114,12 @@ animal_allegiance_three_perk = {
 
    parent = animal_allegiance_two_perk
 
+    can_be_picked = {
+        has_variable = learned_tah
+        has_trait = thuum_track_trait
+    }
+
+
    icon = shout_perk
 
    character_modifier = {
@@ -111,6 +132,12 @@ kyne_peace_perk = {
    tree = zzz_thuum_shouts
    position = { 4 0 }
    icon = node_diplomacy
+
+    can_be_picked = {
+        has_variable = learned_kaan
+        has_trait = thuum_track_trait
+    }
+
 
    character_modifier = {
         stress_gain_mult = 0.10
@@ -126,6 +153,11 @@ kyne_peace_two_perk = {
 
    parent = kyne_peace_perk
 
+    can_be_picked = {
+        has_variable = learned_drem
+        has_trait = thuum_track_trait
+    }
+
    character_modifier = {
         stress_gain_mult = 0.10
         travel_safety_mult = 0.10
@@ -137,7 +169,10 @@ kyne_peace_three_perk = {
    tree = zzz_thuum_shouts
    position = { 4 2 }
 
-   icon = node_diplomacy
+    can_be_picked = {
+        has_variable = learned_ov
+        has_trait = thuum_track_trait
+    }
 
    icon = shout_perk
 

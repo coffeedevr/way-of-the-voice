@@ -1,0 +1,322 @@
+namespace = thuum_siege_event
+
+thuum_siege_event.0001 = {
+     type = character_event
+	title = "Way of the Voice"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+
+    trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			AND = {
+				is_commanding_army = yes
+				commanding_army = {
+					is_army_in_siege = yes
+				}
+			}
+			knight_army ?= { is_army_in_siege = yes }
+		}
+    }
+
+	immediate = {
+		add_character_flag = {
+			flag = used_voice_sieged_today
+			days = 1
+		}
+		save_scope_as = thuum_user
+		if = {
+			limit = {
+				scope:thuum_user = {
+					is_in_army = yes
+					OR = {
+						AND = {
+							is_commanding_army = yes
+							commanding_army = {
+								is_army_in_siege = yes
+							}
+						}
+						knight_army ?= { is_army_in_siege = yes }
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:thuum_user = {
+						is_commanding_army = yes
+						commanding_army = {
+							is_army_in_siege = yes
+						}
+					}
+				}
+				commanding_army = {
+					location = {
+						save_scope_as = sieging_location
+					}
+				}
+			}
+			else = {
+				knight_army = {
+					location = {
+						save_scope_as = sieging_location
+					}
+				}
+			}
+		}
+	}
+
+    option = {
+        name = "Their walls will crumble! Fus!"
+        #custom_tooltip = "You use the Word of Power: Fus!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = unrelenting_force_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_variable = thuum_siege_modifier_small
+					has_variable = thuum_siege_modifier_medium
+					has_variable = thuum_siege_modifier_large
+				}
+			}
+			
+		}
+        ai_chance = {
+			base = 20
+		}
+        hidden_effect = {
+            scope:sieging_location = {
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_small
+					months = 5
+				}
+			}
+        }
+
+    }
+
+    option = {
+        name = "Their walls will crumble! Fus Ro!"
+        #custom_tooltip = "You use the Words of Power: Fus Ro!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = unrelenting_force_two_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_variable = thuum_siege_modifier_small
+					has_variable = thuum_siege_modifier_medium
+					has_variable = thuum_siege_modifier_large
+				}
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_medium
+					months = 5
+				}
+
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        hidden_effect = {
+            modifier = {
+                add = {
+                    value = scope:sieging_location.fort_level
+                    multiply = 0.15
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "Their walls will crumble! Fus Ro Dah!"
+        #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = unrelenting_force_three_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_variable = thuum_siege_modifier_small
+					has_variable = thuum_siege_modifier_medium
+					has_variable = thuum_siege_modifier_large
+				}
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        hidden_effect = {
+            modifier = {
+                add = {
+                    value = scope:sieging_location.fort_level
+                    multiply = 5
+                }
+            }
+        }
+    }
+
+}
+
+thuum_siege_event.0001a = {
+     type = character_event
+	title = "Way of the Voice"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+
+    trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			is_commanding_army = yes
+		}
+    }
+
+	immediate = {
+		add_character_flag = {
+			flag = used_voice_sieged_today
+			days = 1
+		}
+		save_scope_as = thuum_user
+		if = {
+			limit = {
+				scope:thuum_user = {
+					is_in_army = yes
+					OR = {
+						is_commanding_army = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:thuum_user = {
+						is_commanding_army = yes
+					}
+				}
+				commanding_army = {
+					location = {
+						save_scope_as = sieging_location
+					}
+				}
+			}
+			else = {
+				knight_army = {
+					location = {
+						save_scope_as = sieging_location
+					}
+				}
+			}
+		}
+	}
+
+    option = {
+        name = "Their walls will crumble! Fus!"
+        #custom_tooltip = "You use the Word of Power: Fus!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = unrelenting_force_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_variable = thuum_siege_modifier_small
+					has_variable = thuum_siege_modifier_medium
+					has_variable = thuum_siege_modifier_large
+				}
+			}
+			
+		}
+        ai_chance = {
+			base = 20
+		}
+        hidden_effect = {
+            scope:sieging_location = {
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_small
+					months = 5
+				}
+			}
+        }
+
+    }
+
+    option = {
+        name = "Their walls will crumble! Fus Ro!"
+        #custom_tooltip = "You use the Words of Power: Fus Ro!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = unrelenting_force_two_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_variable = thuum_siege_modifier_small
+					has_variable = thuum_siege_modifier_medium
+					has_variable = thuum_siege_modifier_large
+				}
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_medium
+					months = 5
+				}
+
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        hidden_effect = {
+            modifier = {
+                add = {
+                    value = scope:sieging_location.fort_level
+                    multiply = 0.15
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "Their walls will crumble! Fus Ro Dah!"
+        #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = unrelenting_force_three_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_variable = thuum_siege_modifier_small
+					has_variable = thuum_siege_modifier_medium
+					has_variable = thuum_siege_modifier_large
+				}
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        hidden_effect = {
+            modifier = {
+                add = {
+                    value = scope:sieging_location.fort_level
+                    multiply = 5
+                }
+            }
+        }
+    }
+
+}

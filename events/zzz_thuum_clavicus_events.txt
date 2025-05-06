@@ -42,7 +42,31 @@ zzz_thuum_clavicus.1000 = {
 		name = "I want to have a Voice stronger than anyone else!"
         add_trait = thuum_trait_track
         add_modifier = zzz_touched_by_clavicus
+        add_perk = unrelenting_force_perk
         hidden_effect = {
+            root = {
+                if = {
+                    limit = {
+                        exists = var:number_of_words_learned
+                    }
+                    debug_log = "it exists!"
+                    change_variable = {
+                        name = number_of_words_learned
+                        add = 1
+                    }
+                }
+                else = {
+                    debug_log = "doesnt exists!"
+                    set_variable = {
+                        name = number_of_words_learned
+                        value = 1
+                    }
+                }
+                add_to_variable_list = {
+                    name = learned_words
+                    target = learned_fus
+                }
+            }
             add_character_flag = clavicus_strong_event
         }
 	}
@@ -51,8 +75,32 @@ zzz_thuum_clavicus.1000 = {
 		name = "I want all to fear me due to the might of my Voice!"
         add_trait = thuum_trait_track
         add_modifier = zzz_touched_by_clavicus
+        add_perk = unrelenting_force_perk
         hidden_effect = {
-            add_character_flag = clavicus_fear_event
+            root = {
+                if = {
+                    limit = {
+                        exists = var:number_of_words_learned
+                    }
+                    debug_log = "it exists!"
+                    change_variable = {
+                        name = number_of_words_learned
+                        add = 1
+                    }
+                }
+                else = {
+                    debug_log = "doesnt exists!"
+                    set_variable = {
+                        name = number_of_words_learned
+                        value = 1
+                    }
+                }
+                add_to_variable_list = {
+                    name = learned_words
+                    target = learned_fus
+                }
+            }
+            add_character_flag = clavicus_strong_event
         }
 	}
 
@@ -60,8 +108,32 @@ zzz_thuum_clavicus.1000 = {
 		name = "I want all to tremble before the power of my Voice!"
         add_trait = thuum_trait_track
         add_modifier = zzz_touched_by_clavicus
+        add_perk = unrelenting_force_perk
         hidden_effect = {
-            add_character_flag = clavicus_tremble_event
+            root = {
+                if = {
+                    limit = {
+                        exists = var:number_of_words_learned
+                    }
+                    debug_log = "it exists!"
+                    change_variable = {
+                        name = number_of_words_learned
+                        add = 1
+                    }
+                }
+                else = {
+                    debug_log = "doesnt exists!"
+                    set_variable = {
+                        name = number_of_words_learned
+                        value = 1
+                    }
+                }
+                add_to_variable_list = {
+                    name = learned_words
+                    target = learned_fus
+                }
+            }
+            add_character_flag = clavicus_strong_event
         }
 	}
 
