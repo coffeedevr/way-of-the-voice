@@ -1,0 +1,3 @@
+EK2:
+- gui/window_character_lifestyle.gui
+- gui/window_siege.gui

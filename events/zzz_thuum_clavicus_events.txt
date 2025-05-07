@@ -4,7 +4,7 @@ namespace = zzz_thuum_clavicus
 zzz_thuum_clavicus.1000 = {
     type = character_event
 	title = "A Helping Hand?"
-    desc = zzz_thuum_intro.0001.desc
+    desc = zzz_thuum_clavicus.1000.desc
     theme = diplomacy_majesty_focus
 
     override_background = {

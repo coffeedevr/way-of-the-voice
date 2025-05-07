@@ -101,6 +101,9 @@ zzz_thuum_intro.0002 = {
         current_travel_plan = {
    			delay_travel_plan = { days = 30 }
         }
+        root = {
+            add_character_flag = visited_gildergreen
+        }
     }
 
     trigger = {
@@ -174,7 +177,7 @@ zzz_thuum_intro.0002 = {
 zzz_thuum_intro.0003 = {
     type = character_event
 	title = "Failure: Way of the Voice"
-    desc = zzz_thuum_intro.0001.desc
+    desc = zzz_thuum_intro.0003.desc
     theme = diplomacy_majesty_focus
 
     immediate = {
@@ -198,7 +201,7 @@ zzz_thuum_intro.0003 = {
 	}
 
     option = {
-		name = "surely, this is a mistake, right?"
+		name = "Surely, this is a mistake, right?"
 	    custom_tooltip = "This will end the whole Way of the Voice event."
         hidden_effect = {
             trigger_event = {
@@ -217,7 +220,7 @@ zzz_thuum_intro.0003 = {
 zzz_thuum_intro.0004 = {
     type = character_event
 	title = "Success: Way of the Voice"
-    desc = zzz_thuum_intro.0001.desc
+    desc = zzz_thuum_intro.0004.desc
     theme = diplomacy_majesty_focus
 
     immediate = {

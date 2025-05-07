@@ -1,0 +1,4 @@
+﻿thuum_decisions = {
+	sort_order = 150
+	gui_tags = { big_button }
+}

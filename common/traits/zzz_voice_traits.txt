@@ -15,20 +15,21 @@ thuum_trait_track = {
     category = lifestyle
     ruler_designer_cost = 45
     same_opinion = 10
+	prowess = 3
 
     tracks = {
 		mastery = {
 			33 = {
 				monthly_prestige_gain_mult = 0.25
-				martial = 1
 			}
 			66 = {
-				dread = 10
-				martial = 2
+				prowess = 2
+				dread_baseline_add = 5
 			}
 			100 = {
-				dread = 15
-				martial = 3
+				martial = 5
+				monthly_prestige_gain_mult = 0.25
+				dread_baseline_add = 10
 			}
 		}
 	}
@@ -75,9 +76,9 @@ thuum_trait_track = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = "A Thu'um user is a trained master of the Voice, wielding powerful shouts in the dragon tongue to shape the world through sound and will."
+				desc = "A Tongue is a trained user of the Voice, wielding powerful shouts in the dragon tongue to shape the world through sound and will."
 			}
-			desc = "A Thu'um user is a trained master of the Voice, wielding powerful shouts in the dragon tongue to shape the world through sound and will."
+			desc = "A Tongue is a trained user of the Voice, wielding powerful shouts in the dragon tongue to shape the world through sound and will."
 		}
 	}
 

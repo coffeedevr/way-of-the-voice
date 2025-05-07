@@ -1,6 +1,7 @@
 ﻿become_tongue_decision = {
+	
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds" }
-	decision_group_type = major
+	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
 	desc = zero_stone_decision_desc
@@ -15,7 +16,6 @@
 
 	is_valid = {
 		is_adult = yes
-
 	}
 
 	effect = {
@@ -29,7 +29,7 @@
 		else = {
 			start_travel_plan = {
 				destination = title:b_gildergreen.title_province
-				on_arrival_event = zzz_thuum_intro.0001
+				on_arrival_event = zzz_thuum_intro.0002
 				on_arrival_destinations = all_but_last
 			}
 		}
@@ -42,25 +42,21 @@
 
 unrelenting_force_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds" }
-	decision_group_type = major
+	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
 	desc = "test"
 	selection_tooltip = "test"
+	title = unrelenting_force_decision_title
 
 	is_shown = {
 		has_trait = thuum_trait_track
-        is_in_army = yes
-		OR = {
-			AND = {
-				is_commanding_army = yes
-			}
-		}
 	}
 
 	is_valid = {
 		is_adult = yes
 		is_commanding_army = yes
+		is_in_army = yes
 		
 		commanding_army = {
 			location = {
