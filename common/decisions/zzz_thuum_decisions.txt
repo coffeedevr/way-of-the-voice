@@ -15,6 +15,7 @@
 
 	is_valid = {
 		is_adult = yes
+
 	}
 
 	effect = {
@@ -44,8 +45,8 @@ unrelenting_force_decision = {
 	decision_group_type = major
 	ai_check_interval = 12
 
-	desc = zero_stone_decision_desc
-	selection_tooltip = zero_stone_decision_tooltip
+	desc = "test"
+	selection_tooltip = "test"
 
 	is_shown = {
 		has_trait = thuum_trait_track
@@ -53,20 +54,35 @@ unrelenting_force_decision = {
 		OR = {
 			AND = {
 				is_commanding_army = yes
-				#commanding_army = {
-				#	is_army_in_siege = yes
-				#}
 			}
-			#knight_army ?= { is_army_in_siege = yes }
 		}
 	}
 
 	is_valid = {
 		is_adult = yes
+		is_commanding_army = yes
+		
+		commanding_army = {
+			location = {
+				AND = {
+					NOR = {
+						has_province_modifier = thuum_siege_modifier_small
+						has_province_modifier = thuum_siege_modifier_medium
+						has_province_modifier = thuum_siege_modifier_large
+					}
+					NOR = {
+						province_owner = root
+						barony = {
+							is_title_created = no
+						}
+					}
+				}
+			}
+		}
 	}
 
 	effect = {
-		custom_tooltip = zero_stone_decision_effect_tt
+		#custom_tooltip = zero_stone_decision_effect_tt
 		trigger_event = thuum_siege_event.0001a
 	}
 

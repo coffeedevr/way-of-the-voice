@@ -1,0 +1,5 @@
+﻿recenty_sieged_using_fus_opinion = {
+	opinion = -30
+	years = 5
+	decaying = yes
+}

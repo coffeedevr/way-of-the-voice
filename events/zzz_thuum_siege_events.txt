@@ -76,7 +76,7 @@ thuum_siege_event.0001 = {
 	}
 
     option = {
-        name = "Their walls will crumble! Fus!"
+        name = "Tear a hole in their walls! Fus!"
         #custom_tooltip = "You use the Word of Power: Fus!"
         trigger = {
             scope:thuum_user = {
@@ -84,9 +84,9 @@ thuum_siege_event.0001 = {
             }
 			scope:sieging_location = {
 				NOR = {
-					has_variable = thuum_siege_modifier_small
-					has_variable = thuum_siege_modifier_medium
-					has_variable = thuum_siege_modifier_large
+					has_province_modifier = thuum_siege_modifier_small
+					has_province_modifier = thuum_siege_modifier_medium
+					has_province_modifier = thuum_siege_modifier_large
 				}
 			}
 			
@@ -101,12 +101,18 @@ thuum_siege_event.0001 = {
 					months = 5
 				}
 			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}	
         }
 
     }
 
     option = {
-        name = "Their walls will crumble! Fus Ro!"
+        name = "Break down their walls! Fus Ro!"
         #custom_tooltip = "You use the Words of Power: Fus Ro!"
         trigger = {
             scope:thuum_user = {
@@ -114,32 +120,33 @@ thuum_siege_event.0001 = {
             }
 			scope:sieging_location = {
 				NOR = {
-					has_variable = thuum_siege_modifier_small
-					has_variable = thuum_siege_modifier_medium
-					has_variable = thuum_siege_modifier_large
+					has_province_modifier = thuum_siege_modifier_small
+					has_province_modifier = thuum_siege_modifier_medium
+					has_province_modifier = thuum_siege_modifier_large
 				}
-				add_province_modifier = {
-					modifier = thuum_siege_modifier_medium
-					months = 5
-				}
-
 			}
 		}
         ai_chance = {
 			base = 20
 		}
         hidden_effect = {
-            modifier = {
-                add = {
-                    value = scope:sieging_location.fort_level
-                    multiply = 0.15
-                }
-            }
+            scope:sieging_location = {
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_medium
+					months = 5
+				}
+			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}	
         }
     }
 
     option = {
-        name = "Their walls will crumble! Fus Ro Dah!"
+        name = "Their castle will fall! Fus Ro Dah!"
         #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
         trigger = {
             scope:thuum_user = {
@@ -147,9 +154,9 @@ thuum_siege_event.0001 = {
             }
 			scope:sieging_location = {
 				NOR = {
-					has_variable = thuum_siege_modifier_small
-					has_variable = thuum_siege_modifier_medium
-					has_variable = thuum_siege_modifier_large
+					has_province_modifier = thuum_siege_modifier_small
+					has_province_modifier = thuum_siege_modifier_medium
+					has_province_modifier = thuum_siege_modifier_large
 				}
 			}
 		}
@@ -157,12 +164,18 @@ thuum_siege_event.0001 = {
 			base = 20
 		}
         hidden_effect = {
-            modifier = {
-                add = {
-                    value = scope:sieging_location.fort_level
-                    multiply = 5
-                }
-            }
+            scope:sieging_location = {
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_large
+					months = 5
+				}
+				province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
+				}	
+			}
         }
     }
 
@@ -229,7 +242,7 @@ thuum_siege_event.0001a = {
 	}
 
     option = {
-        name = "Their walls will crumble! Fus!"
+        name = "Tear a hole in their walls! Fus!"
         #custom_tooltip = "You use the Word of Power: Fus!"
         trigger = {
             scope:thuum_user = {
@@ -237,9 +250,9 @@ thuum_siege_event.0001a = {
             }
 			scope:sieging_location = {
 				NOR = {
-					has_variable = thuum_siege_modifier_small
-					has_variable = thuum_siege_modifier_medium
-					has_variable = thuum_siege_modifier_large
+					has_province_modifier = thuum_siege_modifier_small
+					has_province_modifier = thuum_siege_modifier_medium
+					has_province_modifier = thuum_siege_modifier_large
 				}
 			}
 			
@@ -253,13 +266,19 @@ thuum_siege_event.0001a = {
 					modifier = thuum_siege_modifier_small
 					months = 5
 				}
+				province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
+				}	
 			}
         }
 
     }
 
     option = {
-        name = "Their walls will crumble! Fus Ro!"
+        name = "Break down their walls! Fus Ro!"
         #custom_tooltip = "You use the Words of Power: Fus Ro!"
         trigger = {
             scope:thuum_user = {
@@ -267,32 +286,33 @@ thuum_siege_event.0001a = {
             }
 			scope:sieging_location = {
 				NOR = {
-					has_variable = thuum_siege_modifier_small
-					has_variable = thuum_siege_modifier_medium
-					has_variable = thuum_siege_modifier_large
+					has_province_modifier = thuum_siege_modifier_small
+					has_province_modifier = thuum_siege_modifier_medium
+					has_province_modifier = thuum_siege_modifier_large
 				}
-				add_province_modifier = {
-					modifier = thuum_siege_modifier_medium
-					months = 5
-				}
-
 			}
 		}
         ai_chance = {
 			base = 20
 		}
         hidden_effect = {
-            modifier = {
-                add = {
-                    value = scope:sieging_location.fort_level
-                    multiply = 0.15
-                }
-            }
+            scope:sieging_location = {
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_medium
+					months = 5
+				}
+				province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
+				}	
+			}
         }
     }
 
     option = {
-        name = "Their walls will crumble! Fus Ro Dah!"
+        name = "Their castle will fall! Fus Ro Dah!"
         #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
         trigger = {
             scope:thuum_user = {
@@ -300,9 +320,9 @@ thuum_siege_event.0001a = {
             }
 			scope:sieging_location = {
 				NOR = {
-					has_variable = thuum_siege_modifier_small
-					has_variable = thuum_siege_modifier_medium
-					has_variable = thuum_siege_modifier_large
+					has_province_modifier = thuum_siege_modifier_small
+					has_province_modifier = thuum_siege_modifier_medium
+					has_province_modifier = thuum_siege_modifier_large
 				}
 			}
 		}
@@ -310,12 +330,18 @@ thuum_siege_event.0001a = {
 			base = 20
 		}
         hidden_effect = {
-            modifier = {
-                add = {
-                    value = scope:sieging_location.fort_level
-                    multiply = 5
-                }
-            }
+            scope:sieging_location = {
+				add_province_modifier = {
+					modifier = thuum_siege_modifier_large
+					months = 5
+				}
+			}
+			province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
+			}	
         }
     }
 
