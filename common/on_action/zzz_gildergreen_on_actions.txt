@@ -1,16 +1,39 @@
 on_travel_plan_cancel = {
     on_action = {
-        on_cancel_gildergreen
+        on_cancel_gildergreen_event
+        on_cancel_gildergreen_decision
+        on_cancel_meditation
     }
 }
 
 
-on_cancel_gildergreen = {
+on_cancel_gildergreen_decision = {
     trigger = {
-        is_decision_on_cooldown = become_tongue_decision 
+
     }
 
     effect = {
-        remove_decision_cooldown = become_tongue_decision
+        remove_character_flag = visited_gildergreen
+    }
+}
+
+on_cancel_gildergreen_event = {
+    trigger = {
+       
+    }
+
+    effect = {
+        remove_character_flag = visited_gildergreen
+        add_character_flag = visit_gildergreen_as_decision
+    }
+}
+
+on_cancel_meditation = {
+    trigger = {
+        is_decision_on_cooldown = thuum_meditation_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = thuum_meditation_decision
     }
 }

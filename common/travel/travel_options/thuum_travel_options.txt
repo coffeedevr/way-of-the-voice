@@ -1,6 +1,11 @@
 ﻿lok_option = {
 	is_shown = {
    		has_trait = thuum_trait_track
+		has_perk = clear_skies_perk
+		NOT = {
+			has_perk = clear_skies_two_perk
+			has_perk = clear_skies_three_perk
+		}
 	}
 
 	is_valid = {
@@ -20,9 +25,14 @@
 	}
 }
 
-lokvah_option= {
+lokvah_option = {
 	is_shown = {
    		has_trait = thuum_trait_track
+		has_perk = clear_skies_perk
+		has_perk = clear_skies_two_perk
+		NOT = {
+			has_perk = clear_skies_three_perk
+		}
 	}
 
 	is_valid = {
@@ -46,6 +56,9 @@ lokvah_option= {
 lokvahkoor_option = {
 	is_shown = {
    		has_trait = thuum_trait_track
+		has_perk = clear_skies_perk
+		has_perk = clear_skies_two_perk
+		has_perk = clear_skies_three_perk
 	}
 
 	is_valid = {
@@ -57,10 +70,7 @@ lokvahkoor_option = {
 	travel_modifier = {
 		travel_safety = 30
 	}
-	
-	on_applied_effect = {
-		custom_tooltip = use_kaan_option_tt
-	}
+
 	
 	ai_will_do = {
 		value = 100
@@ -70,6 +80,11 @@ lokvahkoor_option = {
 wuld_option = {
 	is_shown = {
    		has_trait = thuum_trait_track
+		has_perk = whirlwind_sprint_perk
+		NOT = {
+			has_perk = whirlwind_sprint_two_perk
+			has_perk = whirlwind_sprint_three_perk
+		}
 	}
 
 	is_valid = {
@@ -83,10 +98,7 @@ wuld_option = {
 	travel_modifier = {
 		travel_speed = 10
 	}
-	
-	on_applied_effect = {
-		custom_tooltip = use_wuld_option_tt
-	}
+
 	
 	ai_will_do = {
 		value = 100
@@ -96,6 +108,11 @@ wuld_option = {
 wuldna_option = {
 	is_shown = {
    		has_trait = thuum_trait_track
+		has_perk = whirlwind_sprint_perk
+		has_perk = whirlwind_sprint_two_perk
+		NOT = {
+			has_perk = whirlwind_sprint_three_perk
+		}
 	}
 
 	is_valid = {
@@ -109,10 +126,7 @@ wuldna_option = {
 	travel_modifier = {
 		travel_speed = 20
 	}
-	
-	on_applied_effect = {
-		custom_tooltip = use_wuld_option_tt
-	}
+
 	
 	ai_will_do = {
 		value = 100
@@ -122,6 +136,9 @@ wuldna_option = {
 wuldnakest_option = {
 	is_shown = {
    		has_trait = thuum_trait_track
+		has_perk = whirlwind_sprint_perk
+		has_perk = whirlwind_sprint_two_perk
+		has_perk = whirlwind_sprint_three_perk
 	}
 
 	is_valid = {
@@ -133,10 +150,7 @@ wuldnakest_option = {
 	travel_modifier = {
 		travel_speed = 30
 	}
-	
-	on_applied_effect = {
-		custom_tooltip = use_wuld_option_tt
-	}
+
 	
 	ai_will_do = {
 		value = 100

@@ -4,8 +4,12 @@
  lokvah_option: "Use Shout: "Lok Vah!""
  lokvahkoor_option: "Use Shout: "Lok Vah Koor!""
  lok_option_desc: "Tamriel itself yields before the Thu'um, as you clear away fog and inclement weather."
+ lokvah_option_desc: "Tamriel itself yields before the Thu'um, as you clear away fog and inclement weather."
+ lokvahkoor_option_desc: "Tamriel itself yields before the Thu'um, as you clear away fog and inclement weather."
 
  wuld_option: "Use Shout: "Wuld!""
  wuldna_option: "Use Shout: "Wuld Nah!""
  wuldnakest_option: "Use Shout: "Wuld Nah Kest!""
  wuld_option_desc: "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest."
+ wuldna_option_ndesc: "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest."
+ wuldnakest_option_desc: "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest."

@@ -32,13 +32,21 @@ zzz_thuum_intro.0001 = {
     }
 
     trigger = {
-		
+		AND = {
+            NOT = {
+                has_character_flag = visit_gildergreen_as_decision
+            }
+            NOT = {
+                has_character_flag = visited_gildergreen
+            }
+        }
 	}
 
     option = {
 		name = "Let's head to Gildergreen!"
 		custom_tooltip = "Will travel to Gildergreen"
         hidden_effect  = {
+            add_character_flag = visited_gildergreen
             if = {
                 limit = {
                     capital_province.barony = title:b_gildergreen
@@ -48,9 +56,9 @@ zzz_thuum_intro.0001 = {
             else = {
                 start_travel_plan = {
                     destination = title:b_gildergreen.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_gildergreen_event
                     on_arrival_event = zzz_thuum_intro.0002
                     on_arrival_destinations = all_but_last
-                    
                 }
             }
         }
@@ -262,10 +270,7 @@ zzz_thuum_intro.0004 = {
                         value = 1
                     }
                 }
-                add_to_variable_list = {
-                    name = learned_words
-                    target = learned_fus
-                }
+                add_character_flag = learned_fus
             }
         }
 	}

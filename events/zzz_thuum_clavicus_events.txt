@@ -62,10 +62,7 @@ zzz_thuum_clavicus.1000 = {
                         value = 1
                     }
                 }
-                add_to_variable_list = {
-                    name = learned_words
-                    target = learned_fus
-                }
+                add_character_flag = learned_fus
             }
             add_character_flag = clavicus_strong_event
         }
@@ -95,10 +92,7 @@ zzz_thuum_clavicus.1000 = {
                         value = 1
                     }
                 }
-                add_to_variable_list = {
-                    name = learned_words
-                    target = learned_fus
-                }
+                add_character_flag = learned_fus
             }
             add_character_flag = clavicus_strong_event
         }
@@ -128,10 +122,7 @@ zzz_thuum_clavicus.1000 = {
                         value = 1
                     }
                 }
-                add_to_variable_list = {
-                    name = learned_words
-                    target = learned_fus
-                }
+                add_character_flag = learned_fus
             }
             add_character_flag = clavicus_strong_event
         }
