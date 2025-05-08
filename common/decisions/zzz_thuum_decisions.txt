@@ -1,11 +1,12 @@
 ﻿become_tongue_decision = {
 	
-	picture = { reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds" }
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = zero_stone_decision_desc
-	selection_tooltip = zero_stone_decision_tooltip
+	desc = become_tongue_decision_desc
+	selection_tooltip = "test"
+	title = become_tongue_decision_title
 
 	is_shown = {
 		NOT = {
@@ -19,7 +20,7 @@
 	}
 
 	effect = {
-		custom_tooltip = zero_stone_decision_effect_tt
+		custom_tooltip = become_tongue_decision_effect_tt
 		if = {
 			limit = {
 				capital_province.barony = title:b_gildergreen
@@ -38,14 +39,16 @@
 	ai_potential = {
 		always = yes
 	}
+
+	confirm_text = "To Gildergreen, then."
 }
 
 unrelenting_force_decision = {
-	picture = { reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds" }
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = "test"
+	desc = unrelenting_force_decision_desc
 	selection_tooltip = "test"
 	title = unrelenting_force_decision_title
 
@@ -78,11 +81,13 @@ unrelenting_force_decision = {
 	}
 
 	effect = {
-		#custom_tooltip = zero_stone_decision_effect_tt
+		custom_tooltip = unrelenting_force_decision_effect_tt
 		trigger_event = thuum_siege_event.0001a
 	}
 
 	ai_potential = {
 		always = yes
 	}
+
+	confirm_text = "Fus Ro Dah!"
 }

@@ -14,9 +14,7 @@
     }
 
     effect = {
-        custom_tooltip = {
-		    text = UNRELENTING_FORCE_PERK_EFFECT
-	    }
+        custom_tooltip_no_bullet = UNRELENTING_FORCE_PERK_EFFECT
     }
 }
 
@@ -28,7 +26,7 @@ unrelenting_force_two_perk = {
 
     parent = unrelenting_force_perk
 
-    can_be_picked = {
+    can_be_picked = {   
         has_variable = learned_ro
         has_trait = thuum_track_trait
     }
@@ -70,14 +68,14 @@ unrelenting_force_three_perk = {
 }
 
 
-animal_allegiance_perk = {
+kyne_peace_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
    position = { 2 0 }
    icon = node_diplomacy
 
     can_be_picked = {
-        has_variable = learned_raan
+        has_variable = learned_kaan
         has_trait = thuum_track_trait
     }
 
@@ -87,16 +85,16 @@ animal_allegiance_perk = {
     }
 }
 
-animal_allegiance_two_perk = {
+kyne_peace_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
    position = { 2 1 }
    icon = node_diplomacy
 
-   parent = animal_allegiance_perk
+   parent = kyne_peace_perk
 
     can_be_picked = {
-        has_variable = learned_mir
+        has_variable = learned_drem
         has_trait = thuum_track_trait
     }
 
@@ -106,16 +104,16 @@ animal_allegiance_two_perk = {
     }
 }
 
-animal_allegiance_three_perk = {
+kyne_peace_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
    position = { 2 2 }
    icon = school_conjurationda
 
-   parent = animal_allegiance_two_perk
+   parent = kyne_peace_two_perk
 
     can_be_picked = {
-        has_variable = learned_tah
+        has_variable = learned_ov
         has_trait = thuum_track_trait
     }
 
@@ -127,59 +125,75 @@ animal_allegiance_three_perk = {
     }
 }
 
-kyne_peace_perk = {
+clear_skies_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
    position = { 4 0 }
    icon = node_diplomacy
 
     can_be_picked = {
-        has_variable = learned_kaan
+        has_variable = learned_lok
         has_trait = thuum_track_trait
+    }
+
+    effect = {
+        custom_tooltip = {
+			text = CLEAR_SKIES_PERK_EFFECT
+		}
     }
 
 
    character_modifier = {
-        character_travel_safety = 5
         stress_loss_mult = 0.05
     }
 }
 
-kyne_peace_two_perk = {
+clear_skies_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
    position = { 4 1 }
    icon = node_diplomacy
 
-   parent = kyne_peace_perk
+   parent = clear_skies_perk
 
     can_be_picked = {
-        has_variable = learned_drem
+        has_variable = learned_vah
         has_trait = thuum_track_trait
     }
 
+    effect = {
+        custom_tooltip = {
+			text = CLEAR_SKIES_TWO_PERK_EFFECT
+		}
+    }
+
    character_modifier = {
-        character_travel_safety = 5
         stress_loss_mult = 0.10
     }
 }
 
-kyne_peace_three_perk = {
+clear_skies_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
    position = { 4 2 }
 
     can_be_picked = {
-        has_variable = learned_ov
+        has_variable = learned_koor
         has_trait = thuum_track_trait
     }
 
    icon = shout_perk
 
-   parent = kyne_peace_two_perk
+    effect = {
+        custom_tooltip = {
+			text = CLEAR_SKIES_THREE_PERK_EFFECT
+		}
+    }
+
+
+   parent = clear_skies_two_perk
 
    character_modifier = {
-        character_travel_safety = 5
         stress_loss_mult = 0.15
     }
 }
@@ -195,10 +209,8 @@ whirlwind_sprint_perk = {
         has_trait = thuum_track_trait
     }
 
-
    character_modifier = {
-        stress_gain_mult = 0.10
-        travel_safety_mult = 0.10
+        character_travel_speed = 10
     }
 }
 
@@ -216,8 +228,7 @@ whirlwind_sprint_two_perk = {
     }
 
    character_modifier = {
-        stress_gain_mult = 0.10
-        travel_safety_mult = 0.10
+        character_travel_speed = 15
     }
 }
 
@@ -236,7 +247,6 @@ whirlwind_sprint_three_perk = {
    parent = whirlwind_sprint_two_perk
 
    character_modifier = {
-        stress_gain_mult = 0.10
-        travel_safety_mult = 0.10
+        character_travel_speed = 20
     }
 }
