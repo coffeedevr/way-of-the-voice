@@ -14,7 +14,12 @@
     }
 
     effect = {
-        custom_tooltip_no_bullet = UNRELENTING_FORCE_PERK_EFFECT
+        custom_tooltip = {
+		    text = UNRELENTING_FORCE_PERK_EFFECT_A
+	    }
+        custom_tooltip = {
+		    text = UNRELENTING_FORCE_PERK_EFFECT_B
+	    }
     }
 }
 
@@ -37,7 +42,10 @@ unrelenting_force_two_perk = {
 
     effect = {
         custom_tooltip = {
-		    text = UNRELENTING_FORCE_TWO_PERK_EFFECT
+		    text = UNRELENTING_FORCE_PERK_TWO_EFFECT_A
+	    }
+        custom_tooltip = {
+		    text = UNRELENTING_FORCE_PERK_EFFECT_B
 	    }
     }
 }
@@ -62,7 +70,10 @@ unrelenting_force_three_perk = {
 
     effect = {
         custom_tooltip = {
-		    text = UNRELENTING_FORCE_PERK_EFFECT
+		    text = UNRELENTING_FORCE_PERK_THREE_EFFECT_A
+	    }
+        custom_tooltip = {
+		    text = UNRELENTING_FORCE_PERK_EFFECT_B
 	    }
     }
 }
@@ -83,6 +94,12 @@ kyne_peace_perk = {
    character_modifier = {
        stress_gain_mult = -0.05
     }
+
+    effect = {
+        custom_tooltip = {
+		    text = KYNE_PEACE_PERK_EFFECT_A
+	    }
+    }
 }
 
 kyne_peace_two_perk = {
@@ -101,6 +118,12 @@ kyne_peace_two_perk = {
 
    character_modifier = {
        stress_gain_mult = -0.10
+    }
+
+    effect = {
+        custom_tooltip = {
+		    text = KYNE_PEACE_PERK_TWO_EFFECT_A
+	    }
     }
 }
 
@@ -122,6 +145,12 @@ kyne_peace_three_perk = {
 
    character_modifier = {
         stress_gain_mult = -0.15
+    }
+
+    effect = {
+        custom_tooltip = {
+		    text = KYNE_PEACE_PERK_THREE_EFFECT_A
+	    }
     }
 }
 
@@ -212,6 +241,12 @@ whirlwind_sprint_perk = {
    character_modifier = {
         character_travel_speed = 10
     }
+
+    effect = {
+        custom_tooltip = {
+			text = WHIRLWIND_SPRINT_PERK_EFFECT
+		}
+    }
 }
 
 whirlwind_sprint_two_perk = {
@@ -230,6 +265,12 @@ whirlwind_sprint_two_perk = {
    character_modifier = {
         character_travel_speed = 15
     }
+
+    effect = {
+        custom_tooltip = {
+			text = WHIRLWIND_SPRINT_TWO_PERK_EFFECT
+		}
+    }
 }
 
 whirlwind_sprint_three_perk = {
@@ -245,6 +286,12 @@ whirlwind_sprint_three_perk = {
    icon = shout_perk
 
    parent = whirlwind_sprint_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = WHIRLWIND_SPRINT_THREE_PERK_EFFECT
+		}
+    }
 
    character_modifier = {
         character_travel_speed = 20
