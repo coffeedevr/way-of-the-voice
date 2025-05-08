@@ -58,6 +58,11 @@ unrelenting_force_decision = {
 
 	is_shown = {
 		has_trait = thuum_trait_track
+		OR = {
+			has_perk = unrelenting_force_perk
+			has_perk = unrelenting_force_two_perk
+			has_perk = unrelenting_force_three_perk
+		}
 	}
 
 	is_valid = {
@@ -102,6 +107,51 @@ unrelenting_force_decision = {
 	confirm_text = "Fus Ro Dah!"
 }
 
+kyne_peace_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = kyne_peace_decision_desc
+	selection_tooltip = "test"
+	title = kyne_peace_decision_title
+
+	is_shown = {
+		has_trait = thuum_trait_track
+		OR = {
+			has_perk = kyne_peace_perk
+			has_perk = kyne_peace_two_perk
+			has_perk = kyne_peace_three_perk
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+
+
+		AND = {
+			has_perk = kyne_peace_perk
+			has_perk = kyne_peace_two_perk
+			has_perk = kyne_peace_three_perk
+		}
+
+	}
+
+	effect = {
+		custom_tooltip = kyne_peace_decision_effect_tt
+		trigger_event = zzz_thuum_kyne_peace.1000 
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { months = 6 }
+
+	confirm_text = "Kaan Drem Ov!"
+}
+
+
 thuum_meditation_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
 	decision_group_type = thuum_decisions 
@@ -125,8 +175,8 @@ thuum_meditation_decision = {
 		custom_tooltip = thuum_meditation_decision_effect_tt
 		start_travel_plan = {
 			destination = title:b_gildergreen.title_province
-			on_travel_planner_cancel_on_action = zero_stone_decision_travel_planner_exit
-			on_arrival_event = zzz_thuum_intro.0002
+			on_travel_planner_cancel_on_action = on_cancel_meditation
+			on_arrival_event = zzz_thuum_meditate.1000
 			on_arrival_destinations = all_but_last
 		}
 	}

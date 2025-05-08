@@ -126,7 +126,7 @@ zzz_thuum_intro.0002 = {
 			skill = learning
 			value = very_high_skill_rating
 
-			50 = {
+			30 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 3.5
@@ -137,7 +137,7 @@ zzz_thuum_intro.0002 = {
                 add_character_flag = thuum_medidate_success
 			}
 			# You're not as fit as you thought you were.
-			50 = {
+			70 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = -3.5

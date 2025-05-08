@@ -1,0 +1,172 @@
+
+zzz_thuum_meditate.1000 = {
+    type = character_event
+	title = "Meditate to the Voice"
+    desc = zzz_thuum_meditate.1000.desc
+    theme = diplomacy_majesty_focus
+
+    immediate = {
+        title:b_gildergreen.holder = {
+            save_scope_as = priest
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+    right_portrait = {
+		character = scope:priest
+		animation = thinking
+	}
+
+    option = {
+		name = "People will regale my voice's might."
+        
+		duel = {
+			skill = learning
+			value = very_high_skill_rating
+            
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					# Always give _some_ chance.
+					min = -39
+				}
+				desc = harm.0001.a.tt.success
+                add_stress = -50
+                add_trait_xp = {
+                    trait = thuum_trait_track
+                    track = mastery
+                    value = 5
+                }
+			}
+
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					# Limit how low the off-chance can go.
+					min = -19
+				}
+				desc = harm.0001.a.tt.failure
+                add_stress = -30
+                add_trait_xp = {
+                    trait = thuum_trait_track
+                    track = mastery
+                    value = 3
+                }
+			}
+		}
+	}
+}
+
+zzz_thuum_kyne_peace.1000 = {
+    type = character_event
+	title = "Kyne's Gift"
+    desc = zzz_thuum_kyne_peace.1000.desc
+    theme = diplomacy_majesty_focus
+
+    left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+    option = {
+		name = "...choose the parrot!"
+		trigger = {
+			NOT = {
+				has_character_modifier = parrot_story_modifier 
+			}
+		}
+
+		create_story = story_cycle_pet_parrot
+
+		custom_tooltip = "You befriend a parrot and take it as a pet."
+
+		
+	}
+
+    option = {
+		name = "...choose the scorpion!"
+		trigger = {
+			NOT = {
+				has_character_modifier = scorpion_story_modifier  
+			}
+		}
+
+		create_story = story_cycle_pet_scorpion
+
+		custom_tooltip = "You befriend a scorpion and take it as a pet."
+	}
+
+    option = {
+		name = "...choose the bantam!"
+		trigger = {
+			NOT = {
+				has_character_modifier = bantam_story_modifier  
+			}
+		}
+
+		create_story = story_cycle_pet_bantam
+
+		custom_tooltip = "You befriend a bantam and take it as a pet."
+	}
+
+	option = {
+		name = "...choose the vvardvark!"
+		trigger = {
+			NOT = {
+				has_character_modifier = vvardvark_story_modifier   
+			}
+		}
+
+		create_story = story_cycle_pet_vvardvark
+
+		custom_tooltip = "You befriend a vvardvark and take it as a pet."
+	}
+
+	option = {
+		name = "...choose the mudcrab!"
+		trigger = {
+			NOT = {
+				has_character_modifier = mudcrab_story_modifier    
+			}
+		}
+
+		create_story = story_cycle_pet_mudcrab
+
+		ustom_tooltip = "You befriend a mudcrab and take it as a pet."
+	}
+
+
+	option = {
+		name = "...choose the skeever!"
+		trigger = {
+			NOT = {
+				has_character_modifier = skeever_story_modifier     
+			}
+		}
+
+		create_story = story_cycle_pet_skeever
+
+		custom_tooltip = "You befriend a skeever and take it as a pet."
+	}
+
+	option = {
+		name = "...choose nothing as I have too much pets already!"
+		trigger = {
+			AND = {
+				has_character_modifier = skeever_story_modifier
+				has_character_modifier = mudcrab_story_modifier    
+				has_character_modifier = vvardvark_story_modifier
+				has_character_modifier = bantam_story_modifier  
+				has_character_modifier = scorpion_story_modifier  
+				has_character_modifier = parrot_story_modifier  
+			}
+		}
+	}
+	
+}

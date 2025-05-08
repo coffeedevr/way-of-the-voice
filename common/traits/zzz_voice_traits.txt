@@ -27,7 +27,7 @@ thuum_trait_track = {
 				dread_baseline_add = 5
 			}
 			100 = {
-				martial = 3
+				prowess = 3
 				monthly_prestige_gain_mult = 0.25
 				dread_baseline_add = 10
 			}

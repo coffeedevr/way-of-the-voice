@@ -15,9 +15,10 @@
  kyne_peace_perk_name:0 "Kaan"
  kyne_peace_two_perk_name:0 "Drem"
  kyne_peace_three_perk_name:0 "Ov"
- KYNE_PEACE_PERK_EFFECT_A: "Unlocks an option to use "Kaan" for animal attack events."
- KYNE_PEACE_PERK_TWO_EFFECT_A: "Unlocks an option to use "Kaan Drem" for animal attack events."
- KYNE_PEACE_PERK_THREE_EFFECT_A: "Unlocks an option to use "Kaan Drem Ov" for animal attack events."
+ KYNE_PEACE_PERK_EFFECT_A: "Unlocks an option to use "Kaan" for animal-related events."
+ KYNE_PEACE_PERK_TWO_EFFECT_A: "Unlocks an option to use "Kaan" for animal-related events."
+ KYNE_PEACE_PERK_THREE_EFFECT_A: "Unlocks an option to use "Kaan" for animal-related events."
+ KYNE_PEACE_PERK_THREE_EFFECT_B: "Unlocks the #high $kyne_peace_decision_title$#! [decision|E]."
 
  clear_skies_perk_name:0 "Lok"
  clear_skies_two_perk_name:0 "Vah"
@@ -26,6 +27,7 @@
  CLEAR_SKIES_PERK_EFFECT: "Unlocks the [GetTravelOption('lok_option').GetName] [travel_option|E]"
  CLEAR_SKIES_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('lokvah_option').GetName] [travel_option|E]"
  CLEAR_SKIES_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('lokvahkoor_option').GetName] [travel_option|E]"
+ CLEAR_SKIES_PERK_EFFECT_A: "Unlocks an option to use "Lok" for weather-related events."
 
  whirlwind_sprint_perk_name:0 "Wuld"
  whirlwind_sprint_two_perk_name:0 "Nah"

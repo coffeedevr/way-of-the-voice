@@ -151,6 +151,9 @@ kyne_peace_three_perk = {
         custom_tooltip = {
 		    text = KYNE_PEACE_PERK_THREE_EFFECT_A
 	    }
+        custom_tooltip = {
+		    text = KYNE_PEACE_PERK_THREE_EFFECT_B
+	    }
     }
 }
 
@@ -168,6 +171,9 @@ clear_skies_perk = {
     effect = {
         custom_tooltip = {
 			text = CLEAR_SKIES_PERK_EFFECT
+		}
+        custom_tooltip = {
+			text = CLEAR_SKIES_PERK_EFFECT_A
 		}
     }
 
@@ -194,6 +200,9 @@ clear_skies_two_perk = {
         custom_tooltip = {
 			text = CLEAR_SKIES_TWO_PERK_EFFECT
 		}
+        custom_tooltip = {
+			text = CLEAR_SKIES_PERK_EFFECT_A
+		}
     }
 
    character_modifier = {
@@ -216,6 +225,9 @@ clear_skies_three_perk = {
     effect = {
         custom_tooltip = {
 			text = CLEAR_SKIES_THREE_PERK_EFFECT
+		}
+        custom_tooltip = {
+			text = CLEAR_SKIES_PERK_EFFECT_A
 		}
     }
 

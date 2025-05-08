@@ -1,9 +1,9 @@
 namespace = thuum_siege_event
 
 thuum_siege_event.0001 = {
-     type = character_event
-	title = "Way of the Voice"
-    desc = zzz_thuum_intro.0001.desc
+    type = character_event
+	title = "Unrelenting Force"
+    desc = zzz_thuum_siege_events.1000.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -76,7 +76,7 @@ thuum_siege_event.0001 = {
 	}
 
     option = {
-        name = "Tear a hole in their walls! Fus!"
+        name = zzz_thuum_siege_events.1000.a
         #custom_tooltip = "You use the Word of Power: Fus!"
         trigger = {
             scope:thuum_user = {
@@ -112,7 +112,7 @@ thuum_siege_event.0001 = {
     }
 
     option = {
-        name = "Break down their walls! Fus Ro!"
+        name =  zzz_thuum_siege_events.1000.b
         #custom_tooltip = "You use the Words of Power: Fus Ro!"
         trigger = {
             scope:thuum_user = {
@@ -146,7 +146,7 @@ thuum_siege_event.0001 = {
     }
 
     option = {
-        name = "Their castle will fall! Fus Ro Dah!"
+        name =  zzz_thuum_siege_events.1000.c
         #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
         trigger = {
             scope:thuum_user = {
@@ -183,8 +183,8 @@ thuum_siege_event.0001 = {
 
 thuum_siege_event.0001a = {
      type = character_event
-	title = "Way of the Voice"
-    desc = zzz_thuum_intro.0001.desc
+	title = "Unrelenting Force"
+    desc = zzz_thuum_siege_events.1000.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -242,7 +242,7 @@ thuum_siege_event.0001a = {
 	}
 
     option = {
-        name = "Tear a hole in their walls! Fus!"
+        name = zzz_thuum_siege_events.1000.a
         #custom_tooltip = "You use the Word of Power: Fus!"
         trigger = {
             scope:thuum_user = {
@@ -260,25 +260,23 @@ thuum_siege_event.0001a = {
         ai_chance = {
 			base = 20
 		}
-        hidden_effect = {
-            scope:sieging_location = {
+        scope:sieging_location = {
 				add_province_modifier = {
 					modifier = thuum_siege_modifier_small
 					months = 5
 				}
-				province_owner = {
+			}
+			province_owner = {
 					add_opinion = {
 						target = root
 						modifier = recenty_sieged_using_fus_opinion 
 					}
-				}	
-			}
-        }
+			}	
 
     }
 
     option = {
-        name = "Break down their walls! Fus Ro!"
+        name = zzz_thuum_siege_events.1000.b
         #custom_tooltip = "You use the Words of Power: Fus Ro!"
         trigger = {
             scope:thuum_user = {
@@ -295,8 +293,7 @@ thuum_siege_event.0001a = {
         ai_chance = {
 			base = 20
 		}
-        hidden_effect = {
-            scope:sieging_location = {
+        scope:sieging_location = {
 				add_province_modifier = {
 					modifier = thuum_siege_modifier_medium
 					months = 5
@@ -308,11 +305,10 @@ thuum_siege_event.0001a = {
 					}
 				}	
 			}
-        }
     }
 
     option = {
-        name = "Their castle will fall! Fus Ro Dah!"
+        name =  zzz_thuum_siege_events.1000.c
         #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
         trigger = {
             scope:thuum_user = {
@@ -329,8 +325,7 @@ thuum_siege_event.0001a = {
         ai_chance = {
 			base = 20
 		}
-        hidden_effect = {
-            scope:sieging_location = {
+        scope:sieging_location = {
 				add_province_modifier = {
 					modifier = thuum_siege_modifier_large
 					months = 5
@@ -342,7 +337,6 @@ thuum_siege_event.0001a = {
 						modifier = recenty_sieged_using_fus_opinion 
 					}
 			}	
-        }
     }
 
 }
