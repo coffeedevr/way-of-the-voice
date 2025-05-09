@@ -3,6 +3,7 @@ on_travel_plan_cancel = {
         on_cancel_gildergreen_event
         on_cancel_gildergreen_decision
         on_cancel_meditation
+        on_cancel_bleakfalls_event
     }
 }
 
@@ -35,5 +36,15 @@ on_cancel_meditation = {
 
     effect = {
         remove_decision_cooldown = thuum_meditation_decision
+    }
+}
+
+on_cancel_bleakfalls_event = {
+    trigger = {
+        is_decision_on_cooldown = visit_bleaks_thuum_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = visit_bleaks_thuum_decision
     }
 }

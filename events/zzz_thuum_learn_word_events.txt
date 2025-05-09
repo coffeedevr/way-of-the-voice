@@ -16,6 +16,10 @@ zzz_thuum_learn_word.0001 = {
 		animation = interested
 	}
 
+    is_valid = {
+        
+    }
+
 
     immediate = {
         
@@ -26,16 +30,81 @@ zzz_thuum_learn_word.0001 = {
 	}
 
     option = {
-		name = "I will learn Unrelenting Force"
-		custom_tooltip = "Will travel to Gildergreen"
-        save_scope_value_as = {
-            name = event_word
-            value = flag:zzz_thuum_intro.0001
-        } 
-        set_variable = {
-            name = resume_learning
-            value = scope:event_word
-        } 
+		name = "Go forth!"
+		custom_tooltip = "Will fund an expedition to find a Word Wall."
+        hidden_effect = {
+            random_list = {
+                90 = {
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.0002
+                        months = { 3 6 }
+                    }
+                
+                }
+                10 = {
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.0003
+                        months = { 3 6 }
+                    }
+                }
+            }
+        }
+        add_gold = -100
+	}
+
+    option = {
+		name = "Maybe not now."
+		#custom_tooltip = "Will travel to Gildergreen"
+        hidden_effect = {
+            random_list = {
+                90 = {
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.0002
+                        months = { 3 6 }
+                    }
+                
+                }
+                10 = {
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.0003
+                        months = { 3 6 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+zzz_thuum_learn_word.0010 = {
+    type = character_event
+	title = "No More Word Walls"
+    desc = zzz_thuum_learn_word.0010.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    is_valid = {
+        
+    }
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's rest for now."
 	}
 }
 
@@ -43,7 +112,7 @@ zzz_thuum_learn_word.0001 = {
 zzz_thuum_learn_word.0002 = {
     type = character_event
 	title = "Success: Word Wall Found"
-    desc = zzz_thuum_learn_word.0001.desc
+    desc = zzz_thuum_learn_word.0002.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -57,7 +126,48 @@ zzz_thuum_learn_word.0002 = {
 
 
     immediate = {
-        
+        random_list = {
+            2 = {
+                modifier = {
+                    #factor = 0
+                    OR = {
+                        NOT = {
+                            has_character_flag = found_bleakfalls
+                        }
+                        NOT = {
+                            has_perk = unrelenting_force_perk
+                        }
+                        NOT = {
+                            has_perk = unrelenting_force_two_perk
+                        }
+                        NOT = {
+                            has_perk = unrelenting_force_three_perk
+                        }
+                    }
+                }
+                add_character_flag = found_bleakfalls
+            }
+            2 = {
+                modifier = {
+                    #factor = 0
+                    OR = {
+                        NOT = {
+                            has_character_flag = found_rangvald
+                        }
+                        NOT = {
+                            has_perk = kyne_peace_perk
+                        }
+                        NOT = {
+                            has_perk = kyne_peace_two_perk
+                        }
+                        NOT = {
+                            has_perk = kyne_peace_three_perk
+                        }
+                    }
+                }
+                add_character_flag = found_rangvald
+            }
+        }
     }
 
     trigger = {
@@ -65,24 +175,15 @@ zzz_thuum_learn_word.0002 = {
 	}
 
     option = {
-		name = "I will learn Unrelenting Force"
-		custom_tooltip = "Will travel to Gildergreen"
-        save_scope_value_as = {
-            name = event_word
-            value = flag:zzz_thuum_intro.0001
-        } 
-        set_variable = {
-            name = resume_learning
-            value = scope:event_word
-        } 
+		name = "Well done!"
 	}
 }
 
 ### FAILED RESULT EXPEDITION
-zzz_thuum_learn_word.0002 = {
+zzz_thuum_learn_word.0003 = {
     type = character_event
 	title = "Failed: Word Wall Not Found"
-    desc = zzz_thuum_learn_word.0001.desc
+    desc = zzz_thuum_learn_word.0003.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -104,25 +205,16 @@ zzz_thuum_learn_word.0002 = {
 	}
 
     option = {
-		name = "I will learn Unrelenting Force"
-		custom_tooltip = "Will travel to Gildergreen"
-        save_scope_value_as = {
-            name = event_word
-            value = flag:zzz_thuum_intro.0001
-        } 
-        set_variable = {
-            name = resume_learning
-            value = scope:event_word
-        } 
+		name = "That's unfortunate."
+		add_stress = 30
 	}
 }
 
-
-### SELECT WHAT WORD TO LEARN
-zzz_thuum_learn_word.1000 = {
+## VISIT BLEAK FALLS EVENT
+zzz_thuum_learn_word.2200 = {
     type = character_event
-	title = "Learn a word wall"
-    desc = zzz_thuum_intro.0001.desc
+	title = "Word Wall: Bleak Falls Barrow"
+    desc = zzz_thuum_intro.2200.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -144,51 +236,210 @@ zzz_thuum_learn_word.1000 = {
 	}
 
     option = {
-		name = "I will learn Unrelenting Force"
-		custom_tooltip = "Will travel to Gildergreen"
-        save_scope_value_as = {
-            name = event_word
-            value = flag:zzz_thuum_intro.0001
-        } 
-        set_variable = {
-            name = resume_learning
-            value = scope:event_word
-        } 
-	}
-}
-
-## RESUME EVENT
-zzz_thuum_learn_word.1500 = {
-    type = character_event
-	title = "Learn a word wall"
-    desc = zzz_thuum_intro.0001.desc
-    theme = diplomacy_majesty_focus
-
-    override_background = {
-		reference = temple_church
-	}
-
-    left_portrait = {
-		character = root
-		animation = interested
-	}
-
-
-    immediate = {
-        
-    }
-
-    trigger = {
-
-	}
-
-    option = {
-		name = "resume event"
-		custom_tooltip = "Will travel to Gildergreen"
-        hidden_effect = {
-            trigger_event = {
-                saved_event_id = var:test
+		name = "Let's head to Bleak Falls!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_gildergreen
+                }
+                trigger_event = zzz_thuum_learn_word.2201
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_bleak_falls.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_bleakfalls_event
+                    on_arrival_event = zzz_thuum_learn_word.2201
+                    on_arrival_destinations = all_but_last
+                }
             }
         }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_bleaks_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2201 = {
+    type = character_event
+	title = "Word Wall: Bleak Falls Barrow"
+    desc = zzz_thuum_intro.2201.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's medidate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2202
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                50 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2202
+                        days = { 30 30 }
+                    }
+                }
+                # You're not as fit as you thought you were.
+                50 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.5
+                        # Limit how low the off-chance can go.
+                        min = -19
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2202
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2202 = {
+    type = character_event
+	title = "Success: Bleak Falls Barrow"
+    desc = zzz_thuum_intro.2202.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Success!"
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = unrelenting_force_perk
+                    has_perk = unrelenting_force_two_perk
+                    has_perk = unrelenting_force_three_perk
+                }
+            }
+            add_perk = unrelenting_force_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = unrelenting_force_perk
+                NOT = {
+                    has_perk = unrelenting_force_two_perk
+                    has_perk = unrelenting_force_three_perk
+                }
+            }
+            add_perk = unrelenting_force_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else = {
+            add_perk = unrelenting_force_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2203 = {
+    type = character_event
+	title = "Failed: Bleak Falls Barrow"
+    desc = zzz_thuum_intro.2203.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Failure..."
+        remove_decision_cooldown = visit_bleaks_thuum_decision
+        add_stress = 30
 	}
 }

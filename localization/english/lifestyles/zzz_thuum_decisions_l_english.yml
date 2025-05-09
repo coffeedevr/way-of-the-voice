@@ -19,5 +19,18 @@
  thuum_meditation_decision_effect_tt: "You meditate to your thu'um which might gain you experience."
 
  resume_learning_thuum_title:  "Resume Learning a Word of Power from a Word Wall"
- resume_learning_thuum_desc: "It is time to resume my training."
- resume_learning_thuum_effect_tt: "You travel to a previous word wall and resume your learning."
+ fund_learning_thuum_decision_desc: "Need Description, in first person"
+ fund_learning_thuum_decision_effect_tt: "Spend gold to fund an expedition in order to find a Word Wall to learn a new Word of Power."
+
+ visit_bleaks_thuum_decision_desc: "Need Description, in first person"
+ visit_bleaks_thuum_decision_effect_tt: "Visit Bleak Falls Barrow and meditate to the Word Wall in hopes to learn a new Word of Power."
+
+ visit_rangvald_thuum_decision_desc: "Need Description, in first person"
+ visit_rangvald_thuum_decision_effect_tt: "Visit Rangvald Ruins and meditate to the Word Wall in hopes to learn a new Word of Power."
+
+ visit_ironbind_thuum_decision_desc: "Need Description, in first person"
+ visit_ironbind_thuum_decision_effect_tt: "Visit Ironbind Barrow and meditate to the Word Wall in hopes to learn a new Word of Power."
+
+ visit_northwind_thuum_decision_desc: "Need Description, in first person"
+ visit_northwind_thuum_decision_effect_tt: "Visit Northwind Summit and meditate to the Word Wall in hopes to learn a new Word of Power."
+

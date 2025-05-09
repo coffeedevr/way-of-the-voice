@@ -1,9 +1,10 @@
-﻿fund_learning_thuum = {
+﻿fund_learning_thuum_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = resume_learning_thuum_desc
+	desc =  fund_learning_thuum_decision_desc
+
 	selection_tooltip = "test"
 	title = "Fund an Expedition to Find a Word Wall"
 
@@ -13,47 +14,204 @@
 
 	is_valid = {
 		is_adult = yes
+		OR = {
+			NOT = {
+				AND = {
+					has_perk = unrelenting_force_perk
+					has_perk = unrelenting_force_two_perk
+					has_perk = unrelenting_force_three_perk
+					has_perk = kyne_peace_perk
+					has_perk = kyne_peace_two_perk
+					has_perk = kyne_peace_three_perk
+					#has_perk = clear_skies_perk
+					#has_perk = clear_skies_two_perk
+					#has_perk = clear_skies_three_perk
+					#has_perk = whirlwind_sprint_perk
+					#has_perk = whirlwind_sprint_two_perk
+					#has_perk = whirlwind_sprint_three_perk
+				}
+			}
+		}
+		
 	}
 
 	effect = {
-		custom_tooltip = resume_learning_thuum_effect_tt
-		trigger_event = zzz_thuum_learn_word.0001
-	}
-
-	ai_potential = {
-		always = yes
-	}
-
-	confirm_text = "Let's make haste."
-}
-
-resume_learning_thuum = {
-	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
-	decision_group_type = thuum_decisions 
-	ai_check_interval = 12
-
-	desc = resume_learning_thuum_desc
-	selection_tooltip = "test"
-	title = "Resume Learning a Word of Power from a Word Wall"
-
-	is_shown = {
-		has_variable = resume_learning
-	}
-
-	is_valid = {
-		is_adult = yes
-	}
-
-	effect = {
-		custom_tooltip = resume_learning_thuum_effect_tt
-		trigger_event = {
-			saved_event_id = var:resume_learning
+		custom_tooltip = fund_learning_thuum_decision_effect_tt
+		if = {
+			limit = {
+				AND = {
+					has_character_flag = found_bleakfalls
+					has_character_flag = found_rangvald
+				}
+			}
+			trigger_event = zzz_thuum_learn_word.0010
+		}
+		else = {
+			trigger_event = zzz_thuum_learn_word.0001
 		}
 	}
 
 	ai_potential = {
 		always = yes
 	}
+
+	cooldown = { years = 1 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_bleaks_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_bleaks_thuum_decision_desc
+	selection_tooltip = "test"
+	title = "Visit Word Wall - Bleak Falls Barrow"
+
+	is_shown = {
+		has_character_flag = found_bleakfalls
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = unrelenting_force_perk
+				has_perk = unrelenting_force_two_perk
+				has_perk = unrelenting_force_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_bleaks_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2200 
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_rangvald_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_rangvald_thuum_decision_desc
+	selection_tooltip = "test"
+	title = "Visit Word Wall - Rangvald Ruins"
+
+	is_shown = {
+		has_character_flag = found_rangvald
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_rangvald_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2300 
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_ironbind_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_ironbind_thuum_decision_desc
+	selection_tooltip = "test"
+	title = "Visit Word Wall - Ironbind Barrow"
+
+	is_shown = {
+		has_character_flag = found_ironbind
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = clear_skies_perk
+				has_perk = clear_skies_two_perk
+				has_perk = clear_skies_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_ironbind_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2400 
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_northwind_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_northwind_thuum_decision_desc
+	selection_tooltip = "test"
+	title = "Visit Word Wall - Northwind Summit"
+
+	is_shown = {
+		has_character_flag = found_northwind
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = clear_skies_perk
+				has_perk = clear_skies_two_perk
+				has_perk = clear_skies_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_northwind_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2500 
+		}
+	}
+s
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { years = 2 }
 
 	confirm_text = "Let's make haste."
 }
