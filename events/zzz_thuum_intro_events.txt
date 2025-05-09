@@ -72,11 +72,6 @@ zzz_thuum_intro.0001 = {
         }
 	}
 
-    option = {
-		name = "Not interested"
-		custom_tooltip = "Will drop it"
-	}
-
 }
 
 
@@ -210,18 +205,13 @@ zzz_thuum_intro.0003 = {
 
     option = {
 		name = "Surely this is a mistake, right?"
-	    custom_tooltip = "This will end the whole Way of the Voice event."
+	    custom_tooltip = "Is this the end?"
         hidden_effect = {
             trigger_event = {
                 id = zzz_thuum_clavicus.1000
                 days = { 10 10 }
             }
         }
-	}
-
-    option = {
-		name = "I guess it is not meant to be."
-	    custom_tooltip = "This will end the whole Way of the Voice event."
 	}
 }
 

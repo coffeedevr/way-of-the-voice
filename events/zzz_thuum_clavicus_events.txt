@@ -145,8 +145,8 @@ zzz_thuum_clavicus.1000 = {
 	}
 
     option = {
-		name = "Begone, Clavicus Vile!"
-		custom_tooltip = "Will drop it"
+		name = "I may not have a Thu'um but I rebuke you, Clavicus Vile!"
+		custom_tooltip = "The Way of the Voice event chain will end."
         scope:skaafin_clavicus = { silent_disappearance_effect = yes }
 	}
 
