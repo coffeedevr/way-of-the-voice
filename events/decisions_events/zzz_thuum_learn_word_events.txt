@@ -88,6 +88,10 @@ zzz_thuum_learn_word.0001 = {
             target = scope:option_one
             gold = 500
         }
+
+        scope:option_one = {
+            save_scope_as = chosen_exped
+        }
         
         random_list = {
             50 = {
@@ -283,7 +287,6 @@ zzz_thuum_learn_word.0002 = {
         character = scope:chosen_exped
     }
 
-
     immediate = {
         random_list = {
             2 = {
@@ -313,6 +316,34 @@ zzz_thuum_learn_word.0002 = {
                     save_scope_as = location
                 }
                 add_character_flag = found_rangvald
+            }
+            2 = {
+                modifier = {
+                    #factor = 0
+                    OR = {
+                        NOT = {
+                            has_character_flag = found_ironbind
+                        }
+                    }
+                }
+                title:b_bleak_falls.title_province = {
+                    save_scope_as = location
+                }
+                add_character_flag = found_ironbind
+            }
+            2 = {
+                modifier = {
+                    #factor = 0
+                    OR = {
+                        NOT = {
+                            has_character_flag = found_northwind
+                        }
+                    }
+                }
+                title:b_bleak_falls.title_province = {
+                    save_scope_as = location
+                }
+                add_character_flag = found_northwind
             }
         }
     }
@@ -479,27 +510,82 @@ zzz_thuum_learn_word.2201 = {
                 skill = learning
                 value = very_high_skill_rating
 
-                50 = {
+                40 = {
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 3.5
                         # Always give _some_ chance.
                         min = -39
                     }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_same_culture_heritage = heritage_nedic_south
+                                has_same_culture_heritage = heritage_nedic_north
+                                has_same_culture_heritage = heritage_nedic_central
+                                has_same_culture_heritage = heritage_atmoran
+                            }
+                            factor = 2
+                        }
+                    }
                     desc = "Your meditation succeeds"
-                    custom_tooltip = "You learn a new Word of Power."
+                    custom_tooltip = "You might learn a new Word of Power."
                     trigger_event = {
                         id = zzz_thuum_learn_word.2202
                         days = { 30 30 }
                     }
                 }
-                # You're not as fit as you thought you were.
-                50 = {
+
+                40 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = -3.5
-                        # Limit how low the off-chance can go.
+                        multiplier = -3.0
                         min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_same_culture_heritage = heritage_nedic_south
+                                    has_same_culture_heritage = heritage_nedic_north
+                                    has_same_culture_heritage = heritage_nedic_central
+                                    has_same_culture_heritage = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
                     }
                     desc = "Your meditation fails"
                     custom_tooltip = "You do not learn a new Word of Power."
@@ -562,7 +648,15 @@ zzz_thuum_learn_word.2202 = {
             add_perk = unrelenting_force_two_perk
             create_character_memory = { type = learned_thuum_word }
         }
-        else = {
+        else_if = {
+            limit = {
+            has_perk = unrelenting_force_perk
+            has_perk = unrelenting_force_two_perk
+                NOT = {
+                    
+                    has_perk = unrelenting_force_three_perk
+                }
+            }
             add_perk = unrelenting_force_three_perk
             create_character_memory = { type = learned_thuum_word }
         }

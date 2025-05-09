@@ -115,30 +115,87 @@ zzz_thuum_intro.0002 = {
 
     option = {
 		name = "Let's meditate to Kynareth."
-	    custom_tooltip = "Will medidate to Kynareth."
+	    custom_tooltip = "Will medidate to Kynareth to determine if you can harness the Thu'um."
         
 		duel = {
 			skill = learning
 			value = very_high_skill_rating
 
-			30 = {
+			40 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 3.5
 					# Always give _some_ chance.
 					min = -39
 				}
+                modifier = {
+                    has_trait = diligent
+                    factor = 2
+                }
+                modifier = {
+                    has_trait = patient
+                    factor = 2
+                }
+                modifier = {
+                    has_trait = zealous
+                    factor = 2
+                }
+                modifier = {
+                    has_trait = calm
+                    factor = 2
+                }
+                modifier = {
+                    culture = {
+                        OR = {
+                            has_same_culture_heritage = heritage_nedic_south
+                            has_same_culture_heritage = heritage_nedic_north
+                            has_same_culture_heritage = heritage_nedic_central
+                            has_same_culture_heritage = heritage_atmoran
+                        }
+                        factor = 2
+                    }
+                    
+                }
 				desc = harm.0001.a.tt.success
                 add_character_flag = thuum_medidate_success
 			}
-			# You're not as fit as you thought you were.
-			70 = {
+			40 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -3.5
+					multiplier = -3.0
 					# Limit how low the off-chance can go.
 					min = -19
 				}
+                modifier = {
+                    has_trait = wrathful
+                    factor = 2
+                }
+                modifier = {
+                    has_trait = sadistic
+                    factor = 2
+                }
+                modifier = {
+                    has_trait = cynical
+                    factor = 2
+                }
+                modifier = {
+                    has_trait = callous
+                    factor = 2
+                }
+                modifier = {
+                    culture = {
+                        NOT = {
+                            OR = {
+                                has_same_culture_heritage = heritage_nedic_south
+                                has_same_culture_heritage = heritage_nedic_north
+                                has_same_culture_heritage = heritage_nedic_central
+                                has_same_culture_heritage = heritage_atmoran
+                            }
+                        }
+                        factor = 2
+                    }
+                    
+                }
 				desc = harm.0001.a.tt.failure
                 add_character_flag = thuum_medidate_failure
 			}
@@ -238,7 +295,7 @@ zzz_thuum_intro.0004 = {
 	}
 
     option = {
-		name = "People will regale my voice's might."
+		name = "People will regale my voice's might!"
         add_trait = thuum_trait_track
         add_perk = unrelenting_force_perk
         hidden_effect = {

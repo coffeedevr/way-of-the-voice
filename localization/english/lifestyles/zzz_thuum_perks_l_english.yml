@@ -19,6 +19,7 @@
  KYNE_PEACE_PERK_TWO_EFFECT_A: "Unlocks an option to use "Kaan" for animal-related events."
  KYNE_PEACE_PERK_THREE_EFFECT_A: "Unlocks an option to use "Kaan" for animal-related events."
  KYNE_PEACE_PERK_THREE_EFFECT_B: "Unlocks the #high $kyne_peace_decision_title$#! [decision|E]."
+ KYNE_PEACE_PERK_REQUIREMENT_EFFECT: "#warning Can only be learned if Apprentice of the Voice."
 
  clear_skies_perk_name:0 "Lok"
  clear_skies_two_perk_name:0 "Vah"
