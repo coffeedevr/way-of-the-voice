@@ -17,3 +17,7 @@
  thuum_meditation_decision_title: "Meditate to Your Thu'um"
  thuum_meditation_decision_desc: "You sit in stillness, the world around you fading as you turn inward. Deep within, you seek the ancient resonance of the Voice, ready to attune yourself to its timeless power."
  thuum_meditation_decision_effect_tt: "You meditate to your thu'um which might gain you experience."
+
+ resume_learning_thuum_title:  "Resume Learning a Word of Power from a Word Wall"
+ resume_learning_thuum_desc: "It is time to resume my training."
+ resume_learning_thuum_effect_tt: "You travel to a previous word wall and resume your learning."

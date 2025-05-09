@@ -1,14 +1,17 @@
-thuum_siege_modifier_small = {
-	icon = beast_negative
+thuum_siege_small_modifier = {
+	icon = county_modifier_development_negative
 	fort_level = -3
 }
 
-thuum_siege_modifier_medium = {
-	icon = beast_negative
-	fort_level = -6
+thuum_siege_medium_modifier = {
+	icon = county_modifier_development_negative
+	levy_reinforcement_rate = -0.20
+	fort_level = -5
 }
 
-thuum_siege_modifier_large = {
-	icon = beast_negative
-	fort_level = -10
+thuum_siege_large_modifier = {
+	icon = county_modifier_development_negative
+	levy_reinforcement_rate = -0.20
+	development_growth_factor = -0.20
+	fort_level = -8
 }

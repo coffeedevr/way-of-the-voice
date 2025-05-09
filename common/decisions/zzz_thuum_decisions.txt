@@ -80,9 +80,9 @@ unrelenting_force_decision = {
 			location = {
 				AND = {
 					NOR = {
-						has_province_modifier = thuum_siege_modifier_small
-						has_province_modifier = thuum_siege_modifier_medium
-						has_province_modifier = thuum_siege_modifier_large
+						has_province_modifier = thuum_siege_small_modifier
+						has_province_modifier = thuum_siege_medium_modifier
+						has_province_modifier = thuum_siege_large_modifier
 					}
 					NOR = {
 						province_owner = root
@@ -97,7 +97,7 @@ unrelenting_force_decision = {
 
 	effect = {
 		custom_tooltip = unrelenting_force_decision_effect_tt
-		trigger_event = thuum_siege_event.0001a
+		trigger_event = thuum_siege_event.0002
 	}
 
 	ai_potential = {
@@ -139,7 +139,7 @@ kyne_peace_decision = {
 
 	effect = {
 		custom_tooltip = kyne_peace_decision_effect_tt
-		trigger_event = zzz_thuum_kyne_peace.1000 
+		trigger_event = zzz_thuum_decision_kyne_peace.1000 
 	}
 
 	ai_potential = {
@@ -176,7 +176,7 @@ thuum_meditation_decision = {
 		start_travel_plan = {
 			destination = title:b_gildergreen.title_province
 			on_travel_planner_cancel_on_action = on_cancel_meditation
-			on_arrival_event = zzz_thuum_meditate.1000
+			on_arrival_event = zzz_thuum_decision_meditate.1000
 			on_arrival_destinations = all_but_last
 		}
 	}

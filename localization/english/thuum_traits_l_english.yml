@@ -2,3 +2,8 @@
 
  trait_track_mastery: "Thu'um Mastery"
  trait_track_mastery_desc: ""
+
+ learned_thuum_word:0 "Learned a Word of Power"
+ learned_thuum_word_desc:0 "I learned a Word of Power"
+ learned_thuum_word_desc_second_perspective:0 "You learned a Word of Power"
+ learned_thuum_word_desc_third_perspective:0 "[owner.GetName] learned a Word of Power"

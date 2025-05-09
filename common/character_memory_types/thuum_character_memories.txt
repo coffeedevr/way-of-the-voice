@@ -1,0 +1,28 @@
+﻿learned_thuum_word = {
+	categories = { positive major } 
+	icon = "_default.dds"
+
+	description = {
+		random_valid = {
+			desc = learned_thuum_word_desc
+		}
+	}
+
+	second_perspective_description = {
+		random_valid = {
+			desc = learned_thuum_word_desc_second_perspective
+		}
+	}
+
+	third_perspective_description = {
+		random_valid = {
+			desc = learned_thuum_word_desc_third_perspective
+		}
+	}
+
+	#no relevant participants here
+
+	duration = {
+		years = memory_default_duration
+	}
+}

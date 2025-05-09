@@ -3,3 +3,10 @@
  ek_travel_events.4035.x: "Nothing my thu'um can't handle! #E Lok!#"
  ek_travel_events.4040.x: "Nothing my thu'um can't handle! #E Lok!#"
  ek_travel_events.4045.x: "Nothing my thu'um can't handle! #E Kaan!#"
+
+ thuum_siege_small_modifier: "Walls Destroyed By Fus"
+ thuum_siege_medium_modifier: "Walls Destroyed By Fus Ro"
+ thuum_siege_large_modifier: "Walls Destroyed By Fus Ro Dah"
+ #thuum_siege_modifier_desc: "The Thu'um is raw power, pushing aside anything - or anyone - who stands in your path."
+ unstable_thuum_modifier: "Unstable Thuum"
+ wrathful_thuum_modifier: "Wrathful Thuum"

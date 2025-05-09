@@ -1,5 +1,7 @@
+namespace = zzz_thuum_decision
 
-zzz_thuum_meditate.1000 = {
+### meditate event
+zzz_thuum_decision.1000 = {
     type = character_event
 	title = "Meditate to the Voice"
     desc = zzz_thuum_meditate.1000.desc
@@ -63,7 +65,8 @@ zzz_thuum_meditate.1000 = {
 	}
 }
 
-zzz_thuum_kyne_peace.1000 = {
+## _kyne_peace
+zzz_thuum_decision.2000 = {
     type = character_event
 	title = "Kyne's Gift"
     desc = zzz_thuum_kyne_peace.1000.desc
@@ -85,7 +88,6 @@ zzz_thuum_kyne_peace.1000 = {
 		create_story = story_cycle_pet_parrot
 
 		custom_tooltip = "You befriend a parrot and take it as a pet."
-
 		
 	}
 

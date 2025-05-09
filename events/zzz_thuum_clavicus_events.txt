@@ -41,7 +41,7 @@ zzz_thuum_clavicus.1000 = {
 	option = {
 		name = "I want to have a Voice stronger than anyone else!"
         add_trait = thuum_trait_track
-        add_modifier = zzz_touched_by_clavicus
+        add_modifier = zzz_touched_by_clavicus_modifier
         add_perk = unrelenting_force_perk
         hidden_effect = {
             root = {
@@ -66,12 +66,18 @@ zzz_thuum_clavicus.1000 = {
             }
             add_character_flag = clavicus_strong_event
         }
+        create_character_memory = { type = learned_thuum_word }
+        trigger_event = { 
+		    id = zzz_thuum_clavicus.1001
+		    years = { 3 5 } 
+        }
+
 	}
 
     option = {
-		name = "I want all to fear me due to the might of my Voice!"
+		name = "I want the world to fear the might of my Voice!"
         add_trait = thuum_trait_track
-        add_modifier = zzz_touched_by_clavicus
+        add_modifier = zzz_touched_by_clavicus_modifier
         add_perk = unrelenting_force_perk
         hidden_effect = {
             root = {
@@ -94,14 +100,19 @@ zzz_thuum_clavicus.1000 = {
                 }
                 add_character_flag = learned_fus
             }
-            add_character_flag = clavicus_strong_event
+            add_character_flag = clavicus_fear_event
+        }
+        create_character_memory = { type = learned_thuum_word }
+        trigger_event = { 
+		    id = zzz_thuum_clavicus.1002
+		    years = { 3 5 } 
         }
 	}
 
     option = {
 		name = "I want all to tremble before the power of my Voice!"
         add_trait = thuum_trait_track
-        add_modifier = zzz_touched_by_clavicus
+        add_modifier = zzz_touched_by_clavicus_modifier
         add_perk = unrelenting_force_perk
         hidden_effect = {
             root = {
@@ -124,7 +135,12 @@ zzz_thuum_clavicus.1000 = {
                 }
                 add_character_flag = learned_fus
             }
-            add_character_flag = clavicus_strong_event
+            add_character_flag = clavicus_tremble_event
+        }
+        create_character_memory = { type = learned_thuum_word }
+        trigger_event = { 
+		    id = zzz_thuum_clavicus.1003
+		    years = { 3 5 } 
         }
 	}
 
@@ -136,4 +152,369 @@ zzz_thuum_clavicus.1000 = {
 
 }
 
+zzz_thuum_clavicus.1001 = {
+    type = character_event
+	title = "Death By Your Thu'um"
+    desc = zzz_thuum_clavicus.1001.desc
+    theme = dread
 
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = fear
+	}
+
+    right_portrait = {
+		character = scope:child
+		animation = fear
+	}
+
+    lower_left_portrait = {
+		character = scope:courtier
+	}
+
+    lower_center_portrait = {
+		character = scope:vassal
+	}
+
+	lower_right_portrait = {
+		character = scope:councillor
+	}
+
+    trigger = {
+        has_character_flag = clavicus_strong_event
+        NOT = {
+            has_character_flag = clavicus_done
+        }
+    }
+
+    immediate = {
+        random_courtier = {
+            limit = {
+                NOT = {
+                    is_child_of = root
+                }
+            }
+            save_scope_as = courtier
+        }
+        random_vassal = {
+            limit = {
+                NOT = {
+                    is_councillor_of  = root
+                }
+            }
+            save_scope_as = vassal
+        }
+        random_child = {
+            limit = {
+                is_child_of = root
+            }
+            save_scope_as = child
+        }
+        random_councillor = {
+            limit = {
+                NOT = {
+                    is_child_of = root
+                }
+            }
+            save_scope_as = councillor
+        }
+    }
+
+    option = {
+        name = "Oh no no no no no!!!!!"
+        random_list = {
+			
+			90 = { 
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					title = "Killed by the might of the Voice"
+					left_icon = scope:child
+					scope:child = {
+                        death = {
+						    killer = root
+						    death_reason = death_fight
+					    }
+                    }
+				}
+                send_interface_toast = {
+					title =  "Killed by the might of the Voice"
+					left_icon = scope:councillor
+					scope:councillor = {
+                        death = {
+						    killer = root
+						    death_reason = death_fight
+					    }
+                    }
+				}
+                send_interface_toast = {
+					title =  "Killed by the might of the Voice"
+					left_icon = scope:vassal
+					scope:vassal = {
+                        death = {
+						    killer = root
+						    death_reason = death_fight
+					    }
+                    }
+				}
+                add_trait = wounded_2
+                add_character_modifier = unstable_thuum_modifier
+			}
+            
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+                send_interface_toast = {
+					title = "Killed by the might of the Voice"
+					left_icon = scope:child
+					scope:child = {
+                        death = {
+						    killer = root
+						    death_reason = death_fight
+					    }
+                    }
+				}
+                send_interface_toast = {
+					title =  "Killed by the might of the Voice"
+					left_icon = scope:councillor
+					scope:councillor = {
+                        death = {
+						    killer = root
+						    death_reason = death_fight
+					    }
+                    }
+				}
+                send_interface_toast = {
+					title =  "Killed by the might of the Voice"
+					left_icon = scope:vassal
+					scope:vassal = {
+                        death = {
+						    killer = root
+						    death_reason = death_fight
+					    }
+                    }
+				}
+				send_interface_toast = {
+					title ="Killed by the might of the Voice"
+					left_icon = scope:root
+					death = {
+						killer = root
+						death_reason = death_fight
+					}
+				}
+			}
+		}
+        add_character_flag = clavicus_done
+    }
+    
+}
+
+zzz_thuum_clavicus.1002 = {
+    type = character_event
+	title = "Feared By All"
+    desc = zzz_thuum_clavicus.1002.desc
+    theme = dread
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = rage
+	}
+
+    right_portrait = {
+		character = scope:child
+		animation = fear
+	}
+
+    lower_left_portrait = {
+		character = scope:courtier
+	}
+
+    lower_center_portrait = {
+		character = scope:vassal
+	}
+
+	lower_right_portrait = {
+		character = scope:councillor
+	}
+
+    trigger = {
+        has_character_flag = clavicus_fear_event
+        NOT = {
+            has_character_flag = clavicus_done
+        }
+    }
+
+    immediate = {
+        random_courtier = {
+            limit = {
+                NOT = {
+                    is_child_of = root
+                }
+            }
+            save_scope_as = courtier
+        }
+        random_vassal = {
+            limit = {
+                NOT = {
+                    is_councillor_of  = root
+                }
+            }
+            save_scope_as = vassal
+        }
+        random_child = {
+            limit = {
+                is_child_of = root
+            }
+            save_scope_as = child
+        }
+        random_councillor = {
+            limit = {
+                NOT = {
+                    is_child_of = root
+                }
+            }
+            save_scope_as = councillor
+        }
+    }
+
+    option = {
+        name = "I-I didn't mean to-!"
+		add_stress = 100
+        add_character_modifier = wrathful_thuum_modifier
+        add_trait = depressed_genetic
+        add_character_flag = clavicus_done
+        capital_province = {
+           add_province_modifier = {
+                modifier = thuum_siege_small_modifier
+                months = 12
+            }
+        } 
+    }
+    option = {
+        name = "They will all fear me!!!"
+		add_stress = 30
+        add_character_modifier = wrathful_thuum_modifier
+        add_trait = lunatic_genetic
+        add_character_flag = clavicus_done
+        capital_province = {
+           add_province_modifier = {
+                modifier = thuum_siege_small_modifier
+                months = 12
+            }
+        } 
+    }
+}
+
+zzz_thuum_clavicus.1003 = {
+    type = character_event
+	title = "Destructive Force of Nature"
+    desc = zzz_thuum_clavicus.1003.desc
+    theme = dread
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = fear
+	}
+
+    right_portrait = {
+		character = scope:child
+		animation = fear
+	}
+
+    lower_left_portrait = {
+		character = scope:courtier
+	}
+
+    lower_center_portrait = {
+		character = scope:vassal
+	}
+
+	lower_right_portrait = {
+		character = scope:councillor
+	}
+
+    trigger = {
+        has_character_flag = clavicus_tremble_event
+        NOT = {
+            has_character_flag = clavicus_done
+        }
+    }
+
+    immediate = {
+        random_courtier = {
+            limit = {
+                NOT = {
+                    is_child_of = root
+                }
+            }
+            save_scope_as = courtier
+        }
+        random_vassal = {
+            limit = {
+                NOT = {
+                    is_councillor_of  = root
+                }
+            }
+            save_scope_as = vassal
+        }
+        random_child = {
+            limit = {
+                is_child_of = root
+            }
+            save_scope_as = child
+        }
+        random_councillor = {
+            limit = {
+                NOT = {
+                    is_child_of = root
+                }
+            }
+            save_scope_as = councillor
+        }
+
+    }
+
+    option = {
+        name = "I-I didn't mean to-!"
+		add_stress = 50
+        every_courtier = {
+            add_trait = wounded_1
+        }
+        every_councillor = {
+            limit = {
+                NOT = { has_trait = wounded_1 }
+            }
+            add_trait = wounded_1
+        }
+        every_close_family_member = {
+            limit = {
+                NOT = { has_trait = wounded_1 }
+            }
+            add_trait = wounded_1
+        }
+        capital_province = {
+           add_province_modifier = {
+                modifier = thuum_siege_large_modifier
+                months = 12
+            }
+        }
+        add_character_modifier = unstable_thuum_modifier
+        add_character_flag = clavicus_done 
+    }
+}

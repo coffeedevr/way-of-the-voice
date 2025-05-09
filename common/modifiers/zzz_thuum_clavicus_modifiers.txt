@@ -1,7 +1,22 @@
-zzz_touched_by_clavicus = {
+zzz_touched_by_clavicus_modifier = {
 	icon = stress_negative
 	
     stress_gain_mult = 0.25
 	# Modifiers, such as
 	# county_opinion_add = -30
+}
+
+unstable_thuum_modifier = {
+	icon = stress_negative
+	
+    stress_gain_mult = 0.25
+	general_opinion = -20
+}
+
+wrathful_thuum_modifier = {
+	icon = stress_negative
+	
+	monthly_tyranny = 50
+	dread_baseline_add = 50
+	general_opinion = -50
 }

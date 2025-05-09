@@ -1,0 +1,59 @@
+﻿fund_learning_thuum = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = resume_learning_thuum_desc
+	selection_tooltip = "test"
+	title = "Fund an Expedition to Find a Word Wall"
+
+	is_shown = {
+		has_trait = thuum_trait_track
+	}
+
+	is_valid = {
+		is_adult = yes
+	}
+
+	effect = {
+		custom_tooltip = resume_learning_thuum_effect_tt
+		trigger_event = zzz_thuum_learn_word.0001
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	confirm_text = "Let's make haste."
+}
+
+resume_learning_thuum = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = resume_learning_thuum_desc
+	selection_tooltip = "test"
+	title = "Resume Learning a Word of Power from a Word Wall"
+
+	is_shown = {
+		has_variable = resume_learning
+	}
+
+	is_valid = {
+		is_adult = yes
+	}
+
+	effect = {
+		custom_tooltip = resume_learning_thuum_effect_tt
+		trigger_event = {
+			saved_event_id = var:resume_learning
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	confirm_text = "Let's make haste."
+}

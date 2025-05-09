@@ -1,0 +1,194 @@
+namespace = zzz_thuum_learn_word
+
+### FUND EXPEDITION
+zzz_thuum_learn_word.0001 = {
+    type = character_event
+	title = "Fund Expedition for a Word Wall"
+    desc = zzz_thuum_learn_word.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "I will learn Unrelenting Force"
+		custom_tooltip = "Will travel to Gildergreen"
+        save_scope_value_as = {
+            name = event_word
+            value = flag:zzz_thuum_intro.0001
+        } 
+        set_variable = {
+            name = resume_learning
+            value = scope:event_word
+        } 
+	}
+}
+
+### FOUND RESULT EXPEDITION
+zzz_thuum_learn_word.0002 = {
+    type = character_event
+	title = "Success: Word Wall Found"
+    desc = zzz_thuum_learn_word.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "I will learn Unrelenting Force"
+		custom_tooltip = "Will travel to Gildergreen"
+        save_scope_value_as = {
+            name = event_word
+            value = flag:zzz_thuum_intro.0001
+        } 
+        set_variable = {
+            name = resume_learning
+            value = scope:event_word
+        } 
+	}
+}
+
+### FAILED RESULT EXPEDITION
+zzz_thuum_learn_word.0002 = {
+    type = character_event
+	title = "Failed: Word Wall Not Found"
+    desc = zzz_thuum_learn_word.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "I will learn Unrelenting Force"
+		custom_tooltip = "Will travel to Gildergreen"
+        save_scope_value_as = {
+            name = event_word
+            value = flag:zzz_thuum_intro.0001
+        } 
+        set_variable = {
+            name = resume_learning
+            value = scope:event_word
+        } 
+	}
+}
+
+
+### SELECT WHAT WORD TO LEARN
+zzz_thuum_learn_word.1000 = {
+    type = character_event
+	title = "Learn a word wall"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "I will learn Unrelenting Force"
+		custom_tooltip = "Will travel to Gildergreen"
+        save_scope_value_as = {
+            name = event_word
+            value = flag:zzz_thuum_intro.0001
+        } 
+        set_variable = {
+            name = resume_learning
+            value = scope:event_word
+        } 
+	}
+}
+
+## RESUME EVENT
+zzz_thuum_learn_word.1500 = {
+    type = character_event
+	title = "Learn a word wall"
+    desc = zzz_thuum_intro.0001.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "resume event"
+		custom_tooltip = "Will travel to Gildergreen"
+        hidden_effect = {
+            trigger_event = {
+                saved_event_id = var:test
+            }
+        }
+	}
+}

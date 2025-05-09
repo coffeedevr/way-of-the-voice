@@ -273,5 +273,6 @@ zzz_thuum_intro.0004 = {
                 add_character_flag = learned_fus
             }
         }
+        create_character_memory = { type = learned_thuum_word }
 	}
 }

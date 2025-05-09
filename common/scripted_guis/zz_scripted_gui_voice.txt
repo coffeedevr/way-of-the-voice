@@ -52,14 +52,14 @@ siege_voice = {
 			custom_tooltip = { # Can't damage more
 				text = "text can't damage anymore"
 				NOR = {
-					has_variable = thuum_siege_modifier_large
+					has_variable = thuum_siege_large_modifier
 					# Cannot be damaged by you anymore as the dragon is not big enough
 					AND = {
-						has_variable = thuum_siege_modifier_medium
+						has_variable = thuum_siege_medium_modifier
 						#check if tier two trait
 					}
 					AND = {
-						has_variable = thuum_siege_modifier_small
+						has_variable = thuum_siege_small_modifier
 						#check if tier one trait
 					}
 					AND = {
