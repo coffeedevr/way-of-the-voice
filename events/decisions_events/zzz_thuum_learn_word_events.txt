@@ -321,7 +321,7 @@ zzz_thuum_learn_word.0002 = {
                     #factor = 0
                     OR = {
                         NOT = {
-                            has_character_flag = found_rangvald
+                            has_character_flag = found_ragnvald
                         }
                     }
                 }
@@ -335,7 +335,7 @@ zzz_thuum_learn_word.0002 = {
                 title:b_bleak_falls.title_province = {
                     save_scope_as = location
                 }
-                add_character_flag = found_rangvald
+                add_character_flag = found_ragnvald
             }
             2 = {
                 modifier = {
@@ -746,6 +746,326 @@ zzz_thuum_learn_word.2203 = {
     option = {
 		name = "Failure..."
         remove_decision_cooldown = visit_bleaks_thuum_decision
+        add_stress = 30
+	}
+}
+
+## VISIT RAGNVALD RUINS EVENT
+zzz_thuum_learn_word.2300 = {
+    type = character_event
+	title = "Word Wall: Ragnvald Ruins"
+    desc = zzz_thuum_intro.2300.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        title:b_bleak_falls.title_province = {
+            save_scope_as = location
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's head to Ragnvald!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_bleak_falls.title_province
+                }
+                trigger_event = zzz_thuum_learn_word.2201
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_ragnvald.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_ragnvald_event
+                    on_arrival_event = zzz_thuum_learn_word.2301
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_bleaks_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2301 = {
+    type = character_event
+	title = "Word Wall: Ragnvald Ruins"
+    desc = zzz_thuum_intro.2301.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's medidate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2202
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_same_culture_heritage = heritage_nedic_south
+                                has_same_culture_heritage = heritage_nedic_north
+                                has_same_culture_heritage = heritage_nedic_central
+                                has_same_culture_heritage = heritage_atmoran
+                            }
+                            factor = 2
+                        }
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 3
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You might learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2202
+                        days = { 30 30 }
+                    }
+                }
+
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.0
+                        min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_same_culture_heritage = heritage_nedic_south
+                                    has_same_culture_heritage = heritage_nedic_north
+                                    has_same_culture_heritage = heritage_nedic_central
+                                    has_same_culture_heritage = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2202
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2202 = {
+    type = character_event
+	title = "Success: Ragnvald Ruins"
+    desc = zzz_thuum_intro.2302.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Success!"
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = kyne_peace_perk
+                    has_perk = kyne_peace_two_perk
+                    has_perk = kyne_peace_three_perk
+                }
+            }
+            add_perk = kyne_peace_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = kyne_peace_perk
+                NOT = {
+                    has_perk = kyne_peace_two_perk
+                    has_perk = kyne_peace_three_perk
+                }
+            }
+            add_perk = kyne_peace_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+            has_perk = kyne_peace_perk
+            has_perk = kyne_peace_two_perk
+                NOT = {
+                    
+                    has_perk = kyne_peace_three_perk
+                }
+            }
+            add_perk = kyne_peace_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2303 = {
+    type = character_event
+	title = "Failed: Ragnvald Ruins"
+    desc = zzz_thuum_intro.2303.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Failure..."
+        remove_decision_cooldown = visit_ragnvald_thuum_decision
         add_stress = 30
 	}
 }

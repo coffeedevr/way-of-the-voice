@@ -48,3 +48,13 @@ on_cancel_bleakfalls_event = {
         remove_decision_cooldown = visit_bleaks_thuum_decision
     }
 }
+
+on_cancel_ragnvald_event = {
+    trigger = {
+        is_decision_on_cooldown = visit_ragnvald_thuum_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = visit_ragnvald_thuum_decision
+    }
+}

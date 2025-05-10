@@ -65,7 +65,7 @@
 				has_character_flag = found_bleakfalls
 				has_character_flag = found_ironbind
 				has_character_flag = found_northwind
-				has_character_flag = found_rangvald
+				has_character_flag = found_ragnvald
 			}
 			trigger_event = zzz_thuum_learn_word.0010
 		}
@@ -122,17 +122,17 @@ visit_bleaks_thuum_decision = {
 	confirm_text = "Let's make haste."
 }
 
-visit_rangvald_thuum_decision = {
+visit_ragnvald_thuum_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = visit_rangvald_thuum_decision_desc
+	desc = visit_ragnvald_thuum_decision_desc
 	selection_tooltip = "test"
-	title = "Visit Word Wall - Rangvald Ruins"
+	title = "Visit Word Wall - ragnvald Ruins"
 
 	is_shown = {
-		has_character_flag = found_rangvald
+		has_character_flag = found_ragnvald
 	}
 
 	is_valid = {
@@ -146,7 +146,7 @@ visit_rangvald_thuum_decision = {
 	}
 
 	effect = {
-		custom_tooltip = visit_rangvald_thuum_decision_effect_tt
+		custom_tooltip = visit_ragnvald_thuum_decision_effect_tt
 		trigger_event = {
 			id = zzz_thuum_learn_word.2300 
 		}
