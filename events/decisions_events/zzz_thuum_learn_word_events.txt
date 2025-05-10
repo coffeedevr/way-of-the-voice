@@ -590,14 +590,14 @@ zzz_thuum_learn_word.2201 = {
 						    trait = thuum_trait_track
 						    value >= 66
 					    }
-                        factor = 3
+                        factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
 						    trait = thuum_trait_track
 						    value >= 33
 					    }
-                        factor = 3
+                        factor = 1
                     }
                     desc = "Your meditation succeeds"
                     custom_tooltip = "You might learn a new Word of Power."
@@ -910,14 +910,14 @@ zzz_thuum_learn_word.2301 = {
 						    trait = thuum_trait_track
 						    value >= 66
 					    }
-                        factor = 3
+                        factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
 						    trait = thuum_trait_track
 						    value >= 33
 					    }
-                        factor = 3
+                        factor = 1
                     }
                     desc = "Your meditation succeeds"
                     custom_tooltip = "You might learn a new Word of Power."
@@ -1230,14 +1230,14 @@ zzz_thuum_learn_word.2401 = {
 						    trait = thuum_trait_track
 						    value >= 66
 					    }
-                        factor = 3
+                        factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
 						    trait = thuum_trait_track
 						    value >= 33
 					    }
-                        factor = 3
+                        factor = 1
                     }
                     desc = "Your meditation succeeds"
                     custom_tooltip = "You might learn a new Word of Power."
@@ -1550,14 +1550,14 @@ zzz_thuum_learn_word.2501 = {
 						    trait = thuum_trait_track
 						    value >= 66
 					    }
-                        factor = 3
+                        factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
 						    trait = thuum_trait_track
 						    value >= 33
 					    }
-                        factor = 3
+                        factor = 1
                     }
                     desc = "Your meditation succeeds"
                     custom_tooltip = "You might learn a new Word of Power."
