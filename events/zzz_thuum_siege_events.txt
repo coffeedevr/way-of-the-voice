@@ -100,11 +100,11 @@ thuum_siege_event.0001 = {
 					modifier = thuum_siege_small_modifier
 					months = 5
 				}
-			}
-			province_owner = {
-				add_opinion = {
-					target = root
-					modifier = recenty_sieged_using_fus_opinion 
+				province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
 				}
 			}	
         }
@@ -135,11 +135,11 @@ thuum_siege_event.0001 = {
 					modifier = thuum_siege_medium_modifier
 					months = 5
 				}
-			}
-			province_owner = {
-				add_opinion = {
-					target = root
-					modifier = recenty_sieged_using_fus_opinion 
+				province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
 				}
 			}	
         }
@@ -265,13 +265,13 @@ thuum_siege_event.0002 = {
 					modifier = thuum_siege_small_modifier
 					months = 5
 				}
-			}
 			province_owner = {
 					add_opinion = {
 						target = root
 						modifier = recenty_sieged_using_fus_opinion 
 					}
-			}	
+			}
+		}
 
     }
 
@@ -294,17 +294,17 @@ thuum_siege_event.0002 = {
 			base = 20
 		}
         scope:sieging_location = {
-				add_province_modifier = {
-					modifier = thuum_siege_medium_modifier
-					months = 5
-				}
-				province_owner = {
-					add_opinion = {
-						target = root
-						modifier = recenty_sieged_using_fus_opinion 
-					}
-				}	
+			add_province_modifier = {
+				modifier = thuum_siege_medium_modifier
+				months = 5
 			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}	
+		}
     }
 
     option = {
@@ -330,13 +330,13 @@ thuum_siege_event.0002 = {
 					modifier = thuum_siege_large_modifier
 					months = 5
 				}
-			}
 			province_owner = {
 					add_opinion = {
 						target = root
 						modifier = recenty_sieged_using_fus_opinion 
 					}
-			}	
+			}
+		}	
     }
 
 }
