@@ -207,7 +207,7 @@ visit_northwind_thuum_decision = {
 
 	desc = visit_northwind_thuum_decision_desc
 	selection_tooltip = "test"
-	title = "Visit Word Wall - Northwind Summit"
+	title = "Visit Word Wall - Northwind Mountains"
 
 	is_shown = {
 		has_character_flag = found_northwind
