@@ -768,7 +768,7 @@ zzz_thuum_learn_word.2300 = {
 
 
     immediate = {
-        title:b_bleak_falls.title_province = {
+        title:b_ragnvald.title_province = {
             save_scope_as = location
         }
     }
@@ -782,7 +782,7 @@ zzz_thuum_learn_word.2300 = {
 		hidden_effect = {
             if = {
                 limit = {
-                    capital_province.barony = title:b_bleak_falls.title_province
+                    capital_province.barony = title:b_ragnvald.title_province
                 }
                 trigger_event = zzz_thuum_learn_word.2201
             }
