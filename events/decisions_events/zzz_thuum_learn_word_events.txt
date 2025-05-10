@@ -95,24 +95,24 @@ zzz_thuum_learn_word.0001 = {
         
         random_list = {
             50 = {
-                custom_tooltip = "The epxpedition doesn't find a Word Wall."
+                custom_tooltip = "The expedition finds a Word Wall."
                 modifier = {
                     scope:option_one = {
-                        learning <= 8
-                    }
-                    factor = -2
-                }
-                modifier = {
-                    scope:option_one = {
-                        learning <= 12
+                        learning > 8
                     }
                     factor = 1
                 }
                 modifier = {
                     scope:option_one = {
-                        learning >= 15
+                        learning >= 13
                     }
                     factor = 2
+                }
+                modifier = {
+                    scope:option_one = {
+                        learning >= 18
+                    }
+                    factor = 3
                 }
                 trigger_event = {
                     id = zzz_thuum_learn_word.0002
@@ -120,7 +120,7 @@ zzz_thuum_learn_word.0001 = {
                 }
             }
             50 = {
-                custom_tooltip = "The epxpedition doesn't find a Word Wall."
+                custom_tooltip = "The expedition doesn't find a Word Wall."
                 trigger_event = {
                     id = zzz_thuum_learn_word.0003
                     months = { 1 2 }
@@ -145,24 +145,24 @@ zzz_thuum_learn_word.0001 = {
         
         random_list = {
             50 = {
-                custom_tooltip = "You find the location of a Word Wall."
+                custom_tooltip = "The expedition finds a Word Wall."
                 modifier = {
                     scope:option_two = {
                         learning > 8
                     }
-                    factor = 2
+                    factor = 1
                 }
                 modifier = {
                     scope:option_two = {
-                        learning >= 12
+                        learning >= 13
                     }
                     factor = 2
                 }
                 modifier = {
                     scope:option_two = {
-                        learning >= 15
+                        learning >= 18
                     }
-                    factor = 2
+                    factor = 3
                 }
                 trigger_event = {
                     id = zzz_thuum_learn_word.0002
@@ -194,32 +194,33 @@ zzz_thuum_learn_word.0001 = {
         }
         
         random_list = {
-            50 = {
+            40 = {
+                custom_tooltip = "The expedition finds a Word Wall."
                 modifier = {
                     scope:option_three = {
-                        learning > 8
+                        learning >= 8
+                    }
+                    factor = 1
+                }
+                modifier = {
+                    scope:option_three = {
+                        learning >= 13
                     }
                     factor = 2
                 }
                 modifier = {
                     scope:option_three = {
-                        learning >= 12
+                        learning >= 18
                     }
-                    factor = 2
-                }
-                modifier = {
-                    scope:option_three = {
-                        learning >= 15
-                    }
-                    factor = 2
+                    factor = 3
                 }
                 trigger_event = {
                     id = zzz_thuum_learn_word.0002
                     months = { 1 2 }
                 }
             }
-            50 = {
-                custom_tooltip = "The epxpedition doesn't find a Word Wall."
+            40 = {
+                custom_tooltip = "The expedition doesn't find a Word Wall."
                 trigger_event = {
                     id = zzz_thuum_learn_word.0003
                     months = { 1 2 }
@@ -236,9 +237,25 @@ zzz_thuum_learn_word.0001 = {
 
 zzz_thuum_learn_word.0010 = {
     type = character_event
-	title = "No More Word Walls"
-    desc = zzz_thuum_learn_word.0010.desc
+	title = "No More Word Walls?"
     theme = diplomacy_majesty_focus
+
+    desc = {
+        first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_trait_xp = {
+                        trait = thuum_trait_track
+                        value < 99
+                    }
+				}
+				desc = zzz_thuum_learn_word.0010.desc
+			}
+            desc = zzz_thuum_learn_word.0010.a.desc
+        }
+        
+    }
+
 
     override_background = {
 		reference = temple_church
@@ -251,11 +268,6 @@ zzz_thuum_learn_word.0010 = {
 
     is_valid = {
         
-    }
-
-    option = {
-		name = "Maybe not now."
-		#custom_tooltip = "Will travel to Gildergreen"
     }
 
     trigger = {
@@ -298,6 +310,7 @@ zzz_thuum_learn_word.0002 = {
                         }
                     }
                 }
+                
                 title:b_bleak_falls.title_province = {
                     save_scope_as = location
                 }
@@ -311,6 +324,13 @@ zzz_thuum_learn_word.0002 = {
                             has_character_flag = found_rangvald
                         }
                     }
+                }
+                modifier = {
+                    has_trait_xp = {
+                        trait = thuum_trait_track
+                        value < 33
+                    }
+                    factor = 0
                 }
                 title:b_bleak_falls.title_province = {
                     save_scope_as = location
@@ -326,12 +346,26 @@ zzz_thuum_learn_word.0002 = {
                         }
                     }
                 }
+                modifier = {
+                    has_trait_xp = {
+                        trait = thuum_trait_track
+                        value < 33
+                    }
+                    factor = 0
+                }
                 title:b_bleak_falls.title_province = {
                     save_scope_as = location
                 }
                 add_character_flag = found_ironbind
             }
             2 = {
+                modifier = {
+                    has_trait_xp = {
+                        trait = thuum_trait_track
+                        value < 33
+                    }
+                    factor = 0
+                }
                 modifier = {
                     #factor = 0
                     OR = {
@@ -543,6 +577,27 @@ zzz_thuum_learn_word.2201 = {
                             }
                             factor = 2
                         }
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 3
                     }
                     desc = "Your meditation succeeds"
                     custom_tooltip = "You might learn a new Word of Power."

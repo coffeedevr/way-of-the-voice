@@ -39,10 +39,33 @@
 		custom_tooltip = fund_learning_thuum_decision_effect_tt
 		if = {
 			limit = {
-				AND = {
-					has_character_flag = found_bleakfalls
-					has_character_flag = found_rangvald
+				has_trait_xp = {
+					trait = thuum_trait_track
+					track = mastery
+					value < 33
 				}
+				has_character_flag = found_bleakfalls
+			}
+			trigger_event = zzz_thuum_learn_word.0010
+		}
+		else_if = {
+			limit = {
+				AND = {
+					has_trait_xp = {
+						trait = thuum_trait_track
+						track = mastery
+						value >= 33
+					}
+					has_trait_xp = {
+						trait = thuum_trait_track
+						track = mastery
+						value < 66
+					}
+				}
+				has_character_flag = found_bleakfalls
+				has_character_flag = found_ironbind
+				has_character_flag = found_northwind
+				has_character_flag = found_rangvald
 			}
 			trigger_event = zzz_thuum_learn_word.0010
 		}

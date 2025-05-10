@@ -130,11 +130,11 @@ zzz_thuum_intro.0002 = {
 				}
                 modifier = {
                     has_trait = diligent
-                    factor = 2
+                    factor = 3
                 }
                 modifier = {
                     has_trait = patient
-                    factor = 2
+                    factor = 3
                 }
                 modifier = {
                     has_trait = zealous
@@ -152,7 +152,7 @@ zzz_thuum_intro.0002 = {
                             has_same_culture_heritage = heritage_nedic_central
                             has_same_culture_heritage = heritage_atmoran
                         }
-                        factor = 2
+                        factor = 3
                     }
                     
                 }
