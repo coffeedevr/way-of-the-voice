@@ -40,8 +40,12 @@
  zzz_thuum_intro.2501.desc:0 "I consult the maps that my expedition provided for the location of the Word Wall at the Northwind Summit near [location.GetName], thinking over the logistics it would take to safely see me to it.\n\nOnce I am there, all that is left is for me to ruminate on the word's meaning.\n\nIt might be time for me to set off on my journey."
 
  zzz_thuum_intro.2202.desc.a:0 "Fus"
- zzz_thuum_intro.2202.desc.b:0 "Ro"
- zzz_thuum_intro.2202.desc.c:0 "Dah"
+ zzz_thuum_intro.2202.desc.b:0 "The days turn to weeks. I spend two or three hours each day, pondering the words on the wall in their entirety. The cavern is mercifully quiet, as my retinue has set up camp outside the sanctum.\n\nOne day, I stop meditating and I open my eyes. In my mind is a concept, of something measured- balanced, even. But it is powerful.\n\nI walk towards the wall and touch the Word of Power as it speaks itself to me. I whisper it back only softly, and yet the stones shake when I speak."
+ zzz_thuum_intro.2202.desc.c:0 "The days turn to weeks. I spend two or three hours each day, pondering the words on the wall in their entirety. The cavern is mercifully quiet, as my retinue has set up camp outside the sanctum.\n\nOne day, I stop meditating and I open my eyes. In my heart, there is a power with strength enough to push and the world can only yield before it.\n\nI walk towards the wall and touch the Word of Power as it speaks itself to me. I whisper it back only softly, and yet the cavern shivers when I speak."
+
+ zzz_thuum_intro.2202.option.a:0 "Fus..."
+ zzz_thuum_intro.2202.option.b:0 "Ro..."
+ zzz_thuum_intro.2202.option.c:0 "Dah..."
 
  zzz_thuum_intro.2203.desc:0 "Several weeks have passed by and still I am no closer to understanding the Word of Power.\n\nI know it is here. I can feel it. But no matter how hard I have tried, I cannot figure out which word it is.\n\nA soldier from my retinue informs me that our rations have dwindled. I can return and try again in due time, but for now we should return home."
  zzz_thuum_intro.2303.desc:0 "Several weeks have passed by and still I am no closer to understanding the Word of Power.\n\nI know it is here. I can feel it. But no matter how hard I have tried, I cannot figure out which word it is.\n\nA soldier from my retinue informs me that our rations have dwindled. I can return and try again in due time, but for now we should return home."

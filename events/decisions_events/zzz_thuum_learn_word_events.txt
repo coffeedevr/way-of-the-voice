@@ -743,7 +743,7 @@ zzz_thuum_learn_word.2202 = {
                 }
                 desc = zzz_thuum_intro.2202.desc.b
             }
-            desc = "Dah..."
+            desc = zzz_thuum_intro.2202.desc.c
         }
     }
 
@@ -763,7 +763,7 @@ zzz_thuum_learn_word.2202 = {
                                 has_character_flag = learned_dah
                             }
                         }
-                        desc = "Fus..."
+                        desc = zzz_thuum_intro.2202.option.a
                     }
                     triggered_desc = {
                         trigger = {
@@ -773,9 +773,9 @@ zzz_thuum_learn_word.2202 = {
                                 has_character_flag = learned_dah
                             }
                         }
-                        desc = "Ro..."
+                        desc = zzz_thuum_intro.2202.option.b
                     }
-                    desc = "Dah.."
+                    desc = zzz_thuum_intro.2202.option.c
                 }
             }
         }
