@@ -37,6 +37,7 @@ yearly_global_pulse = {
 random_yearly_playable_pulse = {
     trigger = {
         OR = {
+            is_adult = yes
             is_ruler = yes
             is_landless_adventurer = yes
         }

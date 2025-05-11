@@ -73,6 +73,32 @@ zzz_thuum_intro.0001 = {
         }
 	}
 
+    option = {
+		name = "I am not interested with such things!"
+		custom_tooltip = "Event chain will end."
+        hidden_effect = {
+            add_character_flag = visit_gildergreen_as_decision
+        }
+
+        ai_chance = {
+            base = 50 
+            modifier = {  
+                add = 30
+                culture = {
+                    NOT = {
+                        OR = {
+                            has_cultural_pillar = heritage_nedic_south
+                            has_cultural_pillar = heritage_nedic_north
+                            has_cultural_pillar = heritage_nedic_central
+                            has_cultural_pillar = heritage_atmoran
+                        }
+                    }
+                }
+            }
+        }
+
+	}
+
 }
 
 
@@ -122,7 +148,7 @@ zzz_thuum_intro.0002 = {
 			skill = learning
 			value = very_high_skill_rating
 
-			40 = {
+			35 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 3.5
@@ -148,13 +174,13 @@ zzz_thuum_intro.0002 = {
                 modifier = {
                     culture = {
                         OR = {
-                            has_same_culture_heritage = heritage_nedic_south
-                            has_same_culture_heritage = heritage_nedic_north
-                            has_same_culture_heritage = heritage_nedic_central
-                            has_same_culture_heritage = heritage_atmoran
+                            has_cultural_pillar = heritage_nedic_south
+                            has_cultural_pillar = heritage_nedic_north
+                            has_cultural_pillar = heritage_nedic_central
+                            has_cultural_pillar = heritage_atmoran
                         }
-                        factor = 3
                     }
+                    factor = 10
                     
                 }
 				desc = harm.0001.a.tt.success
@@ -163,7 +189,7 @@ zzz_thuum_intro.0002 = {
 			40 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -3.0
+					multiplier = -3.5
 					# Limit how low the off-chance can go.
 					min = -19
 				}
@@ -187,15 +213,22 @@ zzz_thuum_intro.0002 = {
                     culture = {
                         NOT = {
                             OR = {
-                                has_same_culture_heritage = heritage_nedic_south
-                                has_same_culture_heritage = heritage_nedic_north
-                                has_same_culture_heritage = heritage_nedic_central
-                                has_same_culture_heritage = heritage_atmoran
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
                             }
                         }
-                        factor = 2
                     }
-                    
+                    factor = 5
+                }
+                modifier = {
+                    religion = {
+                        NOT = {
+
+                        }
+                    }
+                    factor = 3
                 }
 				desc = harm.0001.a.tt.failure
                 add_character_flag = thuum_medidate_failure

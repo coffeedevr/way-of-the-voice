@@ -148,6 +148,36 @@ zzz_thuum_clavicus.1000 = {
 		name = "I may not have a Thu'um but I rebuke you, Clavicus Vile!"
 		custom_tooltip = "The Way of the Voice event chain will end."
         scope:skaafin_clavicus = { silent_disappearance_effect = yes }
+
+        ai_chance = {
+            base = 50 
+            modifier = {  
+                add = 25
+                religion = {
+                    NOT = {
+                        OR = {
+                            has_doctrine = doctrine_hidden_daedra_criminal 
+                        }
+                    }
+                }
+            }
+            modifier = {
+                add = -5
+                has_trait = ambitious
+            }
+            modifier = {
+                add = -5
+                has_trait = sadistic
+            }
+            modifier = {
+                add = -5
+                has_trait = wrathful
+            }
+            modifier = {
+                add = -5
+                has_trait = vengeful
+            }
+        }
 	}
 
 }
