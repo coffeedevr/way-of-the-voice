@@ -83,7 +83,7 @@ zzz_thuum_intro.0001 = {
         ai_chance = {
             base = 50 
             modifier = {  
-                add = 30
+                add = 20
                 culture = {
                     NOT = {
                         OR = {
@@ -157,11 +157,15 @@ zzz_thuum_intro.0002 = {
 				}
                 modifier = {
                     has_trait = diligent
-                    factor = 3
+                    factor = 5
                 }
                 modifier = {
                     has_trait = patient
                     factor = 3
+                }
+                modifier = {
+                    has_trait = just
+                    factor = 5
                 }
                 modifier = {
                     has_trait = zealous
