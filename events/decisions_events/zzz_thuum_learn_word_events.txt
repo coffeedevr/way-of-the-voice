@@ -675,7 +675,6 @@ zzz_thuum_learn_word.2201 = {
 zzz_thuum_learn_word.2202 = {
     type = character_event
 	title = "Success: Bleak Falls Barrow"
-    desc = zzz_thuum_intro.2202.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -689,7 +688,63 @@ zzz_thuum_learn_word.2202 = {
 
 
     immediate = {
-        
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = unrelenting_force_perk
+                    has_perk = unrelenting_force_two_perk
+                    has_perk = unrelenting_force_three_perk
+                }
+            }
+            add_character_flag = learned_fus
+        }
+        else_if = {
+            limit = {
+                has_perk = unrelenting_force_perk
+                NOT = {
+                    has_perk = unrelenting_force_two_perk
+                    has_perk = unrelenting_force_three_perk
+                }
+            }
+            add_character_flag = learned_ro
+        }
+        else = {
+            limit = {
+                has_perk = unrelenting_force_perk
+                has_perk = unrelenting_force_two_perk
+                    NOT = {
+                        
+                        has_perk = unrelenting_force_three_perk
+                    }
+            }
+            add_character_flag = learned_dah
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_fus
+                    NOT = {
+                        has_character_flag = learned_ro
+                        has_character_flag = learned_dah
+                    }
+                }
+                desc = zzz_thuum_intro.2202.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_fus
+                    has_character_flag = learned_ro
+                    NOT = {
+                        has_character_flag = learned_dah
+                    }
+                }
+                desc = zzz_thuum_intro.2202.desc.b
+            }
+            desc = "Dah..."
+        }
     }
 
     trigger = {
@@ -697,7 +752,33 @@ zzz_thuum_learn_word.2202 = {
 	}
 
     option = {
-		name = "Success!"
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_fus
+                            NOT = {
+                                has_character_flag = learned_ro
+                                has_character_flag = learned_dah
+                            }
+                        }
+                        desc = "Fus..."
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_fus
+                            has_character_flag = learned_ro
+                            NOT = {
+                                has_character_flag = learned_dah
+                            }
+                        }
+                        desc = "Ro..."
+                    }
+                    desc = "Dah.."
+                }
+            }
+        }
         if = {
             limit = {
                 NOT = {
