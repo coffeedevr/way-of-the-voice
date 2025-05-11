@@ -17,8 +17,9 @@
 
 	is_valid = {
 		is_adult = yes
-		is_at_home = yes
-		is_in_an_activity = no
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
 	}
 
 	effect = {
@@ -127,7 +128,9 @@ kyne_peace_decision = {
 
 	is_valid = {
 		is_adult = yes
-
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
 
 		AND = {
 			has_perk = kyne_peace_perk
@@ -169,6 +172,9 @@ thuum_meditation_decision = {
 	is_valid = {
 		has_trait = thuum_trait_track
 		has_perk = thuum_meditation
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
 	}
 
 	effect = {

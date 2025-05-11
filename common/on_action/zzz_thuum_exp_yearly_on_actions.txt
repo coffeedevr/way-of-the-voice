@@ -33,3 +33,21 @@ yearly_global_pulse = {
     }
 }
 
+
+random_yearly_playable_pulse = {
+    trigger = {
+        OR = {
+            is_ruler = yes
+            is_landless_adventurer = yes
+        }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
+        NOT = {
+            has_character_flag = received_thuum_invitation
+        }
+	}
+    effect = {
+        trigger_event = zzz_thuum_intro.0001
+    }
+}

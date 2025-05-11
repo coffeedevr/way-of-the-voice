@@ -28,6 +28,7 @@ zzz_thuum_intro.0001 = {
             }
             save_scope_as = courtier
         }
+        add_character_flag = received_thuum_invitation
         
     }
 
