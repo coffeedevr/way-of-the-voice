@@ -78,6 +78,11 @@
 		always = yes
 	}
 
+	ai_will_do = {
+        base = 100
+	}
+	
+
 	cooldown = { years = 1 }
 
 	confirm_text = "Let's make haste."
@@ -115,6 +120,10 @@ visit_bleaks_thuum_decision = {
 
 	ai_potential = {
 		always = yes
+	}
+
+	ai_will_do = {
+        base = 100
 	}
 
 	cooldown = { years = 2 }
@@ -156,6 +165,10 @@ visit_ragnvald_thuum_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+        base = 100
+	}
+
 	cooldown = { years = 2 }
 
 	confirm_text = "Let's make haste."
@@ -195,6 +208,10 @@ visit_ironbind_thuum_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+        base = 100
+	}
+
 	cooldown = { years = 2 }
 
 	confirm_text = "Let's make haste."
@@ -229,9 +246,13 @@ visit_northwind_thuum_decision = {
 			id = zzz_thuum_learn_word.2500 
 		}
 	}
-s
+	
 	ai_potential = {
 		always = yes
+	}
+
+	ai_will_do = {
+        base = 100
 	}
 
 	cooldown = { years = 2 }
