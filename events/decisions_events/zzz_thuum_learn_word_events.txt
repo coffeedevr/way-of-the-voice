@@ -275,6 +275,23 @@ zzz_thuum_learn_word.0010 = {
 	}
 
     option = {
+        trait = thuum_trait_track
+        trigger = {
+            has_trait_xp = {
+                trait = thuum_trait_track
+                value < 99
+            }
+        }
+		name = "I need more time to study and improve myself."
+	}
+
+    option = {
+        trigger = {
+            has_trait_xp = {
+                trait = thuum_trait_track
+                value >= 99
+            }
+        }
 		name = "Let's rest for now."
 	}
 }
@@ -510,7 +527,7 @@ zzz_thuum_learn_word.2201 = {
 	}
 
     option = {
-		name = "Let's medidate."
+		name = "Let's meditate."
         
         trait = thuum_trait_track
         trait = dragonborn
@@ -830,7 +847,7 @@ zzz_thuum_learn_word.2301 = {
 	}
 
     option = {
-		name = "Let's medidate."
+		name = "Let's meditate."
         
         trait = thuum_trait_track
         trait = dragonborn
@@ -975,7 +992,7 @@ zzz_thuum_learn_word.2301 = {
 }
 
 ##SUCCESS
-zzz_thuum_learn_word.2202 = {
+zzz_thuum_learn_word.2302 = {
     type = character_event
 	title = "Success: Ragnvald Ruins"
     desc = zzz_thuum_intro.2302.desc
@@ -1150,7 +1167,7 @@ zzz_thuum_learn_word.2401 = {
 	}
 
     option = {
-		name = "Let's medidate."
+		name = "Let's meditate."
         
         trait = thuum_trait_track
         trait = dragonborn
@@ -1470,7 +1487,7 @@ zzz_thuum_learn_word.2501 = {
 	}
 
     option = {
-		name = "Let's medidate."
+		name = "Let's meditate."
         
         trait = thuum_trait_track
         trait = dragonborn

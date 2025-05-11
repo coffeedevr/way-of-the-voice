@@ -215,7 +215,7 @@ types SiegeWindow
 
 		text_single = {
 			parentanchor = center
-			text = "USE_VOICE_SIEGE"
+			text = "Use Thu'um"
 			using = Font_Size_Medium
 			default_format = "#high;glow_color:{0,0,0,1}"
 		}

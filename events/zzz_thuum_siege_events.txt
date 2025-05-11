@@ -308,7 +308,7 @@ thuum_siege_event.0002 = {
     }
 
     option = {
-        name =  zzz_thuum_siege_events.1000.c
+        name = zzz_thuum_siege_events.1000.c
         #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
         trigger = {
             scope:thuum_user = {

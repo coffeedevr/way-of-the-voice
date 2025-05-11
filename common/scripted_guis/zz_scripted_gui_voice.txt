@@ -19,19 +19,13 @@ siege_voice = {
 	}
 
 	is_valid = {
-		trigger_if = {
+		trigger = {
 			limit = { 
 				root = scope:player
 			}
 			custom_tooltip = {
 				text = "sample"
 				NOT = { has_character_flag = used_voice_sieged_today }
-			}
-		}
-		trigger_else = {
-			custom_tooltip = {
-				text = "sample"
-				NOR = { has_character_flag = recently_sieged_voice }
 			}
 		}
 
@@ -76,13 +70,5 @@ siege_voice = {
 		trigger_event = { id = thuum_siege_event.0001 }
 
 		custom_tooltip = "sample"
-
-		if = {
-			limit = { NOT = { root = scope:player } }
-			add_character_flag = {
-				flag = recently_sieged_voice
-				months = 1
-			}
-		}
 	}
 }

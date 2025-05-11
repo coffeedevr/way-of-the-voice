@@ -53,7 +53,7 @@ unrelenting_force_decision = {
 	ai_check_interval = 12
 
 	desc = unrelenting_force_decision_desc
-	selection_tooltip = "test"
+	selection_tooltip = "Current holding location will receive a debuff modifier"
 	title = unrelenting_force_decision_title
 
 	is_shown = {

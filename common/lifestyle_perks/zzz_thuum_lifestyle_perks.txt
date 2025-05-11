@@ -17,9 +17,7 @@
         custom_tooltip = {
 		    text = UNRELENTING_FORCE_PERK_EFFECT_A
 	    }
-        custom_tooltip = {
-		    text = UNRELENTING_FORCE_PERK_EFFECT_B
-	    }
+        
     }
 }
 
@@ -43,9 +41,6 @@ unrelenting_force_two_perk = {
     effect = {
         custom_tooltip = {
 		    text = UNRELENTING_FORCE_PERK_TWO_EFFECT_A
-	    }
-        custom_tooltip = {
-		    text = UNRELENTING_FORCE_PERK_EFFECT_B
 	    }
     }
 }
@@ -71,9 +66,6 @@ unrelenting_force_three_perk = {
     effect = {
         custom_tooltip = {
 		    text = UNRELENTING_FORCE_PERK_THREE_EFFECT_A
-	    }
-        custom_tooltip = {
-		   text = UNRELENTING_FORCE_PERK_EFFECT_B
 	    }
     }
 }

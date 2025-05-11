@@ -1,16 +1,18 @@
 ﻿l_english:
  # Tongue Lifestyle
  thuum_lifestyle_name:0 "Thu'um"
- thuum_lifestyle_desc:0 "Thu'um Lifestyle Description"
+ thuum_lifestyle_desc:0 "Focus on devoting yourself to the Way of the Voice to unlock words that rival the dragons of old whether for war, wisdom, or wonder."
  zzz_thuum_shouts_name:0 "Words of Power"
+
+ recently_sieged_using_fus_opinion_name:0 "Recently sieged using Thu'um"
 
  unrelenting_force_perk_name: "Fus"
  unrelenting_force_two_perk_name: "Ro"
  unrelenting_force_three_perk_name: "Dah"
- UNRELENTING_FORCE_PERK_EFFECT_A: "Unlocks an option to use "Fus" when sieging a holding."
+ UNRELENTING_FORCE_PERK_EFFECT_A: "Unlocks an option to use "Fus" when sieging a holding\nor via the #high $unrelenting_force_decision_title$#! [decision|E]:\n#weak Targeted holding will receive [GetModifier('thuum_siege_small_modifier').GetNameWithTooltip] modifier#!"
  UNRELENTING_FORCE_PERK_EFFECT_B: "Unlocks the #high $unrelenting_force_decision_title$#! [decision|E]."
- UNRELENTING_FORCE_PERK_TWO_EFFECT_A: "Unlocks an option to use "Fus Ro" when sieging a holding."
- UNRELENTING_FORCE_PERK_THREE_EFFECT_A: "Unlocks an option to use "Fus Ro Dah" when sieging a holding."
+ UNRELENTING_FORCE_PERK_TWO_EFFECT_A: "Unlocks an option to use "Fus Ro" when sieging a holding\nor via the #high $unrelenting_force_decision_title$#! [decision|E]:\n#weak Targeted holding will receive [GetModifier('thuum_siege_medium_modifier').GetNameWithTooltip] modifier#!"
+ UNRELENTING_FORCE_PERK_THREE_EFFECT_A: "Unlocks an option to use "Fus Ro Dah" when sieging a holding\nor via the #high $unrelenting_force_decision_title$#! [decision|E]:\n#weak Targeted holding will receive [GetModifier('thuum_siege_large_modifier').GetNameWithTooltip] modifier#!"
 
  kyne_peace_perk_name:0 "Kaan"
  kyne_peace_two_perk_name:0 "Drem"
