@@ -86,7 +86,7 @@ zzz_thuum_learn_word.0001 = {
         }
         pay_reserved_gold = {
             target = scope:option_one
-            gold = 500
+            gold = 200
         }
 
         scope:option_one = {
@@ -137,7 +137,7 @@ zzz_thuum_learn_word.0001 = {
         }
         pay_reserved_gold = {
             target = scope:option_two
-            gold = 500
+            gold = 200
         }
         scope:option_two = {
             save_scope_as = chosen_exped
@@ -187,7 +187,7 @@ zzz_thuum_learn_word.0001 = {
         }
         pay_reserved_gold = {
             target = scope:option_three
-            gold = 500
+            gold = 200
         }
         scope:option_three = {
             save_scope_as = chosen_exped

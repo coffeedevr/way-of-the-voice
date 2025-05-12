@@ -72,6 +72,37 @@ zzz_thuum_clavicus.1000 = {
 		    years = { 3 5 } 
         }
 
+        ai_chance = {
+            base = 40 
+            modifier = {  
+                add = 25
+                religion = {
+                    OR = {
+                            has_doctrine = doctrine_hidden_daedra_criminal 
+                        }
+                }
+            }
+            modifier = {
+                add = 5
+                has_trait = ambitious
+            }
+            modifier = {
+                add = 5
+                has_trait = vengeful
+            }
+            modifier = {
+                add = -5
+                has_trait = just
+            }
+            modifier = {
+                add = -5
+                has_trait = patient
+            }
+            modifier = {
+                add = -5
+                has_trait = diligent
+            }
+        }
 	}
 
     option = {
@@ -107,6 +138,38 @@ zzz_thuum_clavicus.1000 = {
 		    id = zzz_thuum_clavicus.1002
 		    years = { 3 5 } 
         }
+
+        ai_chance = {
+            base = 40 
+            modifier = {  
+                add = 25
+                religion = {
+                    OR = {
+                            has_doctrine = doctrine_hidden_daedra_criminal 
+                        }
+                }
+            }
+            modifier = {
+                add = 5
+                has_trait = sadistic
+            }
+            modifier = {
+                add = 5
+                has_trait = ambitious
+            }
+           modifier = {
+                add = -5
+                has_trait = just
+            }
+            modifier = {
+                add = -5
+                has_trait = patient
+            }
+            modifier = {
+                add = -5
+                has_trait = diligent
+            }
+        }
 	}
 
     option = {
@@ -141,6 +204,38 @@ zzz_thuum_clavicus.1000 = {
         trigger_event = { 
 		    id = zzz_thuum_clavicus.1003
 		    years = { 3 5 } 
+        }
+
+        ai_chance = {
+            base = 40 
+            modifier = {  
+                add = 25
+                religion = {
+                    OR = {
+                            has_doctrine = doctrine_hidden_daedra_criminal 
+                        }
+                }
+            }
+            modifier = {
+                add = 5
+                has_trait = wrathful
+            }
+            modifier = {
+                add = 5
+                has_trait = sadistic
+            }
+            modifier = {
+                add = -5
+                has_trait = just
+            }
+            modifier = {
+                add = -5
+                has_trait = patient
+            }
+            modifier = {
+                add = -5
+                has_trait = diligent
+            }
         }
 	}
 
