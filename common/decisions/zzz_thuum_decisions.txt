@@ -182,7 +182,7 @@ thuum_meditation_decision = {
 		start_travel_plan = {
 			destination = title:b_gildergreen.title_province
 			on_travel_planner_cancel_on_action = on_cancel_meditation
-			on_arrival_event = zzz_thuum_decision_meditate.1000
+			on_arrival_event = zzz_thuum_decision.1000
 			on_arrival_destinations = all_but_last
 		}
 	}
