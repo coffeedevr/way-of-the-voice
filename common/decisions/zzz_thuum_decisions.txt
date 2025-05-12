@@ -166,12 +166,12 @@ thuum_meditation_decision = {
 
 	is_shown = {
 		has_trait = thuum_trait_track
-		has_perk = thuum_meditation
+		has_perk = thuum_meditation_perk
 	}
 
 	is_valid = {
 		has_trait = thuum_trait_track
-		has_perk = thuum_meditation
+		has_perk = thuum_meditation_perk
 		is_travelling = no
 		is_imprisoned = no
 		is_incapable = no

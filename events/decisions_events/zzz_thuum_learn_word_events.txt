@@ -86,7 +86,7 @@ zzz_thuum_learn_word.0001 = {
         }
         pay_reserved_gold = {
             target = scope:option_one
-            gold = 200
+            gold = 100
         }
 
         scope:option_one = {
@@ -137,7 +137,7 @@ zzz_thuum_learn_word.0001 = {
         }
         pay_reserved_gold = {
             target = scope:option_two
-            gold = 200
+            gold = 150
         }
         scope:option_two = {
             save_scope_as = chosen_exped
@@ -293,6 +293,40 @@ zzz_thuum_learn_word.0010 = {
             }
         }
 		name = "Let's rest for now."
+	}
+}
+
+
+### LEARN THUUM MEDITATION
+zzz_thuum_learn_word.0020 = {
+    type = character_event
+	title = "Unlocked: Thu'um Meditation"
+    theme = diplomacy_majesty_focus
+
+    desc = zzz_thuum_learn_word.0020.desc
+
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		#animation = interested
+	}
+
+    is_valid = {
+        
+    }
+
+    trigger = {
+
+	}
+
+
+    option = {
+		name = "Praise Kynareth!"
+        add_perk = thuum_meditation_perk
 	}
 }
 
@@ -559,7 +593,7 @@ zzz_thuum_learn_word.2201 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
                 40 = {
                     compare_modifier = {
@@ -631,19 +665,7 @@ zzz_thuum_learn_word.2201 = {
                         min = -19
                     }
                     modifier = {
-                        has_trait = wrathful
-                        factor = 2
-                    }
-                    modifier = {
-                        has_trait = sadistic
-                        factor = 2
-                    }
-                    modifier = {
-                        has_trait = cynical
-                        factor = 2
-                    }
-                    modifier = {
-                        has_trait = callous
+                        has_trait = impatient
                         factor = 2
                     }
                     modifier = {
@@ -1918,7 +1940,7 @@ zzz_thuum_learn_word.2501 = {
 zzz_thuum_learn_word.2502 = {
     type = character_event
 	title = "Success: Northwind Mountains"
-    desc = zzz_thuum_intro.2502.desc
+
     theme = diplomacy_majesty_focus
 
     override_background = {
