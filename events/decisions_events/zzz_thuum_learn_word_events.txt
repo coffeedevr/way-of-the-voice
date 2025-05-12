@@ -1932,7 +1932,73 @@ zzz_thuum_learn_word.2502 = {
 
 
     immediate = {
-        
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = whirlwind_sprint_perk
+                    has_perk = whirlwind_sprint_two_perk
+                    has_perk = whirlwind_sprint_three_perk
+                }
+            }
+            add_character_flag = learned_wuld
+        }
+        else_if = {
+            limit = {
+                has_perk = whirlwind_sprint_perk
+                NOT = {
+                    has_perk = whirlwind_sprint_two_perk
+                    has_perk = whirlwind_sprint_three_perk
+                }
+            }
+            add_character_flag = learned_nah
+        }
+        else = {
+            limit = {
+                has_perk = whirlwind_sprint_perk
+                has_perk = whirlwind_sprint_two_perk
+                    NOT = {
+                        
+                        has_perk = whirlwind_sprint_three_perk
+                    }
+            }
+            add_character_flag = learned_kest
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_wuld
+                        has_character_flag = learned_nah
+                        has_character_flag = learned_kest
+                    }
+                }
+                desc = zzz_thuum_intro.2502.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_wuld
+                    NOT = {
+                        has_character_flag = learned_nah
+                        has_character_flag = learned_ov
+                    }
+                }
+                desc = zzz_thuum_intro.2502.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_wuld
+                    has_character_flag = learned_nah
+                    NOT = {
+                        has_character_flag = learned_kest
+                    }
+                }
+                desc = zzz_thuum_intro.2502.desc.b
+            }
+            desc = zzz_thuum_intro.2502.desc.c
+        }
     }
 
     trigger = {
@@ -1940,7 +2006,43 @@ zzz_thuum_learn_word.2502 = {
 	}
 
     option = {
-		name = "Success!"
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_wuld
+                                has_character_flag = learned_nah
+                                has_character_flag = learned_kest
+                            }
+                        }
+                        desc = zzz_thuum_intro.2502.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_wuld
+                            NOT = {
+                                has_character_flag = learned_nah
+                                has_character_flag = learned_kest
+                            }
+                        }
+                        desc = zzz_thuum_intro.2502.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_wuld
+                            has_character_flag = learned_nah
+                            NOT = {
+                                has_character_flag = learned_kest
+                            }
+                        }
+                        desc = zzz_thuum_intro.2502.option.b
+                    }
+                    desc = zzz_thuum_intro.2502.option.c
+                }
+            }
+        }
         if = {
             limit = {
                 NOT = {
