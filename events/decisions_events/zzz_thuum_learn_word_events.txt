@@ -587,10 +587,10 @@ zzz_thuum_learn_word.2201 = {
                     modifier = {
                         culture = {
                             OR = {
-                                has_same_culture_heritage = heritage_nedic_south
-                                has_same_culture_heritage = heritage_nedic_north
-                                has_same_culture_heritage = heritage_nedic_central
-                                has_same_culture_heritage = heritage_atmoran
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
                             }
                             factor = 2
                         }
@@ -650,10 +650,10 @@ zzz_thuum_learn_word.2201 = {
                         culture = {
                             NOT = {
                                 OR = {
-                                    has_same_culture_heritage = heritage_nedic_south
-                                    has_same_culture_heritage = heritage_nedic_north
-                                    has_same_culture_heritage = heritage_nedic_central
-                                    has_same_culture_heritage = heritage_atmoran
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
                                 }
                             }
                             factor = 2
@@ -988,10 +988,10 @@ zzz_thuum_learn_word.2301 = {
                     modifier = {
                         culture = {
                             OR = {
-                                has_same_culture_heritage = heritage_nedic_south
-                                has_same_culture_heritage = heritage_nedic_north
-                                has_same_culture_heritage = heritage_nedic_central
-                                has_same_culture_heritage = heritage_atmoran
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
                             }
                             factor = 2
                         }
@@ -1051,10 +1051,10 @@ zzz_thuum_learn_word.2301 = {
                         culture = {
                             NOT = {
                                 OR = {
-                                    has_same_culture_heritage = heritage_nedic_south
-                                    has_same_culture_heritage = heritage_nedic_north
-                                    has_same_culture_heritage = heritage_nedic_central
-                                    has_same_culture_heritage = heritage_atmoran
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
                                 }
                             }
                             factor = 2
@@ -1409,10 +1409,10 @@ zzz_thuum_learn_word.2401 = {
                     modifier = {
                         culture = {
                             OR = {
-                                has_same_culture_heritage = heritage_nedic_south
-                                has_same_culture_heritage = heritage_nedic_north
-                                has_same_culture_heritage = heritage_nedic_central
-                                has_same_culture_heritage = heritage_atmoran
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
                             }
                             factor = 2
                         }
@@ -1472,10 +1472,10 @@ zzz_thuum_learn_word.2401 = {
                         culture = {
                             NOT = {
                                 OR = {
-                                    has_same_culture_heritage = heritage_nedic_south
-                                    has_same_culture_heritage = heritage_nedic_north
-                                    has_same_culture_heritage = heritage_nedic_central
-                                    has_same_culture_heritage = heritage_atmoran
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
                                 }
                             }
                             factor = 2
@@ -1830,10 +1830,10 @@ zzz_thuum_learn_word.2501 = {
                     modifier = {
                         culture = {
                             OR = {
-                                has_same_culture_heritage = heritage_nedic_south
-                                has_same_culture_heritage = heritage_nedic_north
-                                has_same_culture_heritage = heritage_nedic_central
-                                has_same_culture_heritage = heritage_atmoran
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
                             }
                             factor = 2
                         }
@@ -1893,10 +1893,10 @@ zzz_thuum_learn_word.2501 = {
                         culture = {
                             NOT = {
                                 OR = {
-                                    has_same_culture_heritage = heritage_nedic_south
-                                    has_same_culture_heritage = heritage_nedic_north
-                                    has_same_culture_heritage = heritage_nedic_central
-                                    has_same_culture_heritage = heritage_atmoran
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
                                 }
                             }
                             factor = 2
