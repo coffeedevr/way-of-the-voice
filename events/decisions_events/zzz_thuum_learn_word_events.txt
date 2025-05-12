@@ -1497,7 +1497,6 @@ zzz_thuum_learn_word.2401 = {
 zzz_thuum_learn_word.2402 = {
     type = character_event
 	title = "Success: Ironbind Barrow"
-    desc = zzz_thuum_intro.2402.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -1511,7 +1510,73 @@ zzz_thuum_learn_word.2402 = {
 
 
     immediate = {
-        
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = clear_skies_perk
+                    has_perk = clear_skies_two_perk
+                    has_perk = clear_skies_three_perk
+                }
+            }
+            add_character_flag = learned_lok
+        }
+        else_if = {
+            limit = {
+                has_perk = clear_skies_perk
+                NOT = {
+                    has_perk = clear_skies_two_perk
+                    has_perk = clear_skies_three_perk
+                }
+            }
+            add_character_flag = learned_vah
+        }
+        else = {
+            limit = {
+                has_perk = clear_skies_perk
+                has_perk = clear_skies_two_perk
+                    NOT = {
+                        
+                        has_perk = clear_skies_three_perk
+                    }
+            }
+            add_character_flag = learned_koor
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_lok
+                        has_character_flag = learned_vah
+                        has_character_flag = learned_koor
+                    }
+                }
+                desc = zzz_thuum_intro.2402.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_lok
+                    NOT = {
+                        has_character_flag = learned_vah
+                        has_character_flag = learned_koor
+                    }
+                }
+                desc = zzz_thuum_intro.2402.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_fus
+                    has_character_flag = learned_vah
+                    NOT = {
+                        has_character_flag = learned_koor
+                    }
+                }
+                desc = zzz_thuum_intro.2402.desc.b
+            }
+            desc = zzz_thuum_intro.2402.desc.c
+        }
     }
 
     trigger = {
@@ -1519,7 +1584,43 @@ zzz_thuum_learn_word.2402 = {
 	}
 
     option = {
-		name = "Success!"
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_lok
+                                has_character_flag = learned_vah
+                                has_character_flag = learned_koor
+                            }
+                        }
+                        desc = zzz_thuum_intro.2402.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_lok
+                            NOT = {
+                                has_character_flag = learned_vah
+                                has_character_flag = learned_koor
+                            }
+                        }
+                        desc = zzz_thuum_intro.2402.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_lok
+                            has_character_flag = learned_vah
+                            NOT = {
+                                has_character_flag = learned_koor
+                            }
+                        }
+                        desc = zzz_thuum_intro.2402.option.b
+                    }
+                    desc = zzz_thuum_intro.2402.option.c
+                }
+            }
+        }
         if = {
             limit = {
                 NOT = {
