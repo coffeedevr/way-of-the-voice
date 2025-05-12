@@ -23,12 +23,12 @@
 					has_perk = kyne_peace_perk
 					has_perk = kyne_peace_two_perk
 					has_perk = kyne_peace_three_perk
-					#has_perk = clear_skies_perk
-					#has_perk = clear_skies_two_perk
-					#has_perk = clear_skies_three_perk
-					#has_perk = whirlwind_sprint_perk
-					#has_perk = whirlwind_sprint_two_perk
-					#has_perk = whirlwind_sprint_three_perk
+					has_perk = clear_skies_perk
+					has_perk = clear_skies_two_perk
+					has_perk = clear_skies_three_perk
+					has_perk = whirlwind_sprint_perk
+					has_perk = whirlwind_sprint_two_perk
+					has_perk = whirlwind_sprint_three_perk
 				}
 			}
 		}
