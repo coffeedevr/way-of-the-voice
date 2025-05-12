@@ -1076,7 +1076,6 @@ zzz_thuum_learn_word.2301 = {
 zzz_thuum_learn_word.2302 = {
     type = character_event
 	title = "Success: Ragnvald Ruins"
-    desc = zzz_thuum_intro.2302.desc
     theme = diplomacy_majesty_focus
 
     override_background = {
@@ -1090,7 +1089,73 @@ zzz_thuum_learn_word.2302 = {
 
 
     immediate = {
-        
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = kyne_peace_perk
+                    has_perk = kyne_peace_two_perk
+                    has_perk = kyne_peace_three_perk
+                }
+            }
+            add_character_flag = learned_kaan
+        }
+        else_if = {
+            limit = {
+                has_perk = kyne_peace_perk
+                NOT = {
+                    has_perk = kyne_peace_two_perk
+                    has_perk = kyne_peace_three_perk
+                }
+            }
+            add_character_flag = learned_drem
+        }
+        else = {
+            limit = {
+                has_perk = kyne_peace_perk
+                has_perk = kyne_peace_two_perk
+                    NOT = {
+                        
+                        has_perk = kyne_peace_three_perk
+                    }
+            }
+            add_character_flag = learned_ov
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_kaan
+                        has_character_flag = learned_drem
+                        has_character_flag = learned_ov
+                    }
+                }
+                desc = zzz_thuum_intro.2302.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_kaan
+                    NOT = {
+                        has_character_flag = learned_drem
+                        has_character_flag = learned_ov
+                    }
+                }
+                desc = zzz_thuum_intro.2302.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_kaan
+                    has_character_flag = learned_drem
+                    NOT = {
+                        has_character_flag = learned_ov
+                    }
+                }
+                desc = zzz_thuum_intro.2302.desc.b
+            }
+            desc = zzz_thuum_intro.2302.desc.c
+        }
     }
 
     trigger = {
@@ -1098,7 +1163,43 @@ zzz_thuum_learn_word.2302 = {
 	}
 
     option = {
-		name = "Success!"
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_kaan
+                                has_character_flag = learned_drem
+                                has_character_flag = learned_ov
+                            }
+                        }
+                        desc = zzz_thuum_intro.2302.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_kaan
+                            NOT = {
+                                has_character_flag = learned_drem
+                                has_character_flag = learned_ov
+                            }
+                        }
+                        desc = zzz_thuum_intro.2302.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_kaan
+                            has_character_flag = learned_drem
+                            NOT = {
+                                has_character_flag = learned_ov
+                            }
+                        }
+                        desc = zzz_thuum_intro.2302.option.b
+                    }
+                    desc = zzz_thuum_intro.2302.option.c
+                }
+            }
+        }
         if = {
             limit = {
                 NOT = {
