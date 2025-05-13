@@ -75,7 +75,7 @@ unrelenting_force_three_perk = {
 kyne_peace_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 2 0 }
+   position = { 1 0 }
    icon = node_diplomacy
 
     can_be_picked = {
@@ -98,7 +98,7 @@ kyne_peace_perk = {
 kyne_peace_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 2 1 }
+   position = { 1 1 }
    icon = node_diplomacy
 
    parent = kyne_peace_perk
@@ -123,7 +123,7 @@ kyne_peace_two_perk = {
 kyne_peace_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 2 2 }
+   position = { 1 2 }
    icon = school_conjurationda
 
    parent = kyne_peace_two_perk
@@ -153,7 +153,7 @@ kyne_peace_three_perk = {
 clear_skies_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 4 0 }
+   position = { 2 0 }
    icon = node_diplomacy
 
     can_be_picked = {
@@ -179,7 +179,7 @@ clear_skies_perk = {
 clear_skies_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 4 1 }
+   position = { 2 1 }
    icon = node_diplomacy
 
    parent = clear_skies_perk
@@ -206,7 +206,7 @@ clear_skies_two_perk = {
 clear_skies_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 4 2 }
+   position = { 2 2 }
 
     can_be_picked = {
         has_character_flag = learned_koor
@@ -235,7 +235,7 @@ clear_skies_three_perk = {
 whirlwind_sprint_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 6 0 }
+   position = { 3 0 }
    icon = node_diplomacy
 
     can_be_picked = {
@@ -257,7 +257,7 @@ whirlwind_sprint_perk = {
 whirlwind_sprint_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 6 1 }
+   position = { 3 1 }
    icon = node_diplomacy
 
    parent = whirlwind_sprint_perk
@@ -281,7 +281,7 @@ whirlwind_sprint_two_perk = {
 whirlwind_sprint_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts
-   position = { 6 2 }
+   position = { 3 2 }
 
     can_be_picked = {
         has_character_flag = learned_kest
@@ -304,11 +304,10 @@ whirlwind_sprint_three_perk = {
 }
 
 
-
 thuum_meditation_perk = {
     lifestyle = thuum_lifestyle
     tree = zzz_thuum_shouts
-    position = { 3 4 }
+    position = { 1.5 4 }
 
     name = "Thu'um Meditation"
 
@@ -323,3 +322,247 @@ thuum_meditation_perk = {
         has_trait = thuum_trait_track
     }
 }
+
+battle_fury_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 0 0 }
+
+    can_be_picked = {
+        has_character_flag = learned_mid
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+    effect = {
+        custom_tooltip = {
+			text = MID_VUR_SHAAN_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        levy_reinforcement_rate = 0.30
+    }
+}
+
+battle_fury_two_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 0 1 }
+
+    can_be_picked = {
+        has_character_flag = learned_vur
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+   parent = battle_fury_perk
+
+    effect = {
+        custom_tooltip = {
+			text = BATTLE_FURY_TWO_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        levy_size = 0.25
+        levy_maintenance = -0.25
+    }
+}
+
+battle_fury_three_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 0 2 }
+
+    can_be_picked = {
+        has_character_flag = learned_shaan
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+   parent = battle_fury_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = BATTLE_FURY_THREE_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        vassal_levy_contribution_mult = 0.30
+        levy_pursuit = 30
+    }
+}
+
+aura_whisper_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 2 0 }
+
+    can_be_picked = {
+        has_character_flag = learned_mid
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+    effect = {
+        custom_tooltip = {
+			text = MID_VUR_SHAAN_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		enemy_hostile_scheme_success_chance_add = -25
+	}
+}
+
+aura_whisper_two_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 2 1 }
+
+    can_be_picked = {
+        has_character_flag = learned_vur
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+   parent = aura_whisper_perk
+
+    effect = {
+        custom_tooltip = {
+			text = BATTLE_FURY_TWO_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		owned_hostile_scheme_success_chance_add = 15
+		owned_personal_scheme_success_chance_add = 15
+	}
+}
+
+aura_whisper_three_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 2 2 }
+
+    can_be_picked = {
+        has_character_flag = learned_shaan
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+   parent = aura_whisper_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = BATTLE_FURY_THREE_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		max_hostile_schemes_add = 1
+        max_personal_schemes_add = 1
+	}
+}
+
+dragon_aspect_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 4 0 }
+
+    can_be_picked = {
+        has_character_flag = learned_mul
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+    effect = {
+        custom_tooltip = {
+			text = MID_VUR_SHAAN_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		enemy_hostile_scheme_success_chance_add = -25
+	}
+}
+
+dragon_aspect_two_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 4 1 }
+
+    can_be_picked = {
+        has_character_flag = learned_qua
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+   parent = dragon_aspect_perk
+
+    effect = {
+        custom_tooltip = {
+			text = BATTLE_FURY_TWO_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		owned_hostile_scheme_success_chance_add = 15
+		owned_personal_scheme_success_chance_add = 15
+	}
+}
+
+dragon_aspect_three_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_ii
+   position = { 4 2 }
+
+    can_be_picked = {
+        has_character_flag = learned_diiv
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_diplomacy
+
+   parent = dragon_aspect_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = BATTLE_FURY_THREE_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		max_hostile_schemes_add = 1
+        max_personal_schemes_add = 1
+	}
+}
+
+summon_warrior_perk = {
+    lifestyle = thuum_lifestyle
+    tree = zzz_thuum_shouts_ii
+    position = { 2 4 }
+
+    name = "Call of Valor"
+
+    icon = shout_perk
+
+    parent = battle_fury_three_perk
+    parent = aura_whisper_three_perk
+    parent = dragon_aspect_three_perk
+
+    can_be_picked = {
+        has_trait = thuum_trait_track
+    }
+}
+

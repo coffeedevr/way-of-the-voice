@@ -2,7 +2,8 @@
  # Tongue Lifestyle
  thuum_lifestyle_name:0 "Thu'um"
  thuum_lifestyle_desc:0 "Focus on devoting yourself to the Way of the Voice to unlock words that rival the dragons of old whether for war, wisdom, or wonder."
- zzz_thuum_shouts_name:0 "Words of Power"
+ zzz_thuum_shouts_name:0 "Kyne's Path"
+ zzz_thuum_shouts_ii_name:0 "Alduin's Dominion"
 
  recently_sieged_using_fus_opinion_name:0 "Recently sieged using Thu'um"
 
@@ -38,3 +39,24 @@
  WHIRLWIND_SPRINT_PERK_EFFECT: "Unlocks the [GetTravelOption('wuld_option').GetName] [travel_option|E]"
  WHIRLWIND_SPRINT_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldna_option').GetName] [travel_option|E]"
  WHIRLWIND_SPRINT_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldnakest_option').GetName] [travel_option|E]"
+
+ dragon_aspect_perk_name:0 "Mul"
+ dragon_aspect_two_perk_name:0 "Qua"
+ dragon_aspect_three_perk_name:0 "Div"
+ DRAGON_ASPECT_PERK_EFFECT: "Unlocks the [GetTravelOption('wuld_option').GetName] [travel_option|E]"
+ DRAGON_ASPECT_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldna_option').GetName] [travel_option|E]"
+ DRAGON_ASPECT_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldnakest_option').GetName] [travel_option|E]"
+
+ aura_whisper_perk_name:0 "Laas"
+ aura_whisper_two_perk_name:0 "Yah"
+ aura_whisper_three_perk_name:0 "Nir"
+ AURA_WHISPER_PERK_EFFECT: "Unlocks the [GetTravelOption('wuld_option').GetName] [travel_option|E]"
+ AURA_WHISPER_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldna_option').GetName] [travel_option|E]"
+ AURA_WHISPER_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldnakest_option').GetName] [travel_option|E]"
+
+ battle_fury_perk_name:0 "Mid"
+ battle_fury_two_perk_name:0 "Vur"
+ battle_fury_three_perk_name:0 "Shaan"
+ BATTLE_FURY_PERK_EFFECT: "Unlocks the [GetTravelOption('wuld_option').GetName] [travel_option|E]"
+ BATTLE_FURY_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldna_option').GetName] [travel_option|E]"
+ BATTLE_FURY_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldnakest_option').GetName] [travel_option|E]"
