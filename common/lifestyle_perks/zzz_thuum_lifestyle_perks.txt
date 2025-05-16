@@ -342,7 +342,7 @@ battle_fury_perk = {
     }
 
     character_modifier = {
-        levy_reinforcement_rate = 0.30
+        levy_maintenance = -0.05
     }
 }
 
@@ -367,8 +367,7 @@ battle_fury_two_perk = {
     }
 
     character_modifier = {
-        levy_size = 0.25
-        levy_maintenance = -0.25
+        levy_maintenance = -0.10
     }
 }
 
@@ -393,8 +392,7 @@ battle_fury_three_perk = {
     }
 
     character_modifier = {
-        vassal_levy_contribution_mult = 0.30
-        levy_pursuit = 30
+        levy_maintenance = -0.10
     }
 }
 
@@ -412,7 +410,7 @@ aura_whisper_perk = {
 
     effect = {
         custom_tooltip = {
-			text = MID_VUR_SHAAN_PERK_EFFECT
+			text = AURA_WHISPER_PERK_EFFECT
 		}
     }
 
@@ -437,7 +435,7 @@ aura_whisper_two_perk = {
 
     effect = {
         custom_tooltip = {
-			text = BATTLE_FURY_TWO_PERK_EFFECT
+			text = AURA_WHISPER_TWO_PERK_EFFECT
 		}
     }
 
@@ -463,7 +461,7 @@ aura_whisper_three_perk = {
 
     effect = {
         custom_tooltip = {
-			text = BATTLE_FURY_THREE_PERK_EFFECT
+			text = AURA_WHISPER_THREE_PERK_EFFECT
 		}
     }
 
@@ -487,12 +485,12 @@ dragon_aspect_perk = {
 
     effect = {
         custom_tooltip = {
-			text = MID_VUR_SHAAN_PERK_EFFECT
+			text = DRAGON_ASPECT_PERK_EFFECT
 		}
     }
 
-	character_modifier = {
-		enemy_hostile_scheme_success_chance_add = -25
+    character_modifier = {
+        dread_baseline_add = 5
 	}
 }
 
@@ -512,14 +510,14 @@ dragon_aspect_two_perk = {
 
     effect = {
         custom_tooltip = {
-			text = BATTLE_FURY_TWO_PERK_EFFECT
+			text = DRAGON_ASPECT_TWO_PERK_EFFECT
 		}
     }
 
-	character_modifier = {
-		owned_hostile_scheme_success_chance_add = 15
-		owned_personal_scheme_success_chance_add = 15
+    character_modifier = {
+        dread_baseline_add = 5
 	}
+
 }
 
 dragon_aspect_three_perk = {
@@ -538,13 +536,12 @@ dragon_aspect_three_perk = {
 
     effect = {
         custom_tooltip = {
-			text = BATTLE_FURY_THREE_PERK_EFFECT
+			text = DRAGON_ASPECT_THREE_PERK_EFFECT
 		}
     }
 
 	character_modifier = {
-		max_hostile_schemes_add = 1
-        max_personal_schemes_add = 1
+        dread_baseline_add = 10
 	}
 }
 

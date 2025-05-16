@@ -154,6 +154,161 @@ kyne_peace_decision = {
 	confirm_text = "Kaan Drem Ov!"
 }
 
+battle_fury_decision  = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = battle_fury_decision_desc
+	selection_tooltip = "test"
+	title = battle_fury_decision_title
+
+	is_shown = {
+		OR = {
+			has_perk = battle_fury_perk
+			has_perk = battle_fury_two_perk
+			has_perk = battle_fury_three_perk
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
+
+		OR = {
+			has_perk = battle_fury_perk
+			has_perk = battle_fury_two_perk
+			has_perk = battle_fury_three_perk
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				AND = {
+					has_perk = battle_fury_perk
+					NOT = {
+						has_perk = battle_fury_two_perk
+						has_perk = battle_fury_three_perk
+					}
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+
+				add_character_modifier = {
+					modifier = battle_fury_modifier
+					months = 6
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AND = {
+					has_perk = battle_fury_perk
+					has_perk = battle_fury_two_perk
+					NOT = {
+						has_perk = battle_fury_three_perk
+					}
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+
+				add_character_modifier = {
+					modifier = battle_fury_two_modifier
+					months = 6
+				}
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+
+				add_character_modifier = {
+					modifier = battle_fury_three_modifier
+					months = 6
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { months = 6 }
+
+	confirm_text = "Mid Vur Shaan!"
+}
+
+aura_whispher_decision  = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = battle_fury_decision_desc
+	selection_tooltip = "test"
+	title = battle_fury_decision_title
+
+	is_shown = {
+		has_trait = thuum_trait_track
+		OR = {
+			has_perk = unrelenting_force_perk
+			has_perk = unrelenting_force_two_perk
+			has_perk = unrelenting_force_three_perk
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_commanding_army = yes
+		is_in_army = yes
+
+		OR = {
+			has_perk = unrelenting_force_perk
+			has_perk = unrelenting_force_two_perk
+			has_perk = unrelenting_force_three_perk
+		}
+		
+		commanding_army = {
+			location = {
+				AND = {
+					NOR = {
+						has_province_modifier = thuum_siege_small_modifier
+						has_province_modifier = thuum_siege_medium_modifier
+						has_province_modifier = thuum_siege_large_modifier
+					}
+					NOR = {
+						province_owner = root
+						barony = {
+							is_title_created = no
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = unrelenting_force_decision_effect_tt
+		trigger_event = thuum_siege_event.0002
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	confirm_text = "Laas Yah Nir!"
+}
 
 thuum_meditation_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }

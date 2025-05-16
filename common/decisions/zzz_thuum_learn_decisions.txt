@@ -233,9 +233,9 @@ visit_northwind_thuum_decision = {
 	is_valid = {
 		NOT = {
 			AND = {
-				has_perk = clear_skies_perk
-				has_perk = clear_skies_two_perk
-				has_perk = clear_skies_three_perk
+				has_perk = whirlwind_sprint_perk
+				has_perk = whirlwind_sprint_two_perk
+				has_perk = whirlwind_sprint_three_perk
 			}
 		}
 	}

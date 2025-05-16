@@ -5,13 +5,13 @@ thuum_siege_small_modifier = {
 
 thuum_siege_medium_modifier = {
 	icon = county_modifier_development_negative
-	levy_reinforcement_rate = -0.20
+	tax_mult = -0.10
 	fort_level = -5
 }
 
 thuum_siege_large_modifier = {
 	icon = county_modifier_development_negative
-	levy_reinforcement_rate = -0.20
+	tax_mult = -0.20
 	development_growth_factor = -0.20
 	fort_level = -8
 }
