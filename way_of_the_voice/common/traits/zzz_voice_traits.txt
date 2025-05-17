@@ -6,6 +6,8 @@
     category = lifestyle
     ruler_designer_cost = 45
     same_opinion = 10
+	zealot_opinion = 10
+	monthly_piety_gain_mult = 0.20
 
 }
 

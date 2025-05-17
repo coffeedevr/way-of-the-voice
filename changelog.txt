@@ -5,7 +5,10 @@ Fixes:
 - fixed wrong flag check for northwind's 2nd word
 - fixed wrong decision cooldown reset for visit northwind decision when choosen the "not now" option
 Changes:
-- "Blessed by Kyne" trait now gives an increased chance of success when learning a Word of Power
+- "Blessed by Kyne" trait now gives:
+* an increased chance of success when learning a Word of Power
+* monthly piety + 20%
+* zealot vassal opinion + 10
 - upon meditation when visiting Gildergreen, it is now possible to acquire the "Blessed By Kyne" trait and "Dragonborn" trait, with 10% chance and 3% chance respectively.
 1.0.1
 - fixed visit northwind location decision's validity
