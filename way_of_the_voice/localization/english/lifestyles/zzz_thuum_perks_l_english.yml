@@ -50,9 +50,9 @@
  dismay_perk_name:0 "Laas"
  dismay_two_perk_name:0 "Yah"
  dismay_three_perk_name:0 "Nir"
- AURA_WHISPER_PERK_EFFECT: "Unlocks the [GetTravelOption('wuld_option').GetName] [travel_option|E]"
- AURA_WHISPER_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldna_option').GetName] [travel_option|E]"
- AURA_WHISPER_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldnakest_option').GetName] [travel_option|E]"
+ DISMAY_PERK_EFFECT: "Unlocks the [GetTravelOption('wuld_option').GetName] [travel_option|E]"
+ DISMAY_TWO_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldna_option').GetName] [travel_option|E]"
+ DISMAY_THREE_PERK_EFFECT: "Unlocks the [GetTravelOption('wuldnakest_option').GetName] [travel_option|E]"
 
  battle_fury_perk_name:0 "Mid"
  battle_fury_two_perk_name:0 "Vur"
