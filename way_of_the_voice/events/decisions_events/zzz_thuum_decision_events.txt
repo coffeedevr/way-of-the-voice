@@ -232,50 +232,47 @@ zzz_thuum_decision.3000 = {
 
     option = {
         name = zzz_thuum_decision.3000.a
-        #custom_tooltip = "Spread propaganda to inflict bad stuff bruh!"
+        #custom_tooltip = "You use the Word of Power: Fus!"
         trigger = {
             scope:thuum_user = {
-                OR = {
-					has_perk = dismay_perk
-					has_perk = dismay_two_perk
-					has_perk = dismay_three_perk
-				}
+                has_perk = dismay_perk
             }
 			scope:sieging_location = {
 				NOR = {
-					has_province_modifier = friendly_dismay_modifier
-					has_province_modifier = friendly_dismay_two_modifier
-					has_province_modifier = friendly_dismay_three_modifier
 					has_province_modifier = hostile_dismay_modifier
 					has_province_modifier = hostile_dismay_two_modifier
 					has_province_modifier = hostile_dismay_three_modifier
 				}
 			}
+			
 		}
         ai_chance = {
 			base = 20
+		}
+        scope:sieging_location = {
+				add_province_modifier = {
+					modifier = hostile_dismay_modifier
+					months = 5
+				}
+			province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
+			}
 		}
 
     }
 
-
-
     option = {
-        name = zzz_thuum_decision.3000.c
-        #custom_tooltip = "Spread propaganda to improve public opinion."
+        name = zzz_thuum_decision.3000.b
+        #custom_tooltip = "You use the Words of Power: Fus Ro!"
         trigger = {
             scope:thuum_user = {
-                OR = {
-					has_perk = dismay_perk
-					has_perk = dismay_two_perk
-					has_perk = dismay_three_perk
-				}
+                has_perk = dismay_two_perk
             }
 			scope:sieging_location = {
 				NOR = {
-					has_province_modifier = friendly_dismay_modifier
-					has_province_modifier = friendly_dismay_two_modifier
-					has_province_modifier = friendly_dismay_three_modifier
 					has_province_modifier = hostile_dismay_modifier
 					has_province_modifier = hostile_dismay_two_modifier
 					has_province_modifier = hostile_dismay_three_modifier
@@ -285,6 +282,50 @@ zzz_thuum_decision.3000 = {
         ai_chance = {
 			base = 20
 		}
+        scope:sieging_location = {
+			add_province_modifier = {
+				modifier = hostile_dismay_two_modifier
+				months = 5
+			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}	
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.3000.c
+        #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = dismay_three_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_province_modifier = hostile_dismay_modifier
+					has_province_modifier = hostile_dismay_two_modifier
+					has_province_modifier = hostile_dismay_three_modifier
+				}
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        scope:sieging_location = {
+			add_province_modifier = {
+				modifier = hostile_dismay_three_modifier
+				months = 5
+			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}
+		}	
     }
 
 }

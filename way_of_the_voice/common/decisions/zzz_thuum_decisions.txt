@@ -310,7 +310,7 @@ dismay_decision  = {
 		always = yes
 	}
 
-	confirm_text = "Laas Yah Nir!"
+	confirm_text = "Faas Ru Maar!"
 }
 
 dragon_aspect_decision = {
