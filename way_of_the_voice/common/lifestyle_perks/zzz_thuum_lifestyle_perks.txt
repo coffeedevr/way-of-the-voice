@@ -329,7 +329,7 @@ battle_fury_perk = {
    position = { 0 0 }
 
     can_be_picked = {
-        has_character_flag = learned_mid
+        has_character_flag = learned_faas
         has_trait = thuum_trait_track
     }
 
@@ -352,7 +352,7 @@ battle_fury_two_perk = {
    position = { 0 1 }
 
     can_be_picked = {
-        has_character_flag = learned_vur
+        has_character_flag = learned_ru
         has_trait = thuum_trait_track
     }
 
@@ -377,7 +377,7 @@ battle_fury_three_perk = {
    position = { 0 2 }
 
     can_be_picked = {
-        has_character_flag = learned_shaan
+        has_character_flag = learned_maar
         has_trait = thuum_trait_track
     }
 
@@ -402,7 +402,7 @@ dismay_perk = {
    position = { 2 0 }
 
     can_be_picked = {
-        has_character_flag = learned_mid
+        has_character_flag = learned_faas
         has_trait = thuum_trait_track
     }
 
@@ -425,7 +425,7 @@ dismay_two_perk = {
    position = { 2 1 }
 
     can_be_picked = {
-        has_character_flag = learned_vur
+        has_character_flag = learned_ru
         has_trait = thuum_trait_track
     }
 
@@ -451,7 +451,7 @@ dismay_three_perk = {
    position = { 2 2 }
 
     can_be_picked = {
-        has_character_flag = learned_shaan
+        has_character_flag = learned_maar
         has_trait = thuum_trait_track
     }
 
