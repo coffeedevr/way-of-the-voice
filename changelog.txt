@@ -1,6 +1,6 @@
 1.1.0
 Additions:
-- added new Shouts/Words of Power (perks): Battle Fury, Aura Whisper, Dragon Aspect, along with new modifiers tied to the new Words of Power
+- added new Shouts/Words of Power (perks): Battle Fury, Dismay, Dragon Aspect, along with new modifiers tied to the new Words of Power
 Fixes:
 - fixed wrong flag check for northwind's 2nd word
 - fixed wrong decision cooldown reset for visit northwind decision when choosen the "not now" option

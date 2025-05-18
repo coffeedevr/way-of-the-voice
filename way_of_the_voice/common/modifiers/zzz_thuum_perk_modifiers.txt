@@ -43,42 +43,22 @@ battle_fury_three_modifier = {
     army_pursuit_mult = 0.15
 }
 
-hostile_aura_whisper_modifier = {
+hostile_dismay_modifier = {
 	icon = county_modifier_opinion_negative
 	county_opinion_add = -15
 }
 
-hostile_aura_whisper_two_modifier = {
+hostile_dismay_two_modifier = {
 	icon = county_modifier_opinion_negative
 
 	levy_reinforcement_rate = -0.15
     county_opinion_add = -20
 }
 
-hostile_aura_whisper_three_modifier = {
+hostile_dismay_three_modifier = {
 	icon = county_modifier_opinion_negative
 
 	levy_reinforcement_rate = -0.20
 	monthly_county_control_growth_add = -0.20
 	county_opinion_add = -30
-}
-
-friendly_aura_whisper_modifier = {
-	icon = county_modifier_opinion_negative
-	county_opinion_add = 15
-}
-
-friendly_aura_whisper_two_modifier = {
-	icon = county_modifier_opinion_positive
-
-	levy_reinforcement_rate = 0.15
-    county_opinion_add = 20
-}
-
-friendly_aura_whisper_three_modifier = {
-	icon = county_modifier_opinion_positive
-
-	levy_reinforcement_rate = 0.20
-	monthly_county_control_growth_add = 0.20
-	county_opinion_add = 30
 }

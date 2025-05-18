@@ -396,7 +396,7 @@ battle_fury_three_perk = {
     }
 }
 
-aura_whisper_perk = {
+dismay_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts_ii
    position = { 2 0 }
@@ -419,7 +419,7 @@ aura_whisper_perk = {
 	}
 }
 
-aura_whisper_two_perk = {
+dismay_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts_ii
    position = { 2 1 }
@@ -431,7 +431,7 @@ aura_whisper_two_perk = {
 
    icon = node_martial
 
-   parent = aura_whisper_perk
+   parent = dismay_perk
 
     effect = {
         custom_tooltip = {
@@ -445,7 +445,7 @@ aura_whisper_two_perk = {
 	}
 }
 
-aura_whisper_three_perk = {
+dismay_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts_ii
    position = { 2 2 }
@@ -457,7 +457,7 @@ aura_whisper_three_perk = {
 
    icon = node_martial
 
-   parent = aura_whisper_two_perk
+   parent = dismay_two_perk
 
     effect = {
         custom_tooltip = {
@@ -555,7 +555,7 @@ summon_warrior_perk = {
     icon = shout_perk
 
     parent = battle_fury_three_perk
-    parent = aura_whisper_three_perk
+    parent = dismay_three_perk
     parent = dragon_aspect_three_perk
 
     can_be_picked = {

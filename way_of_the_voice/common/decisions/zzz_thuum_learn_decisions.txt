@@ -319,9 +319,9 @@ visit_volunruud_thuum_decision = {
 	is_valid = {
 		NOT = {
 			AND = {
-				has_perk = aura_whisper_perk
-				has_perk = aura_whisper_two_perk
-				has_perk = aura_whisper_three_perk
+				has_perk = dismay_perk
+				has_perk = dismay_two_perk
+				has_perk = dismay_three_perk
 			}
 		}
 	}

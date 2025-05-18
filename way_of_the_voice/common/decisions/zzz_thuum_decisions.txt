@@ -262,9 +262,9 @@ aura_whispher_decision  = {
 	is_shown = {
 		has_trait = thuum_trait_track
 		OR = {
-			has_perk = aura_whisper_perk
-			has_perk = aura_whisper_two_perk
-			has_perk = aura_whisper_three_perk
+			has_perk = dismay_perk
+			has_perk = dismay_two_perk
+			has_perk = dismay_three_perk
 		}
 	}
 
@@ -274,21 +274,21 @@ aura_whispher_decision  = {
 		is_in_army = yes
 
 		OR = {
-			has_perk = aura_whisper_perk
-			has_perk = aura_whisper_two_perk
-			has_perk = aura_whisper_three_perk
+			has_perk = dismay_perk
+			has_perk = dismay_two_perk
+			has_perk = dismay_three_perk
 		}
 		
 		commanding_army = {
 			location = {
 				AND = {
 					NOR = {
-						has_province_modifier = hostile_aura_whisper_two_modifier
-						has_province_modifier = hostile_aura_whisper_three_modifier
-						has_province_modifier = hostile_aura_whisper_modifier
-						has_province_modifier = friendly_aura_whisper_two_modifier
-						has_province_modifier = friendly_aura_whisper_three_modifier
-						has_province_modifier = friendly_aura_whisper_modifier
+						has_province_modifier = hostile_dismay_two_modifier
+						has_province_modifier = hostile_dismay_three_modifier
+						has_province_modifier = hostile_dismay_modifier
+						has_province_modifier = friendly_dismay_two_modifier
+						has_province_modifier = friendly_dismay_three_modifier
+						has_province_modifier = friendly_dismay_modifier
 					}
 					NOR = {
 						province_owner = root
@@ -302,7 +302,7 @@ aura_whispher_decision  = {
 	}
 
 	effect = {
-		custom_tooltip = aura_whisper_decision_effect_tt
+		custom_tooltip = dismay_decision_effect_tt
 		trigger_event = thuum_whisper_event.0001
 	}
 
