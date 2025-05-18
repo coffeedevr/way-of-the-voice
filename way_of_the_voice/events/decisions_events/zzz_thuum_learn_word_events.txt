@@ -2547,7 +2547,7 @@ zzz_thuum_learn_word.2602 = {
                     has_perk = battle_fury_three_perk
                 }
             }
-            add_perk = whirlwind_sprint_two_perk
+            add_perk = battle_fury_two_perk
             create_character_memory = { type = learned_thuum_word }
         }
         else_if = {
@@ -2593,6 +2593,858 @@ zzz_thuum_learn_word.2603 = {
     option = {
 		name = "Failure..."
         remove_decision_cooldown = visit_vahlok_thuum_decision
+        add_stress = 30
+	}
+}
+
+## VISIT VOLUNRUUD TOMB EVENT
+zzz_thuum_learn_word.2700 = {
+    type = character_event
+	title = "Word Wall: Volunruud"
+    desc = zzz_thuum_intro.2700.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        title:b_volunruud.title_province = {
+            save_scope_as = location
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's head to Volunruud!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_volunruud.title_province
+                }
+                trigger_event = zzz_thuum_learn_word.2701
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_volunruud.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_volunruud_event
+                    on_arrival_event = zzz_thuum_learn_word.2701
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_volunruud_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2701 = {
+    type = character_event
+	title = "Word Wall: Volunruud"
+    desc = zzz_thuum_intro.2701.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's meditate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2702
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    modifier = {
+                        has_trait = blessed_by_kyne
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
+                            }
+                            factor = 2
+                        }
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 1
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You might learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2702
+                        days = { 30 30 }
+                    }
+                }
+ 
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.0
+                        min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2703
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2702 = {
+    type = character_event
+	title = "Success: Volunruud"
+
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = aura_whisper_perk
+                    has_perk = aura_whisper_two_perk
+                    has_perk = aura_whisper_three_perk
+                }
+            }
+            add_character_flag = learned_laas
+        }
+        else_if = {
+            limit = {
+                    has_perk = aura_whisper_perk
+                NOT = {
+                    has_perk = aura_whisper_two_perk
+                    has_perk = aura_whisper_three_perk
+                }
+            }
+            add_character_flag = learned_yah
+        }
+        else = {
+            limit = {
+                    has_perk = aura_whisper_perk
+                    has_perk = aura_whisper_two_perk
+                    NOT = {
+                        
+                    has_perk = aura_whisper_three_perk
+                    }
+            }
+            add_character_flag = learned_nir
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_laas
+                        has_character_flag = learned_yah
+                        has_character_flag = learned_nir
+                    }
+                }
+                desc = zzz_thuum_intro.2702.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_laas
+                    NOT = {
+                        has_character_flag = learned_yah
+                        has_character_flag = learned_nir
+                    }
+                }
+                desc = zzz_thuum_intro.2702.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_laas
+                    has_character_flag = learned_yah
+                    NOT = {
+                        has_character_flag = learned_nir
+                    }
+                }
+                desc = zzz_thuum_intro.2702.desc.b
+            }
+            desc = zzz_thuum_intro.2702.desc.c
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_laas
+                                has_character_flag = learned_yah
+                                has_character_flag = learned_nir
+                            }
+                        }
+                        desc = zzz_thuum_intro.2702.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_laas
+                            NOT = {
+                                has_character_flag = learned_yah
+                                has_character_flag = learned_nir
+                            }
+                        }
+                        desc = zzz_thuum_intro.2702.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_laas
+                            has_character_flag = learned_yah
+                            NOT = {
+                                has_character_flag = learned_nir
+                            }
+                        }
+                        desc = zzz_thuum_intro.2702.option.b
+                    }
+                    desc = zzz_thuum_intro.2702.option.c
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = aura_whisper_perk
+                    has_perk = aura_whisper_two_perk
+                    has_perk = aura_whisper_three_perk
+                }
+            }
+            add_perk = aura_whisper_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = aura_whisper_perk
+                NOT = {
+                    has_perk = aura_whisper_two_perk
+                    has_perk = aura_whisper_three_perk
+                }
+            }
+            add_perk = aura_whisper_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+            has_perk = aura_whisper_perk
+            has_perk = aura_whisper_two_perk
+                NOT = {
+                    
+                    has_perk = aura_whisper_three_perk
+                }
+            }
+            add_perk = aura_whisper_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2703 = {
+    type = character_event
+	title = "Failed: Volunruud"
+    desc = zzz_thuum_intro.2703.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Failure..."
+        remove_decision_cooldown = visit_volunruud_thuum_decision
+        add_stress = 30
+	}
+}
+
+## VISIT VOLUNRUUD TOMB EVENT
+zzz_thuum_learn_word.2800 = {
+    type = character_event
+	title = "Word Wall: Raven Rock Mine"
+    desc = zzz_thuum_intro.2800.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        title:b_ravenmine.title_province = {
+            save_scope_as = location
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's head to Raven Rock Mine!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_ravenmine.title_province
+                }
+                trigger_event = zzz_thuum_learn_word.2801
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_ravenmine.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_volunruud_event
+                    on_arrival_event = zzz_thuum_learn_word.2801
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_raven_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2801 = {
+    type = character_event
+	title = "Word Wall: Raven Rock Mine"
+    desc = zzz_thuum_intro.2801.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's meditate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2802
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    modifier = {
+                        has_trait = blessed_by_kyne
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
+                            }
+                            factor = 2
+                        }
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 1
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You might learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2802
+                        days = { 30 30 }
+                    }
+                }
+ 
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.0
+                        min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2803
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2802 = {
+    type = character_event
+	title = "Success: Raven Rock Mine"
+
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = dragon_aspect_perk
+                    has_perk = dragon_aspect_two_perk
+                    has_perk = dragon_aspect_three_perk
+                }
+            }
+            add_character_flag = learned_mul
+        }
+        else_if = {
+            limit = {
+                    has_perk = dragon_aspect_perk
+                NOT = {
+                    has_perk = dragon_aspect_two_perk
+                    has_perk = dragon_aspect_three_perk
+                }
+            }
+            add_character_flag = learned_qah
+        }
+        else = {
+            limit = {
+                    has_perk = dragon_aspect_perk
+                    has_perk = dragon_aspect_two_perk
+                    NOT = {
+                        
+                    has_perk = dragon_aspect_three_perk
+                    }
+            }
+            add_character_flag = learned_diiv
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_mul
+                        has_character_flag = learned_qah
+                        has_character_flag = learned_diiv
+                    }
+                }
+                desc = zzz_thuum_intro.2802.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_mul
+                    NOT = {
+                        has_character_flag = learned_qah
+                        has_character_flag = learned_diiv
+                    }
+                }
+                desc = zzz_thuum_intro.2802.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_mul
+                    has_character_flag = learned_qah
+                    NOT = {
+                        has_character_flag = learned_diiv
+                    }
+                }
+                desc = zzz_thuum_intro.2802.desc.b
+            }
+            desc = zzz_thuum_intro.2802.desc.c
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_mul
+                                has_character_flag = learned_qah
+                                has_character_flag = learned_diiv
+                            }
+                        }
+                        desc = zzz_thuum_intro.2802.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_mul
+                            NOT = {
+                                has_character_flag = learned_qah
+                                has_character_flag = learned_diiv
+                            }
+                        }
+                        desc = zzz_thuum_intro.2802.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_mul
+                            has_character_flag = learned_qah
+                            NOT = {
+                                has_character_flag = learned_diiv
+                            }
+                        }
+                        desc = zzz_thuum_intro.2802.option.b
+                    }
+                    desc = zzz_thuum_intro.2802.option.c
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = dragon_aspect_perk
+                    has_perk = dragon_aspect_two_perk
+                    has_perk = dragon_aspect_three_perk
+                }
+            }
+            add_perk = dragon_aspect_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = dragon_aspect_perk
+                NOT = {
+                    has_perk = dragon_aspect_two_perk
+                    has_perk = dragon_aspect_three_perk
+                }
+            }
+            add_perk = dragon_aspect_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+            has_perk = dragon_aspect_perk
+            has_perk = dragon_aspect_two_perk
+                NOT = {
+                    
+                    has_perk = dragon_aspect_three_perk
+                }
+            }
+            add_perk = dragon_aspect_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2803 = {
+    type = character_event
+	title = "Failed: Raven Rock Mine"
+    desc = zzz_thuum_intro.2803.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Failure..."
+        remove_decision_cooldown = visit_raven_thuum_decision
         add_stress = 30
 	}
 }

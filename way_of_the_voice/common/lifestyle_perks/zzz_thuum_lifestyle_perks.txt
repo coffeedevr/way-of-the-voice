@@ -333,7 +333,7 @@ battle_fury_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
     effect = {
         custom_tooltip = {
@@ -356,7 +356,7 @@ battle_fury_two_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = battle_fury_perk
 
@@ -381,7 +381,7 @@ battle_fury_three_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = battle_fury_two_perk
 
@@ -406,7 +406,7 @@ aura_whisper_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
     effect = {
         custom_tooltip = {
@@ -429,7 +429,7 @@ aura_whisper_two_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = aura_whisper_perk
 
@@ -455,7 +455,7 @@ aura_whisper_three_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = aura_whisper_two_perk
 
@@ -481,7 +481,7 @@ dragon_aspect_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
     effect = {
         custom_tooltip = {
@@ -504,7 +504,7 @@ dragon_aspect_two_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = dragon_aspect_perk
 
@@ -530,7 +530,7 @@ dragon_aspect_three_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = dragon_aspect_two_perk
 

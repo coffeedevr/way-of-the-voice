@@ -303,33 +303,76 @@ visit_vahlok_thuum_decision = {
 	confirm_text = "Let's make haste."
 }
 
-visit_vahlok_thuum_decision = {
+visit_volunruud_thuum_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = visit_vahlok_thuum_decision_desc
-	selection_tooltip = "Visit Vahlok's Tomb and learn its hidden Words of Power"
-	title = "Visit Word Wall - Vahlok's Tomb"
+	desc = visit_volunruud_thuum_decision_desc
+	selection_tooltip = "Visit Volunruud and learn its hidden Words of Power"
+	title = "Visit Word Wall - Volunruud"
 
 	is_shown = {
-		has_character_flag = found_vahlok
+		has_character_flag = found_volunruud
 	}
 
 	is_valid = {
 		NOT = {
 			AND = {
-				has_perk = battle_fury_perk
-				has_perk = battle_fury_two_perk
-				has_perk = battle_fury_three_perk
+				has_perk = aura_whisper_perk
+				has_perk = aura_whisper_two_perk
+				has_perk = aura_whisper_three_perk
 			}
 		}
 	}
 
 	effect = {
-		custom_tooltip = visit_vahlok_thuum_decision_effect_tt
+		custom_tooltip = visit_volunruud_thuum_decision_effect_tt
 		trigger_event = {
-			id = zzz_thuum_learn_word.2600 
+			id = zzz_thuum_learn_word.2700 
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+        base = 100
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_raven_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_raven_thuum_decision_desc
+	selection_tooltip = "Visit Raven Rock Mine and learn its hidden Words of Power"
+	title = "Visit Word Wall - Raven Rock Mine"
+
+	is_shown = {
+		has_character_flag = found_raven
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = dragon_aspect_perk
+				has_perk = dragon_aspect_two_perk
+				has_perk = dragon_aspect_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_raven_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2800 
 		}
 	}
 	
