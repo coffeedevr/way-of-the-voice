@@ -250,14 +250,14 @@ battle_fury_decision  = {
 	confirm_text = "Mid Vur Shaan!"
 }
 
-aura_whispher_decision  = {
+dismay_decision  = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = aura_whispher_decision_desc
+	desc = dismay_decision_desc
 	selection_tooltip = "test"
-	title = aura_whispher_decision_title
+	title = dismay_decision_title
 
 	is_shown = {
 		has_trait = thuum_trait_track
