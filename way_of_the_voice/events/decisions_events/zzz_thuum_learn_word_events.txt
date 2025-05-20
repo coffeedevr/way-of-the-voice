@@ -320,7 +320,9 @@ zzz_thuum_learn_word.0020 = {
     }
 
     trigger = {
-
+        NOT = {
+            has_character_flag = received_thuum_invitation
+        }
 	}
 
 

@@ -50,6 +50,7 @@ random_yearly_playable_pulse = {
             limit = {
                 NOT = {
                     has_character_flag = received_thuum_invitation
+                    has_perk = thuum_meditation_perk
                 }
             }
             trigger_event = zzz_thuum_intro.0001
