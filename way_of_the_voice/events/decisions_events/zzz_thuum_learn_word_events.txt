@@ -434,7 +434,7 @@ zzz_thuum_learn_word.0002 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value < 33
+                        value >= 33
                     }
                     factor = 0
                 }
@@ -450,6 +450,48 @@ zzz_thuum_learn_word.0002 = {
                     save_scope_as = location
                 }
                 add_character_flag = found_valhok
+            }
+            2 = {
+                modifier = {
+                    has_trait_xp = {
+                        trait = thuum_trait_track
+                        value >= 33
+                    }
+                    factor = 0
+                }
+                modifier = {
+                    #factor = 0
+                    OR = {
+                        NOT = {
+                            has_character_flag = found_volunruud
+                        }
+                    }
+                }
+                title:b_vahlok.title_province = {
+                    save_scope_as = location
+                }
+                add_character_flag = found_volunruud
+            }
+            2 = {
+                modifier = {
+                    has_trait_xp = {
+                        trait = thuum_trait_track
+                        value >= 33
+                    }
+                    factor = 0
+                }
+                modifier = {
+                    #factor = 0
+                    OR = {
+                        NOT = {
+                            has_character_flag = found_raven
+                        }
+                    }
+                }
+                title:b_vahlok.title_province = {
+                    save_scope_as = location
+                }
+                add_character_flag = found_raven
             }
         }
     }

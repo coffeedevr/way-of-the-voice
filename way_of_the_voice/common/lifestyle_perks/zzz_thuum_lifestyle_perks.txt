@@ -309,7 +309,7 @@ thuum_meditation_perk = {
     tree = zzz_thuum_shouts
     position = { 1.5 4 }
 
-    name = "Thu'um Meditation"
+    name = "Aspect of Peace"
 
     icon = shout_perk
 
@@ -545,12 +545,12 @@ dragon_aspect_three_perk = {
 	}
 }
 
-summon_warrior_perk = {
+thuum_dominion_perk = {
     lifestyle = thuum_lifestyle
     tree = zzz_thuum_shouts_ii
     position = { 2 4 }
 
-    name = "Call of Valor"
+    name = "Aspect of Dominion"
 
     icon = shout_perk
 
