@@ -52,13 +52,13 @@ hostile_dismay_two_modifier = {
 	icon = county_modifier_opinion_negative
 
 	levy_reinforcement_rate = -0.20
-    monthly_county_control_growth_add = -20
+    monthly_county_control_growth_add = -5
 }
 
 hostile_dismay_three_modifier = {
 	icon = county_modifier_opinion_negative
 
 	levy_reinforcement_rate = -0.25
-	monthly_county_control_growth_add = -0.25
+	monthly_county_control_growth_add = -10
 	county_opinion_add = -30
 }

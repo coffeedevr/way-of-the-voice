@@ -11,6 +11,18 @@
  unstable_thuum_modifier: "Unstable Thuum"
  wrathful_thuum_modifier: "Wrathful Thuum"
 
+ dragon_aspect_modifier: "Dragon Aspect I"
+ dragon_aspect_two_modifier: "Dragon Aspect II"
+ dragon_aspect_three_modifier: "Dragon Aspect III"
+
+ battle_fury_modifier: "Battle Fury I"
+ battle_fury_two_modifier: "Battle Fury II"
+ battle_fury_three_modifier: "Battle Fury III"
+
+ hostile_dismay_modifier: "Population Dismayed By Faas"
+ hostile_dismay_two_modifier: "Population Dismayed By Faas Ru"
+ hostile_dismay_three_modifier: "Population Dismayed By Faas Ru Maar"
+
  THUUM_CONQUEST_COUNTY_CB_NAME:1 "Aspect of Dominion: Conquer [county|E]"
  THUUM_CONQUEST_DUCHY_CB_NAME:1 "Aspect of Dominion: Conquer [duchy|E]"
  THUUM_CONQUEST_CB_SPECIFIC_NAME:1 "Conquer the [TITLE.GetBaseName]"

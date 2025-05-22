@@ -112,7 +112,10 @@
 
  zzz_thuum_learn_word.0020.desc:0 "The air is still as I kneel in meditation, the ancient word echoing on my lips—not spoken, but remembered. I feel it resonating in my chest, deeper than breath, older than memory.\n\nSuddenly, the silence breaks—not with sound, but with revelation. A new rhythm pulses beneath the Word, a hidden harmony within the Shout. It's not just a weapon of force, but a language of creation, a key to the very bones of the world.\n\nMy understanding of the Thu'um grows—not just louder, but truer. A new path unfurls before me, a way to shape the world not just with voice, but with will."
 
-
+ zzz_thuum_decision.3000.desc:0 "A terrible cry echoed across the land — not a roar of rage, but of despair. The sky itself seemd to recoil as everyone heard your Thu'um. \n\nFear seeped into the hearts of the garrison, and even hardened veterans found their hands trembling on their swords. Murmurs spread in the villages: of ghosts walking, of an unseen doom pressing upon the walls. Mustered levies deserted in the night, and local lords found their commands met with sullen silence.\n\nNo enemy had breached their gates, yet the holdfast stood weakened. The Thu’um had passed through — and left only dread in its wake."
+ zzz_thuum_decision.3000.a:0 "Let their courage thin! Faas!"
+ zzz_thuum_decision.3000.b:0 "Dread will stagnate them! Faas Ru!"
+ zzz_thuum_decision.3000.c:0 "Collapse the order and let panic fester! Faas Ru Maar!"
 
  single_combat.0001.unrelenting_force:0 "Try standing your ground against #EMP Unrelenting Force#!!"
 

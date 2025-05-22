@@ -10,6 +10,11 @@ Changes:
 * monthly piety + 20%
 * zealot vassal opinion + 10
 - upon meditation when visiting Gildergreen, it is now possible to acquire the "Blessed By Kyne" trait and "Dragonborn" trait, with 10% chance and 3% chance respectively.
+- Wrathful Thuum now gives 15 monthly tyranny, instead of 50
+1.0.3
+- added limit for thuum medidation event firing
+1.0.2
+- adjusted hbox widget size to make all lifestyles clickable
 1.0.1
 - fixed visit northwind location decision's validity
 1.0.0
