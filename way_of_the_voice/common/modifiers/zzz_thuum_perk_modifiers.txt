@@ -45,7 +45,7 @@ battle_fury_three_modifier = {
 
 hostile_dismay_modifier = {
 	icon = county_modifier_opinion_negative
-	county_opinion_add = -15
+	levy_reinforcement_rate = -0.15
 }
 
 hostile_dismay_two_modifier = {

@@ -303,7 +303,7 @@ dismay_decision  = {
 
 	effect = {
 		custom_tooltip = dismay_decision_effect_tt
-		trigger_event = thuum_whisper_event.0001
+		trigger_event = zzz_thuum_decision.3000
 	}
 
 	ai_potential = {

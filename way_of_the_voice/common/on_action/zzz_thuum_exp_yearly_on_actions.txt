@@ -50,6 +50,7 @@ random_yearly_playable_pulse = {
             limit = {
                 NOT = {
                     has_character_flag = received_thuum_invitation
+                    has_perk = thuun_trait_track
                 }
             }
             trigger_event = zzz_thuum_intro.0001
@@ -74,3 +75,24 @@ random_yearly_playable_pulse = {
         }
     }
 }
+
+five_year_struggle_playable_pulse = {
+
+    trigger = {
+        AND = {
+            has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
+        }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
+    }
+    events = {
+        
+    }
+}
+
