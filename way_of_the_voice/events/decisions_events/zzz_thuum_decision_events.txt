@@ -232,7 +232,7 @@ zzz_thuum_decision.3000 = {
 
     option = {
         name = zzz_thuum_decision.3000.a
-        #custom_tooltip = "You use the Word of Power: Fus!"
+        #custom_tooltip = "You use the Word of Power: Faas!"
         trigger = {
             scope:thuum_user = {
                 has_perk = dismay_perk
@@ -266,7 +266,7 @@ zzz_thuum_decision.3000 = {
 
     option = {
         name = zzz_thuum_decision.3000.b
-        #custom_tooltip = "You use the Words of Power: Fus Ro!"
+        #custom_tooltip = "You use the Words of Power: Faas Ru!"
         trigger = {
             scope:thuum_user = {
                 has_perk = dismay_two_perk
@@ -298,7 +298,7 @@ zzz_thuum_decision.3000 = {
 
     option = {
         name = zzz_thuum_decision.3000.c
-        #custom_tooltip = "You use the Words of Power: Fus Ro Dah!"
+        #custom_tooltip = "You use the Words of Power: Faas Ru Maar!"
         trigger = {
             scope:thuum_user = {
                 has_perk = dismay_three_perk

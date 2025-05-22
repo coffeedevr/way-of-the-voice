@@ -16,7 +16,7 @@ unstable_thuum_modifier = {
 wrathful_thuum_modifier = {
 	icon = stress_negative
 	
-	monthly_tyranny = 50
+	monthly_tyranny = 15
 	dread_baseline_add = 50
 	general_opinion = -50
 }
