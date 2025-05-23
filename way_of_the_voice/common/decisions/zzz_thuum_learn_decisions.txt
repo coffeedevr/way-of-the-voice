@@ -69,6 +69,15 @@
 			}
 			trigger_event = zzz_thuum_learn_word.0010
 		}
+		else_if = {
+			limit = {
+				has_character_flag = found_bleakfalls
+				has_character_flag = found_ironbind
+				has_character_flag = found_northwind
+				has_character_flag = found_ragnvald
+			}
+			trigger_event = zzz_thuum_learn_word.0010
+		}
 		else = {
 			trigger_event = zzz_thuum_learn_word.0001
 		}
@@ -138,7 +147,7 @@ visit_ragnvald_thuum_decision = {
 
 	desc = visit_ragnvald_thuum_decision_desc
 	selection_tooltip = "Visit Ragnvald and learn its hidden Words of Power"
-	title = "Visit Word Wall - ragnvald Ruins"
+	title = "Visit Word Wall - Ragnvald Ruins"
 
 	is_shown = {
 		has_character_flag = found_ragnvald
