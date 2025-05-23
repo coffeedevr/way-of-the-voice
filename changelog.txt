@@ -10,7 +10,7 @@ Changes:
 * an increased chance of success when learning a Word of Power
 * monthly piety + 20%
 * zealot vassal opinion + 10
-- upon meditation when visiting Gildergreen, it is now possible to acquire the "Blessed By Kyne" trait and "Dragonborn" trait, with 10% chance and 3% chance respectively.
+- upon meditation when visiting Gildergreen, it is now possible to acquire the "Blessed By Kyne" trait with a 10% chance
 - Wrathful Thuum modifier now gives 15 monthly tyranny, instead of 50
 1.0.4
 - fixed wrong locations being displayed on Word Wall events
