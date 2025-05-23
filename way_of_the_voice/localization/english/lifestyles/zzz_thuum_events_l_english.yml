@@ -117,6 +117,14 @@
  zzz_thuum_decision.3000.b:0 "Dread will stagnate them! Faas Ru!"
  zzz_thuum_decision.3000.c:0 "Collapse the order and let panic fester! Faas Ru Maar!"
 
+
+ ### THUUM RANDOM EVENTS ###
+ zzz_thuum_random_events.1000.desc:0 "Seeing that it is a lovely day, I head out for a stroll about town. I spend a bit of time enjoying the scenery and perusing market stalls.\n\nWhen I reach the square, a group of noisy peasants have gathered and approach me. They shout a cacophony of obscenities in my general direction, and I catch snippets of what they call me.\n\n 'A foul omen!' one shouts, 'Dragonspawn!' another cries, 'Pure evil!'"
+ zzz_thuum_random_events.2000.desc:0 "A lone warrior named [soldier.GetFullName] arrives at your court, bearing neither tribute nor boast — only quiet resolve.\n\n"I have heard stories," [soldier.GetSheHe] says, "of a voice that shakes mountains and shatters courage. Men say you speak with power drawn from the world’s bones — that when you speak, the winds kneel."\n\n[soldier.GetSheHe|U] removes his helm and kneels. "All my life I have fought for petty lords of lesser power, so instead let me offer my loyalty to one far worthier.""
+ zzz_thuum_random_events.3000.desc:0 "Draped in weather-worn cloaks, a group of humble pilgrims arrives at your doorstep. They have journeyed far, bearing no weapons — only reverence.\n\n"We have heard whispers carried on the wind a voice born from the mountain’s breath — yours," their elder, [new_priest.GetFullName] says. "To wield the Voice is to be touched by the goddess herself", [new_priest.GetSheHe] added.\n\nThey offer what little they possess — coin, relics, and rare scrolls — in tribute to your mastery.\n\n"Accept what we bring, O speaker of the storm, or deny it — and let us honor you another way.""
+
+### THUUM SINGLE COMBAT DUELS ###
+
  single_combat.0001.unrelenting_force:0 "Try standing your ground against #EMP Unrelenting Force#!!"
 
  single_combat.0001.desc.my_feedback.unrelenting_force:0 "I bellow a thunderous shout—*Fus!*—that tears through the air like a storm unleashed. My foe is blasted backward, tumbling across the field as debris flies and silence follows."
