@@ -142,7 +142,7 @@ kyne_peace_decision = {
 
 	effect = {
 		custom_tooltip = kyne_peace_decision_effect_tt
-		trigger_event = zzz_thuum_decision_kyne_peace.1000 
+		trigger_event = zzz_thuum_decision.2000
 	}
 
 	ai_potential = {
