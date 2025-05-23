@@ -76,7 +76,7 @@ random_yearly_playable_pulse = {
     }
 }
 
-five_year_struggle_playable_pulse = {
+five_year_playable_pulse = {
 
     trigger = {
         AND = {
@@ -92,7 +92,9 @@ five_year_struggle_playable_pulse = {
 		is_incapable = no
     }
     events = {
-        
+        zzz_thuum_random_events.1000
+        zzz_thuum_random_events.2000 
+        zzz_thuum_random_events.3000 
     }
 }
 
