@@ -300,7 +300,7 @@ zzz_thuum_learn_word.0010 = {
 ### LEARN THUUM MEDITATION
 zzz_thuum_learn_word.0020 = {
     type = character_event
-	title = "Unlocked: Thu'um Meditation"
+	title = "Unlocked: Aspect of Peace"
     theme = diplomacy_majesty_focus
 
     desc = zzz_thuum_learn_word.0020.desc
@@ -327,6 +327,40 @@ zzz_thuum_learn_word.0020 = {
     option = {
 		name = "Praise Kynareth!"
         add_perk = thuum_meditation_perk
+	}
+}
+
+### LEARN THUUM MEDITATION
+zzz_thuum_learn_word.0030 = {
+    type = character_event
+	title = "Unlocked: Aspect of Dominion"
+    theme = diplomacy_majesty_focus
+
+    desc = zzz_thuum_learn_word.0030.desc
+
+
+    override_background = {
+		reference = army_camp
+	}
+
+    left_portrait = {
+		character = root
+		animation = celebrate_sword
+	}
+
+    is_valid = {
+        
+    }
+
+    trigger = {
+
+	}
+
+
+    option = {
+		name = "Let my Thu'um be known through conquest!"
+        custom_tooltip = "A special casus belli is now unlocked."
+        add_perk = thuum_dominion_perk
 	}
 }
 
@@ -1049,12 +1083,12 @@ zzz_thuum_learn_word.2301 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
-                40 = {
+                35 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3.5
+                        multiplier = 3.0
                         # Always give _some_ chance.
                         min = -39
                     }
@@ -1474,12 +1508,12 @@ zzz_thuum_learn_word.2401 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
-                40 = {
+                35 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3.5
+                        multiplier = 3.0
                         # Always give _some_ chance.
                         min = -39
                     }
@@ -1899,12 +1933,12 @@ zzz_thuum_learn_word.2501 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
-                40 = {
+                35 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3.5
+                        multiplier = 3.0
                         # Always give _some_ chance.
                         min = -39
                     }
@@ -2325,12 +2359,12 @@ zzz_thuum_learn_word.2601 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
-                40 = {
+                35 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3.5
+                        multiplier = 3.0
                         # Always give _some_ chance.
                         min = -39
                     }
@@ -2751,12 +2785,12 @@ zzz_thuum_learn_word.2701 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
-                40 = {
+                35 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3.5
+                        multiplier = 3.0
                         # Always give _some_ chance.
                         min = -39
                     }
@@ -3177,12 +3211,12 @@ zzz_thuum_learn_word.2801 = {
         else = {
             duel = {
                 skill = learning
-                value = very_high_skill_rating
+                value = high_skill_rating
 
-                40 = {
+                35 = {
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3.5
+                        multiplier = 3.0
                         # Always give _some_ chance.
                         min = -39
                     }

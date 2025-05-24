@@ -73,6 +73,21 @@ random_yearly_playable_pulse = {
             }
             trigger_event = zzz_thuum_learn_word.0020
         }
+        if = {
+            limit = {
+                has_trait = thuum_trait_track
+                has_perk = battle_fury_perk
+                has_perk = battle_fury_two_perk
+                has_perk = battle_fury_three_perk
+                has_perk = dismay_perk
+                has_perk = dismay_two_perk
+                has_perk = dismay_three_perk
+                has_perk = dragon_aspect_perk
+                has_perk = dragon_aspect_two_perk
+                has_perk = dragon_aspect_three_perk
+            }
+            trigger_event = zzz_thuum_learn_word.0030
+        }
     }
 }
 
