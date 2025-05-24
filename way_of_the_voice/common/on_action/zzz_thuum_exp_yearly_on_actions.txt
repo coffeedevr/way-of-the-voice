@@ -78,23 +78,13 @@ random_yearly_playable_pulse = {
 
 five_year_playable_pulse = {
 
-    trigger = {
-        AND = {
-            has_trait = thuum_trait_track
-            OR = {
-                is_adult = yes
-                is_ruler = yes
-                is_landless_adventurer = yes
-            }
-        }
-		is_travelling = no
-		is_imprisoned = no
-		is_incapable = no
-    }
-    events = {
-        zzz_thuum_random_events.1000
-        zzz_thuum_random_events.2000 
-        zzz_thuum_random_events.3000 
+    chance_to_happen = 25
+
+    random_events = {
+        100 = zzz_thuum_random_events.1000
+        200 = zzz_thuum_random_events.2000 
+        100 = zzz_thuum_random_events.3000 
+        100 = 0
     }
 }
 

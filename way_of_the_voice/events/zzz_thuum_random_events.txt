@@ -22,9 +22,17 @@ zzz_thuum_random_events.1000 = {
 	}
 
     trigger = {
-        NOT = {
+        AND = {
             has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
         }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
     }
 
     immediate = {
@@ -125,9 +133,17 @@ zzz_thuum_random_events.2000 = {
 	}
 
     trigger = {
-        NOT = {
+        AND = {
             has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
         }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
     }
 
     immediate = {
@@ -188,9 +204,17 @@ zzz_thuum_random_events.3000 = {
 	}
 
     trigger = {
-        NOT = {
+        AND = {
             has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
         }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
     }
 
     immediate = {
