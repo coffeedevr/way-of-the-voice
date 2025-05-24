@@ -321,8 +321,12 @@ zzz_thuum_intro.0004 = {
             save_scope_as = priest
         }
         random_list = {
+            90 = {
+                add_trait = thuum_trait_track
+            }
             10 = {
                 add_trait = blessed_by_kyne
+                add_trait = thuum_trait_track
             }
         }
     }
@@ -339,7 +343,6 @@ zzz_thuum_intro.0004 = {
 
     option = {
 		name = "People will regale my voice's might!"
-        add_trait = thuum_trait_track
         add_perk = unrelenting_force_perk
         trait = blessed_by_kyne
         hidden_effect = {
