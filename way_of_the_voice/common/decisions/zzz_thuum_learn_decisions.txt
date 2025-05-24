@@ -69,6 +69,30 @@
 			}
 			trigger_event = zzz_thuum_learn_word.0010
 		}
+		else_if = {
+			limit = {
+				AND = {
+					has_trait_xp = {
+						trait = thuum_trait_track
+						track = mastery
+						value >= 66
+					}
+					has_trait_xp = {
+						trait = thuum_trait_track
+						track = mastery
+						value < 99
+					}
+				}
+				has_character_flag = found_volunruud
+				has_character_flag = found_ragnvald
+				has_character_flag = found_raven
+				has_character_flag = found_bleakfalls
+				has_character_flag = found_ironbind
+				has_character_flag = found_northwind
+				has_character_flag = found_ragnvald
+			}
+			trigger_event = zzz_thuum_learn_word.0010
+		}
 		else = {
 			trigger_event = zzz_thuum_learn_word.0001
 		}

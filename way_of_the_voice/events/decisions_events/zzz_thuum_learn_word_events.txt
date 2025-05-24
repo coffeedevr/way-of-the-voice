@@ -379,7 +379,7 @@ zzz_thuum_learn_word.0002 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value < 33
+                        value < 32
                     }
                     factor = 0
                 }
@@ -400,7 +400,7 @@ zzz_thuum_learn_word.0002 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value < 33
+                        value < 32
                     }
                     factor = 0
                 }
@@ -413,7 +413,7 @@ zzz_thuum_learn_word.0002 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value < 33
+                        value < 32
                     }
                     factor = 0
                 }
@@ -434,7 +434,7 @@ zzz_thuum_learn_word.0002 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value >= 33
+                        value < 66
                     }
                     factor = 0
                 }
@@ -442,20 +442,20 @@ zzz_thuum_learn_word.0002 = {
                     #factor = 0
                     OR = {
                         NOT = {
-                            has_character_flag = found_valhok
+                            has_character_flag = found_vahlok
                         }
                     }
                 }
                 title:b_vahlok.title_province = {
                     save_scope_as = location
                 }
-                add_character_flag = found_valhok
+                add_character_flag = found_vahlok
             }
             2 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value >= 33
+                        value < 66
                     }
                     factor = 0
                 }
@@ -467,7 +467,7 @@ zzz_thuum_learn_word.0002 = {
                         }
                     }
                 }
-                title:b_vahlok.title_province = {
+                title:b_volunruud.title_province = {
                     save_scope_as = location
                 }
                 add_character_flag = found_volunruud
@@ -476,7 +476,7 @@ zzz_thuum_learn_word.0002 = {
                 modifier = {
                     has_trait_xp = {
                         trait = thuum_trait_track
-                        value >= 33
+                        value < 66
                     }
                     factor = 0
                 }
@@ -488,7 +488,7 @@ zzz_thuum_learn_word.0002 = {
                         }
                     }
                 }
-                title:b_vahlok.title_province = {
+                title:b_ravenmine.title_province = {
                     save_scope_as = location
                 }
                 add_character_flag = found_raven
@@ -2610,7 +2610,7 @@ zzz_thuum_learn_word.2602 = {
 ##FAIL
 zzz_thuum_learn_word.2603 = {
     type = character_event
-	title = "Failed: Northwind Mountains"
+	title = "Failed: Vahlok's Tomb"
     desc = zzz_thuum_intro.2603.desc
     theme = diplomacy_majesty_focus
 
