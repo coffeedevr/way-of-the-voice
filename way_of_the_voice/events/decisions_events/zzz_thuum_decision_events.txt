@@ -38,7 +38,7 @@ zzz_thuum_decision.1000 = {
 					min = -39
 				}
 				desc = harm.0001.a.tt.success
-                add_stress = -50
+                add_stress = -100
                 add_trait_xp = {
                     trait = thuum_trait_track
                     track = mastery
@@ -54,7 +54,7 @@ zzz_thuum_decision.1000 = {
 					min = -19
 				}
 				desc = harm.0001.a.tt.failure
-                add_stress = -30
+                add_stress = -75
                 add_trait_xp = {
                     trait = thuum_trait_track
                     track = mastery
@@ -140,7 +140,7 @@ zzz_thuum_decision.2000 = {
 
 		create_story = story_cycle_pet_mudcrab
 
-		ustom_tooltip = "You befriend a mudcrab and take it as a pet."
+		custom_tooltip = "You befriend a mudcrab and take it as a pet."
 	}
 
 
@@ -171,4 +171,161 @@ zzz_thuum_decision.2000 = {
 		}
 	}
 	
+}
+
+## aura whisper
+zzz_thuum_decision.3000 = {
+     type = character_event
+	title = "Dismay"
+    desc = zzz_thuum_decision.3000.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+
+    trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			is_commanding_army = yes
+		}
+    }
+
+	immediate = {
+		save_scope_as = thuum_user
+		if = {
+			limit = {
+				scope:thuum_user = {
+					is_in_army = yes
+					OR = {
+						is_commanding_army = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:thuum_user = {
+						is_commanding_army = yes
+					}
+				}
+				commanding_army = {
+					location = {
+						save_scope_as = sieging_location
+					}
+				}
+			}
+			else = {
+				knight_army = {
+					location = {
+						save_scope_as = sieging_location
+					}
+				}
+			}
+		}
+	}
+
+    option = {
+        name = zzz_thuum_decision.3000.a
+        #custom_tooltip = "You use the Word of Power: Faas!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = dismay_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_province_modifier = hostile_dismay_modifier
+					has_province_modifier = hostile_dismay_two_modifier
+					has_province_modifier = hostile_dismay_three_modifier
+				}
+			}
+			
+		}
+        ai_chance = {
+			base = 20
+		}
+        scope:sieging_location = {
+				add_province_modifier = {
+					modifier = hostile_dismay_modifier
+					months = 5
+				}
+			province_owner = {
+					add_opinion = {
+						target = root
+						modifier = recenty_sieged_using_fus_opinion 
+					}
+			}
+		}
+
+    }
+
+    option = {
+        name = zzz_thuum_decision.3000.b
+        #custom_tooltip = "You use the Words of Power: Faas Ru!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = dismay_two_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_province_modifier = hostile_dismay_modifier
+					has_province_modifier = hostile_dismay_two_modifier
+					has_province_modifier = hostile_dismay_three_modifier
+				}
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        scope:sieging_location = {
+			add_province_modifier = {
+				modifier = hostile_dismay_two_modifier
+				months = 5
+			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}	
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.3000.c
+        #custom_tooltip = "You use the Words of Power: Faas Ru Maar!"
+        trigger = {
+            scope:thuum_user = {
+                has_perk = dismay_three_perk
+            }
+			scope:sieging_location = {
+				NOR = {
+					has_province_modifier = hostile_dismay_modifier
+					has_province_modifier = hostile_dismay_two_modifier
+					has_province_modifier = hostile_dismay_three_modifier
+				}
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+        scope:sieging_location = {
+			add_province_modifier = {
+				modifier = hostile_dismay_three_modifier
+				months = 5
+			}
+			province_owner = {
+				add_opinion = {
+					target = root
+					modifier = recenty_sieged_using_fus_opinion 
+				}
+			}
+		}	
+    }
+
 }

@@ -1,4 +1,4 @@
-﻿fund_learning_thuum_decision = {
+fund_learning_thuum_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
@@ -14,6 +14,7 @@
 
 	is_valid = {
 		is_adult = yes
+		is_travelling = no
 		OR = {
 			NOT = {
 				AND = {
@@ -29,6 +30,15 @@
 					has_perk = whirlwind_sprint_perk
 					has_perk = whirlwind_sprint_two_perk
 					has_perk = whirlwind_sprint_three_perk
+					has_perk = battle_fury_perk
+					has_perk = battle_fury_two_perk
+					has_perk = battle_fury_three_perk
+					has_perk = dismay_perk
+					has_perk = dismay_two_perk
+					has_perk = dismay_three_perk
+					has_perk = dragon_aspect_perk
+					has_perk = dragon_aspect_two_perk
+					has_perk = dragon_aspect_three_perk
 				}
 			}
 		}
@@ -71,6 +81,21 @@
 		}
 		else_if = {
 			limit = {
+				AND = {
+					has_trait_xp = {
+						trait = thuum_trait_track
+						track = mastery
+						value >= 66
+					}
+					has_trait_xp = {
+						trait = thuum_trait_track
+						track = mastery
+						value < 99
+					}
+				}
+				has_character_flag = found_volunruud
+				has_character_flag = found_ragnvald
+				has_character_flag = found_raven
 				has_character_flag = found_bleakfalls
 				has_character_flag = found_ironbind
 				has_character_flag = found_northwind
@@ -108,9 +133,15 @@ visit_bleaks_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_bleakfalls
+		NOT = {
+			has_perk = unrelenting_force_perk
+			has_perk = unrelenting_force_two_perk
+			has_perk = unrelenting_force_three_perk
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = unrelenting_force_perk
@@ -151,9 +182,17 @@ visit_ragnvald_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_ragnvald
+		NOT = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = kyne_peace_perk
@@ -194,9 +233,17 @@ visit_ironbind_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_ironbind
+				NOT = {
+			AND = {
+				has_perk = clear_skies_perk
+				has_perk = clear_skies_two_perk
+				has_perk = clear_skies_three_perk
+			}
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = clear_skies_perk
@@ -233,13 +280,21 @@ visit_northwind_thuum_decision = {
 
 	desc = visit_northwind_thuum_decision_desc
 	selection_tooltip = "Visit Northwind Mountains and learn its hidden Words of Power"
-	title = "Visit Word Wall - Northwind Mountains"
+	title = "Visit Word Wall - Northwind Mountains near Shor's Stone"
 
 	is_shown = {
 		has_character_flag = found_northwind
+				NOT = {
+			AND = {
+				has_perk = whirlwind_sprint_perk
+				has_perk = whirlwind_sprint_two_perk
+				has_perk = whirlwind_sprint_three_perk
+			}
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = whirlwind_sprint_perk
@@ -253,6 +308,159 @@ visit_northwind_thuum_decision = {
 		custom_tooltip = visit_northwind_thuum_decision_effect_tt
 		trigger_event = {
 			id = zzz_thuum_learn_word.2500 
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+        base = 100
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_vahlok_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_vahlok_thuum_decision_desc
+	selection_tooltip = "Visit Vahlok's Tomb and learn its hidden Words of Power"
+	title = "Visit Word Wall - Vahlok's Tomb"
+
+	is_shown = {
+		is_travelling = no
+		has_character_flag = found_vahlok
+				NOT = {
+			AND = {
+				has_perk = battle_fury_perk
+				has_perk = battle_fury_two_perk
+				has_perk = battle_fury_three_perk
+			}
+		}
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = battle_fury_perk
+				has_perk = battle_fury_two_perk
+				has_perk = battle_fury_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_vahlok_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2600 
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+        base = 100
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_volunruud_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_volunruud_thuum_decision_desc
+	selection_tooltip = "Visit Volunruud and learn its hidden Words of Power"
+	title = "Visit Word Wall - Volunruud"
+
+	is_shown = {
+		is_travelling = no
+		has_character_flag = found_volunruud
+				NOT = {
+			AND = {
+				has_perk = dismay_perk
+				has_perk = dismay_two_perk
+				has_perk = dismay_three_perk
+			}
+		}
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = dismay_perk
+				has_perk = dismay_two_perk
+				has_perk = dismay_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_volunruud_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2700 
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+        base = 100
+	}
+
+	cooldown = { years = 2 }
+
+	confirm_text = "Let's make haste."
+}
+
+visit_raven_thuum_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = visit_raven_thuum_decision_desc
+	selection_tooltip = "Visit Raven Rock Mine and learn its hidden Words of Power"
+	title = "Visit Word Wall - Raven Rock Mine"
+
+	is_shown = {
+		is_travelling = no
+		has_character_flag = found_raven
+				NOT = {
+			AND = {
+				has_perk = dragon_aspect_perk
+				has_perk = dragon_aspect_two_perk
+				has_perk = dragon_aspect_three_perk
+			}
+		}
+	}
+
+	is_valid = {
+		NOT = {
+			AND = {
+				has_perk = dragon_aspect_perk
+				has_perk = dragon_aspect_two_perk
+				has_perk = dragon_aspect_three_perk
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = visit_raven_thuum_decision_effect_tt
+		trigger_event = {
+			id = zzz_thuum_learn_word.2800 
 		}
 	}
 	

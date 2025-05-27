@@ -309,7 +309,7 @@ thuum_meditation_perk = {
     tree = zzz_thuum_shouts
     position = { 1.5 4 }
 
-    name = "Thu'um Meditation"
+    name = "Aspect of Peace"
 
     icon = shout_perk
 
@@ -329,11 +329,11 @@ battle_fury_perk = {
    position = { 0 0 }
 
     can_be_picked = {
-        has_character_flag = learned_mid
+        has_character_flag = learned_faas
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
     effect = {
         custom_tooltip = {
@@ -352,11 +352,11 @@ battle_fury_two_perk = {
    position = { 0 1 }
 
     can_be_picked = {
-        has_character_flag = learned_vur
+        has_character_flag = learned_ru
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = battle_fury_perk
 
@@ -377,11 +377,11 @@ battle_fury_three_perk = {
    position = { 0 2 }
 
     can_be_picked = {
-        has_character_flag = learned_shaan
+        has_character_flag = learned_maar
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = battle_fury_two_perk
 
@@ -396,21 +396,21 @@ battle_fury_three_perk = {
     }
 }
 
-aura_whisper_perk = {
+dismay_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts_ii
    position = { 2 0 }
 
     can_be_picked = {
-        has_character_flag = learned_mid
+        has_character_flag = learned_faas
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
     effect = {
         custom_tooltip = {
-			text = AURA_WHISPER_PERK_EFFECT
+			text = DISMAY_PERK_EFFECT
 		}
     }
 
@@ -419,23 +419,23 @@ aura_whisper_perk = {
 	}
 }
 
-aura_whisper_two_perk = {
+dismay_two_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts_ii
    position = { 2 1 }
 
     can_be_picked = {
-        has_character_flag = learned_vur
+        has_character_flag = learned_ru
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
-   parent = aura_whisper_perk
+   parent = dismay_perk
 
     effect = {
         custom_tooltip = {
-			text = AURA_WHISPER_TWO_PERK_EFFECT
+			text = DISMAY_TWO_PERK_EFFECT
 		}
     }
 
@@ -445,23 +445,23 @@ aura_whisper_two_perk = {
 	}
 }
 
-aura_whisper_three_perk = {
+dismay_three_perk = {
    lifestyle = thuum_lifestyle
    tree = zzz_thuum_shouts_ii
    position = { 2 2 }
 
     can_be_picked = {
-        has_character_flag = learned_shaan
+        has_character_flag = learned_maar
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
-   parent = aura_whisper_two_perk
+   parent = dismay_two_perk
 
     effect = {
         custom_tooltip = {
-			text = AURA_WHISPER_THREE_PERK_EFFECT
+			text = DISMAY_THREE_PERK_EFFECT
 		}
     }
 
@@ -481,7 +481,7 @@ dragon_aspect_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
     effect = {
         custom_tooltip = {
@@ -504,7 +504,7 @@ dragon_aspect_two_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = dragon_aspect_perk
 
@@ -530,7 +530,7 @@ dragon_aspect_three_perk = {
         has_trait = thuum_trait_track
     }
 
-   icon = node_diplomacy
+   icon = node_martial
 
    parent = dragon_aspect_two_perk
 
@@ -545,17 +545,17 @@ dragon_aspect_three_perk = {
 	}
 }
 
-summon_warrior_perk = {
+thuum_dominion_perk = {
     lifestyle = thuum_lifestyle
     tree = zzz_thuum_shouts_ii
     position = { 2 4 }
 
-    name = "Call of Valor"
+    name = "Aspect of Dominion"
 
     icon = shout_perk
 
     parent = battle_fury_three_perk
-    parent = aura_whisper_three_perk
+    parent = dismay_three_perk
     parent = dragon_aspect_three_perk
 
     can_be_picked = {

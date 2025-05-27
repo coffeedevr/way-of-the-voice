@@ -128,7 +128,6 @@ kyne_peace_decision = {
 
 	is_valid = {
 		is_adult = yes
-		is_travelling = no
 		is_imprisoned = no
 		is_incapable = no
 
@@ -173,7 +172,6 @@ battle_fury_decision  = {
 
 	is_valid = {
 		is_adult = yes
-		is_travelling = no
 		is_imprisoned = no
 		is_incapable = no
 
@@ -250,21 +248,21 @@ battle_fury_decision  = {
 	confirm_text = "Mid Vur Shaan!"
 }
 
-aura_whispher_decision  = {
+dismay_decision  = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
 
-	desc = battle_fury_decision_desc
+	desc = dismay_decision_desc
 	selection_tooltip = "test"
-	title = battle_fury_decision_title
+	title = dismay_decision_title
 
 	is_shown = {
 		has_trait = thuum_trait_track
 		OR = {
-			has_perk = unrelenting_force_perk
-			has_perk = unrelenting_force_two_perk
-			has_perk = unrelenting_force_three_perk
+			has_perk = dismay_perk
+			has_perk = dismay_two_perk
+			has_perk = dismay_three_perk
 		}
 	}
 
@@ -274,18 +272,21 @@ aura_whispher_decision  = {
 		is_in_army = yes
 
 		OR = {
-			has_perk = unrelenting_force_perk
-			has_perk = unrelenting_force_two_perk
-			has_perk = unrelenting_force_three_perk
+			has_perk = dismay_perk
+			has_perk = dismay_two_perk
+			has_perk = dismay_three_perk
 		}
 		
 		commanding_army = {
 			location = {
 				AND = {
 					NOR = {
-						has_province_modifier = thuum_siege_small_modifier
-						has_province_modifier = thuum_siege_medium_modifier
-						has_province_modifier = thuum_siege_large_modifier
+						has_province_modifier = hostile_dismay_two_modifier
+						has_province_modifier = hostile_dismay_three_modifier
+						has_province_modifier = hostile_dismay_modifier
+						has_province_modifier = friendly_dismay_two_modifier
+						has_province_modifier = friendly_dismay_three_modifier
+						has_province_modifier = friendly_dismay_modifier
 					}
 					NOR = {
 						province_owner = root
@@ -299,15 +300,110 @@ aura_whispher_decision  = {
 	}
 
 	effect = {
-		custom_tooltip = unrelenting_force_decision_effect_tt
-		trigger_event = thuum_siege_event.0002
+		custom_tooltip = dismay_decision_effect_tt
+		trigger_event = zzz_thuum_decision.3000
 	}
 
 	ai_potential = {
 		always = yes
 	}
 
-	confirm_text = "Laas Yah Nir!"
+	confirm_text = "Faas Ru Maar!"
+}
+
+dragon_aspect_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = dragon_aspect_decision_desc
+	selection_tooltip = "test"
+	title = dragon_aspect_decision_title
+
+	is_shown = {
+		OR = {
+			has_perk = dragon_aspect_perk
+			has_perk = dragon_aspect_two_perk
+			has_perk = dragon_aspect_three_perk
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_imprisoned = no
+		is_incapable = no
+
+		OR = {
+			has_perk = dragon_aspect_perk
+			has_perk = dragon_aspect_two_perk
+			has_perk = dragon_aspect_three_perk
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				AND = {
+					has_perk = dragon_aspect_perk
+					NOT = {
+						has_perk = dragon_aspect_two_perk
+						has_perk = dragon_aspect_three_perk
+					}
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+
+				add_character_modifier = {
+					modifier = dragon_aspect_modifier
+					months = 6
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AND = {
+					has_perk = dragon_aspect_perk
+					has_perk = dragon_aspect_two_perk
+					NOT = {
+						has_perk = dragon_aspect_three_perk
+					}
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+
+				add_character_modifier = {
+					modifier = dragon_aspect_two_modifier
+					months = 6
+				}
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+
+				add_character_modifier = {
+					modifier = dragon_aspect_three_modifier
+					months = 6
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	cooldown = { months = 6 }
+
+	confirm_text = "Mul Qah Diiv!"
 }
 
 thuum_meditation_decision = {

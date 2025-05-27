@@ -10,3 +10,37 @@
  #thuum_siege_modifier_desc: "The Thu'um is raw power, pushing aside anything - or anyone - who stands in your path."
  unstable_thuum_modifier: "Unstable Thuum"
  wrathful_thuum_modifier: "Wrathful Thuum"
+
+ dragon_aspect_modifier: "Dragon Aspect I"
+ dragon_aspect_two_modifier: "Dragon Aspect II"
+ dragon_aspect_three_modifier: "Dragon Aspect III"
+
+ battle_fury_modifier: "Battle Fury I"
+ battle_fury_two_modifier: "Battle Fury II"
+ battle_fury_three_modifier: "Battle Fury III"
+
+ hostile_dismay_modifier: "Population Dismayed By Faas"
+ hostile_dismay_two_modifier: "Population Dismayed By Faas Ru"
+ hostile_dismay_three_modifier: "Population Dismayed By Faas Ru Maar"
+
+ ominous_tongue_diplomacy_success: "Favoured Tongue"
+ ominous_tongue_diplomacy_failure: "Hated Tongue"
+ ominous_tongue_last_option: "Ominous Tongue"
+ trained_soldiers_modifier: "Soldiers Trained"
+ respected_by_pilgrims_modifier: "Respected By Pilgrims"
+ revered_by_pilgrims_modifier: "Revered By Pilgrims"
+
+
+ THUUM_CONQUEST_COUNTY_CB_NAME:1 "Aspect of Dominion: Conquer [county|E]"
+ THUUM_CONQUEST_DUCHY_CB_NAME:1 "Aspect of Dominion: Conquer [duchy|E]"
+ THUUM_CONQUEST_CB_SPECIFIC_NAME:1 "Conquer the [TITLE.GetBaseName]"
+ THUUM_CONQUEST_CB_NAME:0 "Conquer the [TITLE.GetBaseName]"
+ THUUM_CONQUEST_WAR_NAME:2 "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjective] Conquest of the [TITLE.GetBaseName]"
+ THUUM_CONQUEST_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+ 
+ thuum_ducal_conquest_cb:0 "Ducal Conquest"
+ THUUM_DUCAL_CONQUEST_CB_NAME:1 "Aspect of Dominion: [ducal_conquest|E] of [county|E]"
+ THUUM_DUCAL_CONQUEST_CB_SPECIFIC_NAME:1 "Ducal Conquest of the [TITLE.GetBaseName]"
+ THUUM_DUCAL_CONQUEST_WAR_NAME:2 "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjectiveNoTooltip] Ducal Conquest of the [TITLE.GetBaseNameNoTooltip]"
+ THUUM_DUCAL_CONQUEST_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+ 

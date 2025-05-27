@@ -1,0 +1,261 @@
+namespace = zzz_thuum_random_events
+
+## Ominous Tongue
+zzz_thuum_random_events.1000 = {
+    type = character_event
+	title = "Ominous Tongue"
+    desc = zzz_thuum_random_events.1000.desc
+    theme = dread
+
+    override_background = {
+		reference = market
+	}
+
+    left_portrait = {
+		character = root
+		animation = shock
+	}
+
+    right_portrait = {  
+		character = scope:mad_person
+		animation = fear
+	}
+
+    trigger = {
+        AND = {
+            has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
+        }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
+    }
+
+    immediate = {
+        create_character = {
+            template = generic_peasant_character
+            location = root.location
+            culture = root.location.culture
+            faith = root.location.faith
+            dynasty = none
+            trait = lunatic_1
+            save_scope_as = mad_person
+        }
+    }
+
+    option = {
+        name = "Then let me be evil."
+
+        add_dread = major_dread_gain
+        add_prestige = medium_prestige_loss
+    }
+
+    option = {
+        name = "I'm not what you all think!"
+        duel = {
+            skill = diplomacy
+            #value = high_skill_rating
+            target = scope:mad_person
+            50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					# Always give _some_ chance.
+					min = -39
+				}
+				desc = harm.0001.a.tt.success
+                add_stress = -50
+                add_character_modifier = {
+                    modifier =  ominous_tongue_diplomacy_success
+                    months = 6
+                }
+			}
+
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					# Limit how low the off-chance can go.
+					min = -19
+				}
+				desc = harm.0001.a.tt.failure
+                add_stress = 30
+                add_character_modifier = {
+                    modifier =  ominous_tongue_diplomacy_failure
+                    months = 6
+                }
+			}
+        }
+    }
+
+    option = {
+        name = "This will be forgotten soon, I hope..."
+        add_character_modifier = {
+            modifier =  ominous_tongue_last_option
+            months = 6
+        }
+        add_dread = minor_dread_gain
+    }
+
+    after = {
+        hidden_effect = {
+			scope:mad_person = {
+				silent_disappearance_effect = yes	
+			}
+		}
+    }
+    
+}
+
+## Power of Lordship
+zzz_thuum_random_events.2000 = {
+    type = character_event
+	title = "Power of Lordship"
+    desc = zzz_thuum_random_events.2000.desc
+    theme = dread
+
+    override_background = {
+		reference = courtyard
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    right_portrait = {  
+		character = scope:soldier
+		animation = marshal
+	}
+
+    trigger = {
+        AND = {
+            has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
+        }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
+    }
+
+    immediate = {
+		create_character = {
+			template = soldier_friend_character
+			location = root.location
+			culture = root.location.culture
+			faith = root.location.faith
+			save_scope_as = soldier
+		}
+		scope:soldier = {
+			add_character_flag = wear_armor
+		}
+    }
+
+    option = {
+        name = "Then rise, and serve with honor."
+
+        add_courtier = scope:soldier
+        add_prestige = medium_prestige_loss
+    }
+
+    option = {
+        name = "Will you be willing to train my soliders?"
+        add_character_modifier = {
+            modifier = trained_soldiers_modifier
+            months = 12
+        }
+        add_prestige = minor_prestige_loss
+    }
+
+    option = {
+        name = "I have no use for strays."
+        add_prestige = minor_prestige_loss
+    }
+
+}
+
+## Kyne's Blessings
+zzz_thuum_random_events.3000 = {
+    type = character_event
+	title = "Kyne's Blessings"
+    desc = zzz_thuum_random_events.3000.desc
+    theme = dread
+
+    override_background = {
+		reference = courtyard
+	}
+
+    left_portrait = {
+		character = root
+		animation = chaplain
+	}
+
+    right_portrait = {  
+		character = scope:new_priest
+		animation = personality_zealous
+	}
+
+    trigger = {
+        AND = {
+            has_trait = thuum_trait_track
+            OR = {
+                is_adult = yes
+                is_ruler = yes
+                is_landless_adventurer = yes
+            }
+        }
+		is_travelling = no
+		is_imprisoned = no
+		is_incapable = no
+    }
+
+    immediate = {
+
+        title:b_gildergreen.title_province = {
+            save_scope_as = province
+        }
+
+        create_character = {
+            template = priest_character_template
+            faith = scope:province.faith
+            culture = scope:province.culture
+            gender_female_chance = 50
+            
+            save_scope_as = new_priest
+        }
+    }
+
+    option = {
+        name = "I accept your offerings with gratitude."
+
+        add_gold = 250
+        add_character_modifier = {
+            modifier = revered_by_pilgrims_modifier
+            months = 12
+        }
+    }
+
+    option = {
+        name = "I walk the path of the Voice, not the coin."
+        add_piety = 500
+        add_character_modifier = {
+            modifier = respected_by_pilgrims_modifier
+            months = 12
+        }
+    }
+
+    option = {
+        name = "Knowledge is power!"
+        add_learning_lifestyle_xp = major_lifestyle_xp
+		add_piety = medium_piety_gain
+    }
+
+}

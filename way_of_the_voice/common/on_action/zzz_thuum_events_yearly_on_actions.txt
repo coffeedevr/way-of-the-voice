@@ -1,0 +1,62 @@
+random_yearly_playable_pulse = {
+    trigger = {
+        basic_is_valid_for_yearly_events_trigger = yes
+	}
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_character_flag = received_thuum_invitation
+                    #has_perk = thuum_trait_track
+                }
+            }
+            trigger_event = zzz_thuum_intro.0001
+        }
+        if = {
+            limit = {
+                has_trait = thuum_trait_track
+                has_perk = whirlwind_sprint_perk
+                has_perk = whirlwind_sprint_two_perk
+                has_perk = whirlwind_sprint_three_perk
+                has_perk = unrelenting_force_perk
+                has_perk = unrelenting_force_two_perk
+                has_perk = unrelenting_force_three_perk
+                has_perk = clear_skies_perk
+                has_perk = clear_skies_two_perk
+                has_perk = clear_skies_three_perk
+                has_perk = kyne_peace_perk
+                has_perk = kyne_peace_two_perk
+                has_perk = kyne_peace_three_perk
+            }
+            trigger_event = zzz_thuum_learn_word.0020
+        }
+        if = {
+            limit = {
+                has_trait = thuum_trait_track
+                has_perk = battle_fury_perk
+                has_perk = battle_fury_two_perk
+                has_perk = battle_fury_three_perk
+                has_perk = dismay_perk
+                has_perk = dismay_two_perk
+                has_perk = dismay_three_perk
+                has_perk = dragon_aspect_perk
+                has_perk = dragon_aspect_two_perk
+                has_perk = dragon_aspect_three_perk
+            }
+            trigger_event = zzz_thuum_learn_word.0030
+        }
+    }
+}
+
+five_year_playable_pulse = {
+
+    chance_to_happen = 100
+
+    random_events = {
+        100 = zzz_thuum_random_events.1000
+        200 = zzz_thuum_random_events.2000 
+        100 = zzz_thuum_random_events.3000 
+        100 = 0
+    }
+}
+

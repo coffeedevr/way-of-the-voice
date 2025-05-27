@@ -1,0 +1,28 @@
+1.1.0
+Additions:
+- added new Shouts/Words of Power (perks): Battle Fury, Dismay, Dragon Aspect, along with new modifiers tied to the new Words of Power
+- added three new random events to fire every five years for Thu'um characters: Ominous Tongue, Power of Lordship, Kyne's Blessings
+Fixes:
+- fixed wrong flag check for northwind's 2nd word
+- fixed wrong decision cooldown reset for visit northwind decision when choosen the "not now" option
+Changes:
+- "Blessed by Kyne" trait now gives:
+* an increased chance of success when learning a Word of Power
+* monthly piety + 20%
+* zealot vassal opinion + 10
+- Kyne's Peace decision now gives base either -100 stress or -75 stress.
+- upon meditation when visiting Gildergreen, it is now possible to acquire the "Blessed By Kyne" trait with a 10% chance
+- Wrathful Thuum modifier now gives 15 monthly tyranny, instead of 50
+- adjusted chance on learning a new word upon visiting a Word Wall to make it a little fair
+- better triggers and localization for events
+1.0.4
+- fixed wrong locations being displayed on Word Wall events
+- added a new limit to check if all word wall events are already found
+1.0.3
+- added limit for thuum medidation event firing
+1.0.2
+- adjusted hbox widget size to make all lifestyles clickable
+1.0.1
+- fixed visit northwind location decision's validity
+1.0.0
+- initial release

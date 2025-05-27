@@ -4,7 +4,7 @@
 
  unrelenting_force_decision_title: "Use 'Unrelenting Force' While in an Army"
  unrelenting_force_decision_desc: "You narrow your eyes and feel the old words stirring in your chest. The power thrums in your throat, begging to be unleashed.\n\nWhether to intimidate, defend, or simply make an entrance, the decision is yours. The walls may crack, the people may scatter — but your Thu'um will be heard."
- unrelenting_force_decision_effect_tt: "You use 'Fus Ro Dah' to shatter the fort walls at your army's position."
+ unrelenting_force_decision_effect_tt: "March and lead an army to a location and use 'Unrelenting Force' to shatter enemy fortresses:\n\nFus: [GetModifier('thuum_siege_small_modifier').GetNameWithTooltip]\nFus Ro: [GetModifier('thuum_siege_medium_modifier').GetNameWithTooltip]\nFus Ro Dah: [GetModifier('thuum_siege_large_modifier').GetNameWithTooltip]"
 
  become_tongue_decision_title: "Visit the Priest of Kyne in Gildergreen"
  become_tongue_decision_desc: "After a long day at court, a courtier excitedly tells me of a northern power said to shatter fortresses, calm beasts, and command the skies with just one's voice.\n\nIntrigued, I consider seeking out the priests of Kyne in Gildergreen to learn this power for myself."
@@ -18,6 +18,15 @@
  thuum_meditation_decision_desc: "You sit in stillness, the world around you fading as you turn inward. Deep within, you seek the ancient resonance of the Voice, ready to attune yourself to its timeless power."
  thuum_meditation_decision_effect_tt: "You meditate to your thu'um which might gain you experience."
 
+ dragon_aspect_decision_title: "Use 'Dragon Aspect' and Feel Your New-found Power"
+ dragon_aspect_decision_desc: "As you steady your breath and think about the words, a fearsome power courses through you, ready to be unleashed."
+
+ dismay_decision_title: "Use 'Dismay' and Hinder Your Enemies"
+ dismay_decision_desc: "You understand that Words of Power can be used to intimidate and frighten. You take a deep breath, feeling the power of the Thu'um within you, and prepare to unleash it upon your enemies, even friends."
+ dismay_decision_effect_tt: "March and lead an army to a location and use 'Dismay' to cast fear into your enemies:\n\nFaas: [GetModifier('hostile_dismay_modifier').GetNameWithTooltip]\nFaas Ru: [GetModifier('hostile_dismay_two_modifier').GetNameWithTooltip]\nFaas Ru Maar: [GetModifier('hostile_dismay_three_modifier').GetNameWithTooltip]"
+
+ battle_fury_decision_title: "Use 'Battle Fury' and Inspire Your Allies"
+ battle_fury_decision_desc: "You take a deep breath, feeling the power of the Thu'um within you, and prepare to unleash it upon your allies to strengthen and embolden them."
  #resume_learning_thuum_title:  "Resume Learning a Word of Power from a Word Wall"
  fund_learning_thuum_decision_desc: "There are more Words of Power out there, lost in the world. Perhaps I can enlist loyal agents to seek them out for me."
  fund_learning_thuum_decision_effect_tt: "Spend gold to fund an expedition in order to find a Word Wall to learn a new Word of Power."
@@ -34,5 +43,12 @@
  visit_northwind_thuum_decision_desc: "Need Description, in first person"
  visit_northwind_thuum_decision_effect_tt: "Visit Northwind Summit and meditate to the Word Wall in hopes to learn a new Word of Power."
 
+ visit_vahlok_thuum_decision_desc: "Need Description, in first person"
+ visit_vahlok_thuum_decision_effect_tt: "Visit Vahlok's Tomb and meditate to the Word Wall in hopes to learn a new Word of Power."
 
+ visit_volunruud_thuum_decision_desc: "Need Description, in first person"
+ visit_volunruud_thuum_decision_effect_tt: "Visit Volunruud and meditate to the Word Wall in hopes to learn a new Word of Power."
+
+ visit_raven_thuum_decision_desc: "Need Description, in first person"
+ visit_raven_thuum_decision_effect_tt: "Visit Raven Rock Mine and meditate to the Word Wall in hopes to learn a new Word of Power."
 

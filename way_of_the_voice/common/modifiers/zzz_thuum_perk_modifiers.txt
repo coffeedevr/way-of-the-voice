@@ -1,17 +1,16 @@
 dragon_aspect_modifier = {
 	icon = prowess_positive
 	
-	monthly_tyranny = 50
-	dread_baseline_add = 50
-	general_opinion = -50
+	health = 2
+	prowess = 2
 }
 
 dragon_aspect_two_modifier = {
 	icon = prowess_positive
 	
-	monthly_tyranny = 50
-	dread_baseline_add = 50
-	general_opinion = -50
+	health = 2
+	men_at_arms_maintenance_per_dread_mult = -0.50
+	prowess = 3
 }
 
 dragon_aspect_three_modifier = {
@@ -19,66 +18,89 @@ dragon_aspect_three_modifier = {
 	
     health = 2
     men_at_arms_maintenance_per_dread_mult = -0.50
-    prowess_per_piety_level = 2
+    prowess = 5
 }
 
 battle_fury_modifier = {
     icon = prowess_positive
 
+	knight_effectiveness_mult = 0.10
     army_damage_mult =  0.10
 }
 
 battle_fury_two_modifier = {
     icon = prowess_positive
 
-    levy_size = 0.25
+    knight_effectiveness_mult = 0.30
     army_damage_mult =  0.15
 }
 
 battle_fury_three_modifier = {
     icon = prowess_positive
 
-    levy_size = 0.25
+    knight_effectiveness_mult = 0.50
     army_damage_mult =  0.15
     army_pursuit_mult = 0.15
 }
 
-hostile_aura_whisper_modifier = {
+hostile_dismay_modifier = {
 	icon = county_modifier_opinion_negative
-	county_opinion_add = -15
-}
-
-hostile_aura_whisper_two_modifier = {
-	icon = county_modifier_opinion_negative
-
 	levy_reinforcement_rate = -0.15
-    county_opinion_add = -20
 }
 
-hostile_aura_whisper_three_modifier = {
+hostile_dismay_two_modifier = {
 	icon = county_modifier_opinion_negative
 
 	levy_reinforcement_rate = -0.20
-	monthly_county_control_growth_add = -0.20
+    monthly_county_control_decline_add = -10
+}
+
+hostile_dismay_three_modifier = {
+	icon = county_modifier_opinion_negative
+
+	levy_reinforcement_rate = -0.25
+	monthly_county_control_decline_add = -20
 	county_opinion_add = -30
 }
 
-friendly_aura_whisper_modifier = {
+
+### EVENT MODIFIERS
+
+ominous_tongue_diplomacy_success = {
+	icon = county_modifier_opinion_positive
+
+	general_opinion = 30
+}
+
+ominous_tongue_diplomacy_failure = {
 	icon = county_modifier_opinion_negative
-	county_opinion_add = 15
+
+	general_opinion = -30
 }
 
-friendly_aura_whisper_two_modifier = {
-	icon = county_modifier_opinion_positive
+ominous_tongue_last_option = {
+	icon = county_modifier_opinion_negative
 
-	levy_reinforcement_rate = 0.15
-    county_opinion_add = 20
+	general_opinion = -20
 }
 
-friendly_aura_whisper_three_modifier = {
-	icon = county_modifier_opinion_positive
+trained_soldiers_modifier = {
+	icon = prowess_positive
 
 	levy_reinforcement_rate = 0.20
-	monthly_county_control_growth_add = 0.20
-	county_opinion_add = 30
+	levy_size = 0.10
+}
+
+respected_by_pilgrims_modifier = {
+	icon = county_modifier_opinion_positive
+
+	general_opinion = 10
+	monthly_piety_gain_mult = 0.10
+}
+
+revered_by_pilgrims_modifier = {
+	icon = county_modifier_opinion_positive
+
+	general_opinion = 10
+	monthly_prestige_gain_mult = 0.10
 }
