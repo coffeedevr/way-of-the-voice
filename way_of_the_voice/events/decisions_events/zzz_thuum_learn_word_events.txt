@@ -320,7 +320,7 @@ zzz_thuum_learn_word.0020 = {
     }
 
     trigger = {
-        NOT = {
+      NOT = {
             has_perk = thuum_meditation_perk
         }
 	}
@@ -411,7 +411,7 @@ zzz_thuum_learn_word.0002 = {
                     }
                     factor = 0
                 }
-                title:b_bleak_falls.title_province = {
+                title:b_ragnvald.title_province = {
                     save_scope_as = location
                 }
                 add_character_flag = found_ragnvald
@@ -428,7 +428,7 @@ zzz_thuum_learn_word.0002 = {
                     }
                     factor = 0
                 }
-                title:b_bleak_falls.title_province = {
+                title:b_ironbind.title_province = {
                     save_scope_as = location
                 }
                 add_character_flag = found_ironbind
@@ -445,7 +445,7 @@ zzz_thuum_learn_word.0002 = {
                     has_character_flag = found_northwind
                     factor = 0
                 }
-                title:b_bleak_falls.title_province = {
+                title:b_shor_stone.title_province = {
                     save_scope_as = location
                 }
                 add_character_flag = found_northwind

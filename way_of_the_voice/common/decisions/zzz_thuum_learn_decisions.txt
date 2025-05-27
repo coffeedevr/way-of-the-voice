@@ -1,4 +1,4 @@
-﻿fund_learning_thuum_decision = {
+fund_learning_thuum_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
 	decision_group_type = thuum_decisions 
 	ai_check_interval = 12
@@ -178,7 +178,7 @@ visit_ragnvald_thuum_decision = {
 
 	desc = visit_ragnvald_thuum_decision_desc
 	selection_tooltip = "Visit Ragnvald and learn its hidden Words of Power"
-	title = "Visit Word Wall - ragnvald Ruins"
+	title = "Visit Word Wall - Ragnvald Ruins"
 
 	is_shown = {
 		has_character_flag = found_ragnvald

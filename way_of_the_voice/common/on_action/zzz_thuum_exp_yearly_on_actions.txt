@@ -31,4 +31,5 @@ yearly_global_pulse = {
             }
         }
     }
+
 }
