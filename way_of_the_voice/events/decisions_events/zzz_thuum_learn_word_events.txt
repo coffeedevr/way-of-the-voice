@@ -320,7 +320,9 @@ zzz_thuum_learn_word.0020 = {
     }
 
     trigger = {
-
+        NOT = {
+            has_perk = thuum_meditation_perk
+        }
 	}
 
 
@@ -388,12 +390,8 @@ zzz_thuum_learn_word.0002 = {
         random_list = {
             2 = {
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_bleakfalls
-                        }
-                    }
+                    has_character_flag = found_bleakfalls
+                    factor = 0
                 }
                 
                 title:b_bleak_falls.title_province = {
@@ -403,12 +401,8 @@ zzz_thuum_learn_word.0002 = {
             }
             2 = {
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_ragnvald
-                        }
-                    }
+                    has_character_flag = found_ragnvald
+                    factor = 0
                 }
                 modifier = {
                     has_trait_xp = {
@@ -424,12 +418,8 @@ zzz_thuum_learn_word.0002 = {
             }
             2 = {
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_ironbind
-                        }
-                    }
+                    has_character_flag = found_ironbind
+                    factor = 0
                 }
                 modifier = {
                     has_trait_xp = {
@@ -452,12 +442,8 @@ zzz_thuum_learn_word.0002 = {
                     factor = 0
                 }
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_northwind
-                        }
-                    }
+                    has_character_flag = found_northwind
+                    factor = 0
                 }
                 title:b_bleak_falls.title_province = {
                     save_scope_as = location
@@ -473,12 +459,8 @@ zzz_thuum_learn_word.0002 = {
                     factor = 0
                 }
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_vahlok
-                        }
-                    }
+                    has_character_flag = found_vahlok
+                    factor = 0
                 }
                 title:b_vahlok.title_province = {
                     save_scope_as = location
@@ -494,12 +476,8 @@ zzz_thuum_learn_word.0002 = {
                     factor = 0
                 }
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_volunruud
-                        }
-                    }
+                    has_character_flag = found_volunruud
+                    factor = 0
                 }
                 title:b_volunruud.title_province = {
                     save_scope_as = location
@@ -515,12 +493,8 @@ zzz_thuum_learn_word.0002 = {
                     factor = 0
                 }
                 modifier = {
-                    #factor = 0
-                    OR = {
-                        NOT = {
-                            has_character_flag = found_raven
-                        }
-                    }
+                    has_character_flag = found_raven
+                    factor = 0
                 }
                 title:b_ravenmine.title_province = {
                     save_scope_as = location
@@ -727,8 +701,9 @@ zzz_thuum_learn_word.2201 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -1120,8 +1095,9 @@ zzz_thuum_learn_word.2301 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -1545,8 +1521,9 @@ zzz_thuum_learn_word.2401 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -1824,7 +1801,7 @@ zzz_thuum_learn_word.2403 = {
 ## VISIT NORTHWIND MOUNTAINS EVENT
 zzz_thuum_learn_word.2500 = {
     type = character_event
-	title = "Word Wall: Northwind Mountains near Shor's Stone"
+	title = "Word Wall: Northwind Mountains"
     desc = zzz_thuum_intro.2500.desc
     theme = diplomacy_majesty_focus
 
@@ -1876,7 +1853,7 @@ zzz_thuum_learn_word.2500 = {
 ## ON ARRIVAL
 zzz_thuum_learn_word.2501 = {
     type = character_event
-	title = "Word Wall: Northwind Mountains near Shor's Stone"
+	title = "Word Wall: Northwind Mountains"
     desc = zzz_thuum_intro.2501.desc
     theme = diplomacy_majesty_focus
 
@@ -1970,8 +1947,9 @@ zzz_thuum_learn_word.2501 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -2052,7 +2030,7 @@ zzz_thuum_learn_word.2501 = {
 ##SUCCESS
 zzz_thuum_learn_word.2502 = {
     type = character_event
-	title = "Success: Northwind Mountains near Shor's Stone"
+	title = "Success: Northwind Mountainse"
 
     theme = diplomacy_majesty_focus
 
@@ -2218,7 +2196,7 @@ zzz_thuum_learn_word.2502 = {
 ##FAIL
 zzz_thuum_learn_word.2503 = {
     type = character_event
-	title = "Failed: Northwind Mountains near Shor's Stone"
+	title = "Failed: Northwind Mountains"
     desc = zzz_thuum_intro.2503.desc
     theme = diplomacy_majesty_focus
 
@@ -2396,8 +2374,9 @@ zzz_thuum_learn_word.2601 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -2822,8 +2801,9 @@ zzz_thuum_learn_word.2701 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -3248,8 +3228,9 @@ zzz_thuum_learn_word.2801 = {
                                 has_cultural_pillar = heritage_nedic_central
                                 has_cultural_pillar = heritage_atmoran
                             }
-                            factor = 2
+                           
                         }
+factor = 2
                     }
                     modifier = {
                         has_trait_xp = {

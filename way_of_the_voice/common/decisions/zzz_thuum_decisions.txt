@@ -128,7 +128,6 @@ kyne_peace_decision = {
 
 	is_valid = {
 		is_adult = yes
-		is_travelling = no
 		is_imprisoned = no
 		is_incapable = no
 
@@ -173,7 +172,6 @@ battle_fury_decision  = {
 
 	is_valid = {
 		is_adult = yes
-		is_travelling = no
 		is_imprisoned = no
 		is_incapable = no
 
@@ -332,7 +330,6 @@ dragon_aspect_decision = {
 
 	is_valid = {
 		is_adult = yes
-		is_travelling = no
 		is_imprisoned = no
 		is_incapable = no
 

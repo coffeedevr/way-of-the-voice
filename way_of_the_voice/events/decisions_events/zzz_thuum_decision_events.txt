@@ -38,7 +38,7 @@ zzz_thuum_decision.1000 = {
 					min = -39
 				}
 				desc = harm.0001.a.tt.success
-                add_stress = -50
+                add_stress = -100
                 add_trait_xp = {
                     trait = thuum_trait_track
                     track = mastery
@@ -54,7 +54,7 @@ zzz_thuum_decision.1000 = {
 					min = -19
 				}
 				desc = harm.0001.a.tt.failure
-                add_stress = -30
+                add_stress = -75
                 add_trait_xp = {
                     trait = thuum_trait_track
                     track = mastery
@@ -140,7 +140,7 @@ zzz_thuum_decision.2000 = {
 
 		create_story = story_cycle_pet_mudcrab
 
-		ustom_tooltip = "You befriend a mudcrab and take it as a pet."
+		custom_tooltip = "You befriend a mudcrab and take it as a pet."
 	}
 
 

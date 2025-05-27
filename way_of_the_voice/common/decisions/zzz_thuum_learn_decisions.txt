@@ -14,6 +14,7 @@
 
 	is_valid = {
 		is_adult = yes
+		is_travelling = no
 		OR = {
 			NOT = {
 				AND = {
@@ -29,6 +30,15 @@
 					has_perk = whirlwind_sprint_perk
 					has_perk = whirlwind_sprint_two_perk
 					has_perk = whirlwind_sprint_three_perk
+					has_perk = battle_fury_perk
+					has_perk = battle_fury_two_perk
+					has_perk = battle_fury_three_perk
+					has_perk = dismay_perk
+					has_perk = dismay_two_perk
+					has_perk = dismay_three_perk
+					has_perk = dragon_aspect_perk
+					has_perk = dragon_aspect_two_perk
+					has_perk = dragon_aspect_three_perk
 				}
 			}
 		}
@@ -123,9 +133,15 @@ visit_bleaks_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_bleakfalls
+		NOT = {
+			has_perk = unrelenting_force_perk
+			has_perk = unrelenting_force_two_perk
+			has_perk = unrelenting_force_three_perk
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = unrelenting_force_perk
@@ -166,9 +182,17 @@ visit_ragnvald_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_ragnvald
+		NOT = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = kyne_peace_perk
@@ -209,9 +233,17 @@ visit_ironbind_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_ironbind
+				NOT = {
+			AND = {
+				has_perk = clear_skies_perk
+				has_perk = clear_skies_two_perk
+				has_perk = clear_skies_three_perk
+			}
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = clear_skies_perk
@@ -252,9 +284,17 @@ visit_northwind_thuum_decision = {
 
 	is_shown = {
 		has_character_flag = found_northwind
+				NOT = {
+			AND = {
+				has_perk = whirlwind_sprint_perk
+				has_perk = whirlwind_sprint_two_perk
+				has_perk = whirlwind_sprint_three_perk
+			}
+		}
 	}
 
 	is_valid = {
+		is_travelling = no
 		NOT = {
 			AND = {
 				has_perk = whirlwind_sprint_perk
@@ -294,7 +334,15 @@ visit_vahlok_thuum_decision = {
 	title = "Visit Word Wall - Vahlok's Tomb"
 
 	is_shown = {
+		is_travelling = no
 		has_character_flag = found_vahlok
+				NOT = {
+			AND = {
+				has_perk = battle_fury_perk
+				has_perk = battle_fury_two_perk
+				has_perk = battle_fury_three_perk
+			}
+		}
 	}
 
 	is_valid = {
@@ -337,7 +385,15 @@ visit_volunruud_thuum_decision = {
 	title = "Visit Word Wall - Volunruud"
 
 	is_shown = {
+		is_travelling = no
 		has_character_flag = found_volunruud
+				NOT = {
+			AND = {
+				has_perk = dismay_perk
+				has_perk = dismay_two_perk
+				has_perk = dismay_three_perk
+			}
+		}
 	}
 
 	is_valid = {
@@ -380,7 +436,15 @@ visit_raven_thuum_decision = {
 	title = "Visit Word Wall - Raven Rock Mine"
 
 	is_shown = {
+		is_travelling = no
 		has_character_flag = found_raven
+				NOT = {
+			AND = {
+				has_perk = dragon_aspect_perk
+				has_perk = dragon_aspect_two_perk
+				has_perk = dragon_aspect_three_perk
+			}
+		}
 	}
 
 	is_valid = {

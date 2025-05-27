@@ -33,13 +33,7 @@ zzz_thuum_intro.0001 = {
     }
 
     trigger = {
-		AND = {
-            NOT = {
-                has_character_flag = visit_gildergreen_as_decision
-            }
-            NOT = {
-                has_character_flag = visited_gildergreen
-            }
+        NOT = {
             has_perk =  thuum_trait_track
         }
 	}
