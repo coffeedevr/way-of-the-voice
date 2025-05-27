@@ -248,7 +248,7 @@ visit_northwind_thuum_decision = {
 
 	desc = visit_northwind_thuum_decision_desc
 	selection_tooltip = "Visit Northwind Mountains and learn its hidden Words of Power"
-	title = "Visit Word Wall - Northwind Mountains"
+	title = "Visit Word Wall - Northwind Mountains near Shor's Stone"
 
 	is_shown = {
 		has_character_flag = found_northwind

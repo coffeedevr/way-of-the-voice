@@ -12,6 +12,7 @@ Changes:
 * zealot vassal opinion + 10
 - upon meditation when visiting Gildergreen, it is now possible to acquire the "Blessed By Kyne" trait with a 10% chance
 - Wrathful Thuum modifier now gives 15 monthly tyranny, instead of 50
+- adjusted chance on learning a new word upon visiting a Word Wall to make it a little fair
 1.0.4
 - fixed wrong locations being displayed on Word Wall events
 - added a new limit to check if all word wall events are already found

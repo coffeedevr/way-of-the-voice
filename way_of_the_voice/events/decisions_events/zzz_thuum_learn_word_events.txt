@@ -1824,7 +1824,7 @@ zzz_thuum_learn_word.2403 = {
 ## VISIT NORTHWIND MOUNTAINS EVENT
 zzz_thuum_learn_word.2500 = {
     type = character_event
-	title = "Word Wall: Northwind Mountains"
+	title = "Word Wall: Northwind Mountains near Shor's Stone"
     desc = zzz_thuum_intro.2500.desc
     theme = diplomacy_majesty_focus
 
@@ -1876,7 +1876,7 @@ zzz_thuum_learn_word.2500 = {
 ## ON ARRIVAL
 zzz_thuum_learn_word.2501 = {
     type = character_event
-	title = "Word Wall: Northwind Mountains"
+	title = "Word Wall: Northwind Mountains near Shor's Stone"
     desc = zzz_thuum_intro.2501.desc
     theme = diplomacy_majesty_focus
 
@@ -2052,7 +2052,7 @@ zzz_thuum_learn_word.2501 = {
 ##SUCCESS
 zzz_thuum_learn_word.2502 = {
     type = character_event
-	title = "Success: Northwind Mountains"
+	title = "Success: Northwind Mountains near Shor's Stone"
 
     theme = diplomacy_majesty_focus
 
@@ -2218,7 +2218,7 @@ zzz_thuum_learn_word.2502 = {
 ##FAIL
 zzz_thuum_learn_word.2503 = {
     type = character_event
-	title = "Failed: Northwind Mountains"
+	title = "Failed: Northwind Mountains near Shor's Stone"
     desc = zzz_thuum_intro.2503.desc
     theme = diplomacy_majesty_focus
 
