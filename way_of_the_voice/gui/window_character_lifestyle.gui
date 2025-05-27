@@ -365,7 +365,7 @@ window = {
 			hbox = {
 				widget = {
 					layoutpolicy_vertical = expanding
-					size = { 575 0 } #EK EDIT: expanded from 450 to make new lifestyles clickable
+					size = { 700 0 } #EK EDIT: expanded from 450 to make new lifestyles clickable
 
 					background = {
 						texture = "gfx/interface/window_lifestyles/lifestyles_tabs_bg.dds"
