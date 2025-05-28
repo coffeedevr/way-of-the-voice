@@ -15,6 +15,11 @@ Changes:
 - Wrathful Thuum modifier now gives 15 monthly tyranny, instead of 50
 - adjusted chance on learning a new word upon visiting a Word Wall to make it a little fair
 - better triggers and localization for events
+- buffed the following traveling perks:
+* Clear Skies Perks now gives 15, 30 and 50 travel Safety
+* Whirlwind Sprint Perks now gives 15, 25, and 35 Travel Speed
+1.0.5
+- fixed trigger event reference for kyne peace decision
 1.0.4
 - fixed wrong locations being displayed on Word Wall events
 - added a new limit to check if all word wall events are already found
