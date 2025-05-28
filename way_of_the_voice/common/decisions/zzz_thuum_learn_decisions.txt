@@ -103,6 +103,18 @@ fund_learning_thuum_decision = {
 			}
 			trigger_event = zzz_thuum_learn_word.0010
 		}
+		else_if = {
+			limit = {
+				has_character_flag = found_volunruud
+				has_character_flag = found_vahlok
+				has_character_flag = found_raven
+				has_character_flag = found_bleakfalls
+				has_character_flag = found_ironbind
+				has_character_flag = found_northwind
+				has_character_flag = found_ragnvald
+			}
+			trigger_event = zzz_thuum_learn_word.0010
+		}
 		else = {
 			trigger_event = zzz_thuum_learn_word.0001
 		}
