@@ -94,7 +94,7 @@ fund_learning_thuum_decision = {
 					}
 				}
 				has_character_flag = found_volunruud
-				has_character_flag = found_ragnvald
+				has_character_flag = found_vahlok
 				has_character_flag = found_raven
 				has_character_flag = found_bleakfalls
 				has_character_flag = found_ironbind

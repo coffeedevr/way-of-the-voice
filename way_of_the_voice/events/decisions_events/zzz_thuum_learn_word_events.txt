@@ -3118,7 +3118,7 @@ zzz_thuum_learn_word.2800 = {
             else = {
                 start_travel_plan = {
                     destination = title:b_ravenmine.title_province
-                    on_travel_planner_cancel_on_action = on_cancel_volunruud_event
+                    on_travel_planner_cancel_on_action = on_cancel_ravenmine_event
                     on_arrival_event = zzz_thuum_learn_word.2801
                     on_arrival_destinations = all_but_last
                 }

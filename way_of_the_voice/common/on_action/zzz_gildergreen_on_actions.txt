@@ -78,3 +78,33 @@ on_cancel_ragnvald_event = {
         remove_decision_cooldown = visit_northwind_thuum_decision
     }
 }
+
+on_cancel_vahlok_event = {
+    trigger = {
+        is_decision_on_cooldown = visit_vahlok_thuum_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = visit_vahlok_thuum_decision
+    }
+}
+
+on_cancel_ravenmine_event = {
+    trigger = {
+        is_decision_on_cooldown = visit_raven_thuum_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = visit_raven_thuum_decision
+    }
+}
+
+on_cancel_volunruud_event = {
+    trigger = {
+        is_decision_on_cooldown = visit_volunruud_thuum_decision 
+    }
+
+    effect = {
+        remove_decision_cooldown = visit_volunruud_thuum_decision
+    }
+}
