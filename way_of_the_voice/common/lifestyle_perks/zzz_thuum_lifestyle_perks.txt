@@ -337,7 +337,7 @@ battle_fury_perk = {
 
     effect = {
         custom_tooltip = {
-			text = MID_VUR_SHAAN_PERK_EFFECT
+			text = BATTLE_FURY_PERK_EFFECT
 		}
     }
 
