@@ -2480,7 +2480,7 @@ zzz_thuum_learn_word.2602 = {
                     has_perk = battle_fury_three_perk
                 }
             }
-            add_character_flag = learned_faas
+            add_character_flag = learned_mid
         }
         else_if = {
             limit = {
@@ -2490,7 +2490,7 @@ zzz_thuum_learn_word.2602 = {
                     has_perk = battle_fury_three_perk
                 }
             }
-            add_character_flag = learned_ru
+            add_character_flag = learned_vur
         }
         else = {
             limit = {
@@ -2501,7 +2501,7 @@ zzz_thuum_learn_word.2602 = {
                     has_perk = battle_fury_three_perk
                     }
             }
-            add_character_flag = learned_maar
+            add_character_flag = learned_shaan
         }
     }
 
@@ -2510,29 +2510,29 @@ zzz_thuum_learn_word.2602 = {
             triggered_desc = {
                 trigger = {
                     NOT = {
-                        has_character_flag = learned_faas
-                        has_character_flag = learned_ru
-                        has_character_flag = learned_maar
+                        has_character_flag = learned_mid
+                        has_character_flag = learned_vur
+                        has_character_flag = learned_shaan
                     }
                 }
                 desc = zzz_thuum_intro.2602.desc.a
             }
             triggered_desc = {
                 trigger = {
-                    has_character_flag = learned_faas
+                    has_character_flag = learned_mid
                     NOT = {
-                        has_character_flag = learned_ru
-                        has_character_flag = learned_maar
+                        has_character_flag = learned_vur
+                        has_character_flag = learned_shaan
                     }
                 }
                 desc = zzz_thuum_intro.2602.desc.a
             }
             triggered_desc = {
                 trigger = {
-                    has_character_flag = learned_faas
-                    has_character_flag = learned_ru
+                    has_character_flag = learned_mid
+                    has_character_flag = learned_vur
                     NOT = {
-                        has_character_flag = learned_maar
+                        has_character_flag = learned_shaan
                     }
                 }
                 desc = zzz_thuum_intro.2602.desc.b
@@ -2552,29 +2552,29 @@ zzz_thuum_learn_word.2602 = {
                     triggered_desc = {
                         trigger = {
                             NOT = {
-                                has_character_flag = learned_faas
-                                has_character_flag = learned_ru
-                                has_character_flag = learned_maar
+                                has_character_flag = learned_mid
+                                has_character_flag = learned_vur
+                                has_character_flag = learned_shaan
                             }
                         }
                         desc = zzz_thuum_intro.2602.desc.a
                     }
                     triggered_desc = {
                         trigger = {
-                            has_character_flag = learned_faas
+                            has_character_flag = learned_mid
                             NOT = {
-                                has_character_flag = learned_ru
-                                has_character_flag = learned_maar
+                                has_character_flag = learned_vur
+                                has_character_flag = learned_shaan
                             }
                         }
                         desc = zzz_thuum_intro.2602.option.a
                     }
                     triggered_desc = {
                         trigger = {
-                            has_character_flag = learned_faas
-                            has_character_flag = learned_ru
+                            has_character_flag = learned_mid
+                            has_character_flag = learned_vur
                             NOT = {
-                                has_character_flag = learned_maar
+                                has_character_flag = learned_shaan
                             }
                         }
                         desc = zzz_thuum_intro.2602.option.b
