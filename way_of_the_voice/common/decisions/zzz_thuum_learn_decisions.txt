@@ -146,9 +146,11 @@ visit_bleaks_thuum_decision = {
 	is_shown = {
 		has_character_flag = found_bleakfalls
 		NOT = {
-			has_perk = unrelenting_force_perk
-			has_perk = unrelenting_force_two_perk
-			has_perk = unrelenting_force_three_perk
+			AND = {
+				has_perk = unrelenting_force_perk
+				has_perk = unrelenting_force_two_perk
+				has_perk = unrelenting_force_three_perk
+			}
 		}
 	}
 
