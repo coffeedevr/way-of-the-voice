@@ -355,7 +355,9 @@ zzz_thuum_learn_word.0030 = {
     }
 
     trigger = {
-
+        NOT = {
+            has_perk = thuum_dominion_perk
+        }
 	}
 
 
