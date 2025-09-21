@@ -42,6 +42,9 @@ random_yearly_playable_pulse = {
                 has_perk = dragon_aspect_perk
                 has_perk = dragon_aspect_two_perk
                 has_perk = dragon_aspect_three_perk
+                NOT = {
+                    has_perk = thuum_dominion_perk
+                }
             }
             trigger_event = zzz_thuum_learn_word.0030
         }
