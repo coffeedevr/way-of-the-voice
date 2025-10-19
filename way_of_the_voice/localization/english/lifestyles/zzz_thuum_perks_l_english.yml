@@ -4,6 +4,7 @@
  thuum_lifestyle_desc:0 "Focus on devoting yourself to the Way of the Voice to unlock words that rival the dragons of old whether for war, wisdom, or wonder."
  zzz_thuum_shouts_name:0 "Kyne's Path"
  zzz_thuum_shouts_ii_name:0 "Alduin's Dominion"
+ zzz_thuum_shouts_iii_name:0 "Forsaken Words"
 
  recently_sieged_using_fus_opinion_name:0 "Recently sieged using Thu'um"
 
@@ -60,3 +61,24 @@
  BATTLE_FURY_PERK_EFFECT: "Unlocks the #high $battle_fury_decision_title$#! [decision|E]."
  BATTLE_FURY_TWO_PERK_EFFECT: "Unlocks the #high $battle_fury_decision_title$#! [decision|E]."
  BATTLE_FURY_THREE_PERK_EFFECT: "Unlocks the #high $battle_fury_decision_title$#! [decision|E]."
+
+ drain_vitality_perk_name:0 "Gaan"
+ drain_vitality_two_perk_name:0 "Lah"
+ drain_vitality_three_perk_name:0 "Haas"
+ DRAIN_VITALITY_PERK_EFFECT: "Unlocks the #high $drain_vitality_decision_title$#! [decision|E]."
+ DRAIN_VITALITY_TWO_PERK_EFFECT: "Unlocks the #high $drain_vitality_decision_title$#! [decision|E]."
+ DRAIN_VITALITY_THREE_PERK_EFFECT: "Unlocks the #high $drain_vitality_decision_title$#! [decision|E]."
+
+ raise_graveyard_perk_name:0 "Lok"
+ raise_graveyard_two_perk_name:0 "Diil"
+ raise_graveyard_three_perk_name:0 "On"
+ RAISE_GRAVEYARD_PERK_EFFECT: "Unlocks the #high $raise_graveyard_decision_title$#! [decision|E]."
+ RAISE_GRAVEYARD_TWO_PERK_EFFECT: "Unlocks the #high $raise_graveyard_decision_title$#! [decision|E]."
+ RAISE_GRAVEYARD_THREE_PERK_EFFECT: "Unlocks the #high $raise_graveyard_decision_title$#! [decision|E]."
+
+ plague_breath_perk_name:0 "Viir"
+ plague_breath_two_perk_name:0 "Su"
+ plague_breath_three_perk_name:0 "Pook"
+ PLAGUE_BREATH_PERK_EFFECT: "Unlocks the #high $plague_breathe_decision_title$#! [decision|E]."
+ PLAGUE_BREATH_TWO_PERK_EFFECT: "Unlocks the #high $plague_breathe_decision_title$#! [decision|E]."
+ PLAGUE_BREATH_THREE_PERK_EFFECT: "Unlocks the #high $plague_breathe_decision_title$#! [decision|E]."

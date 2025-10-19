@@ -511,7 +511,7 @@ zzz_thuum_learn_word.0002 = {
 	}
 
     option = {
-		name = "Well done!"
+		name = "Time to go home for now!"
         custom_tooltip = "Unlocks a decision to visit the Word Wall"
 	}
 }
@@ -786,7 +786,6 @@ zzz_thuum_learn_word.2202 = {
 		animation = interested
 	}
 
-
     immediate = {
         if = {
             limit = {
@@ -818,6 +817,12 @@ zzz_thuum_learn_word.2202 = {
                     }
             }
             add_character_flag = learned_dah
+        }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
         }
     }
 
@@ -913,6 +918,22 @@ zzz_thuum_learn_word.2202 = {
             add_perk = unrelenting_force_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2204
+        }
 	}
 }
 
@@ -927,14 +948,75 @@ zzz_thuum_learn_word.2203 = {
 		reference = temple_church
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2201
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_bleaks_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2204 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
 
     immediate = {
-        
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -942,11 +1024,20 @@ zzz_thuum_learn_word.2203 = {
 	}
 
     option = {
-		name = "Failure..."
-        remove_decision_cooldown = visit_bleaks_thuum_decision
-        add_stress = 30
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2201
+	}
+
+    option = {
+		name = "It's time to go home for now."
 	}
 }
+
 
 ## VISIT RAGNVALD RUINS EVENT
 zzz_thuum_learn_word.2300 = {
@@ -1225,6 +1316,12 @@ zzz_thuum_learn_word.2302 = {
             }
             add_character_flag = learned_ov
         }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
     }
 
     desc = {
@@ -1339,6 +1436,23 @@ zzz_thuum_learn_word.2302 = {
             add_perk = kyne_peace_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = kyne_peace_perk
+                    }
+                    NOT = {
+                        has_perk = kyne_peace_two_perk
+                    }
+                    NOT = {
+                        has_perk = kyne_peace_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2304
+        }
 	}
 }
 
@@ -1353,14 +1467,76 @@ zzz_thuum_learn_word.2303 = {
 		reference = dungeon
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+
+    trigger = {
+
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2301
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_ragnvald_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2304 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
 
     immediate = {
-        
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -1368,9 +1544,17 @@ zzz_thuum_learn_word.2303 = {
 	}
 
     option = {
-		name = "Failure..."
-        remove_decision_cooldown = visit_ragnvald_thuum_decision
-        add_stress = 30
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2301
+	}
+
+    option = {
+		name = "It's time to go home for now."
 	}
 }
 
@@ -1651,6 +1835,12 @@ zzz_thuum_learn_word.2402 = {
             }
             add_character_flag = learned_koor
         }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
     }
 
     desc = {
@@ -1765,6 +1955,23 @@ zzz_thuum_learn_word.2402 = {
             add_perk = clear_skies_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = clear_skies_perk
+                    }
+                    NOT = {
+                        has_perk = clear_skies_two_perk
+                    }
+                    NOT = {
+                        has_perk = clear_skies_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2404
+        }
 	}
 }
 
@@ -1779,14 +1986,26 @@ zzz_thuum_learn_word.2403 = {
 		reference = dungeon
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
-
-    immediate = {
-        
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -1794,9 +2013,66 @@ zzz_thuum_learn_word.2403 = {
 	}
 
     option = {
-		name = "Failure..."
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2403
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
         remove_decision_cooldown = visit_ironbind_thuum_decision
         add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2404 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2401
+	}
+
+    option = {
+		name = "It's time to go home for now."
 	}
 }
 
@@ -2078,6 +2354,12 @@ zzz_thuum_learn_word.2502 = {
             }
             add_character_flag = learned_kest
         }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
     }
 
     desc = {
@@ -2192,6 +2474,23 @@ zzz_thuum_learn_word.2502 = {
             add_perk = whirlwind_sprint_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2204
+        }
 	}
 }
 
@@ -2206,14 +2505,75 @@ zzz_thuum_learn_word.2503 = {
 		reference = wilderness_mountains
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2501
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_northwind_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2504 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
 
     immediate = {
-        
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -2221,9 +2581,17 @@ zzz_thuum_learn_word.2503 = {
 	}
 
     option = {
-		name = "Failure..."
-        remove_decision_cooldown = visit_northwind_thuum_decision
-        add_stress = 30
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2501
+	}
+
+    option = {
+		name = "It's time to go home for now."
 	}
 }
 
@@ -2505,6 +2873,12 @@ zzz_thuum_learn_word.2602 = {
             }
             add_character_flag = learned_shaan
         }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
     }
 
     desc = {
@@ -2619,6 +2993,23 @@ zzz_thuum_learn_word.2602 = {
             add_perk = battle_fury_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2604
+        }
 	}
 }
 
@@ -2633,14 +3024,75 @@ zzz_thuum_learn_word.2603 = {
 		reference = wilderness_mountains
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2601
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_vahlok_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2604 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
 
     immediate = {
-        
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -2648,9 +3100,17 @@ zzz_thuum_learn_word.2603 = {
 	}
 
     option = {
-		name = "Failure..."
-        remove_decision_cooldown = visit_vahlok_thuum_decision
-        add_stress = 30
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2601
+	}
+
+    option = {
+		name = "It's time to go home for now."
 	}
 }
 
@@ -2932,6 +3392,12 @@ zzz_thuum_learn_word.2702 = {
             }
             add_character_flag = learned_nir
         }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
     }
 
     desc = {
@@ -3046,6 +3512,23 @@ zzz_thuum_learn_word.2702 = {
             add_perk = dismay_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2704
+        }
 	}
 }
 
@@ -3060,14 +3543,75 @@ zzz_thuum_learn_word.2703 = {
 		reference = wilderness_mountains
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2701
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_volunruud_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2704 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
 
     immediate = {
-        
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -3075,9 +3619,17 @@ zzz_thuum_learn_word.2703 = {
 	}
 
     option = {
-		name = "Failure..."
-        remove_decision_cooldown = visit_volunruud_thuum_decision
-        add_stress = 30
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2701
+	}
+
+    option = {
+		name = "It's time to go home for now."
 	}
 }
 
@@ -3359,6 +3911,12 @@ zzz_thuum_learn_word.2802 = {
             }
             add_character_flag = learned_diiv
         }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
     }
 
     desc = {
@@ -3473,6 +4031,22 @@ zzz_thuum_learn_word.2802 = {
             add_perk = dragon_aspect_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2804
+        }
 	}
 }
 
@@ -3487,14 +4061,75 @@ zzz_thuum_learn_word.2803 = {
 		reference = wilderness_mountains
 	}
 
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
     left_portrait = {
 		character = root
 		animation = interested
 	}
 
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2801
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "Failure..."
+        remove_decision_cooldown = visit_raven_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2804 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
 
     immediate = {
-        
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
     }
 
     trigger = {
@@ -3502,8 +4137,1572 @@ zzz_thuum_learn_word.2803 = {
 	}
 
     option = {
-		name = "Failure..."
-        remove_decision_cooldown = visit_raven_thuum_decision
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2801
+	}
+
+    option = {
+		name = "It's time to go home for now."
+	}
+}
+
+## VISIT DIMHOLLOW CRYPT EVENT
+zzz_thuum_learn_word.2900 = {
+    type = character_event
+	title = "Word Wall: Dimhollow Crypt"
+    desc = zzz_thuum_intro.2900.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        title:b_dimhollow.title_province = {
+            save_scope_as = location
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's head to Dimhollow Crypt!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_dimhollow.title_province
+                }
+                trigger_event = zzz_thuum_learn_word.2901
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_dimhollow.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_dimhollowmine_event
+                    on_arrival_event = zzz_thuum_learn_word.2901
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_dimhollow_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2901 = {
+    type = character_event
+	title = "Word Wall: Dimhollow Crypt"
+    desc = zzz_thuum_intro.2901.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's meditate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2902
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = high_skill_rating
+
+                35 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.0
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    modifier = {
+                        has_trait = blessed_by_kyne
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
+                            }
+                           
+                        }
+factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 1
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You might learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2902
+                        days = { 30 30 }
+                    }
+                }
+ 
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.0
+                        min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2903
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2902 = {
+    type = character_event
+	title = "Success: Dimhollow Crypt"
+
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = drain_vitality_perk
+                    has_perk = drain_vitality_two_perk
+                    has_perk = drain_vitality_three_perk
+                }
+            }
+            add_character_flag = learned_gaan
+        }
+        else_if = {
+            limit = {
+                    has_perk = drain_vitality_perk
+                NOT = {
+                    has_perk = drain_vitality_two_perk
+                    has_perk = drain_vitality_three_perk
+                }
+            }
+            add_character_flag = learned_lah
+        }
+        else = {
+            limit = {
+                    has_perk = drain_vitality_perk
+                    has_perk = drain_vitality_two_perk
+                    NOT = {
+                        
+                    has_perk = drain_vitality_three_perk
+                    }
+            }
+            add_character_flag = learned_haas
+        }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_gaan
+                        has_character_flag = learned_lah
+                        has_character_flag = learned_haas
+                    }
+                }
+                desc = zzz_thuum_intro.2902.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_gaan
+                    NOT = {
+                        has_character_flag = learned_lah
+                        has_character_flag = learned_haas
+                    }
+                }
+                desc = zzz_thuum_intro.2902.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_gaan
+                    has_character_flag = learned_lah
+                    NOT = {
+                        has_character_flag = learned_haas
+                    }
+                }
+                desc = zzz_thuum_intro.2902.desc.b
+            }
+            desc = zzz_thuum_intro.2902.desc.c
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_gaan
+                                has_character_flag = learned_lah
+                                has_character_flag = learned_haas
+                            }
+                        }
+                        desc = zzz_thuum_intro.2902.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_gaan
+                            NOT = {
+                                has_character_flag = learned_lah
+                                has_character_flag = learned_haas
+                            }
+                        }
+                        desc = zzz_thuum_intro.2902.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_gaan
+                            has_character_flag = learned_lah
+                            NOT = {
+                                has_character_flag = learned_haas
+                            }
+                        }
+                        desc = zzz_thuum_intro.2902.option.b
+                    }
+                    desc = zzz_thuum_intro.2902.option.c
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = drain_vitality_perk
+                    has_perk = drain_vitality_two_perk
+                    has_perk = drain_vitality_three_perk
+                }
+            }
+            add_perk = drain_vitality_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = drain_vitality_perk
+                NOT = {
+                    has_perk = drain_vitality_two_perk
+                    has_perk = drain_vitality_three_perk
+                }
+            }
+            add_perk = drain_vitality_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+            has_perk = drain_vitality_perk
+            has_perk = drain_vitality_two_perk
+                NOT = {
+                    
+                    has_perk = drain_vitality_three_perk
+                }
+            }
+            add_perk = drain_vitality_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2904
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2903 = {
+    type = character_event
+	title = "Failed: Dimhollow Crypt"
+    desc = zzz_thuum_intro.2903.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2901
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_dimhollow_thuum_decision
         add_stress = 30
 	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2904 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2901
+	}
+
+    option = {
+		name = "It's time to go home for now."
+	}
+}
+
+## VISIT SHIERKWIND BASTION EVENT
+zzz_thuum_learn_word.2110 = {
+    type = character_event
+	title = "Word Wall: Shriekwind Bastion"
+    desc = zzz_thuum_intro.2110.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        title:b_shriekwind.title_province = {
+            save_scope_as = location
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's head to Shriekwind Bastion!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_shriekwind.title_province
+                }
+                trigger_event = zzz_thuum_learn_word.2111
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_shriekwind.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_shriekwind_event
+                    on_arrival_event = zzz_thuum_learn_word.2111
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_shriekwind_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2111 = {
+    type = character_event
+	title = "Word Wall: Shriekwind Bastion"
+    desc = zzz_thuum_intro.2111.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's meditate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2112
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = high_skill_rating
+
+                35 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.0
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    modifier = {
+                        has_trait = blessed_by_kyne
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
+                            }
+                           
+                        }
+factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 1
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You might learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2112
+                        days = { 30 30 }
+                    }
+                }
+ 
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.0
+                        min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2113
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2112 = {
+    type = character_event
+	title = "Success: Shriekwind Bastion"
+
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_character_flag = learned_lok_gv
+        }
+        else_if = {
+            limit = {
+                    has_perk = raise_graveyard_perk
+                NOT = {
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_character_flag = learned_diil
+        }
+        else = {
+            limit = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    NOT = {
+                        
+                    has_perk = raise_graveyard_three_perk
+                    }
+            }
+            add_character_flag = learned_on
+        }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_lok_gv
+                        has_character_flag = learned_diil
+                        has_character_flag = learned_on
+                    }
+                }
+                desc = zzz_thuum_intro.2112.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_lok_gv
+                    NOT = {
+                        has_character_flag = learned_diil
+                        has_character_flag = learned_on
+                    }
+                }
+                desc = zzz_thuum_intro.2112.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_lok_gv
+                    has_character_flag = learned_diil
+                    NOT = {
+                        has_character_flag = learned_on
+                    }
+                }
+                desc = zzz_thuum_intro.2112.desc.b
+            }
+            desc = zzz_thuum_intro.2112.desc.c
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_lok_gv
+                                has_character_flag = learned_diil
+                                has_character_flag = learned_on
+                            }
+                        }
+                        desc = zzz_thuum_intro.2112.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_lok_gv
+                            NOT = {
+                                has_character_flag = learned_diil
+                                has_character_flag = learned_on
+                            }
+                        }
+                        desc = zzz_thuum_intro.2112.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_lok_gv
+                            has_character_flag = learned_diil
+                            NOT = {
+                                has_character_flag = learned_on
+                            }
+                        }
+                        desc = zzz_thuum_intro.2112.option.b
+                    }
+                    desc = zzz_thuum_intro.2112.option.c
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_perk = raise_graveyard_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = raise_graveyard_perk
+                NOT = {
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_perk = raise_graveyard_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+            has_perk = raise_graveyard_perk
+            has_perk = raise_graveyard_two_perk
+                NOT = {
+                    
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_perk = raise_graveyard_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2214
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2113 = {
+    type = character_event
+	title = "Failed: Shriekwind Bastion"
+    desc = zzz_thuum_intro.2113.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2211
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "Failure..."
+        remove_decision_cooldown = visit_shriekwind_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2124 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2211
+	}
+
+    option = {
+		name = "It's time to go home for now."
+	}
+}
+
+## VISIT CAERDAN EVENT
+zzz_thuum_learn_word.2120 = {
+    type = character_event
+	title = "Word Wall: Caerdan Dwemer Ruin"
+    desc = zzz_thuum_intro.2120.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        title:b_caerdan.title_province = {
+            save_scope_as = location
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's head to Caerdan Dwemer Ruin!"
+		hidden_effect = {
+            if = {
+                limit = {
+                    capital_province.barony = title:b_caerdan.title_province
+                }
+                trigger_event = zzz_thuum_learn_word.2121
+            }
+            else = {
+                start_travel_plan = {
+                    destination = title:b_caerdan.title_province
+                    on_travel_planner_cancel_on_action = on_cancel_caerdan_event
+                    on_arrival_event = zzz_thuum_learn_word.2121
+                    on_arrival_destinations = all_but_last
+                }
+            }
+        }
+	}
+    option = {
+        name = "Maybe not now."
+        remove_decision_cooldown = visit_caerdan_thuum_decision
+    }
+}
+
+## ON ARRIVAL
+zzz_thuum_learn_word.2121 = {
+    type = character_event
+	title = "Word Wall: Caerdan Dwemer Ruin"
+    desc = zzz_thuum_intro.2121.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        current_travel_plan = {
+   			delay_travel_plan = { days = 30 }
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's meditate."
+        
+        trait = thuum_trait_track
+        trait = dragonborn
+
+		if = {
+            limit = {
+                has_trait = dragonborn
+            }
+            duel = {
+                skill = learning
+                value = very_high_skill_rating
+
+                100 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.5
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2122
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+        else = {
+            duel = {
+                skill = learning
+                value = high_skill_rating
+
+                35 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3.0
+                        # Always give _some_ chance.
+                        min = -39
+                    }
+                    modifier = {
+                        has_trait = blessed_by_kyne
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = diligent
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = patient
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = zealous
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = calm
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            OR = {
+                                has_cultural_pillar = heritage_nedic_south
+                                has_cultural_pillar = heritage_nedic_north
+                                has_cultural_pillar = heritage_nedic_central
+                                has_cultural_pillar = heritage_atmoran
+                            }
+                           
+                        }
+factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 100
+					    }
+                        factor = 3
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 66
+					    }
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait_xp = {
+						    trait = thuum_trait_track
+						    value >= 33
+					    }
+                        factor = 1
+                    }
+                    desc = "Your meditation succeeds"
+                    custom_tooltip = "You might learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2122
+                        days = { 30 30 }
+                    }
+                }
+ 
+                40 = {
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = -3.0
+                        min = -19
+                    }
+                    modifier = {
+                        has_trait = wrathful
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = sadistic
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = cynical
+                        factor = 2
+                    }
+                    modifier = {
+                        has_trait = callous
+                        factor = 2
+                    }
+                    modifier = {
+                        culture = {
+                            NOT = {
+                                OR = {
+                                    has_cultural_pillar = heritage_nedic_south
+                                    has_cultural_pillar = heritage_nedic_north
+                                    has_cultural_pillar = heritage_nedic_central
+                                    has_cultural_pillar = heritage_atmoran
+                                }
+                            }
+                            factor = 2
+                        }
+                    }
+                    desc = "Your meditation fails"
+                    custom_tooltip = "You do not learn a new Word of Power."
+                    trigger_event = {
+                        id = zzz_thuum_learn_word.2123
+                        days = { 30 30 }
+                    }
+                }
+            }
+        }
+	}
+}
+
+##SUCCESS
+zzz_thuum_learn_word.2122 = {
+    type = character_event
+	title = "Success: Caerdan Dwemer Ruin"
+
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_character_flag = learned_viir
+        }
+        else_if = {
+            limit = {
+                    has_perk = raise_graveyard_perk
+                NOT = {
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_character_flag = learned_su
+        }
+        else = {
+            limit = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    NOT = {
+                        
+                    has_perk = raise_graveyard_three_perk
+                    }
+            }
+            add_character_flag = learned_pook
+        }
+        add_learning_lifestyle_xp = 300
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 3
+        }
+    }
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        has_character_flag = learned_viir
+                        has_character_flag = learned_su
+                        has_character_flag = learned_pook
+                    }
+                }
+                desc = zzz_thuum_intro.2122.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_viir
+                    NOT = {
+                        has_character_flag = learned_su
+                        has_character_flag = learned_pook
+                    }
+                }
+                desc = zzz_thuum_intro.2122.desc.a
+            }
+            triggered_desc = {
+                trigger = {
+                    has_character_flag = learned_viir
+                    has_character_flag = learned_su
+                    NOT = {
+                        has_character_flag = learned_pook
+                    }
+                }
+                desc = zzz_thuum_intro.2122.desc.b
+            }
+            desc = zzz_thuum_intro.2122.desc.c
+        }
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = {
+            text = {
+                first_valid = {
+                    triggered_desc = {
+                        trigger = {
+                            NOT = {
+                                has_character_flag = learned_viir
+                                has_character_flag = learned_su
+                                has_character_flag = learned_pook
+                            }
+                        }
+                        desc = zzz_thuum_intro.2122.desc.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_viir
+                            NOT = {
+                                has_character_flag = learned_su
+                                has_character_flag = learned_pook
+                            }
+                        }
+                        desc = zzz_thuum_intro.2122.option.a
+                    }
+                    triggered_desc = {
+                        trigger = {
+                            has_character_flag = learned_viir
+                            has_character_flag = learned_su
+                            NOT = {
+                                has_character_flag = learned_pook
+                            }
+                        }
+                        desc = zzz_thuum_intro.2122.option.b
+                    }
+                    desc = zzz_thuum_intro.2122.option.c
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_perk = raise_graveyard_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+                has_perk = raise_graveyard_perk
+                NOT = {
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_perk = raise_graveyard_two_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        else_if = {
+            limit = {
+            has_perk = raise_graveyard_perk
+            has_perk = raise_graveyard_two_perk
+                NOT = {
+                    
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
+            add_perk = raise_graveyard_three_perk
+            create_character_memory = { type = learned_thuum_word }
+        }
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_perk = unrelenting_force_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_two_perk
+                    }
+                    NOT = {
+                        has_perk = unrelenting_force_three_perk
+                    }
+                }
+            }
+            trigger_event = zzz_thuum_learn_word.2124
+        }
+	}
+}
+
+##FAIL
+zzz_thuum_learn_word.2123 = {
+    type = character_event
+	title = "Failed: Caerdan Dwemer Ruin"
+    desc = zzz_thuum_intro.2123.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = wilderness_mountains
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+        add_learning_lifestyle_xp = 200
+        add_trait_xp = {
+            trait = thuum_trait_track
+            track = mastery
+            value = 1
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = interested
+	}
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+        
+	}
+
+    option = {
+        name = "Let me try again!"
+        trigger_event = zzz_thuum_learn_word.2121
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        add_stress = 10
+    }
+
+    option = {
+		name = "It's time to go home for now..."
+        remove_decision_cooldown = visit_caerdan_thuum_decision
+        add_stress = 30
+	}
+}
+
+### CONTINUE?
+zzz_thuum_learn_word.2124 = {
+    type = character_event
+	title = "Continue learning the Word Wall?"
+    desc = zzz_thuum_decision.9999.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = temple_church
+	}
+
+    left_portrait = {
+		character = root
+		animation = scheme
+	}
+
+    immediate = {
+        random_courtier = {
+            save_scope_as = entourage
+        }
+    }
+
+    right_portrait = {
+        character = scope:entourage
+        animation = sad
+    }
+
+    trigger = {
+
+	}
+
+    option = {
+		name = "Let's try again."
+        custom_tooltip = "You replenish your rations and try meditating again."
+        pay_reserved_gold = {
+            target = scope:entourage
+            gold = 15
+        }
+        trigger_event = zzz_thuum_learn_word.2121
+	}
+
+    option = {
+		name = "It's time to go home for now."
+	}
+    
 }

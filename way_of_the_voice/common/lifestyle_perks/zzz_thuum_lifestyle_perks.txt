@@ -563,3 +563,241 @@ thuum_dominion_perk = {
     }
 }
 
+drain_vitality_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 0 0 }
+
+    can_be_picked = {
+        has_character_flag = learned_gaan
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+    effect = {
+        custom_tooltip = {
+			text = DRAIN_VITALITY_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        enemy_hostile_scheme_phase_duration_add = 20
+	}
+}
+
+drain_vitality_two_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 0 1 }
+
+    can_be_picked = {
+        has_character_flag = learned_lah
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+   parent = drain_vitality_perk
+
+    effect = {
+        custom_tooltip = {
+			text = DRAIN_VITALITY_TWO_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        enemy_hostile_scheme_phase_duration_add = 20
+	}
+
+}
+
+drain_vitality_three_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 0 2 }
+
+    can_be_picked = {
+        has_character_flag = learned_haas
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+   parent = drain_vitality_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = DRAIN_VITALITY_THREE_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+        enemy_hostile_scheme_phase_duration_add = 30
+	}
+}
+
+raise_graveyard_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 2 0 }
+
+    can_be_picked = {
+        has_character_flag = learned_lok_gv
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+    effect = {
+        custom_tooltip = {
+			text = RAISE_GRAVEYARD_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        hard_casualty_modifier = -0.05
+    }
+}
+
+raise_graveyard_two_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 2 1 }
+
+    can_be_picked = {
+        has_character_flag = learned_diil
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+   parent = raise_graveyard_perk
+
+    effect = {
+        custom_tooltip = {
+			text = RAISE_GRAVEYARD_TWO_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        hard_casualty_modifier = -0.05
+    }
+}
+
+raise_graveyard_three_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 2 2 }
+
+    can_be_picked = {
+        has_character_flag = learned_on
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+   parent = raise_graveyard_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = RAISE_GRAVEYARD_THREE_PERK_EFFECT
+		}
+    }
+
+    character_modifier = {
+        hard_casualty_modifier = -0.10
+    }
+}
+
+plague_breath_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 4 0 }
+
+    can_be_picked = {
+        has_character_flag = learned_viir
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+    effect = {
+        custom_tooltip = {
+			text = PLAGUE_BREATH_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		owned_personal_scheme_success_chance_add = 5
+	}
+}
+
+plague_breath_two_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 4 1 }
+
+    can_be_picked = {
+        has_character_flag = learned_su
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+   parent = plague_breath_perk
+
+    effect = {
+        custom_tooltip = {
+			text = PLAGUE_BREATH_TWO_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		dread_gain_mult = 0.05
+	}
+}
+
+plague_breath_three_perk = {
+   lifestyle = thuum_lifestyle
+   tree = zzz_thuum_shouts_iii
+   position = { 4 2 }
+
+    can_be_picked = {
+        has_character_flag = learned_pook
+        has_trait = thuum_trait_track
+    }
+
+   icon = node_intrigue
+
+   parent = plague_breath_two_perk
+
+    effect = {
+        custom_tooltip = {
+			text = PLAGUE_BREATH_THREE_PERK_EFFECT
+		}
+    }
+
+	character_modifier = {
+		dread_gain_mult = 0.05
+        owned_hostile_scheme_success_chance_add = 5
+	}
+}
+
+thuum_compulsion_perk = {
+    lifestyle = thuum_lifestyle
+    tree = zzz_thuum_shouts_iii
+    position = { 2 4 }
+
+    name = "Aspect of Control"
+
+    icon = shout_perk
+
+    parent = drain_vitality_three_perk
+    parent = raise_graveyard_three_perk
+    parent = plague_breath_three_perk
+
+    can_be_picked = {
+        has_trait = thuum_trait_track
+    }
+}

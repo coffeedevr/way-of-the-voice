@@ -329,3 +329,121 @@ zzz_thuum_decision.3000 = {
     }
 
 }
+
+## raise graveyard
+zzz_thuum_decision.4000 = {
+     type = character_event
+	title = "Raise Graveyard"
+    desc = zzz_thuum_decision.4000.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+
+    trigger = {
+        has_trait = thuum_trait_track
+    }
+
+    option = {
+        name = zzz_thuum_decision.4000.a
+        #custom_tooltip = "You use the Word of Power: Faas!"
+        #trigger = {
+        #    scope:thuum_user = {
+        #        has_perk = dismay_perk
+        #    }
+		#}
+        ai_chance = {
+			base = 20
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = target_of_own_spell_notification
+			left_icon = root
+			spawn_army = {
+				men_at_arms = {
+					type = maa_undead_soldiers
+					stacks = {
+						value = 1
+						multiply = spell_multiplier_greater
+						multiply = create_undead_value
+					}
+				}
+				location = root.location
+				inheritable = no
+				uses_supply = no
+				name = "undead_horde"
+			}
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.4000.b
+        #custom_tooltip = "You use the Word of Power: Faas!"
+        #trigger = {
+        #    scope:thuum_user = {
+        #        has_perk = dismay_perk
+        #    }
+		#}
+        ai_chance = {
+			base = 20
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = target_of_own_spell_notification
+			left_icon = root
+			spawn_army = {
+				men_at_arms = {
+					type = maa_undead_archers
+					stacks = {
+						value = 1
+						multiply = spell_multiplier_greater
+						multiply = create_undead_value
+					}
+				}
+				location = root.location
+				inheritable = no
+				uses_supply = no
+				name = "undead_horde"
+			}
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.4000.c
+        #custom_tooltip = "You use the Word of Power: Faas!"
+        #trigger = {
+        #    scope:thuum_user = {
+        #        has_perk = dismay_perk
+        #    }
+		#}
+        ai_chance = {
+			base = 20
+		}
+		s
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = target_of_own_spell_notification
+			left_icon = root
+			spawn_army = {
+				men_at_arms = {
+					type = maa_bone_colossus
+					stacks = {
+						value = 1
+						multiply = spell_multiplier_grand
+						multiply = create_undead_value
+					}
+				}
+				location = root.location
+				inheritable = no
+				uses_supply = no
+				name = "undead_horde"
+			}
+		}
+    }
+}
