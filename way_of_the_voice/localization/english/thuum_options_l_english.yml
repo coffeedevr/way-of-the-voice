@@ -23,6 +23,11 @@
  hostile_dismay_two_modifier: "Population Dismayed By Faas Ru"
  hostile_dismay_three_modifier: "Population Dismayed By Faas Ru Maar"
 
+ drain_vit_modifier: "Drained Vitality By Gaan"
+ drain_vit_two_modifier: "Drained Vitality By Gaan La"
+ drain_vit_three_modifier: "Drained Vitality By Gaan La Haas"
+
+
  ominous_tongue_diplomacy_success: "Favoured Tongue"
  ominous_tongue_diplomacy_failure: "Hated Tongue"
  ominous_tongue_last_option: "Ominous Tongue"

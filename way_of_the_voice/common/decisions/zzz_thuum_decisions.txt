@@ -406,6 +406,165 @@ dragon_aspect_decision = {
 	confirm_text = "Mul Qah Diiv!"
 }
 
+drain_vitality_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = drain_vitality_decision_desc
+	selection_tooltip = "Current holding ruler will receive a debuff modifier"
+	title = drain_vitality_decision_title
+
+	is_shown = {
+		OR = {
+			has_perk = drain_vitality_perk
+			has_perk = drain_vitality_two_perk
+			has_perk = drain_vitality_three_perk
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_commanding_army = yes
+		is_in_army = yes
+		is_imprisoned = no
+		is_incapable = no
+
+		OR = {
+			has_perk = drain_vitality_perk
+			has_perk = drain_vitality_two_perk
+			has_perk = drain_vitality_three_perk
+		}
+		
+		commanding_army = {
+			location = {
+				county = {
+					holder = {
+						NOR = {
+							has_character_modifier = drain_vit_modifier
+							has_character_modifier = drain_vit_two_modifier
+							has_character_modifier = drain_vit_three_modifier
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = drain_vitality_decision_effect_tt
+		trigger_event = zzz_thuum_decision.5000 
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	confirm_text = "Gaan Lah Haas!"
+}
+
+
+plague_breath_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = plague_breath_decision_desc
+	selection_tooltip = "Current holding ruler will receive a debuff modifier"
+	title = plague_breath_decision_title
+
+	is_shown = {
+		OR = {
+			has_perk = plague_breath_perk
+			has_perk = plague_breath_two_perk
+			has_perk = plague_breath_three_perk
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_commanding_army = yes
+		is_in_army = yes
+		is_imprisoned = no
+		is_incapable = no
+
+		OR = {
+			has_perk = plague_breath_perk
+			has_perk = plague_breath_two_perk
+			has_perk = plague_breath_three_perk
+		}
+		
+		commanding_army = {
+			location = {
+				any_province_epidemic = {
+					count < 1
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = plague_breath_decision_effect_tt
+		trigger_event = zzz_thuum_decision.6000 
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	confirm_text = "Viir Su Pook!"
+}
+
+raise_graveyard_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = raise_graveyard_decision_desc
+	selection_tooltip = "Current holding ruler will receive a debuff modifier"
+	title = raise_graveyard_decision_title
+
+	is_shown = {
+		OR = {
+			has_perk = raise_graveyard_perk
+			has_perk = raise_graveyard_two_perk
+			has_perk = raise_graveyard_three_perk
+		}
+
+	}
+
+	is_valid = {
+		is_adult = yes
+		is_imprisoned = no
+		is_incapable = no
+
+		OR = {
+			has_perk = raise_graveyard_perk
+			has_perk = raise_graveyard_two_perk
+			has_perk = raise_graveyard_three_perk
+		}
+		
+		commanding_army = {
+			location = {
+				any_province_epidemic = {
+					count < 1
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = raise_graveyard_decision_effect_tt
+		trigger_event = zzz_thuum_decision.4000 
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	confirm_text = "Lok Diil On!"
+}
+
 thuum_meditation_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
 	decision_group_type = thuum_decisions 
@@ -443,6 +602,37 @@ thuum_meditation_decision = {
 	}
 
 	cooldown = { years = 1 }
+
+	confirm_text = "Start the meditation."
+}
+
+
+thuum_use_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = thuum_decisions 
+	ai_check_interval = 12
+
+	desc = thuum_use_decision_desc
+	selection_tooltip = "test"
+	title = thuum_use_decision_title
+
+	is_shown = {
+
+	}
+
+	is_valid = {
+
+	}
+
+	effect = {
+		root = {
+			set_variable = spells_open
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
 
 	confirm_text = "Start the meditation."
 }

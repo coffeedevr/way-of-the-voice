@@ -2,8 +2,8 @@
 Additions:
 - added new Shouts/Words of Power (perks): Drain Vitality, Raise Graveyard, Plague Breath, along with new modifiers tied to the new Words of Power
 Changes:
-- succesfully learning a word of power now gives 3xp of Thuum Trait and 500xp of learning, while failing to learn a word of power gives 1xp of Thuum Trait and 300xp of Learning.
-- players can now retry to continue learning the next word of power instead of just going home.
+- succesfully learning a word of power now gives 3xp of Thuum Trait and 300xp of learning, while failing to learn a word of power gives 1xp of Thuum Trait and 300xp of Learning.
+- players can now continue/retry learning the next word of power instead of just going home.
 1.1.1a
 - update version to 1.17.*
 - change Wrathful Modifier to last either 3 or 5 years depending on option selected and change monthly tyranny from 15 to 0.75.

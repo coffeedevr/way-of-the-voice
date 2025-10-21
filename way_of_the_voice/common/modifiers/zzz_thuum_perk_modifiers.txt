@@ -63,6 +63,24 @@ hostile_dismay_three_modifier = {
 	county_opinion_add = -30
 }
 
+drain_vit_modifier = {
+	icon = health_positive
+	health = -0.2
+}
+
+drain_vit_two_modifier = {
+	icon = health_positive
+	health = -0.4
+	owned_personal_scheme_success_chance_add = -10
+}
+
+drain_vit_three_modifier = {
+	icon = health_positive
+	health = -0.6
+	owned_personal_scheme_success_chance_add = -10
+	enemy_hostile_scheme_phase_duration_add = -20
+}
+
 
 ### EVENT MODIFIERS
 

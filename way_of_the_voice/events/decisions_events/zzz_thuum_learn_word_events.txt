@@ -4553,13 +4553,13 @@ zzz_thuum_learn_word.2902 = {
             limit = {
                 OR = {
                     NOT = {
-                        has_perk = unrelenting_force_perk
+                        has_perk = drain_vitality_perk
                     }
                     NOT = {
-                        has_perk = unrelenting_force_two_perk
+                        has_perk = drain_vitality_two_perk
                     }
                     NOT = {
-                        has_perk = unrelenting_force_three_perk
+                        has_perk = drain_vitality_three_perk
                     }
                 }
             }
@@ -5143,7 +5143,7 @@ zzz_thuum_learn_word.2113 = {
 }
 
 ### CONTINUE?
-zzz_thuum_learn_word.2124 = {
+zzz_thuum_learn_word.2114 = {
     type = character_event
 	title = "Continue learning the Word Wall?"
     desc = zzz_thuum_decision.9999.desc
@@ -5438,30 +5438,30 @@ zzz_thuum_learn_word.2122 = {
         if = {
             limit = {
                 NOT = {
-                    has_perk = raise_graveyard_perk
-                    has_perk = raise_graveyard_two_perk
-                    has_perk = raise_graveyard_three_perk
+                    has_perk = plague_breath_perk
+                    has_perk = plague_breath_two_perk
+                    has_perk = plague_breath_three_perk
                 }
             }
             add_character_flag = learned_viir
         }
         else_if = {
             limit = {
-                    has_perk = raise_graveyard_perk
+                    has_perk = plague_breath_perk
                 NOT = {
-                    has_perk = raise_graveyard_two_perk
-                    has_perk = raise_graveyard_three_perk
+                    has_perk = plague_breath_two_perk
+                    has_perk = plague_breath_three_perk
                 }
             }
             add_character_flag = learned_su
         }
         else = {
             limit = {
-                    has_perk = raise_graveyard_perk
-                    has_perk = raise_graveyard_two_perk
+                    has_perk = plague_breath_perk
+                    has_perk = plague_breath_two_perk
                     NOT = {
                         
-                    has_perk = raise_graveyard_three_perk
+                    has_perk = plague_breath_three_perk
                     }
             }
             add_character_flag = learned_pook
@@ -5555,48 +5555,48 @@ zzz_thuum_learn_word.2122 = {
         if = {
             limit = {
                 NOT = {
-                    has_perk = raise_graveyard_perk
-                    has_perk = raise_graveyard_two_perk
-                    has_perk = raise_graveyard_three_perk
+                    has_perk = plague_breath_perk
+                    has_perk = plague_breath_two_perk
+                    has_perk = plague_breath_three_perk
                 }
             }
-            add_perk = raise_graveyard_perk
+            add_perk = plague_breath_perk
             create_character_memory = { type = learned_thuum_word }
         }
         else_if = {
             limit = {
-                has_perk = raise_graveyard_perk
+                has_perk = plague_breath_perk
                 NOT = {
-                    has_perk = raise_graveyard_two_perk
-                    has_perk = raise_graveyard_three_perk
+                    has_perk = plague_breath_two_perk
+                    has_perk = plague_breath_three_perk
                 }
             }
-            add_perk = raise_graveyard_two_perk
+            add_perk = rplague_breath_two_perk
             create_character_memory = { type = learned_thuum_word }
         }
         else_if = {
             limit = {
-            has_perk = raise_graveyard_perk
-            has_perk = raise_graveyard_two_perk
+            has_perk = plague_breath_perk
+            has_perk = plague_breath_perk
                 NOT = {
                     
-                    has_perk = raise_graveyard_three_perk
+                    has_perk = plague_breath_three_perk
                 }
             }
-            add_perk = raise_graveyard_three_perk
+            add_perk = plague_breath_three_perk
             create_character_memory = { type = learned_thuum_word }
         }
         if = {
             limit = {
                 OR = {
                     NOT = {
-                        has_perk = unrelenting_force_perk
+                        has_perk = plague_breath_perk
                     }
                     NOT = {
-                        has_perk = unrelenting_force_two_perk
+                        has_perk = plague_breath_two_perk
                     }
                     NOT = {
-                        has_perk = unrelenting_force_three_perk
+                        has_perk = plague_breath_three_perk
                     }
                 }
             }

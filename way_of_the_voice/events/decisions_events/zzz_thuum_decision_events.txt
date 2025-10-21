@@ -425,7 +425,6 @@ zzz_thuum_decision.4000 = {
         ai_chance = {
 			base = 20
 		}
-		s
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = target_of_own_spell_notification
@@ -446,4 +445,204 @@ zzz_thuum_decision.4000 = {
 			}
 		}
     }
+}
+
+## drain vitality
+zzz_thuum_decision.5000 = {
+    type = character_event
+	title = "Drain Vitality"
+    desc = zzz_thuum_decision.5000.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = courtyard
+	}
+
+	trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			is_commanding_army = yes
+		}
+    }
+
+	immediate = {
+		commanding_army = {
+			location = {
+				county = {
+					holder = {
+						save_scope_as = ruler
+					}
+				}
+			}
+		}
+	}
+
+	right_portrait = {
+		character = scope:ruler
+		animation = fear
+	}
+
+    left_portrait = {
+		character = root
+		animation = personality_vengeful
+	}
+
+    trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			is_commanding_army = yes
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.5000.a
+		scope:ruler = {
+			add_character_modifier = drain_vit_modifier
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.5000.b
+		scope:ruler = {
+			add_character_modifier = drain_vit_two_modifier
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.5000.c
+		scope:ruler = {
+			add_character_modifier = drain_vit_three_modifier
+		}
+    }
+
+}
+
+## PLAGUE BREATH
+zzz_thuum_decision.6000 = {
+    type = character_event
+	title = "Plague Breath"
+    desc = zzz_thuum_decision.6000.desc
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = battlefield
+	}
+
+	trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			is_commanding_army = yes
+		}
+    }
+
+	immediate = {
+		commanding_army = {
+			location = {
+				county = {
+					holder = {
+						save_scope_as = ruler
+					}
+				}
+			}
+		}
+	}
+
+	right_portrait = {
+		character = scope:ruler
+		animation = fear
+	}
+
+    left_portrait = {
+		character = root
+		animation = personality_vengeful
+	}
+
+    trigger = {
+        has_trait = thuum_trait_track
+        is_in_army = yes
+		OR = {
+			is_commanding_army = yes
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.6000.a
+		scope:ruler.capital_province = {
+			random_list = {
+				20 = {
+					create_epidemic_outbreak = { type = measles intensity = minor }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = consumption intensity = minor }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = smallpox intensity = minor }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = dysentery intensity = minor }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = ergotism intensity = minor }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = typhus intensity = minor }
+				}
+			}
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.6000.b
+	    	scope:ruler.capital_province = {
+			random_list = {
+				20 = {
+					create_epidemic_outbreak = { type = measles intensity = major }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = consumption intensity = major }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = smallpox intensity = major }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = dysentery intensity = major }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = ergotism intensity = major }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = typhus intensity = major }
+				}
+			}
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.6000.c
+		scope:ruler.capital_province = {
+			random_list = {
+				20 = {
+					create_epidemic_outbreak = { type = measles intensity = apocalyptic }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = consumption intensity = apocalyptic }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = smallpox intensity = apocalyptic }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = dysentery intensity = apocalyptic }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = ergotism intensity = apocalyptic }
+				}
+				20 = {
+					create_epidemic_outbreak = { type = typhus intensity = apocalyptic }
+				}
+			}
+    	}
+	}
 }
