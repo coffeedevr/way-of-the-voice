@@ -1,0 +1,366 @@
+thuum_interaction = {
+
+    greeting = positive
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	desc = "Use Your Known Words of Power"
+    category = interaction_category_magic
+
+	redirect = {
+		scope:actor = {save_scope_as = secondary_actor}
+	}
+
+    options_heading = "List of All Available Dragon Shouts"
+
+    immediate = {
+        root = {
+            save_scope_as = actor
+        }
+    }
+
+	is_shown = {
+        scope:recipient = scope:actor
+	}
+
+    is_valid = {
+        scope:actor = {
+            has_trait = thuum_trait_track
+        }
+    }
+
+    send_name = "Use Shout"
+
+	send_option = {
+        is_valid = {
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = unrelenting_force
+        localization = unrelenting_force_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = kyne_peace
+        localization = kyne_peace_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = clear_skies
+        localization = clear_skies_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = whirlwind_sprint
+        localization = whirlwind_sprint_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = dragon_aspect
+        localization = dragon_aspect_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = dismay
+        localization = dismay_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = battle_fury
+        localization = battle_fury_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:raise_graveyard = no
+            scope:plague_breath = no
+        }
+        flag = drain_vitality
+        localization = drain_vitality_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:plague_breath = no
+        }
+        flag = raise_graveyard
+        localization = raise_graveyard_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+    send_option = {
+        is_valid = {
+            scope:unrelenting_force = no
+            scope:kyne_peace = no
+            scope:clear_skies = no
+            scope:whirlwind_sprint = no
+            scope:dragon_aspect = no
+            scope:dismay = no
+            scope:battle_fury = no
+            scope:drain_vitality = no
+            scope:raise_graveyard = no
+        }
+        flag = plague_breath
+        localization = plague_breath_effect_name
+    }
+
+	send_options_exclusive = no
+
+	can_send = {
+		calc_true_if = {
+			amount >= 1
+            scope:unrelenting_force = yes
+            scope:kyne_peace = yes
+            scope:clear_skies = yes
+            scope:whirlwind_sprint = yes
+            scope:dragon_aspect = yes
+            scope:dismay = yes
+            scope:battle_fury = yes
+            scope:drain_vitality = yes
+            scope:raise_graveyard = yes
+            scope:plague_breath = yes
+		}
+	}
+
+    pre_auto_accept = {
+        
+    }
+
+	on_accept = {
+		scope:recipient = {
+			switch = {
+                trigger = yes
+                scope:unrelenting_force = { 
+                    custom_tooltip = unrelenting_force_decision_effect_tt
+                }
+                scope:kyne_peace = { 
+                    custom_tooltip = kyne_peace_decision_effect_tt
+                }
+                scope:clear_skies = { 
+                    custom_tooltip = clear_skies_decision_effect_tt
+                }
+                scope:whirlwind_sprint = { 
+                    custom_tooltip = whirlwind_sprint_decision_effect_tt
+                }
+                scope:dragon_aspect = { 
+                    custom_tooltip = dragon_aspect_decision_effect_tt
+                }
+                scope:dismay = { 
+                    custom_tooltip = dismay_decision_effect_tt
+                }
+                scope:battle_fury = { 
+                    custom_tooltip = battle_fury_decision_effect_tt
+                }
+                scope:drain_vitality = { 
+                    custom_tooltip = drain_vitality_decision_effect_tt
+                }
+                scope:raise_graveyard = { 
+                    custom_tooltip = raise_graveyard_decision_effect_tt
+                }
+                scope:plague_breath = { 
+                    custom_tooltip = plague_breath_decision_effect_tt
+                }
+                
+            }
+		}
+	}
+	auto_accept = yes
+}

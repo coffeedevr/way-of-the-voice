@@ -605,34 +605,3 @@ thuum_meditation_decision = {
 
 	confirm_text = "Start the meditation."
 }
-
-
-thuum_use_decision = {
-	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-	decision_group_type = thuum_decisions 
-	ai_check_interval = 12
-
-	desc = thuum_use_decision_desc
-	selection_tooltip = "test"
-	title = thuum_use_decision_title
-
-	is_shown = {
-
-	}
-
-	is_valid = {
-
-	}
-
-	effect = {
-		root = {
-			set_variable = spells_open
-		}
-	}
-
-	ai_potential = {
-		always = yes
-	}
-
-	confirm_text = "Start the meditation."
-}
