@@ -8,7 +8,7 @@
 
  recently_sieged_using_fus_opinion_name:0 "Recently sieged using Thu'um"
 
- thuum_interaction: "Shout a Known Word of Power"
+ thuum_interaction: "Use Your Thu'um"
  thuum_caster_desc:0 "[CHARACTER.GetShortUINameNoTooltip|U] will voice out your selected Shout which will trigger an event."
 
  unrelenting_force_effect_name: "Unrelenting Force - [GetPerk('unrelenting_force_perk').GetName( GetPlayer )] [GetPerk('unrelenting_force_two_perk').GetName( GetPlayer )] [GetPerk('unrelenting_force_three_perk').GetName( GetPlayer )]"

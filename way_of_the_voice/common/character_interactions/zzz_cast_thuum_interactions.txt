@@ -5,6 +5,7 @@ thuum_interaction = {
 	ignores_pending_interaction_block = yes
 	desc = "Use Your Known Words of Power"
     category = interaction_category_magic
+    icon = thuum_interaction_icon
 
 	redirect = {
 		scope:actor = {save_scope_as = secondary_actor}
@@ -26,6 +27,7 @@ thuum_interaction = {
         scope:actor = {
             has_trait = thuum_trait_track
         }
+        
     }
 
     send_name = "Use Shout"
@@ -41,6 +43,36 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:recipient = {
+                is_adult = yes
+                is_commanding_army = yes
+                is_in_army = yes
+
+                OR = {
+                    has_perk = unrelenting_force_perk
+                    has_perk = unrelenting_force_two_perk
+                    has_perk = unrelenting_force_three_perk
+                }
+                
+                commanding_army = {
+                    location = {
+                        AND = {
+                            NOR = {
+                                has_province_modifier = thuum_siege_small_modifier
+                                has_province_modifier = thuum_siege_medium_modifier
+                                has_province_modifier = thuum_siege_large_modifier
+                            }
+                            NOR = {
+                                province_owner = root
+                                barony = {
+                                    is_title_created = no
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         flag = unrelenting_force
         localization = unrelenting_force_effect_name
@@ -218,6 +250,7 @@ thuum_interaction = {
                 trigger = yes
                 scope:unrelenting_force = { 
                     custom_tooltip = unrelenting_force_decision_effect_tt
+                    trigger_event = thuum_siege_event.0002
                 }
                 scope:kyne_peace = { 
                     custom_tooltip = kyne_peace_decision_effect_tt
