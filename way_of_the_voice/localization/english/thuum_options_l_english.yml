@@ -1,5 +1,7 @@
 ﻿l_english:
 
+ interaction_category_thuum:0 "Way of the Voice"
+
  ek_travel_events.4035.x: "Nothing my thu'um can't handle! #E Lok!#"
  ek_travel_events.4040.x: "Nothing my thu'um can't handle! #E Lok!#"
  ek_travel_events.4045.x: "Nothing my thu'um can't handle! #E Kaan!#"
@@ -48,4 +50,3 @@
  THUUM_DUCAL_CONQUEST_CB_SPECIFIC_NAME:1 "Ducal Conquest of the [TITLE.GetBaseName]"
  THUUM_DUCAL_CONQUEST_WAR_NAME:2 "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjectiveNoTooltip] Ducal Conquest of the [TITLE.GetBaseNameNoTooltip]"
  THUUM_DUCAL_CONQUEST_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- 

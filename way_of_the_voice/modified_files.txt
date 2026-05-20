@@ -1,5 +1,8 @@
 EK2:
 - gui/window_character_lifestyle.gui
 - gui/window_siege.gui
-- ek_travel_events
-- travel_events_james
+- events/travel_events/ek_travel_events
+- events/travel_events/travel_events_james
+- events/activities/hunt_activity/ek_hunt_events
+- common/scripted_effects/00_single_combat_effects
+- travel/point_of_interest_types/travel_point_of_interest_types

@@ -89,7 +89,6 @@ thuum_siege_event.0001 = {
 					has_province_modifier = thuum_siege_large_modifier
 				}
 			}
-			
 		}
         ai_chance = {
 			base = 20
@@ -182,7 +181,7 @@ thuum_siege_event.0001 = {
 }
 
 thuum_siege_event.0002 = {
-     type = character_event
+    type = character_event
 	title = "Unrelenting Force"
     desc = zzz_thuum_siege_events.1000.desc
     theme = diplomacy_majesty_focus

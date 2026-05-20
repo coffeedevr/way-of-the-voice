@@ -105,6 +105,10 @@ unrelenting_force_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	confirm_text = "Fus Ro Dah!"
 }
 
@@ -123,6 +127,10 @@ kyne_peace_decision = {
 			has_perk = kyne_peace_perk
 			has_perk = kyne_peace_two_perk
 			has_perk = kyne_peace_three_perk
+		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
 		}
 	}
 
@@ -148,6 +156,10 @@ kyne_peace_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	cooldown = { months = 6 }
 
 	confirm_text = "Kaan Drem Ov!"
@@ -167,6 +179,10 @@ battle_fury_decision  = {
 			has_perk = battle_fury_perk
 			has_perk = battle_fury_two_perk
 			has_perk = battle_fury_three_perk
+		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
 		}
 	}
 
@@ -243,6 +259,10 @@ battle_fury_decision  = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	cooldown = { months = 6 }
 
 	confirm_text = "Mid Vur Shaan!"
@@ -263,6 +283,10 @@ dismay_decision  = {
 			has_perk = dismay_perk
 			has_perk = dismay_two_perk
 			has_perk = dismay_three_perk
+		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
 		}
 	}
 
@@ -308,6 +332,10 @@ dismay_decision  = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	confirm_text = "Faas Ru Maar!"
 }
 
@@ -325,6 +353,10 @@ dragon_aspect_decision = {
 			has_perk = dragon_aspect_perk
 			has_perk = dragon_aspect_two_perk
 			has_perk = dragon_aspect_three_perk
+		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
 		}
 	}
 
@@ -401,6 +433,10 @@ dragon_aspect_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	cooldown = { months = 6 }
 
 	confirm_text = "Mul Qah Diiv!"
@@ -420,6 +456,10 @@ drain_vitality_decision = {
 			has_perk = drain_vitality_perk
 			has_perk = drain_vitality_two_perk
 			has_perk = drain_vitality_three_perk
+		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
 		}
 	}
 
@@ -460,9 +500,12 @@ drain_vitality_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	confirm_text = "Gaan Lah Haas!"
 }
-
 
 plague_breath_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/thuum_decisions.dds" }
@@ -478,6 +521,10 @@ plague_breath_decision = {
 			has_perk = plague_breath_perk
 			has_perk = plague_breath_two_perk
 			has_perk = plague_breath_three_perk
+		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
 		}
 	}
 
@@ -512,6 +559,10 @@ plague_breath_decision = {
 		always = yes
 	}
 
+	ai_will_do = {
+		base = 100
+	}
+
 	confirm_text = "Viir Su Pook!"
 }
 
@@ -530,6 +581,10 @@ raise_graveyard_decision = {
 			has_perk = raise_graveyard_two_perk
 			has_perk = raise_graveyard_three_perk
 		}
+		OR = {
+			is_ai = yes
+			debug_only = yes
+		}
 
 	}
 
@@ -543,14 +598,7 @@ raise_graveyard_decision = {
 			has_perk = raise_graveyard_two_perk
 			has_perk = raise_graveyard_three_perk
 		}
-		
-		commanding_army = {
-			location = {
-				any_province_epidemic = {
-					count < 1
-				}
-			}
-		}
+
 	}
 
 	effect = {
@@ -560,6 +608,10 @@ raise_graveyard_decision = {
 
 	ai_potential = {
 		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
 	}
 
 	confirm_text = "Lok Diil On!"
@@ -599,6 +651,10 @@ thuum_meditation_decision = {
 
 	ai_potential = {
 		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
 	}
 
 	cooldown = { years = 1 }

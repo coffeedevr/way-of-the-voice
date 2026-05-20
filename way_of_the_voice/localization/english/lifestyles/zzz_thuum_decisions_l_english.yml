@@ -2,9 +2,14 @@
  # Tongue Lifestyle
  decision_group_type_thuum_decisions: "Thuum Decisions"
 
- unrelenting_force_decision_title: "Use 'Unrelenting Force' While in an Army"
+ unrelenting_force_decision_title: "Use 'Unrelenting Force' to Destroy Holding Walls"
  unrelenting_force_decision_desc: "You narrow your eyes and feel the old words stirring in your chest. The power thrums in your throat, begging to be unleashed.\n\nWhether to intimidate, defend, or simply make an entrance, the decision is yours. The walls may crack, the people may scatter — but your Thu'um will be heard."
  unrelenting_force_decision_effect_tt: "March and lead an army to a location and use 'Unrelenting Force' to shatter enemy fortresses:\n\nFus: [GetModifier('thuum_siege_small_modifier').GetNameWithTooltip]\nFus Ro: [GetModifier('thuum_siege_medium_modifier').GetNameWithTooltip]\nFus Ro Dah: [GetModifier('thuum_siege_large_modifier').GetNameWithTooltip]"
+ 
+ unrelenting_force_interaction_effect_tt: "Use 'Unrelenting Force' and inflict injury to your target with a chance of them being maimed or even death."
+ clear_skies_decision_effect_tt: "You call upon your thuum and grant yourself clear weather, giving you an advantage to your surroundings and the calm of the mind."
+ whirlwind_sprint_decision_effect_tt: "Your thuum doesn't just let you sprint with a force of a whirldwind, but also allows you to quickly take action of your own schemes."
+ dismay_interaction_effect_tt: "You understand that Words of Power can be used to intimidate and frighten your enemies, even friends."
 
  become_tongue_decision_title: "Visit the Priest of Kyne in Gildergreen"
  become_tongue_decision_desc: "After a long day at court, a courtier excitedly tells me of a northern power said to shatter fortresses, calm beasts, and command the skies with just one's voice.\n\nIntrigued, I consider seeking out the priests of Kyne in Gildergreen to learn this power for myself."
@@ -20,9 +25,10 @@
 
  dragon_aspect_decision_title: "Use 'Dragon Aspect' and Feel Your New-found Power"
  dragon_aspect_decision_desc: "As you steady your breath and think about the words, a fearsome power courses through you, ready to be unleashed."
+ dragon_aspect_decision_effect_tt: "Your thuum allows you to gain a powerful dragon-like aspect, granting you enhanced abilities and resilience."
 
  dismay_decision_title: "Use 'Dismay' and Hinder Your Enemies"
- dismay_decision_desc: "You understand that Words of Power can be used to intimidate and frighten. You take a deep breath, feeling the power of the Thu'um within you, and prepare to unleash it upon your enemies, even friends."
+ dismay_decision_desc: "You understand that Words of Power can be used to intimidate and frighten your enemies, even friends."
  dismay_decision_effect_tt: "March and lead an army to a location and use 'Dismay' to cast fear into your enemies:\n\nFaas: [GetModifier('hostile_dismay_modifier').GetNameWithTooltip]\nFaas Ru: [GetModifier('hostile_dismay_two_modifier').GetNameWithTooltip]\nFaas Ru Maar: [GetModifier('hostile_dismay_three_modifier').GetNameWithTooltip]"
 
  battle_fury_decision_title: "Use 'Battle Fury' and Inspire Your Allies"

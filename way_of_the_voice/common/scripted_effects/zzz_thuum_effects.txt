@@ -1,0 +1,24 @@
+add_thuum_capacity = {
+    custom_description = {
+        text = add_thuum_capacity
+        value = $VALUE$
+        if = {            
+            limit = { NOT = { has_variable = thuum_capacity } }
+            if = {
+                limit = { NOT = { $VALUE$ = 0 } }
+                set_variable = { name = thuum_capacity value = $VALUE$ }
+                if = {
+                    limit = { $VALUE$ > magicka_max }
+                    set_variable = { name = thuum_capacity value = thuum_capacity_max }
+                }
+            }
+        }
+        else = {
+            change_variable = { name = thuum_capacity add = $VALUE$ }
+            if = {
+                limit = { var:thuum_capacity > thuum_capacity_max }
+                set_variable = { name = thuum_capacity value = thuum_capacity_max }
+            }
+        }
+    }
+}

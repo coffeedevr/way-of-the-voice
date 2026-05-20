@@ -4,7 +4,7 @@ thuum_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	desc = "Use Your Known Words of Power"
-    category = interaction_category_magic
+    category = interaction_category_thuum
     icon = thuum_interaction_icon
 
 	redirect = {
@@ -13,15 +13,15 @@ thuum_interaction = {
 
     options_heading = "List of All Available Dragon Shouts"
 
-    immediate = {
-        root = {
-            save_scope_as = actor
-        }
-    }
+    #immediate = {
+    #    root = {
+    #        save_scope_as = actor
+    #    }
+    #}
 
-	is_shown = {
-        scope:recipient = scope:actor
-	}
+	#is_shown = {
+    #    scope:recipient = scope:actor
+	#}
 
     is_valid = {
         scope:actor = {
@@ -30,10 +30,13 @@ thuum_interaction = {
         
     }
 
-    send_name = "Use Shout"
-
+    send_name = "Use Your Thu'um"
+    ##UNRELENTING FORCE
 	send_option = {
         is_valid = {
+            NOT = {
+                scope:actor = scope:recipient
+            }
             scope:kyne_peace = no
             scope:clear_skies = no
             scope:whirlwind_sprint = no
@@ -44,41 +47,28 @@ thuum_interaction = {
             scope:raise_graveyard = no
             scope:plague_breath = no
 
-            scope:recipient = {
+            scope:actor = {
                 is_adult = yes
-                is_commanding_army = yes
-                is_in_army = yes
+                is_incapable = no
 
                 OR = {
                     has_perk = unrelenting_force_perk
                     has_perk = unrelenting_force_two_perk
                     has_perk = unrelenting_force_three_perk
                 }
-                
-                commanding_army = {
-                    location = {
-                        AND = {
-                            NOR = {
-                                has_province_modifier = thuum_siege_small_modifier
-                                has_province_modifier = thuum_siege_medium_modifier
-                                has_province_modifier = thuum_siege_large_modifier
-                            }
-                            NOR = {
-                                province_owner = root
-                                barony = {
-                                    is_title_created = no
-                                }
-                            }
-                        }
-                    }
-                }
+
+                is_at_same_location = scope:recipient
             }
         }
         flag = unrelenting_force
         localization = unrelenting_force_effect_name
     }
 
+    ## KYNE'S PEACE
     send_option = {
+        is_shown = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:clear_skies = no
@@ -89,12 +79,28 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:actor = {
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+
+                OR = {
+                    has_perk = kyne_peace_perk
+                    has_perk = kyne_peace_two_perk
+                    has_perk = kyne_peace_three_perk
+                }
+            }
         }
         flag = kyne_peace
         localization = kyne_peace_effect_name
     }
 
+    ## CLEAR SKIES
     send_option = {
+        is_shown = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:kyne_peace = no
@@ -105,12 +111,35 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:actor = {
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+
+                OR = {
+                    has_perk = clear_skies_perk
+                    has_perk = clear_skies_two_perk
+                    has_perk = clear_skies_three_perk
+                }
+
+                NOR = {
+                    has_character_modifier = clear_skies_modifier
+                    has_character_modifier = clear_skies_two_modifier
+                    has_character_modifier = clear_skies_three_modifier
+                }
+            }
         }
+
         flag = clear_skies
         localization = clear_skies_effect_name
     }
 
+    ## WHIRLWIND SPRINT
     send_option = {
+        is_shown = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:kyne_peace = no
@@ -121,12 +150,28 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:actor = {
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+
+                OR = {
+                    has_perk = whirlwind_sprint_perk
+                    has_perk = cwhirlwind_sprint_two_perk
+                    has_perk = whirlwind_sprint_three_perk
+                }
+            }
         }
         flag = whirlwind_sprint
         localization = whirlwind_sprint_effect_name
     }
 
+    ## DRAGON ASPECT
     send_option = {
+        is_shown = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:kyne_peace = no
@@ -137,11 +182,23 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:actor = {
+                OR = {
+                    has_perk = dragon_aspect_perk
+                    has_perk = dragon_aspect_two_perk
+                    has_perk = dragon_aspect_three_perk
+                }
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+            }
         }
         flag = dragon_aspect
         localization = dragon_aspect_effect_name
     }
 
+    ## DISMAY
     send_option = {
         is_valid = {
             scope:unrelenting_force = no
@@ -153,12 +210,26 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+            
+            scope:actor = {
+                is_adult = yes
+
+                OR = {
+                    has_perk = dismay_perk
+                    has_perk = dismay_two_perk
+                    has_perk = dismay_three_perk
+                }
+            }
         }
         flag = dismay
         localization = dismay_effect_name
     }
 
+    ## BATTLE FURY
     send_option = {
+        is_shown = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:kyne_peace = no
@@ -169,12 +240,28 @@ thuum_interaction = {
             scope:drain_vitality = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:actor = {
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+            
+                OR = {
+                    has_perk = battle_fury_perk
+                    has_perk = battle_fury_two_perk
+                    has_perk = battle_fury_three_perk
+                }
+            }
         }
         flag = battle_fury
         localization = battle_fury_effect_name
     }
 
+    ## DRAIN VITALITY
     send_option = {
+        NOT = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:kyne_peace = no
@@ -185,12 +272,37 @@ thuum_interaction = {
             scope:battle_fury = no
             scope:raise_graveyard = no
             scope:plague_breath = no
+
+            scope:actor = {
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+
+                OR = {
+                    has_perk = drain_vitality_perk
+                    has_perk = drain_vitality_two_perk
+                    has_perk = drain_vitality_three_perk
+                }
+            }
+
+            scope:recipient = {
+                NOR = {
+                    has_character_modifier = drain_vit_modifier
+                    has_character_modifier = drain_vit_two_modifier
+                    has_character_modifier = drain_vit_three_modifier
+                }
+                is_at_same_location = scope:actor
+            }
         }
         flag = drain_vitality
         localization = drain_vitality_effect_name
     }
 
+    ## RAISE GRAVEYARD
     send_option = {
+        is_shown = {
+            scope:actor = scope:recipient
+        }
         is_valid = {
             scope:unrelenting_force = no
             scope:kyne_peace = no
@@ -201,11 +313,24 @@ thuum_interaction = {
             scope:battle_fury = no
             scope:drain_vitality = no
             scope:plague_breath = no
+
+            scope:actor = {
+                is_adult = yes
+                is_imprisoned = no
+                is_incapable = no
+
+                OR = {
+                    has_perk = raise_graveyard_perk
+                    has_perk = raise_graveyard_two_perk
+                    has_perk = raise_graveyard_three_perk
+                }
+            }
         }
         flag = raise_graveyard
         localization = raise_graveyard_effect_name
     }
 
+    ## PLAGUE BREATH
     send_option = {
         is_valid = {
             scope:unrelenting_force = no
@@ -217,10 +342,33 @@ thuum_interaction = {
             scope:battle_fury = no
             scope:drain_vitality = no
             scope:raise_graveyard = no
+
+            scope:actor = {
+                is_adult = yes
+                is_commanding_army = yes
+                is_in_army = yes
+                is_imprisoned = no
+                is_incapable = no
+
+                OR = {
+                    has_perk = plague_breath_perk
+                    has_perk = plague_breath_two_perk
+                    has_perk = plague_breath_three_perk
+                }
+                
+                commanding_army = {
+                    location = {
+                        any_province_epidemic = {
+                            count < 1
+                        }
+                    }
+                }
+            }
         }
         flag = plague_breath
         localization = plague_breath_effect_name
     }
+    
 
 	send_options_exclusive = no
 
@@ -249,39 +397,394 @@ thuum_interaction = {
 			switch = {
                 trigger = yes
                 scope:unrelenting_force = { 
-                    custom_tooltip = unrelenting_force_decision_effect_tt
-                    trigger_event = thuum_siege_event.0002
+                    custom_tooltip = unrelenting_force_interaction_effect_tt
+                    scope:actor = {
+                        trigger_event = zzz_thuum_decision.0900
+                    }
                 }
                 scope:kyne_peace = { 
                     custom_tooltip = kyne_peace_decision_effect_tt
+                    trigger_event = zzz_thuum_decision.2000
                 }
                 scope:clear_skies = { 
                     custom_tooltip = clear_skies_decision_effect_tt
+                    if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = clear_skies_perk
+                                    NOT = {
+                                        has_perk = clear_skies_two_perk
+                                        has_perk = clear_skies_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = clear_skies_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = clear_skies_perk
+                                    has_perk = clear_skies_two_perk
+                                    NOT = {
+                                        has_perk = clear_skies_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = clear_skies_two_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else = {
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = clear_skies_three_modifier
+                                months = 3
+                            }
+                        }
+                    }
                 }
                 scope:whirlwind_sprint = { 
                     custom_tooltip = whirlwind_sprint_decision_effect_tt
+                    if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = whirlwind_sprint_perk
+                                    NOT = {
+                                        has_perk = whirlwind_sprint_two_perk
+                                        has_perk = whirlwind_sprint_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = whirlwind_sprint_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = whirlwind_sprint_perk
+                                    has_perk = whirlwind_sprint_two_perk
+                                    NOT = {
+                                        has_perk = whirlwind_sprint_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = whirlwind_sprint_two_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else = {
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = whirlwind_sprint_three_modifier
+                                months = 3
+                            }
+                        }
+                    }
                 }
                 scope:dragon_aspect = { 
                     custom_tooltip = dragon_aspect_decision_effect_tt
+                    if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = dragon_aspect_perk
+                                    NOT = {
+                                        has_perk = dragon_aspect_two_perk
+                                        has_perk = dragon_aspect_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = dragon_aspect_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = dragon_aspect_perk
+                                    has_perk = dragon_aspect_two_perk
+                                    NOT = {
+                                        has_perk = dragon_aspect_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = dragon_aspect_two_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else = {
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = dragon_aspect_three_modifier
+                                months = 3
+                            }
+                        }
+                    }
                 }
                 scope:dismay = { 
-                    custom_tooltip = dismay_decision_effect_tt
+                    custom_tooltip = dismay_interaction_effect_tt
+                    if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = dismay_perk
+                                    NOT = {
+                                        has_perk = dismay_two_perk
+                                        has_perk = dismay_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = personal_dismay_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = dismay_perk
+                                    has_perk = dismay_two_perk
+                                    NOT = {
+                                        has_perk = dismay_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = personal_dismay_two_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else = {
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = personal_dismay_three_modifier
+                                months = 3
+                            }
+                        }
+                    }
                 }
                 scope:battle_fury = { 
-                    custom_tooltip = battle_fury_decision_effect_tt
-                }
+                    custom_tooltip = battle_fury_decision_desc
+                    if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = battle_fury_perk
+                                    NOT = {
+                                        has_perk = battle_fury_two_perk
+                                        has_perk = battle_fury_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = battle_fury_modifier
+                                months = 6
+                            }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = battle_fury_perk
+                                    has_perk = battle_fury_two_perk
+                                    NOT = {
+                                        has_perk = battle_fury_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = battle_fury_two_modifier
+                                months = 6
+                            }
+                        }
+                    }
+                    else = {
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = battle_fury_three_modifier
+                                months = 6
+                            }
+                        }
+                    }
+                }            
                 scope:drain_vitality = { 
                     custom_tooltip = drain_vitality_decision_effect_tt
+                    if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = drain_vitality_perk
+                                    NOT = {
+                                        has_perk = drain_vitality_two_perk
+                                        has_perk = drain_vitality_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = drain_vit_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            AND = {
+                                scope:actor = {
+                                    has_perk = drain_vitality_perk
+                                    has_perk = drain_vitality_two_perk
+                                    NOT = {
+                                        has_perk = drain_vitality_three_perk
+                                    }
+                                }
+                            }
+                        }
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = drain_vit_two_modifier
+                                months = 3
+                            }
+                        }
+                    }
+                    else = {
+                        send_interface_toast = {
+                            type = event_toast_effect_neutral
+                            title = msg_diligent_development_focus
+                            left_icon = root
+
+                            add_character_modifier = {
+                                modifier = drain_vit_three_modifier
+                                months = 3
+                            }
+                        }
+                    }
                 }
                 scope:raise_graveyard = { 
                     custom_tooltip = raise_graveyard_decision_effect_tt
+                    trigger_event = zzz_thuum_decision.4000 
                 }
                 scope:plague_breath = { 
                     custom_tooltip = plague_breath_decision_effect_tt
+                    scope:actor = {
+                        trigger_event = zzz_thuum_decision.6000
+                    }
                 }
-                
             }
 		}
 	}
+    
 	auto_accept = yes
 }

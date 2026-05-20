@@ -332,7 +332,7 @@ zzz_thuum_learn_word.0020 = {
 	}
 }
 
-### LEARN THUUM MEDITATION
+### LEARN THUUM DOMINATION
 zzz_thuum_learn_word.0030 = {
     type = character_event
 	title = "Unlocked: Aspect of Dominion"
@@ -672,14 +672,18 @@ zzz_thuum_learn_word.2201 = {
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 3.5
-                        # Always give _some_ chance.
                         min = -39
+                    }
+                    modifier = { #thuum_understanding
+                        add = 50
+                        exists = var:thuum_understanding
+                        var:thuum_understanding >= 16
                     }
                     modifier = {
                         has_trait = blessed_by_kyne
                         factor = 2
                     }
-                    modifier = {
+                    modifier = {    
                         has_trait = diligent
                         factor = 2
                     }
@@ -705,7 +709,7 @@ zzz_thuum_learn_word.2201 = {
                             }
                            
                         }
-factor = 2
+                        factor = 2
                     }
                     modifier = {
                         has_trait_xp = {
@@ -3633,7 +3637,7 @@ zzz_thuum_learn_word.2704 = {
 	}
 }
 
-## VISIT VOLUNRUUD TOMB EVENT
+## VISIT RAVENROCK TOMB EVENT
 zzz_thuum_learn_word.2800 = {
     type = character_event
 	title = "Word Wall: Raven Rock Mine"

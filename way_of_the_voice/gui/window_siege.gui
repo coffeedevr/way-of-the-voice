@@ -562,6 +562,30 @@ window = {
 				hbox = {
 					layoutpolicy_horizontal = expanding
 					margin = { 7 0 }
+					expand = {}
+					hbox = {
+							background = {
+									using = Background_Area_Dark
+							}
+							margin = { 15 5 }
+							spacing = 5
+							tooltip = "[Province.GetFortLevelTooltip]"
+							icon = {
+									name = "icon_fort"
+									texture = "gfx/interface/window_siege/fort_icon.dds"
+									size = { 30 25 }
+							}
+							text_single = {
+									text = "[SiegeWindow.GetSiege.GetProvince.GetFortLevel]"
+									default_format = "#high"
+									align = nobaseline|right
+							}
+					}
+			}
+			hbox = {
+					layoutpolicy_horizontal = expanding
+					margin = { 7 0 }
+
 					spacing = 10
 					using = Animation_ShowHide_Standard
 
@@ -597,7 +621,7 @@ window = {
 					hbox = {
 						name = "tutorial_highlight_holding_view_loot_box"
 						datacontext = "[SiegeWindow.GetSiege]"
-						tooltip = "[Province.GetRaidLootTooltip]"
+						tooltip = "[Province.GetLootTooltip]"
 						margin = { 15 5 }
 						spacing = 3
 
@@ -612,7 +636,7 @@ window = {
 						}
 
 						text_single = {
-							raw_text = "@gold_icon! [Siege.GetProvince.GetRaidLoot|0]"
+							text = "PROVINCE_LOOT_VALUE"
 							default_format = "#high"
 							align = nobaseline
 						}
@@ -940,7 +964,8 @@ window = {
 
 							widget = {
 								name = "siege_machine_box"
-								datacontext = "[SiegeWindow.GetStrongestSiegeRegiment.GetMAAType]"
+								datacontext = "[SiegeWindow.GetStrongestSiegeRegiment]"
+								datacontext = "[Regiment.GetMAAType]"
 								datacontext = "[GetPlayer]"
 								visible = "[DataModelHasItems(SiegeWindow.GetSiegeMachinesRegiments)]"
 								size = { 100% 100% }
@@ -1000,7 +1025,7 @@ window = {
 														}
 
 														tooltipwidget = {
-															using = maa_type_container_tooltip
+															widget_maa_type_container_tooltip = {}
 														}
 
 														using = tooltip_nw
@@ -1014,7 +1039,7 @@ window = {
 								}
 
 								background = {
-									texture = "[MenAtArmsType.GetHorizontalImage]"
+									texture = "[MenAtArmsType.GetHorizontalImageForCulture( Regiment.GetOwner.GetCulture )]"
 									using = Mask_Rough_Edges
 								}
 

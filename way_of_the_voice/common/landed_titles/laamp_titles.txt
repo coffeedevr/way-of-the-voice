@@ -1,0 +1,618 @@
+@never_primary_score = -1000
+## Landless Camp Adventure
+
+d_laamp_apana = { #Apana
+	color = { 100 100 100 }
+	capital = c_meirvale #Future capital
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_penitent_blades = {
+	color = { 100 100 100 }
+	capital = c_wrothgar
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_dusksabers = {
+	color = { 100 100 100 }
+	capital = c_bosara
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_verminous_path = {
+	color = { 100 100 100 }
+	capital = c_nayon
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_starlit_revelry = {
+	color = { 100 100 100 }
+	capital = c_nendeium
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_glittering_fortune = {
+	color = { 100 100 100 }
+	capital = c_dajodirr
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_bearclaw = {
+	color = { 100 100 100 }
+	capital = c_eldenroot
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_septinius = {
+	color = { 100 100 100 }
+	capital = c_wayrest
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_goldskin = {
+	color = { 100 100 100 }
+	capital = c_keelfen
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_nubbins = {
+	color = { 100 100 100 }
+	capital = c_indoranyon
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_crecy = {
+	color = { 100 100 100 }
+	capital = c_kambria
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_ashabah = {
+	color = { 100 100 100 }
+	capital = c_skaven
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_young_pilots = {
+	color = { 100 100 100 }
+	capital = c_systres
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_south_argonia = {
+	color = { 100 100 100 }
+	capital = c_lilmoth
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_ayleid_chroniclers = {
+	color = { 100 100 100 }
+	capital = c_crowhaven
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_dynaheir = {
+	color = { 100 100 100 }
+	capital = c_tear
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_whirling_way = {
+	color = { 100 100 100 }
+	capital = c_tagon
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_western_circle = {
+	color = { 100 100 100 }
+	capital = c_ravan
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_night_stalkers = {
+	color = { 100 100 100 }
+	capital = c_bonegrappler
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_wayward_column = {
+	color = { 100 100 100 }
+	capital = c_newt
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_libertine_spiritist = {
+	color = { 100 100 100 }
+	capital = c_quickwater
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_jolund = {
+	color = { 100 100 100 }
+	capital = c_morthal
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_aethelred = {
+	color = { 100 100 100 }
+	capital = c_northmoor
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_quixote = {
+	color = { 100 100 100 }
+	capital = c_daggerfall
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_battlelords = {
+	color = { 100 100 100 }
+	capital = c_ayafa
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_seth = {
+	color = { 100 100 100 }
+	capital = c_gideon
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_mantiti = {
+	color = { 100 100 100 }
+	capital = c_helnim
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_dolthernul = {
+	color = { 100 100 100 }
+	capital = c_llothanis
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_mulakh_clan = {
+	color = { 100 100 100 }
+	capital = c_marahk_bazhul
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_relvel = {
+	color = { 100 100 100 }
+	capital = c_vhul
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_ghardun = {
+	color = { 100 100 100 }
+	capital = c_horak
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_carindon = {
+	color = { 100 100 100 }
+	capital = c_rosefield
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_elendarie = {
+	color = { 100 100 100 }
+	capital = c_velyn
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_blades_tenmar = {
+	color = { 100 100 100 }
+	capital = c_tenmar
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_moonsingers = {
+	color = { 100 100 100 }
+	capital = c_riverhold
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_pasoroth_laamp = {
+	color = { 100 100 100 }
+	capital = c_shardrock
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_vogian = {
+	color = { 100 100 100 }
+	capital = c_redmane
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_searaiders = {
+	color = { 100 100 100 }
+	capital = c_winterhold
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_thonnir = {
+	color = { 100 100 100 }
+	capital = c_riften
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_rimesnap = {
+	color = { 100 100 100 }
+	capital = c_highpoint
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_reachbreakers = {
+	color = { 100 100 100 }
+	capital = c_karthwatch
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_keeneye = {
+	color = { 100 100 100 }
+	capital = c_shornhelm
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_ilabael = {
+	color = { 100 100 100 }
+	capital = c_ald_redaynia
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_ulver = {
+	color = { 100 100 100 }
+	capital = c_sunmul
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_saluphus = {
+	color = { 100 100 100 }
+	capital = c_gold_throat
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_iocundus = {
+	color = { 100 100 100 }
+	capital = c_soulrest
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_vastarie = {
+	color = { 100 100 100 }
+	capital = c_laeloria
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}
+
+d_laamp_manaz = {
+	color = { 100 100 100 }
+	capital = c_evermore #Witch-kings have a great demand for mercenaries!
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes	
+}
+
+d_laamp_nisren = {
+	color = { 100 100 100 }
+	capital = c_oran
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes	
+}
+
+d_laamp_dovahater = {
+	color = { 100 100 100 }
+	capital = c_kolskeggr
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes	
+}
+
+### THUUM ADDITION EASTER EGG
+
+d_blades_ashes = {
+	color = { 100 100 100 }
+	capital = c_stonewaste
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+}

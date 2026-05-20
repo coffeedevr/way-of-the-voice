@@ -21,6 +21,49 @@ dragon_aspect_three_modifier = {
     prowess = 5
 }
 
+clear_skies_modifier = {
+	icon = prowess_positive
+	
+	health = 0.05
+	stress_gain_mult = -0.2
+}
+
+clear_skies_two_modifier = {
+	icon = prowess_positive
+	
+	health = 0.1
+	stress_gain_mult = -0.10
+	pursue_efficiency = 0.10
+}
+
+clear_skies_three_modifier = {
+	icon = prowess_positive
+	
+    health = 0.2
+    stress_gain_mult = -0.15
+	pursue_efficiency = 0.15
+}
+
+whirlwind_sprint_modifier = {
+	icon = horse_positive
+	
+	personal_scheme_phase_duration_add = -10
+}
+
+whirlwind_sprint_two_modifier = {
+	icon = horse_positive
+	
+	naval_movement_speed_mult = 0.10
+	personal_scheme_phase_duration_add = -15
+}
+
+whirlwind_sprint_three_modifier = {
+	icon = horse_positive
+	
+	naval_movement_speed_mult = 0.15
+	personal_scheme_phase_duration_add = -20
+}
+
 battle_fury_modifier = {
     icon = prowess_positive
 
@@ -63,21 +106,39 @@ hostile_dismay_three_modifier = {
 	county_opinion_add = -30
 }
 
+personal_dismay_modifier = {
+	icon = county_modifier_opinion_negative
+	owned_personal_scheme_success_chance_add =  = -0.10
+}
+
+personal_dismay_two_modifier = {
+	icon = county_modifier_opinion_negative
+
+	levy_reinforcement_rate = -0.20
+	owned_personal_scheme_success_chance_add =  = -0.15
+}
+
+personal_dismay_three_modifier = {
+	icon = county_modifier_opinion_negative
+
+	levy_reinforcement_rate = -0.25
+	owned_personal_scheme_success_chance_add =  = -0.20
+}
+
 drain_vit_modifier = {
-	icon = health_positive
-	health = -0.2
+	icon = health_negative
+	health = -0.20
 }
 
 drain_vit_two_modifier = {
-	icon = health_positive
-	health = -0.4
-	owned_personal_scheme_success_chance_add = -10
+	icon = health_negative
+	health = -0.30
+	enemy_hostile_scheme_phase_duration_add = -10
 }
 
 drain_vit_three_modifier = {
-	icon = health_positive
-	health = -0.6
-	owned_personal_scheme_success_chance_add = -10
+	icon = health_negative
+	health = -0.50
 	enemy_hostile_scheme_phase_duration_add = -20
 }
 

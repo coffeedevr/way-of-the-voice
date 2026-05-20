@@ -1,0 +1,5 @@
+﻿dyn_nimus = {
+	name = "dynn_Nimus"
+	culture = ojel
+	motto = dynn_nimus_motto
+}

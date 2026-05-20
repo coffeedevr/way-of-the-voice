@@ -1,3 +1,3 @@
-thuum_caster = {
+﻿thuum_caster = {
     global = thuum_caster_desc
 }

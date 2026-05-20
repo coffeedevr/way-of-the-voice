@@ -161,7 +161,6 @@ ek_hunt.1002 = {
 
 	option = { # Kill it! Kill it with fire!
 		trigger = {
-			can_secretly_worship_hircine = yes
 		}
 
 		name = ek_hunt.1002.a
@@ -188,7 +187,6 @@ ek_hunt.1002 = {
 	option = { # Run as fast as you can
 		name = ek_hunt.1002.b
 		trigger = {
-			can_secretly_worship_hircine = yes
 		}
 		add_character_modifier = hircines_wrath
 		add_character_flag = make_suicide_available		
@@ -253,7 +251,6 @@ ek_hunt.1002 = {
 		name = ek_hunt.1002.d
 		
 		custom_tooltip = ek_hunt.1002.d.tt
-		add_piety_level = -1
 		stress_impact = { zealous = major_stress_impact_gain }
 		if = {
 			limit = { 
@@ -510,7 +507,7 @@ ek_hunt.1006 = {
 	immediate = {
 		play_music_cue = "mx_cue_combat_2"
 	}
-
+	
 	## THUUM MOD ADDED
 	# use kyne's peace shout
 	option = {

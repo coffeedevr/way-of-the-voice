@@ -737,7 +737,7 @@ scripted_effect select_special_tier_move_effect = {
 				NOT = { exists = local_var:combat_move_hurt_me_better_flag }
 				OR = {
 					has_trait = deviant
-					any_secret = { secret_type = secret_deviant }
+					any_secret = { type = secret_deviant }
 				}
 				# Block special moves twice in a row.
 				NOR = {
@@ -2094,6 +2094,19 @@ scripted_effect work_out_wounds_or_death_effect = {
 					death_reason = death_duel
 				}
 			}
+			if = {
+				limit = {
+					scope:sc_victor = {
+						faith = {
+							has_doctrine = tenet_cranial_trophies
+						}
+					}
+				}
+				tgp_cranial_trophies_beheading_effect = {
+					KILLER = scope:sc_victor
+					DEAD = scope:sc_loser
+				}
+			}
 		}
 		else = {
 			scope:sc_loser = {
@@ -2117,6 +2130,19 @@ scripted_effect work_out_wounds_or_death_effect = {
 			death = {
 				killer = scope:sc_victor
 				death_reason = death_duel
+			}
+		}
+		if = {
+			limit = {
+				scope:sc_victor = {
+					faith = {
+						has_doctrine = tenet_cranial_trophies
+					}
+				}
+			}
+			tgp_cranial_trophies_beheading_effect = {
+				KILLER = scope:sc_victor
+				DEAD = scope:sc_loser
 			}
 		}
 	}
@@ -2242,7 +2268,7 @@ scripted_effect finalise_combat_results_effect = {
 					any_relation = {
 						type = soulmate
 						count >= 1
-						NOT = { this = scope:sc_victor }
+						this != scope:sc_victor
 					}
 				}
 				random_relation = {
@@ -2260,7 +2286,7 @@ scripted_effect finalise_combat_results_effect = {
 					any_relation = {
 						type = best_friend
 						count >= 1
-						NOT = { this = scope:sc_victor }
+						this != scope:sc_victor
 					}
 				}
 				random_relation = {
@@ -2381,7 +2407,7 @@ scripted_effect finalise_combat_results_effect = {
 			## killed_by_another_head_of_faith
 			else_if = {
 				limit = {
-					NOT = { faith.religious_head = scope:sc_victor }
+					faith.religious_head != scope:sc_victor
 					scope:sc_victor.faith.religious_head = scope:sc_victor
 				}
 				save_scope_value_as = {
@@ -2502,7 +2528,7 @@ scripted_effect finalise_combat_results_effect = {
 					OR = {
 						highest_held_title_tier >= tier_empire
 						any_held_title = { is_head_of_faith = yes }
-						has_nickname = nick_genghis_khan
+						#mpo_has_greatest_of_khans_nickname_trigger = yes #EK DISABLED
 					}
 				}
 				has_dlc_feature = legends
@@ -2524,8 +2550,7 @@ scripted_effect finalise_combat_results_effect = {
 	scope:sc_victor = {
 		if = {
 			limit = {
-				exists = accolade
-				accolade = { is_accolade_active = yes }
+				accolade ?= { is_accolade_active = yes }
 			}
 			# Glory is relative to the prowess difference between two characters. Beating someone equally matched or better is worth more.
 			## Massively outclassed.
@@ -5206,8 +5231,8 @@ scripted_effect combat_move_leech_health_effect = {
 		DUEL_SUCCESS = duel_success_medium
 	}
 }
-
 # EK ADDITION END
+
 
 # THUUM
 ## UNRELENTING FORCE
@@ -5292,6 +5317,8 @@ scripted_effect combat_move_unrelenting_force_effect = {
 		DUEL_SUCCESS = duel_success_very_high
 	}
 }
+
+
 ##################################################
 # SINGLE COMBAT EVENTS
 
@@ -5560,7 +5587,7 @@ single_combat.0001 = {
 								triggered_desc = {
 									trigger = { scope:sc_defender_last_move = flag:unrelenting_force }
 									desc = single_combat.0001.desc.my_feedback.unrelenting_force
-								}						
+								}								
 								triggered_desc = {
 									trigger = { scope:sc_defender_last_move = flag:special_fallback }
 									desc = single_combat.0001.desc.my_feedback.special_fallback
@@ -5791,7 +5818,7 @@ single_combat.0001 = {
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:unrelenting_force }
 									desc = single_combat.0001.desc.opponent_response.unrelenting_force
-								}						
+								}											
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:special_fallback }
 									desc = single_combat.0001.desc.opponent_response.special_fallback
@@ -6142,7 +6169,7 @@ single_combat.0001 = {
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:unrelenting_force }
 									desc = single_combat.0001.desc.my_feedback.unrelenting_force
-								}								
+								}									
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:special_fallback }
 									desc = single_combat.0001.desc.my_feedback.special_fallback
@@ -6373,7 +6400,7 @@ single_combat.0001 = {
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:unrelenting_force }
 									desc = single_combat.0001.desc.opponent_response.unrelenting_force
-								}						
+								}								
 								triggered_desc = {
 									trigger = { scope:sc_defender_last_move = flag:special_fallback }
 									desc = single_combat.0001.desc.opponent_response.special_fallback
@@ -6484,7 +6511,18 @@ single_combat.0001 = {
 	theme = martial
 	left_portrait = {
 		character = scope:myself
-		scripted_animation = duel_wield_weapon
+		#EK EDIT
+		#triggered_animation = {
+		#	trigger = {
+		#		portrait_should_wield_sword_trigger = yes
+		#		culture = { has_cultural_pillar = heritage_japonic }
+		#	}
+		#	animation = chudan_no_kamae
+		#}
+		triggered_animation = {
+			trigger = { always = yes }
+			scripted_animation = duel_wield_weapon
+		}
 	}
 	right_portrait = {
 		character = scope:my_foe
@@ -7501,7 +7539,7 @@ single_combat.0001 = {
 		name = {
 			trigger = {
 				house_not_allowed_to_yell_motto_trigger = no
-				NOT = { scope:sc_attacker.house = scope:sc_defender.house }
+				scope:sc_attacker.house != scope:sc_defender.house
 			}
 			text = single_combat.0001.enthusiastic_onslaught.motto
 		}
@@ -8814,7 +8852,6 @@ single_combat.0001 = {
 			hidden_effect = { combat_move_leech_health_effect = yes }
 		}
 	}
-	
 	# EK ADDITION END
 	### THUUM UNRELENTING FORCE
 	option = {
@@ -10499,7 +10536,11 @@ single_combat.0031 = {
 	theme = skull
 	left_portrait = {
 		character = scope:sc_loser
-		animation = fear
+		triggered_animation = {
+			trigger = { portrait_should_wield_sword_trigger = yes }
+			animation = sword_yield_start
+		}
+		animation = pain
 	}
 	right_portrait = {
 		character = scope:sc_victor
@@ -10597,6 +10638,17 @@ single_combat.0031 = {
 				value = { 1 3 }
 			}
 		}
+		scope:sc_loser = {
+			every_vassal = {
+				limit = {
+					has_vassal_stance = belligerent
+				}
+				add_opinion = {
+					modifier = liege_lost_duel
+					target = scope:sc_loser
+				}
+			}
+		}
 		#Acknowledge loss of temporary combat modifiers.
 		custom_tooltip = single_combat.result.tt.temporary_modifiers_removed
 		# Damage equipped artifacts for loser
@@ -10609,6 +10661,19 @@ single_combat.0031 = {
 			TYPE = armor
 			CHANCE = 66 # 33% chance of no damage
 			PERCENT = 15 # 5-15 percent of max durability lost
+		}
+		#Nomads fighting upstart family members event
+		if = {
+			limit = {
+				scope:sc_loser = {
+					has_character_flag = duelling_defecting_family_flag
+					this = scope:sc_attacker
+				}
+			}
+			scope:sc_loser = {
+				set_designated_heir = scope:sc_victor
+				remove_character_flag = duelling_defecting_family_flag
+			}
 		}
 	}
 
@@ -11280,10 +11345,6 @@ single_combat.0041 = {
 								}
 								# EK ADDITION END
 								triggered_desc = {
-									trigger = { scope:sc_attacker_last_move = flag:unrelenting_force}
-									desc = single_combat.0041.desc.opponent_response.unrelenting_force
-								}
-								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:special_fallback }
 									desc = single_combat.0041.desc.opponent_response.special_fallback
 								}
@@ -11482,10 +11543,6 @@ single_combat.0041 = {
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:leech_health}
 									desc = single_combat.0041.desc.opponent_response.leech_health.injury
-								}
-								triggered_desc = {
-									trigger = { scope:sc_attacker_last_move = flag:unrelenting_force}
-									desc = single_combat.0041.desc.opponent_response.unrelenting_force.injury
 								}
 								# EK ADDITION END
 								triggered_desc = {
@@ -11910,10 +11967,6 @@ single_combat.0041 = {
 								triggered_desc = {
 									trigger = { scope:sc_attacker_last_move = flag:leech_health }
 									desc = single_combat.0041.desc.sc_attacker.leech_health
-								}
-								triggered_desc = {
-									trigger = { scope:sc_attacker_last_move = flag:unrelenting_force }
-									desc = single_combat.0041.desc.sc_attacker.unrelenting_force
 								}
 								# EK ADDITION END
 								triggered_desc = {
@@ -12354,7 +12407,7 @@ single_combat.0041 = {
 			trigger = { is_alive = no }
 			animation = loss_1
 		}
-		animation = fear
+		animation = sword_yield_start
 	}
 	# Background Logic
 	override_background = {
@@ -12432,6 +12485,17 @@ single_combat.0041 = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					scope:sc_victor.faith = { has_doctrine = tenet_cranial_trophies }
+				}
+				show_as_tooltip = {
+					tgp_cranial_trophies_beheading_effect = {
+						KILLER = scope:sc_victor
+						DEAD = scope:sc_loser
+					}
+				}
+			}
 		}
 		else_if = {
 			limit = { scope:fatality = flag:practice }
@@ -12463,6 +12527,19 @@ single_combat.0041 = {
 				value = tournament_hastiludes_xp_gain_minor_value
 			}
 		}
+		
+		scope:sc_victor = {
+			every_vassal = {
+				limit = {
+					has_vassal_stance = belligerent
+				}
+				custom = every_belligerent_vassal
+				add_opinion = {
+					modifier = liege_won_duel
+					target = scope:sc_victor
+				}
+			}
+		}
 		#EK DISABLED: no Hereward
 		# Add Hereward killing a Norman XP
 		#if = {
@@ -12477,6 +12554,77 @@ single_combat.0041 = {
 		#		value = { 5 10 }
 		#	}
 		#}
+		# Add Nomadic Legitimacy gain
+		if = { # Nomads gain Legitimacy from duels
+			limit = {
+				has_mpo_dlc_trigger = yes
+				is_valid_for_nomadic_legitimacy_change = yes
+			}
+			add_legitimacy = medium_legitimacy_gain
+		}
+
+		# Increase the Strength of Ushiwakamaru
+		#EK DISABLED
+		#if = {
+		#	limit = {
+		#		OR = {
+		#			has_character_modifier = tgp_japan_ushiwakamaru
+		#			has_character_modifier = tgp_japan_ushiwakamaru_2
+		#			has_character_modifier = tgp_japan_ushiwakamaru_3
+		#		}
+		#	}
+		#	change_variable = {
+		#		name = ushiwakamaru_duels_won
+		#		add = 1
+		#	}
+
+		#	if = {
+		#		limit = {
+		#			var:ushiwakamaru_duels_won >= 60
+		#			NOT = { has_character_modifier = tgp_japan_ushiwakamaru_4 }
+		#		}
+		#		remove_character_modifier = tgp_japan_ushiwakamaru_3
+		#		add_character_modifier = {
+		#			modifier = tgp_japan_ushiwakamaru_4
+		#			years = -1
+		#		}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			var:ushiwakamaru_duels_won >= 40
+		#			NOT = { has_character_modifier = tgp_japan_ushiwakamaru_4 }
+		#			NOT = { has_character_modifier = tgp_japan_ushiwakamaru_3 }
+		#		}
+		#		remove_character_modifier = tgp_japan_ushiwakamaru_2
+		#		add_character_modifier = {
+		#			modifier = tgp_japan_ushiwakamaru_3
+		#			years = -1
+		#		}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			var:ushiwakamaru_duels_won >= 20
+		#			NOT = { has_character_modifier = tgp_japan_ushiwakamaru_4 }
+		#			NOT = { has_character_modifier = tgp_japan_ushiwakamaru_3 }
+		#			NOT = { has_character_modifier = tgp_japan_ushiwakamaru_2 }
+		#		}
+		#		remove_character_modifier = tgp_japan_ushiwakamaru
+		#		add_character_modifier = {
+		#			modifier = tgp_japan_ushiwakamaru_2
+		#			years = -1
+		#		}
+		#	}
+		#}
+
+		#Lose some stress if you kill your rival
+		if = {
+			limit = {
+				 has_relation_rival = scope:sc_loser 
+			}
+			stress_impact = {
+				base = major_stress_impact_loss
+			}
+		}
 
 		# Damage equipped artifacts
 		may_damage_artifact_effect = {
@@ -12491,6 +12639,17 @@ single_combat.0041 = {
 		}
 		#Acknowledge loss of temporary combat modifiers.
 		custom_tooltip = single_combat.result.tt.temporary_modifiers_removed
+
+		# EK ADDITION: winning duels gives piety
+		scope:sc_victor = {
+			if = {
+				limit = {
+					faith = { has_doctrine_parameter = winning_duels_give_piety }
+				}
+				add_piety = { value = medium_piety_gain }
+			}
+		}
+		# EK ADDITION END
 	}
 
 	# They died!

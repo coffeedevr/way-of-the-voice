@@ -1,5 +1,299 @@
 namespace = zzz_thuum_decision
 
+### unrelenting force event
+zzz_thuum_decision.0900 = {
+    type = character_event
+	title = "Unrelenting Force"
+    desc = zzz_thuum_decision.0900.desc
+    theme = diplomacy_majesty_focus
+	override_background = burning_building
+
+    immediate = {
+        scope:recipient = {
+            save_scope_as = target
+        }
+    }
+
+    left_portrait = {
+		character = root
+		animation = rage
+	}
+
+    right_portrait = {
+		character = scope:target
+		animation = fear
+	}
+
+    option = {
+		name = zzz_thuum_decision.0900.a
+        trigger = {
+            scope:actor = {
+                has_perk = unrelenting_force_perk
+            }
+		}
+        random_list = {
+			99 = {
+                desc = "Will receive injuries"
+                if = {
+                    limit = {
+                        has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:recipient }
+                    }
+                    send_interface_toast = {
+                        type = event_toast_effect_neutral
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            add_trait = wounded_1
+                        }
+                        hidden_effect = {
+                            stress_impact = {
+                                base = minor_stress_impact_loss
+                            }
+                        }
+                    }
+                }
+                else = {
+                    send_interface_toast = {
+                        type = event_toast_effect_bad
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            add_trait = wounded_1
+                        }
+                    }
+                }
+			}
+            1 = {
+                desc = "Will die"
+                if = {
+                    limit = {
+                        has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:recipient }
+                    }
+                    send_interface_toast = {
+                        type = event_toast_effect_neutral
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            death = {
+                                death_reason = death_fight
+                            }
+                        }
+                        hidden_effect = {
+                            stress_impact = {
+                                base = minor_stress_impact_loss
+                            }
+                        }
+                    }
+                }
+                else = {
+                    send_interface_toast = {
+                        type = event_toast_effect_bad
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            death = {
+                                death_reason = death_fight
+                            }
+                        }
+                    }
+                }
+            }
+
+		}
+	}
+
+    option = {
+		name = zzz_thuum_decision.0900.b
+        trigger = {
+            scope:actor = {
+                has_perk = unrelenting_force_perk
+                has_perk = unrelenting_force_two_perk
+            }
+		}
+        random_list = {
+			85 = {
+                desc = travel_danger_events.7000.a_dont_recover_die
+                if = {
+                    limit = {
+                        has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:recipient }
+                    }
+                    send_interface_toast = {
+                        type = event_toast_effect_neutral
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            add_trait = wounded_2
+                        }
+                        hidden_effect = {
+                            stress_impact = {
+                                base = minor_stress_impact_loss
+                            }
+                        }
+                    }
+                }
+                else = {
+                    send_interface_toast = {
+                        type = event_toast_effect_bad
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            add_trait = wounded_2
+                        }
+                    }
+                }
+			}
+            30 = {
+                desc = travel_danger_events.7000.a_dont_recover_die
+                if = {
+                    limit = {
+                        has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:recipient }
+                    }
+                    send_interface_toast = {
+                        type = event_toast_effect_neutral
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            death = {
+                                death_reason = death_fight
+                            }
+                        }
+                        hidden_effect = {
+                            stress_impact = {
+                                base = minor_stress_impact_loss
+                            }
+                        }
+                    }
+                }
+                else = {
+                    send_interface_toast = {
+                        type = event_toast_effect_bad
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            death = {
+                                death_reason = death_fight
+                            }
+                        }
+                    }
+                }
+            }
+
+		}
+	}
+
+    option = {
+		name = zzz_thuum_decision.0900.b
+        trigger = {
+            scope:actor = {
+                has_perk = unrelenting_force_perk
+                has_perk = unrelenting_force_two_perk
+            }
+		}
+        random_list = {
+			65 = {
+                desc = "Will receive injuries"
+                if = {
+                    limit = {
+                        has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:recipient }
+                    }
+                    send_interface_toast = {
+                        type = event_toast_effect_neutral
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            maimed_in_battle_effect = yes
+                        }
+                        hidden_effect = {
+                            stress_impact = {
+                                base = minor_stress_impact_loss
+                            }
+                        }
+                    }
+                }
+                else = {
+                    send_interface_toast = {
+                        type = event_toast_effect_bad
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            maimed_in_battle_effect = yes
+                        }
+                    }
+                }
+			}
+            35 = {
+                desc = travel_danger_events.7000.a_dont_recover_die
+                if = {
+                    limit = {
+                        has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:recipient }
+                    }
+                    send_interface_toast = {
+                        type = event_toast_effect_neutral
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            death = {
+                                death_reason = death_fight
+                            }
+                        }
+                        hidden_effect = {
+                            stress_impact = {
+                                base = minor_stress_impact_loss
+                            }
+                        }
+                    }
+                }
+                else = {
+                    send_interface_toast = {
+                        type = event_toast_effect_bad
+                        title = travel_danger_events.7000.a_dont_recover_die
+                        left_icon = root
+                        right_icon = scope:recipient
+                        scope:recipient = {
+                            death = {
+                                death_reason = death_fight
+                            }
+                        }
+                    }
+                }
+            }
+
+		}
+	}
+
+    option = {
+		name = zzz_thuum_decision.0900.b
+        trigger = {
+            scope:actor = {
+                has_perk = unrelenting_force_perk
+                has_perk = unrelenting_force_two_perk
+            }
+		}
+	}
+
+    option = {
+		name = zzz_thuum_decision.0900.c
+        trigger = {
+            scope:actor = {
+                has_perk = unrelenting_force_perk
+                has_perk = unrelenting_force_two_perk
+                has_perk = unrelenting_force_three_perk
+            }
+		}
+	}
+}
+
 ### meditate event
 zzz_thuum_decision.1000 = {
     type = character_event
@@ -78,8 +372,69 @@ zzz_thuum_decision.2000 = {
 	}
 
     option = {
+		name = "...choose the cat!"
+		trigger = {
+			OR = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
+			NOT = {
+				has_character_modifier = cat_story_modifier 
+			}
+		}
+
+		create_story = story_cycle_pet_cat
+
+		custom_tooltip = "You befriend a cat and take it as a pet."
+		
+	}
+
+    option = {
+		name = "...choose the dog!"
+		trigger = {
+			OR = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
+			NOT = {
+				has_character_modifier = dog_story_modifier 
+			}
+		}
+
+		create_story = story_cycle_pet_dog
+
+		custom_tooltip = "You befriend a dog and take it as a pet."
+		
+	}
+
+    option = {
+		name = "...choose the eagle!"
+		trigger = {
+			OR = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
+			NOT = {
+				has_character_modifier = eagle_story_modifier 
+			}
+		}
+
+		create_story = story_cycle_pet_eagle
+
+		custom_tooltip = "You befriend a eagle and take it as a pet."
+		
+	}
+
+    option = {
 		name = "...choose the parrot!"
 		trigger = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+			}
 			NOT = {
 				has_character_modifier = parrot_story_modifier 
 			}
@@ -94,6 +449,10 @@ zzz_thuum_decision.2000 = {
     option = {
 		name = "...choose the scorpion!"
 		trigger = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+			}
 			NOT = {
 				has_character_modifier = scorpion_story_modifier  
 			}
@@ -107,6 +466,10 @@ zzz_thuum_decision.2000 = {
     option = {
 		name = "...choose the bantam!"
 		trigger = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+			}
 			NOT = {
 				has_character_modifier = bantam_story_modifier  
 			}
@@ -120,6 +483,11 @@ zzz_thuum_decision.2000 = {
 	option = {
 		name = "...choose the vvardvark!"
 		trigger = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
 			NOT = {
 				has_character_modifier = vvardvark_story_modifier   
 			}
@@ -133,6 +501,11 @@ zzz_thuum_decision.2000 = {
 	option = {
 		name = "...choose the mudcrab!"
 		trigger = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
 			NOT = {
 				has_character_modifier = mudcrab_story_modifier    
 			}
@@ -147,6 +520,11 @@ zzz_thuum_decision.2000 = {
 	option = {
 		name = "...choose the skeever!"
 		trigger = {
+			AND = {
+				has_perk = kyne_peace_perk
+				has_perk = kyne_peace_two_perk
+				has_perk = kyne_peace_three_perk
+			}
 			NOT = {
 				has_character_modifier = skeever_story_modifier     
 			}
@@ -161,6 +539,9 @@ zzz_thuum_decision.2000 = {
 		name = "...choose nothing as I have too much pets already!"
 		trigger = {
 			AND = {
+				has_character_modifier = cat_story_modifier
+				has_character_modifier = dog_story_modifier
+				has_character_modifier = eagle_story_modifier
 				has_character_modifier = skeever_story_modifier
 				has_character_modifier = mudcrab_story_modifier    
 				has_character_modifier = vvardvark_story_modifier
@@ -645,4 +1026,312 @@ zzz_thuum_decision.6000 = {
 			}
     	}
 	}
+}
+
+## clear skies
+zzz_thuum_decision.7000 = {
+    type = character_event
+	title = "Clear Skies"
+    desc = zzz_thuum_decision.7000.desc
+    theme = diplomacy_majesty_focus
+
+    left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+    trigger = {
+        has_trait = thuum_trait_track
+		NOR = {
+			has_character_modifier = clear_skies_modifier
+			has_character_modifier = clear_skies_two_modifier
+			has_character_modifier = clear_skies_three_modifier
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.7000.a
+        #custom_tooltip = "You use the Word of Power: Lok!"
+        trigger = {
+			has_perk = clear_skies_perk
+			NOR = {
+				has_character_modifier = clear_skies_modifier
+				has_character_modifier = clear_skies_two_modifier
+				has_character_modifier = clear_skies_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = clear_skies_modifier
+				months = 5
+			}
+		}
+
+    }
+
+    option = {
+        name = zzz_thuum_decision.7000.b
+        #custom_tooltip = "You use the Words of Power: Lok Vah!"
+        trigger = {
+			has_perk = clear_skies_perk
+			has_perk = clear_skies_two_perk
+			NOR = {
+				has_character_modifier = clear_skies_modifier
+				has_character_modifier = clear_skies_two_modifier
+				has_character_modifier = clear_skies_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 50
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = clear_skies_two_modifier
+				months = 5
+			}
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.7000.c
+        #custom_tooltip = "You use the Words of Power: Lok Vah Kor!"
+        trigger = {
+			has_perk = clear_skies_perk
+			has_perk = clear_skies_two_perk
+			has_perk = clear_skies_three_perk
+			NOR = {
+				has_character_modifier = clear_skies_modifier
+				has_character_modifier = clear_skies_two_modifier
+				has_character_modifier = clear_skies_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 100
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = clear_skies_three_modifier
+				months = 5
+			}
+		}
+    }
+
+}
+
+### whirlwind SPRINT
+zzz_thuum_decision.8000 = {
+    type = character_event
+	title = "Whirlwind Sprint"
+    desc = zzz_thuum_decision.8000.desc
+    theme = diplomacy_majesty_focus
+
+    left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+    trigger = {
+        has_trait = thuum_trait_track
+		NOR = {
+			has_character_modifier = whirlwind_sprint_modifier
+			has_character_modifier = whirlwind_sprint_two_modifier
+			has_character_modifier = whirlwind_sprint_three_modifier
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.8000.a
+        #custom_tooltip = "You use the Word of Power: Wuld!"
+        trigger = {
+			has_perk = whirlwind_sprint_perk
+			NOR = {
+				has_character_modifier = whirlwind_sprint_modifier
+				has_character_modifier = whirlwind_sprint_two_modifier
+				has_character_modifier = whirlwind_sprint_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = cwhirlwind_sprint_modifier
+				months = 5
+			}
+		}
+
+    }
+
+    option = {
+        name = zzz_thuum_decision.8000.b
+        #custom_tooltip = "You use the Words of Power: Wuld Nah!"
+        trigger = {
+			has_perk = whirlwind_sprint_perk
+			has_perk = whirlwind_sprint_two_perk
+			NOR = {
+				has_character_modifier = whirlwind_sprint_modifier
+				has_character_modifier = whirlwind_sprint_two_modifier
+				has_character_modifier = whirlwind_sprint_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 50
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = whirlwind_sprint_two_modifier
+				months = 5
+			}
+		}
+
+    }
+
+    option = {
+        name = zzz_thuum_decision.8000.c
+        #custom_tooltip = "You use the Words of Power: Wuld Nah Kest!"
+        trigger = {
+			has_perk = whirlwind_sprint_perk
+			has_perk = whirlwind_sprint_two_perk
+			has_perk = whirlwind_sprint_three_perk
+			NOR = {
+				has_character_modifier = whirlwind_sprint_modifier
+				has_character_modifier = whirlwind_sprint_two_modifier
+				has_character_modifier = whirlwind_sprint_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 100
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = whirlwind_sprint_three_modifier
+				months = 5
+			}
+		}
+    }
+
+}
+
+### DRAGON ASPECT
+zzz_thuum_decision.9000 = {
+    type = character_event
+	title = "Dragon Aspect"
+    desc = zzz_thuum_decision.9000.desc
+    theme = diplomacy_majesty_focus
+
+    left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+    trigger = {
+        has_trait = thuum_trait_track
+		NOR = {
+			has_character_modifier = dragon_aspect_modifier
+			has_character_modifier = dragon_aspect_two_modifier
+			has_character_modifier = dragon_aspect_three_modifier
+		}
+    }
+
+    option = {
+        name = zzz_thuum_decision.9000.a
+        #custom_tooltip = "You use the Word of Power: Mul!"
+        trigger = {
+			has_perk = dragon_aspect_perk
+			NOR = {
+				has_character_modifier = dragon_aspect_modifier
+				has_character_modifier = dragon_aspect_two_modifier
+				has_character_modifier = dragon_aspect_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 20
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = cdragon_aspect_modifier
+				months = 5
+			}
+		}
+
+    }
+
+    option = {
+        name = zzz_thuum_decision.9000.b
+        #custom_tooltip = "You use the Words of Power: Mul Qua!"
+        trigger = {
+			has_perk = dragon_aspect_perk
+			has_perk = dragon_aspect_two_perk
+			NOR = {
+				has_character_modifier = dragon_aspect_modifier
+				has_character_modifier = dragon_aspect_two_modifier
+				has_character_modifier = dragon_aspect_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 50
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = dragon_aspect_two_modifier
+				months = 5
+			}
+		}
+
+    }
+
+    option = {
+        name = zzz_thuum_decision.9000.c
+        #custom_tooltip = "You use the Words of Power: Mul Qua Div!"
+        trigger = {
+			has_perk = dragon_aspect_perk
+			has_perk = dragon_aspect_two_perk
+			has_perk = dragon_aspect_three_perk
+			NOR = {
+				has_character_modifier = dragon_aspect_modifier
+				has_character_modifier = dragon_aspect_two_modifier
+				has_character_modifier = dragon_aspect_three_modifier
+			}
+		}
+        ai_chance = {
+			base = 100
+		}
+		send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = msg_diligent_development_focus
+				left_icon = root
+			add_character_modifier = {
+				modifier = dragon_aspect_three_modifier
+				months = 5
+			}
+		}
+    }
+
 }

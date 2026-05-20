@@ -2269,14 +2269,10 @@ ek_travel_events.0035 = {
 	option = {
 		name = ek_travel_events.0035.d
 		custom_tooltip = ek_travel_events.0035.d.tt
+		
+		# can you increase lifepspan?
 		trigger = {
-			OR = {
-				can_increase_lifespan_trigger = yes
-				NOR = { 
-					is_vampire = yes
-					is_lycan = yes
-				}
-			}			
+			can_increase_lifespan_trigger = yes
 		}
 
 		ai_chance = { # The AI should never do this
@@ -3214,6 +3210,9 @@ ek_travel_events.0060 = {
 			desc = ek_court.0003.desc49
 			desc = ek_court.0003.desc50
 			desc = ek_court.0003.desc51
+			desc = ek_court.0003.desc52
+			desc = ek_court.0003.desc53
+			desc = ek_court.0003.desc54
 		}
 		desc = ek_court.0003.end
 	}
@@ -4522,7 +4521,7 @@ ek_travel_events.0080 = {
 		stress_impact = {
 			greedy = major_stress_impact_gain
 			paranoid = minor_stress_impact_gain
-			gregarious = minor_stress_impact_gloss
+			gregarious = minor_stress_impact_loss
 		}
 
 		ai_chance = {
@@ -4872,6 +4871,7 @@ ek_travel_events.4005 = {
 		NOT = {
 			faith.religion = { is_in_family = rf_daedra }
 		}
+		can_secretly_worship_daedra = yes
 	}
 
 	weight_multiplier = {
@@ -5846,7 +5846,6 @@ ek_travel_events.4020 = {
 		duel = {
 			skill = prowess
 			value = low_skill_rating
-
 			10 = {
 				desc = ek_travel_events.4020.a.success
 				compare_modifier = {
@@ -6351,13 +6350,13 @@ ek_travel_events.4030 = {
 
 		spawn_army = {
 			men_at_arms = {
-				type = risen_dead
+				type = maa_undead_soldiers
 				stacks = 1
 			}
 			uses_supply = no
 			inheritable = no
 			location = root.location
-			name = "risen_dead"
+			name = "undead_horde"
 		}
 
 		stress_impact = {
@@ -6493,6 +6492,7 @@ ek_travel_events.4035 = {
 		
 	}
 	## THUUM MOD ENDED
+
 
 	option = { # Thats just a bit of wind
 		name = ek_travel_events.4035.a
@@ -6831,7 +6831,7 @@ ek_travel_events.4045 = {
 		
 	}
 	## THUUM MOD ENDED
-
+	
 	option = { # Cursed Vernim
 		name = ek_travel_events.4045.a
 

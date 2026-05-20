@@ -4,5 +4,5 @@ tags={
 }
 picture="thumbnail.png"
 name="Way of the Voice - EK2 Submod (Thu'um)"
-supported_version="1.17.*"
+supported_version="1.18.*"
 remote_file_id="3480406007"

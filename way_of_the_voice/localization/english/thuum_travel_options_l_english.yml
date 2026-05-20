@@ -13,3 +13,6 @@
  wuld_option_desc: "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest."
  wuldna_option_ndesc: "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest."
  wuldnakest_option_desc: "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest."
+
+ TRAVEL_POINT_OF_INTEREST_TT_thuum_poi_lore:0 "Nordic Ruin"
+ thuum_poi_lore_tt:0 "Will increase Thuum Understanding"

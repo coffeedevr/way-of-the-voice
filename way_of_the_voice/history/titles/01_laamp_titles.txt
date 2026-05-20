@@ -1,0 +1,1304 @@
+# 867
+
+d_laamp_apana = { # Guttorm
+	3369.1.1 = {
+		liege = 0
+		holder = apana_101c
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 3370.1.1 }
+		}
+	}
+	3400.1.1 = {
+		holder = 0
+	}
+}
+
+d_penitent_blades = {
+	3350.1.1 = {
+		liege = 0
+		holder = deltacortis_1
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+				create_maa_regiment = {
+					TYPE = orc_marauders
+					SIZE = 1
+				}				
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3401.1.8 = {
+		holder = 0
+	}
+}
+
+d_dusksabers = {
+	3350.1.1 = {
+		liege = 0
+		holder = bathogorgen_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3700.1.1 = {
+		holder = 0
+	}
+}
+
+d_verminous_path = {
+	3350.1.1 = {
+		liege = 0
+		holder = soranus_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_scholars
+						}
+					}
+					add_realm_law = camp_purpose_scholars
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3369.1.8 = {
+		holder = 0
+	}
+}
+
+d_starlit_revelry = {
+	3350.1.1 = {
+		liege = 0
+		holder = telanwenar_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3401.1.8 = {
+		holder = 0
+	}
+}
+
+d_glittering_fortune = {
+	3350.1.1 = {
+		liege = 0
+		holder = jashanzir_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3401.1.8 = {
+		holder = 0
+	}
+}
+
+d_laamp_bearclaw = {
+	3339.1.1 = {
+		liege = 0
+		holder = elyrimil_101 #Oreyn Bearclaw
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 3360.1.1 }
+		}
+	}
+	3365.3.6 = {
+		holder = 0 #Landed
+	}
+}
+
+d_laamp_septinius = {
+	3350.1.1 = {
+		liege = 0
+		holder = symon_septinius
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+				create_maa_regiment = {
+					TYPE = armored_footmen
+					SIZE = 1
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3401.1.8 = {
+		holder = 0
+	}
+}
+
+d_laamp_goldskin = { #Goblin Toowin's curious goblin gang
+	3368.1.1 = {
+		liege = 0
+		holder = goldskin_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3380.1.1 = { holder = 0 } #Thek dies and the gang disbands
+}
+
+d_laamp_nubbins = { #Some say he leapt from Black Marsh to Vvardenfell, others say he's a liar
+	3359.1.1 = {
+		liege = 0
+		holder = hostalta_nubbins
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3390.1.1 = { holder = 0 }
+}
+
+d_laamp_crecy = { #Perynak Crecy, claimant to Bhoriane
+	3359.1.1 = {
+		liege = 0
+		holder = crecy_1000
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3379.1.1 = { holder = crecy_1001 }
+	3411.1.1 = { holder = 0 }
+}
+
+d_laamp_ashabah = { #Traveling Ash'abah
+	3359.1.1 = {
+		liege = 0
+		holder = ashabah_100b
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3374.1.1 = { holder = 0 }	#HistoryToDo: Continue for future start dates
+}
+
+d_laamp_young_pilots = { #The Young Pilots - an Altmer youth group in unfamiliar lands
+	3369.1.1 = {
+		liege = 0
+		holder = young_pilot_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_explorers
+						}
+					}
+					add_realm_law = camp_purpose_explorers 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3374.4.12 = { holder = young_pilot_101 }
+	3374.8.28 = { holder = young_pilot_102 }
+	3376.1.6 = { holder = 0 }
+}
+
+d_laamp_south_argonia = { #South Argonia Expedition
+	3359.1.1 = {
+		liege = 0
+		holder = south_argonia_e_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_explorers
+						}
+					}
+					add_realm_law = camp_purpose_explorers 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3371.1.1 = { holder = 0 }
+}
+
+d_laamp_ayleid_chroniclers = { #Ayleid scholars
+	3359.1.1 = {
+		liege = 0
+		holder = ayleid_chronicler_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_scholars
+						}
+					}
+					add_realm_law = camp_purpose_scholars 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3397.1.1 = { holder = 0 }
+}
+
+d_laamp_dynaheir = { #A Redguard witch and her devoted Nord companion
+	3359.1.1 = {
+		liege = 0
+		holder = dynaheir
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3380.9.21 = { holder = 0 }
+}
+
+d_laamp_whirling_way = { #The Whirling Warriors' Way, a nomadic sect of Ansei aspirants opposing the Hiradirge
+	3340.1.1 = {
+		liege = 0
+		holder = whirling_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3418.1.1 = { holder = whirling_101 }
+	3432.1.1 = { holder = 0 }
+}
+
+d_laamp_western_circle = { #Criminal ring active within Southern Yokuda
+	3356.1.1 = {
+		liege = 0
+		holder = ploutar_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3386.1.1 = { holder = 0 }
+}
+
+d_laamp_night_stalkers = { #Lycan pack active near Velyn Harbor
+	3358.1.1 = {
+		liege = 0
+		holder = quickstep_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3376.1.1 = { holder = 0 }
+}
+
+d_laamp_wayward_column = { #Veterans of the Potentate, now pursuing mercenary work
+	3368.1.1 = {
+		liege = 0
+		holder = wayward_column_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+				create_maa_regiment = {
+					TYPE = argonian_spear_infantry
+					SIZE = 1
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3380.1.1 = { holder = 0 }
+}
+
+d_laamp_libertine_spiritist = { #Necromancer hippies
+	3366.1.1 = {
+		liege = 0
+		holder = davirius_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3411.1.1 = { holder = 0 }
+}
+
+d_laamp_jolund = { #Jolund Half-Mer LAAMP in 450
+	3369.1.1 = {
+		liege = 0
+		holder = easteregg_2
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3561.1.1 = { holder = 0 }
+}
+
+d_laamp_aethelred = { #Theodyn Aethelred, adapted from EK1
+	3347.1.1 = {
+		liege = 0
+		holder = aethelred_101
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3380.1.1 = { holder = 0 }
+}
+
+d_laamp_quixote = { #Chivalrous knight Ser Fights-the-Air Quixoteleel
+	3355.1.1 = {
+		liege = 0
+		holder = quixoteleel_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3409.1.1 = { holder = 0 }
+}
+
+d_laamp_battlelords = { #Knightly order of Ebonarm, Daggerlore
+	3359.1.1 = {
+		liege = 0
+		holder = reins_104
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+				create_maa_regiment = {
+					TYPE = light_horsemen
+					SIZE = 1
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3420.1.1 = { holder = 0 }
+}
+
+d_laamp_seth = { #Sethiete society near Gideon
+	3357.1.1 = {
+		liege = 0
+		holder = aspis_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3396.1.1 = { holder = 0 }
+}
+
+d_laamp_mantiti = { #Ashlander mercenary working for Telvanni
+	3313.1.1 = {
+		liege = 0
+		holder = mantiti_102
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3423.4.5 = { holder = 0 } #Landed
+}
+
+d_laamp_dolthernul = { #Mercenaries/gang in Llothanis
+	3286.1.1 = {
+		liege = 0
+		holder = dolthernul_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3577.1.1 = { holder = 0 } #Landed
+}
+
+d_mulakh_clan = {
+	3364.1.1 = {
+		liege = 0
+		holder = mulakh_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		} 
+	}
+}
+
+d_laamp_relvel = {
+	3332.1.1 = {
+		liege = 0
+		holder = relvel_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_scholars
+						}
+					}
+					add_realm_law = camp_purpose_scholars
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3494.1.1 = { holder = 0 }
+}
+
+d_laamp_ghardun = {
+	3304.1.1 = {
+		liege = 0
+		holder = ghardun_99b
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3412.1.1 = { holder = ghardun_101 } #Company inherited by son
+	3452.1.1 = { holder = ghardun_101b }
+	3489.1.1 = { holder = 0 }
+}
+
+d_laamp_carindon = { #Carindon Legitimists
+	3330.2.16 = {
+		liege = 0
+		holder = carindon_1003
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_legitimists 
+						}
+					}
+					add_realm_law = camp_purpose_legitimists 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3430.1.1 = { holder = carindon_1004 }
+	3448.5.1 = { holder = 0 } #Landed
+}
+
+d_laamp_elendarie = { #Elendarie V the Bosmer
+	3402.5.1 = {
+		liege = 0
+		holder = aunoroe_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3540.1.1 = { holder = 0 } #Death
+}
+
+
+d_blades_tenmar = { #Mercenary company operating mostly in Tenmar
+	3353.1.1 = {
+		liege = 0
+		holder = sihnai_100b
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3364.7.27 = { holder = 0 }
+}
+
+d_moonsingers = { #Wandering Moon-Singers
+	3198.1.1 = { holder = nequinal_991 }
+	3238.1.1 = { holder = nequinal_992 }
+	3260.1.1 = { holder = nequinal_993 }
+	3290.1.1 = { holder = nequinal_994 }
+	3335.1.1 = {
+		liege = 0
+		holder = nequinal_995
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_scholars
+						}
+					}
+					add_realm_law = camp_purpose_scholars
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3382.1.1 = { holder = nequinal_996 }
+	3404.1.1 = { holder = nequinal_997 }
+	3438.1.1 = { holder = nequinal_998 }
+	3465.1.1 = { holder = nequinal_999 }
+	3485.1.1 = { holder = 0 }
+}
+
+d_pasoroth_laamp = {
+	3429.1.1 = {
+		liege = 0
+		holder = hlaalu_pasoroth
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3486.7.9 = { holder = 0 } #Pasoroth becomes grandmaster
+}
+
+d_laamp_vogian = {
+	3356.1.1 = {
+		liege = 0
+		holder = vogian_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3368.1.1 = { holder = 0 }
+}
+
+d_laamp_searaiders = { #Sea-Raiders
+	3358.1.1 = {
+		liege = 0
+		holder = searaider_99 # Jumne
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3376.1.1 = { holder = 0 }
+}
+
+d_laamp_thonnir = { #Thonnir wandering after his cousin's coup
+	3369.5.14 = {
+		liege = 0
+		holder = skjoralmor_201 # Thonnir Skjoralmor
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3421.1.1 = { holder = 0 }
+}
+
+d_laamp_rimesnap = { #Rieklings
+	3356.1.1 = {
+		liege = 0
+		holder = rimesnap_99 # Tharz
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3383.1.1 = { holder = 0 }
+}
+
+d_laamp_reachbreakers = { #Reachbreakers after the burning
+	3362.1.1 = {
+		liege = 0
+		holder = reachbreaker_103 # Kirsten
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_legitimists
+						}
+					}
+					add_realm_law = camp_purpose_legitimists 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3397.1.1 = { holder = 0 }
+}
+d_laamp_keeneye = { #Descendants of an old Nordic family that used to own Camlorn
+	3336.1.1 = {
+		liege = 0
+		holder = keeneye_1000 # Osring
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_legitimists
+						}
+					}
+					add_realm_law = camp_purpose_legitimists 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3364.1.1 = { holder = keeneye_1001 } # Bronvar
+	3404.1.1 = { holder = 0 }
+}
+d_laamp_ilabael = { #Esar-Don's inheritance was split between the Sheogorad Nords and the Ghost Sea Slavers by 450
+	3366.8.11 = {
+		liege = 0
+		holder = ilabael_101
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3378.11.13 = { holder = 0 }	#Becomes landed
+}
+d_laamp_ulver = { #440 start before becoming the Ghost Sea Slavers by 450
+	3358.1.1 = {
+		liege = 0
+		holder = ulver_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3366.8.11 = { holder = 0 }	#Becomes landed
+}
+
+d_laamp_saluphus = {
+	3367.1.6 = {
+		liege = 0
+		holder = saluphus_100c
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_brigands
+						}
+					}
+					add_realm_law = camp_purpose_brigands 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3376.1.6 = { holder = 0 } #Dies
+}
+
+d_laamp_iocundus = {
+	3340.1.1 = {
+		liege = 0
+		holder = iocundus_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_scholars
+						}
+					}
+					add_realm_law = camp_purpose_scholars
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3392.1.1 = { holder = 0 }
+}
+
+d_laamp_vastarie = {
+	3160.1.1 = {
+		liege = 0
+		holder = vastarie_1000
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_scholars
+						}
+					}
+					add_realm_law = camp_purpose_scholars
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}	
+	}
+	3405.1.1 = { holder = 0 }
+}
+
+d_laamp_manaz = {
+	3362.5.16 = {
+		liege = 0
+		holder = manaz_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3376.9.3 = { holder = 0 } #Landed
+}
+
+d_laamp_nisren = {
+	3358.11.4 = {
+		liege = 0
+		holder = nisren_100
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3382.4.14 = { holder = 0 } #Landed
+}
+
+d_laamp_dovahater = {
+	3355.6.4 = {
+		liege = 0
+		holder = dovahater_1001
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries 
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries 
+				}
+				create_maa_regiment = {
+					TYPE = huscarl
+					SIZE = 2
+				}
+			}
+
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3373.1.1 = { holder = 0 }
+}
+
+### THUUM EASTER EGG
+d_blades_ashes = { #order of sacred ashes
+	3353.1.1 = {
+		liege = 0
+		holder = bloodies_1
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { 
+							has_realm_law = camp_purpose_mercenaries
+						}
+					}
+					add_realm_law = camp_purpose_mercenaries
+				}
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = { NOT = { has_dlc_feature = roads_to_power } }
+				holder ?= { destroy_title = prev }
+			}
+		}
+	}
+	3364.7.27 = { holder = 0 }
+}

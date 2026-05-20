@@ -1,0 +1,35 @@
+namespace = thuum_travel_event
+
+thuum_travel_event.0001 = {
+    type = character_event
+	title = "Unrelenting Force"
+    desc = "testing!"
+    theme = diplomacy_majesty_focus
+
+    override_background = {
+		reference = burning_building
+	}
+
+    left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+
+    immediate = {
+        root.location = {
+            save_scope_as = province
+        }
+    }
+
+    
+    option = {
+        name =  "testing!"
+        effect = {
+            remove_list_variable = {
+                name = visited_points_of_interest
+                target = scope:province
+            }
+        }
+    }
+
+}
